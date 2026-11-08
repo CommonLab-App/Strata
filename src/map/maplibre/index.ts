@@ -20,6 +20,10 @@ export const createEngine: CreateEngine = async (container) => {
     },
     center: [0, 20],
     zoom: 1.2,
+    // At most two device pixels per CSS pixel: a 3x phone draws under half the fragments for a globe that looks the same.
+    pixelRatio: Math.min(window.devicePixelRatio, 2),
+    // No cross-fade as tiles arrive: it costs a frame every 16 ms for 300 ms per tile on a phone, for little.
+    fadeDuration: 0,
   })
   await new Promise<void>((resolve) => map.once('style.load', () => resolve()))
   map.setProjection({ type: 'globe' })

@@ -30,7 +30,7 @@ Goal: a learner opens Strata, sees today's earthquakes on a globe, reads the wee
 
 - `npm test` passes; includes unit tests for `usgs-quakes.normalize`, `getSnapshot` cache hit/miss, and self-check grading.
 - Fresh browser profile + `npm run dev`: see quakes from the past day, open one, finish the week-1 lab and self-check, reload and see progress persisted.
-- Lighthouse mobile performance >= 80 on the Explore page with the chosen engine.
+- Lighthouse mobile performance >= 80 on the Explore page with the chosen engine (`npm run bench`; needs a machine with a GPU, see docs/DECISIONS.md).
 - `grep -ri` for any institution name, course code, or campus string returns nothing.
 
 ## Out of scope for phase 1

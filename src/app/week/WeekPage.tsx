@@ -1,0 +1,76 @@
+import type { ComponentType } from 'react'
+import { NavLink, useParams } from 'react-router'
+import { PageHeader } from '@/app/PageHeader'
+import { NotFound } from '@/app/pages/NotFound'
+import { SelfCheck } from '@/app/selfcheck/SelfCheck'
+import type { Question } from '@/app/selfcheck/questions'
+import { STATUS_LABEL } from '@/app/status'
+import { hasPage, WEEKS, weekPath, type Week } from '@/app/weeks'
+import * as week01 from '@/app/weeks/week01'
+import { useWeekProgress, type WeekProgress } from './weekProgress'
+
+export interface LabProps {
+  progress: WeekProgress
+  update: (patch: Partial<Omit<WeekProgress, 'status'>>) => void
+}
+
+/** What a week's folder exports. */
+export interface WeekContent {
+  Learn: ComponentType
+  Explore: ComponentType
+  Lab: ComponentType<LabProps>
+  questions: Question[]
+}
+
+const CONTENT: Record<number, WeekContent> = { 1: week01 }
+
+const TABS = [
+  { tab: 'learn', label: 'Learn' },
+  { tab: 'explore', label: 'Explore' },
+  { tab: 'lab', label: 'Lab' },
+  { tab: 'check', label: 'Self-check' },
+] as const
+type Tab = (typeof TABS)[number]['tab']
+
+export function WeekPage() {
+  const params = useParams()
+  const number = Number(params.week)
+  const week = WEEKS.find((w) => w.week === number)
+  const tab = params.tab ?? 'learn'
+  const content = week && CONTENT[week.week]
+  if (!week || !hasPage(week) || !content || !TABS.some((t) => t.tab === tab)) return <NotFound />
+  return <WeekShell week={week} tab={tab as Tab} content={content} />
+}
+
+function WeekShell({ week, tab, content }: { week: Week; tab: Tab; content: WeekContent }) {
+  const [progress, update] = useWeekProgress(week)
+  const title = `Week ${week.week}: ${week.title}`
+  const { Learn, Explore, Lab, questions } = content
+  return (
+    <>
+      <PageHeader title={title} documentTitle={`${TABS.find((t) => t.tab === tab)?.label} · ${title}`} />
+      <div className="mb-4 flex flex-wrap items-center gap-3">
+        <nav aria-label="Week sections" className="flex flex-wrap gap-1 rounded-lg bg-muted p-[3px] text-sm">
+          {TABS.map(({ tab: t, label }) => (
+            <NavLink
+              key={t}
+              to={t === 'learn' ? weekPath(week.week) : `${weekPath(week.week)}/${t}`}
+              end
+              className={({ isActive }) => `rounded-md px-3 py-1 outline-none focus-visible:ring-2 focus-visible:ring-ring ${isActive ? 'bg-background font-medium shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}
+            >
+              {label}
+            </NavLink>
+          ))}
+        </nav>
+        <span className="rounded-full border px-2.5 py-0.5 text-xs text-muted-foreground" aria-label="Week progress">
+          {STATUS_LABEL[progress.status]}
+          {progress.selfCheckBest !== null && ` · best ${progress.selfCheckBest}/${questions.length}`}
+        </span>
+      </div>
+      {tab === 'learn' && <Learn />}
+      {tab === 'explore' && <Explore />}
+      {tab === 'lab' && <Lab progress={progress} update={update} />}
+      {tab === 'check' && <SelfCheck questions={questions} progress={progress} update={update} />}
+    </>
+  )
+}

@@ -46,6 +46,17 @@ export function About() {
               </a>
               .
             </li>
+            <li>
+              Basemap:{' '}
+              <a className={link} href="https://www.openstreetmap.org/copyright" rel="noreferrer">
+                OpenStreetMap contributors
+              </a>
+              , drawn with{' '}
+              <a className={link} href="https://maplibre.org/" rel="noreferrer">
+                MapLibre GL JS
+              </a>
+              .
+            </li>
           </ul>
         </section>
 

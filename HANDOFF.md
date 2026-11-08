@@ -20,5 +20,11 @@ Do deliverable 6: build the quake layer on both CesiumJS and MapLibre GL, run th
 
 Remove the engine we did not pick. Finish deliverables 7 through 10 and run the acceptance tests. When all pass, update CHANGELOG.md and tell me the phase-1 gate is met.
 
+## Status 2026-11-08
+
+Prompts one to four are done: deliverables 1 to 10 are built and committed, `npm run build` passes, and the scripted
+acceptance flow passes in a fresh browser profile. The Lighthouse gate (80 or more on Explore) measured 72 on a server
+without a GPU; see docs/DECISIONS.md for how to measure it on a real device before calling the phase-1 gate met.
+
 ## Then
 Ask Claude Code to draft docs/specs/phase-2-earth-materials.md from docs/PLAN.md before any phase-2 code, and review it the same way.

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "w1q01",
+    "prompt": "Which statement is a scientific hypothesis?",
+    "options": [
+      "Rivers are beautiful in the morning.",
+      "If a stream's slope is steeper, it will carry larger grains of sand.",
+      "Geology is the most important science.",
+      "Nobody knows how canyons form."
+    ],
+    "answer": 1,
+    "explanation": "A hypothesis is a tentative explanation that a test could show to be wrong."
+  },
+  {
+    "id": "w1q02",
+    "prompt": "Which of these belongs to the geosphere?",
+    "options": ["Ocean water", "Rock of the crust and mantle", "The air", "Living things"],
+    "answer": 1,
+    "explanation": "The geosphere is the solid Earth; water, air and life are the hydrosphere, atmosphere and biosphere."
+  },
+  {
+    "id": "w1q03",
+    "prompt": "\"The present is the key to the past\" means that geologists assume:",
+    "options": [
+      "Earth has always looked exactly as it does today.",
+      "Past events can never be known.",
+      "The processes acting today also acted in the past, so today's processes explain old rocks.",
+      "Rocks only form in the present."
+    ],
+    "answer": 2,
+    "explanation": "This is the principle of uniformitarianism: the same physical laws and processes, acting over long spans of time."
+  },
+  {
+    "id": "w1q04",
+    "prompt": "Earth's internal processes, such as plate motion and volcanism, are driven mostly by:",
+    "options": ["Sunlight", "Heat from Earth's interior", "Ocean tides", "Wind"],
+    "answer": 1,
+    "explanation": "Heat left from Earth's formation and from radioactive decay drives the interior; the Sun drives processes at the surface."
+  },
+  {
+    "id": "w1q05",
+    "prompt": "Which of these is an observation rather than an interpretation?",
+    "options": [
+      "This layer was laid down by a flood.",
+      "This layer is two metres thick and made of sand-sized grains.",
+      "This layer is older than the hills.",
+      "This layer formed quickly."
+    ],
+    "answer": 1,
+    "explanation": "An observation records what can be measured or seen directly; the others explain or infer."
+  },
+  {
+    "id": "w1q06",
+    "prompt": "On the magnitude scale used in earthquake feeds, going from magnitude 4 to magnitude 5 means the recorded ground motion is roughly:",
+    "options": ["The same", "Twice as large", "Ten times as large", "A hundred times as large"],
+    "answer": 2,
+    "explanation": "Magnitude is logarithmic: each whole step is about ten times the recorded amplitude and about thirty times the energy."
+  },
+  {
+    "id": "w1q07",
+    "prompt": "The depth of an earthquake given in a feed is measured:",
+    "options": ["Above sea level", "Below the surface, in kilometres", "From the centre of Earth", "In degrees of latitude"],
+    "answer": 1,
+    "explanation": "Depth is the distance from the surface down to the point where the rupture began."
+  },
+  {
+    "id": "w1q08",
+    "prompt": "Why do scientists publish their data and methods along with their conclusions?",
+    "options": [
+      "So that others can check and repeat the work.",
+      "Because journals require long papers.",
+      "To keep the results secret.",
+      "To make the work look harder."
+    ],
+    "answer": 0,
+    "explanation": "Science depends on results that others can reproduce and test."
+  },
+  {
+    "id": "w1q09",
+    "prompt": "The age of Earth is about:",
+    "options": ["4,600 years", "4.6 million years", "4.6 billion years", "4.6 trillion years"],
+    "answer": 2,
+    "explanation": "Radiometric dating of meteorites and the oldest Earth minerals gives about 4.6 billion years."
+  },
+  {
+    "id": "w1q10",
+    "prompt": "Looking at a day of earthquakes on the globe, most of them fall:",
+    "options": ["Evenly everywhere", "Along plate boundaries", "Only on land", "Only in the deep ocean"],
+    "answer": 1,
+    "explanation": "Earthquakes cluster where plates meet; the pattern outlines the boundaries."
+  }
+]

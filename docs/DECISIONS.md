@@ -50,3 +50,32 @@ terrain, and profiles are computed from elevation tiles in code anyway. Phase 6'
 either by changing the raster source.
 
 `npm run bench` now runs Lighthouse mobile on the week-1 Explore pane alone, for the phase-1 gate.
+
+## 2026-11-08 Phase-1 Lighthouse gate: measured at 72 here, device number still needed
+
+The spec asks for Lighthouse mobile performance of 80 or more on the Explore pane. `npm run bench` runs it twice in one
+headless Chromium against the production build; this server has no GPU, so WebGL runs on SwiftShader (software).
+
+| Run | Score | FCP | LCP | TBT | Speed index |
+| --- | --- | --- | --- | --- | --- |
+| Cold browser, SwiftShader | 68 | 0.76 s | 0.76 s | 4.2 s | 4.4 s |
+| Warm browser, SwiftShader | 72 | 0.77 s | 0.77 s | 2.2 s | 2.7 s |
+| Warm, WebGL disabled (`BENCH_NO_WEBGL=1`) | 67 | 0.76 s | 4.0 s | 0.8 s | 1.0 s |
+
+What the runs say:
+
+- First and largest paint are the same event at about 0.76 s: the pane's text paints in its web font before the
+  engine starts. Three changes got it there: the quake count moved out of the caption into its own element, the
+  latin Inter faces are served from `public/fonts/` with a preload in index.html instead of the fontsource CSS, and
+  week content is in the main chunk rather than a lazy one. The engine starts only after a painted frame and
+  `document.fonts.ready` (`settled()` in `src/app/weeks/week01/Explore.tsx`).
+- The remaining 2.2 s of blocking time is MapLibre's start-up: WebGL context, globe and raster shaders, first
+  frame. With WebGL disabled it falls to 0.8 s, of which the main chunk's evaluation is most. (The 4 s LCP in that
+  row is the "globe could not load" message appearing late; it is not a real page state.) Under SwiftShader the
+  shader work runs on the CPU and is counted at Lighthouse's four-times slowdown; on a phone the GPU driver does it.
+- The cold run adds the browser's own GPU-process start to everything; Lighthouse on a desktop pays far less for it.
+
+So the gate is not shown met here, and cannot be from this server. To measure it: `npm run build && npm run preview`,
+open `/#/week/1/explore` in desktop Chrome, run Lighthouse from DevTools with the mobile preset, or `CHROME_PATH=<a
+Chrome with a GPU> npm run bench`. If a device run still falls short, the next levers are MapLibre's chunk (1.06 MB,
+288 kB gzipped; no smaller build exists) and the main chunk (481 kB; React, the router, zod and the UI library).

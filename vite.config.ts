@@ -23,6 +23,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(import.meta.dirname, './src'),
+      '@data': path.resolve(import.meta.dirname, './data'),
     },
   },
   build: {
