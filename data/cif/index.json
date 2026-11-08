@@ -1,0 +1,210 @@
+{
+  "anorthite": {
+    "cod": "1000034",
+    "url": "https://www.crystallography.net/cod/1000034.cif",
+    "mineral": "Anorthite",
+    "formula": "Al2 Ca O8 Si2",
+    "spaceGroup": "P -1",
+    "fetched": "2026-11-08"
+  },
+  "apatite": {
+    "cod": "1010996",
+    "url": "https://www.crystallography.net/cod/1010996.cif",
+    "mineral": "Fluorapatite",
+    "formula": "Ca5 F O12 P3",
+    "spaceGroup": "P 63/m",
+    "fetched": "2026-11-08"
+  },
+  "augite": {
+    "cod": "9009664",
+    "url": "https://www.crystallography.net/cod/9009664.cif",
+    "mineral": "Augite",
+    "formula": "Ca Fe0.25 Mg0.74 O6 Si2",
+    "spaceGroup": "C 1 2/c 1",
+    "fetched": "2026-11-08"
+  },
+  "biotite": {
+    "cod": "9002308",
+    "url": "https://www.crystallography.net/cod/9002308.cif",
+    "mineral": "Annite",
+    "formula": "Al Fe3 K0.956 O12 Si3",
+    "spaceGroup": "C 1 2/m 1",
+    "fetched": "2026-11-08"
+  },
+  "calcite": {
+    "cod": "1010928",
+    "url": "https://www.crystallography.net/cod/1010928.cif",
+    "mineral": "Calcite",
+    "formula": "C Ca O3",
+    "spaceGroup": "R -3 c RS",
+    "fetched": "2026-11-08"
+  },
+  "corundum": {
+    "cod": "1000017",
+    "url": "https://www.crystallography.net/cod/1000017.cif",
+    "mineral": "Corundum",
+    "formula": "Al2 O3",
+    "spaceGroup": "R -3 c :H",
+    "fetched": "2026-11-08"
+  },
+  "dolomite": {
+    "cod": "1200014",
+    "url": "https://www.crystallography.net/cod/1200014.cif",
+    "mineral": "Dolomite",
+    "formula": "C2 Ca Mg O6",
+    "spaceGroup": "R -3 :H",
+    "fetched": "2026-11-08"
+  },
+  "fluorite": {
+    "cod": "1000043",
+    "url": "https://www.crystallography.net/cod/1000043.cif",
+    "mineral": "Fluorite",
+    "formula": "Ca F2",
+    "spaceGroup": "F m -3 m",
+    "fetched": "2026-11-08"
+  },
+  "galena": {
+    "cod": "5000087",
+    "url": "https://www.crystallography.net/cod/5000087.cif",
+    "mineral": "Galena",
+    "formula": "Pb S",
+    "spaceGroup": "F m -3 m",
+    "fetched": "2026-11-08"
+  },
+  "garnet": {
+    "cod": "9001426",
+    "url": "https://www.crystallography.net/cod/9001426.cif",
+    "mineral": "Almandine",
+    "formula": "Al2 Fe3 O12 Si3",
+    "spaceGroup": "I a -3 d",
+    "fetched": "2026-11-08"
+  },
+  "graphite": {
+    "cod": "9000046",
+    "url": "https://www.crystallography.net/cod/9000046.cif",
+    "mineral": "Graphite",
+    "formula": "- C -",
+    "spaceGroup": "F m m m",
+    "fetched": "2026-11-08"
+  },
+  "gypsum": {
+    "cod": "1010981",
+    "url": "https://www.crystallography.net/cod/1010981.cif",
+    "mineral": "Gypsum",
+    "formula": "Ca H4 O6 S",
+    "spaceGroup": "C 1 2/c 1",
+    "fetched": "2026-11-08"
+  },
+  "halite": {
+    "cod": "9000629",
+    "url": "https://www.crystallography.net/cod/9000629.cif",
+    "mineral": "Halite",
+    "formula": "Cl Na",
+    "spaceGroup": "F m -3 m",
+    "fetched": "2026-11-08"
+  },
+  "hematite": {
+    "cod": "1011240",
+    "url": "https://www.crystallography.net/cod/1011240.cif",
+    "mineral": "Hematite",
+    "formula": "Fe2 O3",
+    "spaceGroup": "R -3 c :R",
+    "fetched": "2026-11-08"
+  },
+  "hornblende": {
+    "cod": "9001244",
+    "url": "https://www.crystallography.net/cod/9001244.cif",
+    "mineral": "Hornblende",
+    "formula": "Al1.08 Ca1.7 Fe1.718 H2 Mg3.442 Na0.46 O24 Si6.92",
+    "spaceGroup": "C 1 2/m 1",
+    "fetched": "2026-11-08"
+  },
+  "kaolinite": {
+    "cod": "1550598",
+    "url": "https://www.crystallography.net/cod/1550598.cif",
+    "mineral": "Kaolinite",
+    "formula": "Al2 H4 O9 Si2",
+    "spaceGroup": "P 1",
+    "fetched": "2026-11-08"
+  },
+  "magnetite": {
+    "cod": "1011032",
+    "url": "https://www.crystallography.net/cod/1011032.cif",
+    "mineral": "Magnetite",
+    "formula": "Fe3 O4",
+    "spaceGroup": "F d -3 m :1",
+    "fetched": "2026-11-08"
+  },
+  "muscovite": {
+    "cod": "9015623",
+    "url": "https://www.crystallography.net/cod/9015623.cif",
+    "mineral": "Muscovite",
+    "formula": "Al3 K O12 Si3",
+    "spaceGroup": "C 1 2/c 1",
+    "fetched": "2026-11-08"
+  },
+  "olivine": {
+    "cod": "1572959",
+    "url": "https://www.crystallography.net/cod/1572959.cif",
+    "mineral": "forsterite",
+    "formula": "Mg8 O16 Si4",
+    "spaceGroup": "P 1",
+    "fetched": "2026-11-08"
+  },
+  "orthoclase": {
+    "cod": "1011205",
+    "url": "https://www.crystallography.net/cod/1011205.cif",
+    "mineral": "Orthoclase",
+    "formula": "Al K O8 Si3",
+    "spaceGroup": "C 1 2/m 1",
+    "fetched": "2026-11-08"
+  },
+  "plagioclase": {
+    "cod": "9000525",
+    "url": "https://www.crystallography.net/cod/9000525.cif",
+    "mineral": "Albite",
+    "formula": "Al Na O8 Si3",
+    "spaceGroup": "C -1",
+    "fetched": "2026-11-08"
+  },
+  "pyrite": {
+    "cod": "1010760",
+    "url": "https://www.crystallography.net/cod/1010760.cif",
+    "mineral": "Pyrite",
+    "formula": "Fe S2",
+    "spaceGroup": null,
+    "fetched": "2026-11-08"
+  },
+  "quartz": {
+    "cod": "5000035",
+    "url": "https://www.crystallography.net/cod/5000035.cif",
+    "mineral": "Quartz",
+    "formula": "O2 Si",
+    "spaceGroup": "P 32 2 1",
+    "fetched": "2026-11-08"
+  },
+  "sphalerite": {
+    "cod": "1100043",
+    "url": "https://www.crystallography.net/cod/1100043.cif",
+    "mineral": "Sphalerite",
+    "formula": "S Zn",
+    "spaceGroup": "F -4 3 m",
+    "fetched": "2026-11-08"
+  },
+  "talc": {
+    "cod": "9008040",
+    "url": "https://www.crystallography.net/cod/9008040.cif",
+    "mineral": "Talc",
+    "formula": "H2 Mg3 O12 Si4",
+    "spaceGroup": "C 1 2/c 1",
+    "fetched": "2026-11-08"
+  },
+  "topaz": {
+    "cod": "9001514",
+    "url": "https://www.crystallography.net/cod/9001514.cif",
+    "mineral": "Topaz",
+    "formula": "Al2 H2 O6 Si",
+    "spaceGroup": "P b n m",
+    "fetched": "2026-11-08"
+  }
+}
