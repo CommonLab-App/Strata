@@ -7,6 +7,12 @@ of docs/PLAN.md. Week 5 (volcanoes) and the volcano half of week 4 are phase 3.
 Gate: all five identification labs save a worksheet, score it, and reproduce the same unknowns and the same score
 from the stored entry after a reload.
 
+## Status
+
+2026-11-08: deliverables 1 (minerals), 2, 3, 5 and 8 built; weeks 2 and 3 of deliverable 6 wired in. Rocks (the
+rock library, the Rock Inspector grids, weeks 4, 6 and 7) are next. Two additions beyond the plan, asked for on the
+way: an Elements of the crust page (`/explore/elements`) and a Maps and data page (`/resources`).
+
 ## What phase 1 gives us
 
 - Week shell with Learn / Explore / Lab / Self-check, per-week localStorage entry, `useWeekProgress`, self-check

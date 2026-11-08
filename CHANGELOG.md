@@ -13,4 +13,8 @@ Phase-1 gate met 2026-11-08: build, tests and the acceptance flow pass; Lighthou
 - Week 1: Learn page with linked reading; Explore with the quake globe, time-range toggle, quake details and a largest-quakes list; sand-and-water lab worksheet; ten-question self-check with best score kept.
 - `npm run bench`: Lighthouse mobile on the Explore pane, cold and warm, with a no-WebGL diagnostic switch.
 - `public/robots.txt`; MapLibre's attribution link styled as a link.
+- Phase 2 begun: mineral library (48 species, 36 core, sourced values) with the two imported turntable specimens; 27 crystal structures from the Crystallography Open Database with provenance; CIF reader and unit-cell builder; identification-lab engine (seeded draw, bench tools, key narrowing, scoring with sufficiency).
+- Mineral Inspector with search, property key, compare tray, cards with sourced values, turntable video and a lazily loaded Three.js crystal viewer with bonds, unit cell and silicate tetrahedra.
+- Weeks 2 and 3: Learn text, Explore into the inspector, Mineral ID I (12 unknowns, basic tools) and Mineral ID II (15 unknowns, full toolbox), ten self-check questions each.
+- Elements of the crust: the periodic table shaded by crustal abundance with Goldschmidt classes and links to the minerals that hold each element; Maps and data page of public services.
 - `scripts/import_sample.py`: turntable video import with ffmpeg (H.264, 720p, silent, all metadata stripped and verified, a provenance tag drawn into the frame and kept as the comment tag) for the phase-2 sample library.

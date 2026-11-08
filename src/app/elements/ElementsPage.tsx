@@ -13,7 +13,7 @@ const MINOR = ['Ti', 'H', 'P', 'Mn', 'F', 'Ba', 'Sr', 'S', 'C', 'Zr', 'Cl']
 
 const GOLDSCHMIDT_TEXT: Record<Goldschmidt, string> = {
   lithophile: 'Lithophile, "rock-loving": bonds readily with oxygen and gathers in the crust and mantle as silicates and oxides.',
-  siderophile: 'Siderophile, "iron-loving": dissolves in molten iron and went largely to the core; scarce in the crust.',
+  siderophile: 'Siderophile, "iron-loving": dissolves in molten iron, so most of it went to the core; what stayed in the crust is bound to oxygen or sulfur.',
   chalcophile: 'Chalcophile, "ore-loving": prefers sulfur to oxygen, so it is found in sulfide ore minerals.',
   atmophile: 'Atmophile: a gas or forms gases, so it sits in the atmosphere and oceans rather than in rock.',
 }
