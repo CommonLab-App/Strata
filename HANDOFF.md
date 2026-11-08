@@ -24,7 +24,11 @@ Remove the engine we did not pick. Finish deliverables 7 through 10 and run the 
 
 Prompts one to four are done and the phase-1 gate is met: deliverables 1 to 10 are built and committed, `npm run
 build` passes, the scripted acceptance flow passes in a fresh browser profile, and Lighthouse mobile performance on
-Explore is 92 on a desktop with a GPU (docs/DECISIONS.md). Next: the phase-2 spec.
+Explore is 92 on a desktop with a GPU (docs/DECISIONS.md).
+
+Phase 2 is built as of 2026-11-08 (docs/specs/phase-2-earth-materials.md, Status). To close its gate: Lighthouse mobile on
+`/#/explore/minerals/quartz` from a machine with a GPU, 80 or more. Then draft docs/specs/phase-3-internal-processes.md
+from docs/PLAN.md before any phase-3 code.
 
 ## Then
 Ask Claude Code to draft docs/specs/phase-2-earth-materials.md from docs/PLAN.md before any phase-2 code, and review it the same way.

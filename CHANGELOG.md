@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+Phase-2 gate met on the build machine 2026-11-08: all five identification labs save, score and reproduce their tray after a reload (docs/specs/phase-2-earth-materials.md); Lighthouse on the mineral card still to run on a GPU machine.
+
 Phase-1 gate met 2026-11-08: build, tests and the acceptance flow pass; Lighthouse mobile performance 92 on the Explore pane (docs/DECISIONS.md).
 
 - Scaffold copied from Valence: Vite, React, hash router, Tailwind, shadcn, first-paint theme script, architecture lint rules (network only in `src/data/adapters/`).
@@ -16,5 +18,7 @@ Phase-1 gate met 2026-11-08: build, tests and the acceptance flow pass; Lighthou
 - Phase 2 begun: mineral library (48 species, 36 core, sourced values) with the two imported turntable specimens; 27 crystal structures from the Crystallography Open Database with provenance; CIF reader and unit-cell builder; identification-lab engine (seeded draw, bench tools, key narrowing, scoring with sufficiency).
 - Mineral Inspector with search, property key, compare tray, cards with sourced values, turntable video and a lazily loaded Three.js crystal viewer with bonds, unit cell and silicate tetrahedra.
 - Weeks 2 and 3: Learn text, Explore into the inspector, Mineral ID I (12 unknowns, basic tools) and Mineral ID II (15 unknowns, full toolbox), ten self-check questions each.
+- Rock library (47 rocks, 30 core) with Bowen's series and metamorphic facies as data figures; Rock Inspector with the three classification grids; rock identification engine and bench; weeks 4, 6 and 7 with Learn text, labs and self-checks.
+- StrataLab brand: tokens, Zilla Slab and JetBrains Mono, mark and lockups, icons, the labelled block diagram on About.
 - Elements of the crust: the periodic table shaded by crustal abundance with Goldschmidt classes and links to the minerals that hold each element; Maps and data page of public services.
 - `scripts/import_sample.py`: turntable video import with ffmpeg (H.264, 720p, silent, all metadata stripped and verified, a provenance tag drawn into the frame and kept as the comment tag) for the phase-2 sample library.

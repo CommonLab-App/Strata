@@ -9,9 +9,22 @@ from the stored entry after a reload.
 
 ## Status
 
-2026-11-08: deliverables 1 (minerals), 2, 3, 5 and 8 built; weeks 2 and 3 of deliverable 6 wired in. Rocks (the
-rock library, the Rock Inspector grids, weeks 4, 6 and 7) are next. Two additions beyond the plan, asked for on the
-way: an Elements of the crust page (`/explore/elements`) and a Maps and data page (`/resources`).
+2026-11-08: all deliverables built. The gate is met on this machine: the five identification labs (weeks 2, 3, 4, 6,
+7) each save a tray, score it, and reproduce the same unknowns and score after a reload, in a scripted run through
+the production build; 128 tests, lint, types and the build pass; the forbidden-strings grep is clean. Still to run
+on a machine with a GPU, as for phase 1: Lighthouse mobile on `/#/explore/minerals/quartz`.
+
+Departures from the text below, decided while building:
+
+- Rock labs do not score grid placement separately. The worksheet derives the grid cell from the observations as
+  they come in, and the learner is scored on the name and on sufficiency, like the mineral labs. The grids are for
+  the Explore pane.
+- The hand lens reports feel, and olivine, garnet and gypsum sit in week 3's pool rather than week 2's, so that every
+  pool mineral can be told apart with that week's tools.
+- Photos from Wikimedia Commons were not added: the two specimens with recordings use them, the rest show a
+  placeholder until a recording arrives. Panda's core set is about 35 minerals; the library marks 36 as core until
+  the list comes.
+- Beyond the plan: an Elements of the crust page and a Maps and data page.
 
 ## What phase 1 gives us
 
