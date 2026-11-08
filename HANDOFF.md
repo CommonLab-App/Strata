@@ -27,8 +27,8 @@ build` passes, the scripted acceptance flow passes in a fresh browser profile, a
 Explore is 92 on a desktop with a GPU (docs/DECISIONS.md).
 
 Phase 2 is built as of 2026-11-08 (docs/specs/phase-2-earth-materials.md, Status). To close its gate: Lighthouse mobile on
-`/#/explore/minerals/quartz` from a machine with a GPU, 80 or more. Then draft docs/specs/phase-3-internal-processes.md
-from docs/PLAN.md before any phase-3 code.
+`/#/explore/minerals/quartz` from a machine with a GPU, 80 or more. The phase-3 spec is drafted (docs/specs/phase-3-internal-processes.md, 2026-11-08) and is out for review by
+geologists before any phase-3 code; expect changes to specs 2 and 3 and to the library data from that review.
 
 ## Then
 Ask Claude Code to draft docs/specs/phase-2-earth-materials.md from docs/PLAN.md before any phase-2 code, and review it the same way.
