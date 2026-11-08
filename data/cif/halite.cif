@@ -1,7 +1,7 @@
 #------------------------------------------------------------------------------
-#$Date: 2024-04-18 18:56:43 +0300 (Thu, 18 Apr 2024) $
-#$Revision: 291269 $
-#$URL: file:///home/coder/svn-repositories/_RELOADED_COD/cod-reloaded/cif/9/00/06/9000629.cif $
+#$Date: 2024-04-25 17:59:02 +0300 (Thu, 25 Apr 2024) $
+#$Revision: 291351 $
+#$URL: file:///home/coder/svn-repositories/_RELOADED_COD/cod-reloaded/cif/9/00/33/9003308.cif $
 #------------------------------------------------------------------------------
 #
 # This file is available in the Crystallography Open Database (COD),
@@ -13,20 +13,26 @@
 # proper attribution is given to the journal article from which the
 # data were obtained.
 #
-data_9000629
+data_9003308
 loop_
 _publ_author_name
-'Finger, L. W.'
-'King, H. E.'
+'Walker, D.'
+'Verma, P. K.'
+'Cranswick, L. M. D.'
+'Jones, R. L.'
+'Clark, S. M.'
+'Buhre, S.'
 _publ_section_title
-;A revised method of operation of the single-crystal diamond cell and
- refinement of the structure of NaCl at 32 kbar
+;
+ Halite-sylvite thermoelasticity
+ Sample: msl416031, T = 25 C, P = 0.0 kbar, cell volume = 179.42 ang**3
 ;
 _journal_name_full               'American Mineralogist'
-_journal_page_first              337
-_journal_page_last               342
-_journal_volume                  63
-_journal_year                    1978
+_journal_page_first              204
+_journal_page_last               210
+_journal_volume                  89
+_journal_year                    2004
+_chemical_formula_structural     NaCl
 _chemical_formula_sum            'Cl Na'
 _chemical_name_mineral           Halite
 _space_group_IT_number           225
@@ -35,16 +41,18 @@ _symmetry_space_group_name_H-M   'F m -3 m'
 _cell_angle_alpha                90
 _cell_angle_beta                 90
 _cell_angle_gamma                90
-_cell_length_a                   5.4533
-_cell_length_b                   5.4533
-_cell_length_c                   5.4533
+_cell_length_a                   5.6401
+_cell_length_b                   5.6401
+_cell_length_c                   5.6401
 _cell_formula_units_Z            4
-_cell_volume                     162.173
-_database_code_amcsd             0000641
-_exptl_crystal_density_diffrn    2.394
+_cell_volume                     179.416
+_database_code_amcsd             0003397
+_diffrn_ambient_pressure         0
+_diffrn_ambient_temperature      298.15
+_exptl_crystal_density_diffrn    2.164
 _cod_original_sg_symbol_H-M      'F m 3 m'
 _cod_original_formula_sum        'Na Cl'
-_cod_database_code               9000629
+_cod_database_code               9003308
 loop_
 _space_group_symop_operation_xyz
 x,y,z
@@ -244,11 +252,10 @@ _atom_site_label
 _atom_site_fract_x
 _atom_site_fract_y
 _atom_site_fract_z
-_atom_site_U_iso_or_equiv
-Na 0.00000 0.00000 0.00000 0.01849
-Cl 0.50000 0.50000 0.50000 0.01494
+Na 0.00000 0.00000 0.00000
+Cl 0.50000 0.50000 0.50000
 loop_
 _cod_related_entry_id
 _cod_related_entry_database
 _cod_related_entry_code
-1 AMCSD 0000641
+1 AMCSD 0003397

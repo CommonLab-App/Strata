@@ -1,4 +1,5 @@
 import type { Quake } from '@/data/adapters/usgs-quakes'
+import { seeded } from '@/engine/random'
 import type { MapPoint } from './types'
 
 /** A quake as a dot: scaled by magnitude, never smaller than a tap can find. */
@@ -12,15 +13,7 @@ export const quakePoint = (quake: Quake): MapPoint => ({
 
 /** `count` points spread over the globe, the same for the same seed, for the frame-rate bench. */
 export function syntheticPoints(count: number, seed: number): MapPoint[] {
-  // ponytail: mulberry32, enough for a scatter.
-  let s = seed >>> 0
-  const random = () => {
-    s = (s + 0x6d2b79f5) >>> 0
-    let t = s
-    t = Math.imul(t ^ (t >>> 15), t | 1)
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61)
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
-  }
+  const random = seeded(seed)
   const points: MapPoint[] = []
   for (let i = 0; i < count; i++) {
     // Uniform on the sphere: latitude from arcsin, not a flat spread, so the poles are not crowded.

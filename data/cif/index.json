@@ -96,8 +96,8 @@
     "fetched": "2026-11-08"
   },
   "halite": {
-    "cod": "9000629",
-    "url": "https://www.crystallography.net/cod/9000629.cif",
+    "cod": "9003308",
+    "url": "https://www.crystallography.net/cod/9003308.cif",
     "mineral": "Halite",
     "formula": "Cl Na",
     "spaceGroup": "F m -3 m",
@@ -168,11 +168,11 @@
     "fetched": "2026-11-08"
   },
   "pyrite": {
-    "cod": "1010760",
-    "url": "https://www.crystallography.net/cod/1010760.cif",
+    "cod": "5000115",
+    "url": "https://www.crystallography.net/cod/5000115.cif",
     "mineral": "Pyrite",
     "formula": "Fe S2",
-    "spaceGroup": null,
+    "spaceGroup": "P a -3",
     "fetched": "2026-11-08"
   },
   "quartz": {

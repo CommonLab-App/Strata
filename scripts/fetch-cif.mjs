@@ -23,12 +23,21 @@ if (codArg) {
   entry = { candidates: (byMineral.length ? byMineral : rows).sort((a, b) => Number(a.nel ?? 99) - Number(b.nel ?? 99) || Number(a.file) - Number(b.file)) }
   if (!entry.candidates.length) throw new Error(`COD found nothing for ${name}`)
 }
+/** True when the atom-site loop has at least one row with a numeric fractional coordinate (some entries hold only "?"). */
+function hasAtomRows(text) {
+  const at = text.indexOf('_atom_site_fract_x')
+  if (at < 0) return false
+  const after = text.slice(at).split('\n').slice(1)
+  const firstRow = after.find((line) => line.trim() && !line.trim().startsWith('_'))
+  return firstRow !== undefined && /(^|\s)-?\d/.test(firstRow)
+}
+
 // The first candidate that is a full structure: some COD entries hold a cell without atoms, or no cell at all.
 let url, cif
 for (const candidate of entry.candidates ?? [entry]) {
   url = `https://www.crystallography.net/cod/${candidate.file}.cif`
   cif = await (await fetch(url)).text()
-  if (cif.includes('_cell_length_a') && cif.includes('_atom_site_fract_x')) {
+  if (cif.includes('_cell_length_a') && hasAtomRows(cif)) {
     entry = candidate
     break
   }
