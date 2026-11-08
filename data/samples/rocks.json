@@ -1,0 +1,1858 @@
+[
+  {
+    "id": "granite",
+    "name": "Granite",
+    "class": "igneous",
+    "core": true,
+    "texture": {
+      "grain": "phaneritic"
+    },
+    "composition": {
+      "silica": "felsic",
+      "minerals": [
+        "quartz",
+        "orthoclase",
+        "plagioclase",
+        "biotite",
+        "muscovite",
+        "hornblende"
+      ]
+    },
+    "formation": [
+      "continental crust",
+      "batholith",
+      "slow cooling"
+    ],
+    "related": {
+      "twin": "rhyolite"
+    },
+    "colourIndex": 10,
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "rhyolite",
+    "name": "Rhyolite",
+    "class": "igneous",
+    "core": true,
+    "texture": {
+      "grain": "aphanitic"
+    },
+    "composition": {
+      "silica": "felsic",
+      "minerals": [
+        "quartz",
+        "orthoclase",
+        "plagioclase"
+      ]
+    },
+    "formation": [
+      "lava dome",
+      "ash-flow",
+      "fast cooling"
+    ],
+    "related": {
+      "twin": "granite"
+    },
+    "colourIndex": 10,
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "granodiorite",
+    "name": "Granodiorite",
+    "class": "igneous",
+    "core": false,
+    "texture": {
+      "grain": "phaneritic"
+    },
+    "composition": {
+      "silica": "felsic",
+      "minerals": [
+        "plagioclase",
+        "quartz",
+        "orthoclase",
+        "biotite",
+        "hornblende"
+      ]
+    },
+    "formation": [
+      "continental arc",
+      "batholith"
+    ],
+    "related": {
+      "twin": "dacite"
+    },
+    "colourIndex": 20,
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "dacite",
+    "name": "Dacite",
+    "class": "igneous",
+    "core": false,
+    "texture": {
+      "grain": "aphanitic"
+    },
+    "composition": {
+      "silica": "felsic",
+      "minerals": [
+        "plagioclase",
+        "quartz",
+        "hornblende",
+        "biotite"
+      ]
+    },
+    "formation": [
+      "stratovolcano",
+      "lava dome"
+    ],
+    "related": {
+      "twin": "granodiorite"
+    },
+    "colourIndex": 20,
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "diorite",
+    "name": "Diorite",
+    "class": "igneous",
+    "core": true,
+    "texture": {
+      "grain": "phaneritic"
+    },
+    "composition": {
+      "silica": "intermediate",
+      "minerals": [
+        "plagioclase",
+        "hornblende",
+        "biotite",
+        "augite"
+      ]
+    },
+    "formation": [
+      "volcanic arc",
+      "pluton"
+    ],
+    "related": {
+      "twin": "andesite"
+    },
+    "colourIndex": 35,
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "andesite",
+    "name": "Andesite",
+    "class": "igneous",
+    "core": true,
+    "texture": {
+      "grain": "aphanitic"
+    },
+    "composition": {
+      "silica": "intermediate",
+      "minerals": [
+        "plagioclase",
+        "hornblende",
+        "augite"
+      ]
+    },
+    "formation": [
+      "stratovolcano",
+      "subduction zone"
+    ],
+    "related": {
+      "twin": "diorite"
+    },
+    "colourIndex": 35,
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "gabbro",
+    "name": "Gabbro",
+    "class": "igneous",
+    "core": true,
+    "texture": {
+      "grain": "phaneritic"
+    },
+    "composition": {
+      "silica": "mafic",
+      "minerals": [
+        "plagioclase",
+        "augite",
+        "olivine"
+      ]
+    },
+    "formation": [
+      "oceanic crust",
+      "layered intrusion"
+    ],
+    "related": {
+      "twin": "basalt"
+    },
+    "colourIndex": 60,
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "basalt",
+    "name": "Basalt",
+    "class": "igneous",
+    "core": true,
+    "texture": {
+      "grain": "aphanitic"
+    },
+    "composition": {
+      "silica": "mafic",
+      "minerals": [
+        "plagioclase",
+        "augite",
+        "olivine"
+      ]
+    },
+    "formation": [
+      "ocean floor",
+      "shield volcano",
+      "flood basalt"
+    ],
+    "related": {
+      "twin": "gabbro"
+    },
+    "colourIndex": 60,
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "peridotite",
+    "name": "Peridotite",
+    "class": "igneous",
+    "core": true,
+    "texture": {
+      "grain": "phaneritic"
+    },
+    "composition": {
+      "silica": "ultramafic",
+      "minerals": [
+        "olivine",
+        "augite"
+      ]
+    },
+    "formation": [
+      "upper mantle",
+      "ophiolite base"
+    ],
+    "related": {},
+    "colourIndex": 90,
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "komatiite",
+    "name": "Komatiite",
+    "class": "igneous",
+    "core": false,
+    "texture": {
+      "grain": "aphanitic"
+    },
+    "composition": {
+      "silica": "ultramafic",
+      "minerals": [
+        "olivine",
+        "augite"
+      ]
+    },
+    "formation": [
+      "very hot ancient lava"
+    ],
+    "related": {
+      "twin": "peridotite"
+    },
+    "colourIndex": 90,
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "obsidian",
+    "name": "Obsidian",
+    "class": "igneous",
+    "core": true,
+    "texture": {
+      "grain": "glassy"
+    },
+    "composition": {
+      "silica": "felsic",
+      "minerals": []
+    },
+    "formation": [
+      "rapidly chilled lava",
+      "lava dome margin"
+    ],
+    "related": {
+      "twin": "rhyolite"
+    },
+    "colourIndex": 0,
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "pumice",
+    "name": "Pumice",
+    "class": "igneous",
+    "core": true,
+    "texture": {
+      "grain": "vesicular"
+    },
+    "composition": {
+      "silica": "felsic",
+      "minerals": []
+    },
+    "formation": [
+      "frothy explosive eruption"
+    ],
+    "related": {
+      "twin": "rhyolite"
+    },
+    "colourIndex": 0,
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "scoria",
+    "name": "Scoria",
+    "class": "igneous",
+    "core": true,
+    "texture": {
+      "grain": "vesicular"
+    },
+    "composition": {
+      "silica": "mafic",
+      "minerals": [
+        "plagioclase",
+        "augite"
+      ]
+    },
+    "formation": [
+      "cinder cone",
+      "gas-rich basaltic eruption"
+    ],
+    "related": {
+      "twin": "basalt"
+    },
+    "colourIndex": 60,
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "tuff",
+    "name": "Tuff",
+    "class": "igneous",
+    "core": true,
+    "texture": {
+      "grain": "pyroclastic"
+    },
+    "composition": {
+      "silica": "felsic",
+      "minerals": [
+        "quartz",
+        "orthoclase",
+        "plagioclase"
+      ]
+    },
+    "formation": [
+      "ash fall",
+      "ash flow"
+    ],
+    "related": {
+      "twin": "rhyolite"
+    },
+    "colourIndex": 10,
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "pegmatite",
+    "name": "Pegmatite",
+    "class": "igneous",
+    "core": false,
+    "texture": {
+      "grain": "pegmatitic"
+    },
+    "composition": {
+      "silica": "felsic",
+      "minerals": [
+        "quartz",
+        "orthoclase",
+        "muscovite",
+        "tourmaline",
+        "beryl"
+      ]
+    },
+    "formation": [
+      "last water-rich melt of a granite"
+    ],
+    "related": {
+      "twin": "granite"
+    },
+    "colourIndex": 5,
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "porphyry",
+    "name": "Porphyry (andesite porphyry)",
+    "class": "igneous",
+    "core": false,
+    "texture": {
+      "grain": "porphyritic"
+    },
+    "composition": {
+      "silica": "intermediate",
+      "minerals": [
+        "plagioclase",
+        "hornblende"
+      ]
+    },
+    "formation": [
+      "two-stage cooling: slow then fast"
+    ],
+    "related": {},
+    "colourIndex": 35,
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "conglomerate",
+    "name": "Conglomerate",
+    "class": "sedimentary",
+    "core": true,
+    "texture": {
+      "kind": "clastic",
+      "grainSizeMm": [
+        2,
+        256
+      ],
+      "sorting": "poor",
+      "rounding": "rounded",
+      "cement": "silica or calcite"
+    },
+    "composition": {
+      "minerals": [
+        "quartz"
+      ],
+      "clasts": "rounded gravel"
+    },
+    "formation": [
+      "river channel",
+      "alluvial fan",
+      "beach"
+    ],
+    "related": {},
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "breccia",
+    "name": "Breccia",
+    "class": "sedimentary",
+    "core": true,
+    "texture": {
+      "kind": "clastic",
+      "grainSizeMm": [
+        2,
+        256
+      ],
+      "sorting": "poor",
+      "rounding": "angular",
+      "cement": "silica or calcite"
+    },
+    "composition": {
+      "minerals": [
+        "quartz"
+      ],
+      "clasts": "angular gravel"
+    },
+    "formation": [
+      "talus",
+      "fault zone",
+      "debris flow"
+    ],
+    "related": {},
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "sandstone",
+    "name": "Sandstone (quartz arenite)",
+    "class": "sedimentary",
+    "core": true,
+    "texture": {
+      "kind": "clastic",
+      "grainSizeMm": [
+        0.0625,
+        2
+      ],
+      "sorting": "well",
+      "rounding": "rounded",
+      "cement": "silica"
+    },
+    "composition": {
+      "minerals": [
+        "quartz"
+      ]
+    },
+    "formation": [
+      "beach",
+      "dune",
+      "shallow sea"
+    ],
+    "related": {},
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "arkose",
+    "name": "Arkose",
+    "class": "sedimentary",
+    "core": false,
+    "texture": {
+      "kind": "clastic",
+      "grainSizeMm": [
+        0.0625,
+        2
+      ],
+      "sorting": "moderate",
+      "rounding": "angular",
+      "cement": "calcite or iron oxide"
+    },
+    "composition": {
+      "minerals": [
+        "quartz",
+        "orthoclase"
+      ]
+    },
+    "formation": [
+      "alluvial fan near granite highlands"
+    ],
+    "related": {},
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "greywacke",
+    "name": "Greywacke",
+    "class": "sedimentary",
+    "core": false,
+    "texture": {
+      "kind": "clastic",
+      "grainSizeMm": [
+        0.0625,
+        2
+      ],
+      "sorting": "poor",
+      "rounding": "angular",
+      "cement": "clay matrix"
+    },
+    "composition": {
+      "minerals": [
+        "quartz",
+        "plagioclase"
+      ]
+    },
+    "formation": [
+      "turbidity current",
+      "deep sea fan"
+    ],
+    "related": {},
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "siltstone",
+    "name": "Siltstone",
+    "class": "sedimentary",
+    "core": true,
+    "texture": {
+      "kind": "clastic",
+      "grainSizeMm": [
+        0.0039,
+        0.0625
+      ],
+      "sorting": "well",
+      "rounding": "rounded",
+      "cement": "clay or calcite"
+    },
+    "composition": {
+      "minerals": [
+        "quartz",
+        "kaolinite"
+      ]
+    },
+    "formation": [
+      "floodplain",
+      "lake",
+      "delta"
+    ],
+    "related": {},
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "shale",
+    "name": "Shale",
+    "class": "sedimentary",
+    "core": true,
+    "texture": {
+      "kind": "clastic",
+      "grainSizeMm": [
+        0,
+        0.0039
+      ],
+      "sorting": "well",
+      "cement": "clay"
+    },
+    "composition": {
+      "minerals": [
+        "kaolinite",
+        "muscovite",
+        "quartz"
+      ]
+    },
+    "formation": [
+      "quiet deep water",
+      "lagoon",
+      "floodplain"
+    ],
+    "related": {},
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "mudstone",
+    "name": "Mudstone",
+    "class": "sedimentary",
+    "core": false,
+    "texture": {
+      "kind": "clastic",
+      "grainSizeMm": [
+        0,
+        0.0039
+      ],
+      "sorting": "well",
+      "cement": "clay"
+    },
+    "composition": {
+      "minerals": [
+        "kaolinite",
+        "quartz"
+      ]
+    },
+    "formation": [
+      "quiet water, no fissility"
+    ],
+    "related": {},
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "limestone",
+    "name": "Limestone",
+    "class": "sedimentary",
+    "core": true,
+    "texture": {
+      "kind": "biochemical"
+    },
+    "composition": {
+      "minerals": [
+        "calcite"
+      ]
+    },
+    "formation": [
+      "warm shallow sea",
+      "reef",
+      "lagoon"
+    ],
+    "related": {},
+    "acid": "fizzes",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "fossiliferous-limestone",
+    "name": "Fossiliferous limestone",
+    "class": "sedimentary",
+    "core": false,
+    "texture": {
+      "kind": "biochemical"
+    },
+    "composition": {
+      "minerals": [
+        "calcite"
+      ]
+    },
+    "formation": [
+      "shell bank",
+      "reef"
+    ],
+    "related": {},
+    "acid": "fizzes",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "oolitic-limestone",
+    "name": "Oolitic limestone",
+    "class": "sedimentary",
+    "core": false,
+    "texture": {
+      "kind": "chemical",
+      "grainSizeMm": [
+        0.5,
+        2
+      ],
+      "sorting": "well",
+      "rounding": "rounded",
+      "cement": "calcite"
+    },
+    "composition": {
+      "minerals": [
+        "calcite"
+      ]
+    },
+    "formation": [
+      "tidal shoal in warm water"
+    ],
+    "related": {},
+    "acid": "fizzes",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "chalk",
+    "name": "Chalk",
+    "class": "sedimentary",
+    "core": false,
+    "texture": {
+      "kind": "biochemical"
+    },
+    "composition": {
+      "minerals": [
+        "calcite"
+      ]
+    },
+    "formation": [
+      "open sea, plankton rain"
+    ],
+    "related": {},
+    "acid": "fizzes",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "coquina",
+    "name": "Coquina",
+    "class": "sedimentary",
+    "core": true,
+    "texture": {
+      "kind": "biochemical",
+      "grainSizeMm": [
+        2,
+        30
+      ],
+      "sorting": "poor",
+      "rounding": "angular",
+      "cement": "calcite"
+    },
+    "composition": {
+      "minerals": [
+        "calcite"
+      ]
+    },
+    "formation": [
+      "beach of shell debris"
+    ],
+    "related": {},
+    "acid": "fizzes",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "dolostone",
+    "name": "Dolostone",
+    "class": "sedimentary",
+    "core": true,
+    "texture": {
+      "kind": "chemical"
+    },
+    "composition": {
+      "minerals": [
+        "dolomite"
+      ]
+    },
+    "formation": [
+      "altered limestone",
+      "evaporative lagoon"
+    ],
+    "related": {},
+    "acid": "fizzes-powdered",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "chert",
+    "name": "Chert",
+    "class": "sedimentary",
+    "core": true,
+    "texture": {
+      "kind": "chemical"
+    },
+    "composition": {
+      "minerals": [
+        "quartz"
+      ]
+    },
+    "formation": [
+      "deep sea ooze",
+      "nodules in limestone"
+    ],
+    "related": {},
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "rock-salt",
+    "name": "Rock salt",
+    "class": "sedimentary",
+    "core": true,
+    "texture": {
+      "kind": "chemical"
+    },
+    "composition": {
+      "minerals": [
+        "halite"
+      ]
+    },
+    "formation": [
+      "evaporating sea or lake"
+    ],
+    "related": {},
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "rock-gypsum",
+    "name": "Rock gypsum",
+    "class": "sedimentary",
+    "core": true,
+    "texture": {
+      "kind": "chemical"
+    },
+    "composition": {
+      "minerals": [
+        "gypsum"
+      ]
+    },
+    "formation": [
+      "evaporating sea or lake"
+    ],
+    "related": {},
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "coal",
+    "name": "Coal (bituminous)",
+    "class": "sedimentary",
+    "core": true,
+    "texture": {
+      "kind": "biochemical"
+    },
+    "composition": {
+      "minerals": []
+    },
+    "formation": [
+      "buried swamp peat"
+    ],
+    "related": {},
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "travertine",
+    "name": "Travertine",
+    "class": "sedimentary",
+    "core": false,
+    "texture": {
+      "kind": "chemical"
+    },
+    "composition": {
+      "minerals": [
+        "calcite"
+      ]
+    },
+    "formation": [
+      "hot spring",
+      "cave"
+    ],
+    "related": {},
+    "acid": "fizzes",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "slate",
+    "name": "Slate",
+    "class": "metamorphic",
+    "core": true,
+    "texture": {
+      "foliated": true,
+      "grade": "low",
+      "texture": "slaty"
+    },
+    "composition": {
+      "indexMinerals": [
+        "chlorite",
+        "muscovite"
+      ],
+      "parent": [
+        "shale"
+      ]
+    },
+    "formation": [
+      "low-grade regional metamorphism"
+    ],
+    "related": {
+      "parent": [
+        "shale"
+      ]
+    },
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "phyllite",
+    "name": "Phyllite",
+    "class": "metamorphic",
+    "core": true,
+    "texture": {
+      "foliated": true,
+      "grade": "low",
+      "texture": "phyllitic"
+    },
+    "composition": {
+      "indexMinerals": [
+        "muscovite",
+        "chlorite"
+      ],
+      "parent": [
+        "slate"
+      ]
+    },
+    "formation": [
+      "low to medium grade regional"
+    ],
+    "related": {
+      "parent": [
+        "slate"
+      ]
+    },
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "schist",
+    "name": "Schist (mica schist)",
+    "class": "metamorphic",
+    "core": true,
+    "texture": {
+      "foliated": true,
+      "grade": "medium",
+      "texture": "schistose"
+    },
+    "composition": {
+      "indexMinerals": [
+        "muscovite",
+        "biotite",
+        "garnet",
+        "staurolite"
+      ],
+      "parent": [
+        "phyllite",
+        "shale"
+      ]
+    },
+    "formation": [
+      "medium-grade regional metamorphism"
+    ],
+    "related": {
+      "parent": [
+        "phyllite",
+        "shale"
+      ]
+    },
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "gneiss",
+    "name": "Gneiss",
+    "class": "metamorphic",
+    "core": true,
+    "texture": {
+      "foliated": true,
+      "grade": "high",
+      "texture": "gneissic"
+    },
+    "composition": {
+      "indexMinerals": [
+        "orthoclase",
+        "plagioclase",
+        "quartz",
+        "biotite",
+        "sillimanite"
+      ],
+      "parent": [
+        "schist",
+        "granite"
+      ]
+    },
+    "formation": [
+      "high-grade regional metamorphism"
+    ],
+    "related": {
+      "parent": [
+        "schist",
+        "granite"
+      ]
+    },
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "migmatite",
+    "name": "Migmatite",
+    "class": "metamorphic",
+    "core": false,
+    "texture": {
+      "foliated": true,
+      "grade": "high",
+      "texture": "gneissic"
+    },
+    "composition": {
+      "indexMinerals": [
+        "quartz",
+        "orthoclase",
+        "biotite"
+      ],
+      "parent": [
+        "gneiss"
+      ]
+    },
+    "formation": [
+      "partial melting at the top of the grade"
+    ],
+    "related": {
+      "parent": [
+        "gneiss"
+      ]
+    },
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "marble",
+    "name": "Marble",
+    "class": "metamorphic",
+    "core": true,
+    "texture": {
+      "foliated": false,
+      "grade": "medium",
+      "texture": "granoblastic"
+    },
+    "composition": {
+      "indexMinerals": [
+        "calcite"
+      ],
+      "parent": [
+        "limestone"
+      ]
+    },
+    "formation": [
+      "contact or regional metamorphism of limestone"
+    ],
+    "related": {
+      "parent": [
+        "limestone"
+      ]
+    },
+    "acid": "fizzes",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "quartzite",
+    "name": "Quartzite",
+    "class": "metamorphic",
+    "core": true,
+    "texture": {
+      "foliated": false,
+      "grade": "medium",
+      "texture": "granoblastic"
+    },
+    "composition": {
+      "indexMinerals": [
+        "quartz"
+      ],
+      "parent": [
+        "sandstone"
+      ]
+    },
+    "formation": [
+      "metamorphism of quartz sandstone"
+    ],
+    "related": {
+      "parent": [
+        "sandstone"
+      ]
+    },
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "hornfels",
+    "name": "Hornfels",
+    "class": "metamorphic",
+    "core": true,
+    "texture": {
+      "foliated": false,
+      "grade": "medium",
+      "texture": "hornfelsic"
+    },
+    "composition": {
+      "indexMinerals": [
+        "biotite",
+        "muscovite"
+      ],
+      "parent": [
+        "shale"
+      ]
+    },
+    "formation": [
+      "contact metamorphism beside an intrusion"
+    ],
+    "related": {
+      "parent": [
+        "shale"
+      ]
+    },
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "amphibolite",
+    "name": "Amphibolite",
+    "class": "metamorphic",
+    "core": false,
+    "texture": {
+      "foliated": true,
+      "grade": "medium",
+      "texture": "schistose"
+    },
+    "composition": {
+      "indexMinerals": [
+        "hornblende",
+        "plagioclase"
+      ],
+      "parent": [
+        "basalt",
+        "gabbro"
+      ]
+    },
+    "formation": [
+      "medium-grade regional metamorphism of mafic rock"
+    ],
+    "related": {
+      "parent": [
+        "basalt",
+        "gabbro"
+      ]
+    },
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "serpentinite",
+    "name": "Serpentinite",
+    "class": "metamorphic",
+    "core": false,
+    "texture": {
+      "foliated": false,
+      "grade": "low",
+      "texture": "granoblastic"
+    },
+    "composition": {
+      "indexMinerals": [
+        "serpentine"
+      ],
+      "parent": [
+        "peridotite"
+      ]
+    },
+    "formation": [
+      "hydration of mantle rock"
+    ],
+    "related": {
+      "parent": [
+        "peridotite"
+      ]
+    },
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "anthracite",
+    "name": "Anthracite",
+    "class": "metamorphic",
+    "core": false,
+    "texture": {
+      "foliated": false,
+      "grade": "low",
+      "texture": "granoblastic"
+    },
+    "composition": {
+      "indexMinerals": [],
+      "parent": [
+        "coal"
+      ]
+    },
+    "formation": [
+      "metamorphism of bituminous coal"
+    ],
+    "related": {
+      "parent": [
+        "coal"
+      ]
+    },
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "greenstone",
+    "name": "Greenstone",
+    "class": "metamorphic",
+    "core": false,
+    "texture": {
+      "foliated": false,
+      "grade": "low",
+      "texture": "granoblastic"
+    },
+    "composition": {
+      "indexMinerals": [
+        "chlorite",
+        "epidote"
+      ],
+      "parent": [
+        "basalt"
+      ]
+    },
+    "formation": [
+      "low-grade metamorphism of basalt"
+    ],
+    "related": {
+      "parent": [
+        "basalt"
+      ]
+    },
+    "acid": "none",
+    "specimens": [],
+    "images": [],
+    "sources": [
+      {
+        "title": "An Introduction to Geology (open textbook), chapters 4 to 6",
+        "url": "https://opengeology.org/textbook/",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "USGS: rock types",
+        "url": "https://www.usgs.gov/faqs/what-are-3-types-rock",
+        "accessed": "2026-11-08"
+      }
+    ]
+  }
+]

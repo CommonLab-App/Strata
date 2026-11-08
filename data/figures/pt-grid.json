@@ -1,0 +1,134 @@
+{
+  "source": {
+    "title": "Metamorphic facies (Wikipedia); An Introduction to Geology, chapter 6",
+    "url": "https://en.wikipedia.org/wiki/Metamorphic_facies",
+    "accessed": "2026-11-08"
+  },
+  "axes": {
+    "temperatureC": [
+      0,
+      1000
+    ],
+    "depthKm": [
+      0,
+      50
+    ]
+  },
+  "facies": [
+    {
+      "id": "zeolite",
+      "name": "Zeolite",
+      "t": [
+        100,
+        250
+      ],
+      "d": [
+        2,
+        12
+      ],
+      "grade": "very low",
+      "rocks": []
+    },
+    {
+      "id": "greenschist",
+      "name": "Greenschist",
+      "t": [
+        300,
+        500
+      ],
+      "d": [
+        5,
+        25
+      ],
+      "grade": "low",
+      "rocks": [
+        "slate",
+        "phyllite",
+        "greenstone",
+        "serpentinite"
+      ]
+    },
+    {
+      "id": "amphibolite",
+      "name": "Amphibolite",
+      "t": [
+        500,
+        700
+      ],
+      "d": [
+        10,
+        35
+      ],
+      "grade": "medium",
+      "rocks": [
+        "schist",
+        "amphibolite",
+        "marble",
+        "quartzite"
+      ]
+    },
+    {
+      "id": "granulite",
+      "name": "Granulite",
+      "t": [
+        700,
+        1000
+      ],
+      "d": [
+        15,
+        45
+      ],
+      "grade": "high",
+      "rocks": [
+        "gneiss",
+        "migmatite"
+      ]
+    },
+    {
+      "id": "blueschist",
+      "name": "Blueschist",
+      "t": [
+        150,
+        450
+      ],
+      "d": [
+        20,
+        45
+      ],
+      "grade": "high pressure, low temperature",
+      "rocks": []
+    },
+    {
+      "id": "eclogite",
+      "name": "Eclogite",
+      "t": [
+        450,
+        900
+      ],
+      "d": [
+        40,
+        50
+      ],
+      "grade": "very high pressure",
+      "rocks": []
+    },
+    {
+      "id": "hornfels",
+      "name": "Hornfels (contact)",
+      "t": [
+        400,
+        800
+      ],
+      "d": [
+        0,
+        8
+      ],
+      "grade": "contact",
+      "rocks": [
+        "hornfels",
+        "marble",
+        "quartzite"
+      ]
+    }
+  ]
+}

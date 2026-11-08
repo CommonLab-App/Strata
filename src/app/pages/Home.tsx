@@ -17,7 +17,7 @@ export function Home() {
         </p>
       )}
       <p className="mb-6 max-w-prose text-muted-foreground">
-        Strata is an introductory physical geology explorer and virtual lab, laid out as a sixteen-week course with two
+        StrataLab is an introductory physical geology explorer and virtual lab, laid out as a sixteen-week course with two
         optional extension weeks. No account is needed{persistent ? '; your progress is saved in this browser.' : '.'}
       </p>
       <ol className="grid max-w-3xl gap-2">

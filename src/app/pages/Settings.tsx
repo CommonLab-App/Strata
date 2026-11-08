@@ -67,7 +67,7 @@ export function Settings() {
           clear it when you finish.
         </p>
         <div className="flex flex-wrap gap-2">
-          <Button variant="outline" onClick={() => download('strata-progress.json', exportAll(store))}>
+          <Button variant="outline" onClick={() => download('stratalab-progress.json', exportAll(store))}>
             Export my progress
           </Button>
           <Button
@@ -75,7 +75,7 @@ export function Settings() {
             // The theme's red on its own pale red measured 4.0 to 1 in the light theme: a darker red of the same hue there.
             className="text-red-700 dark:text-destructive"
             onClick={() => {
-              if (window.confirm('Clear all Strata progress and settings in this browser? This cannot be undone.')) {
+              if (window.confirm('Clear all StrataLab progress and settings in this browser? This cannot be undone.')) {
                 resetAll()
               }
             }}

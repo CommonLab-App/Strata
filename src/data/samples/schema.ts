@@ -68,3 +68,67 @@ export const mineralsSchema = z.array(mineralSchema).superRefine((list, ctx) => 
     })
   })
 })
+
+export const ROCK_CLASSES = ['igneous', 'sedimentary', 'metamorphic'] as const
+export const IGNEOUS_GRAINS = ['phaneritic', 'aphanitic', 'porphyritic', 'glassy', 'vesicular', 'pyroclastic', 'pegmatitic'] as const
+export const SILICA = ['felsic', 'intermediate', 'mafic', 'ultramafic'] as const
+export const SED_KINDS = ['clastic', 'chemical', 'biochemical'] as const
+export const SORTING = ['well', 'moderate', 'poor'] as const
+export const ROUNDING = ['rounded', 'angular'] as const
+export const GRADES = ['low', 'medium', 'high'] as const
+export const MET_TEXTURES = ['slaty', 'phyllitic', 'schistose', 'gneissic', 'granoblastic', 'hornfelsic'] as const
+
+const rockBase = {
+  id: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
+  name: z.string(),
+  core: z.boolean(),
+  formation: z.array(z.string()).min(1),
+  specimens: z.array(specimenSchema).default([]),
+  images: z.array(imageSchema).default([]),
+  sources: z.array(sourceSchema).min(1),
+}
+
+export const igneousSchema = z.object({
+  ...rockBase,
+  class: z.literal('igneous'),
+  texture: z.object({ grain: z.enum(IGNEOUS_GRAINS) }),
+  composition: z.object({ silica: z.enum(SILICA), minerals: z.array(z.string()) }),
+  /** Percent dark minerals, roughly; null for glass and froth. */
+  colourIndex: z.number().min(0).max(100).nullable(),
+  related: z.object({ twin: z.string().optional() }),
+})
+export const sedimentarySchema = z.object({
+  ...rockBase,
+  class: z.literal('sedimentary'),
+  texture: z.object({
+    kind: z.enum(SED_KINDS),
+    grainSizeMm: range.optional(),
+    sorting: z.enum(SORTING).optional(),
+    rounding: z.enum(ROUNDING).optional(),
+    cement: z.string().optional(),
+  }),
+  composition: z.object({ minerals: z.array(z.string()), clasts: z.string().optional() }),
+  acid: z.enum(['fizzes', 'fizzes-powdered', 'none']),
+  related: z.object({}),
+})
+export const metamorphicSchema = z.object({
+  ...rockBase,
+  class: z.literal('metamorphic'),
+  texture: z.object({ foliated: z.boolean(), grade: z.enum(GRADES), texture: z.enum(MET_TEXTURES) }),
+  composition: z.object({ indexMinerals: z.array(z.string()), parent: z.array(z.string()) }),
+  acid: z.enum(['fizzes', 'fizzes-powdered', 'none']),
+  related: z.object({ parent: z.array(z.string()) }),
+})
+export const rockSchema = z.discriminatedUnion('class', [igneousSchema, sedimentarySchema, metamorphicSchema])
+export type Rock = z.infer<typeof rockSchema>
+export type Igneous = z.infer<typeof igneousSchema>
+export type Sedimentary = z.infer<typeof sedimentarySchema>
+export type Metamorphic = z.infer<typeof metamorphicSchema>
+
+export const rocksSchema = z.array(rockSchema).superRefine((list, ctx) => {
+  const ids = new Set<string>()
+  list.forEach((r, i) => {
+    if (ids.has(r.id)) ctx.addIssue({ code: 'custom', message: `duplicate rock id ${r.id}`, path: [i, 'id'] })
+    ids.add(r.id)
+  })
+})

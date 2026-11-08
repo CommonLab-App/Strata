@@ -36,6 +36,16 @@ export function Layout() {
         aria-label="Main"
         className={`flex shrink-0 flex-col gap-1 border-r bg-sidebar p-2 ${expanded ? 'w-52' : 'w-14'}`}
       >
+        <NavLink to="/" className="mb-1 flex h-10 items-center rounded-md px-2 outline-none focus-visible:ring-2 focus-visible:ring-ring" aria-label="StrataLab home">
+          {expanded ? (
+            <>
+              <img src={`${import.meta.env.BASE_URL}brand/header-lockup-light.svg`} alt="StrataLab" className="h-8 dark:hidden" />
+              <img src={`${import.meta.env.BASE_URL}brand/header-lockup-dark.svg`} alt="StrataLab" className="hidden h-8 dark:block" />
+            </>
+          ) : (
+            <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="StrataLab" className="size-7" />
+          )}
+        </NavLink>
         <Button
           variant="ghost"
           className="justify-start"
@@ -59,7 +69,7 @@ export function Layout() {
             className={({ isActive }) =>
               `flex h-9 items-center gap-2 rounded-md px-2.5 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring ${
                 isActive
-                  ? 'relative bg-sidebar-accent font-medium before:absolute before:inset-y-2 before:left-0.5 before:rounded-full before:border-l-3 before:border-sidebar-foreground'
+                  ? 'relative bg-sidebar-accent font-medium before:absolute before:inset-y-2 before:left-0.5 before:rounded-full before:border-l-3 before:border-brand'
                   : 'hover:bg-sidebar-accent/60'
               }`
             }

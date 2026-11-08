@@ -1,0 +1,27 @@
+{
+  "source": {
+    "title": "Bowen's reaction series (Wikipedia); An Introduction to Geology, chapter 4",
+    "url": "https://en.wikipedia.org/wiki/Bowen%27s_reaction_series",
+    "accessed": "2026-11-08"
+  },
+  "discontinuous": [
+    "olivine",
+    "augite",
+    "hornblende",
+    "biotite"
+  ],
+  "continuous": [
+    "plagioclase (calcium-rich)",
+    "plagioclase (sodium-rich)"
+  ],
+  "late": [
+    "orthoclase",
+    "muscovite",
+    "quartz"
+  ],
+  "temperatureC": {
+    "top": 1200,
+    "bottom": 700
+  },
+  "note": "Minerals at the top crystallise first from a cooling mafic melt and weather fastest at the surface; the two branches join and the last three crystallise from the remaining felsic melt."
+}

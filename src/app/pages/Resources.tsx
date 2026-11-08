@@ -54,7 +54,7 @@ export function Resources() {
     <>
       <PageHeader title="Maps and data" />
       <p className="mb-6 max-w-prose text-muted-foreground">
-        The public services this course draws on and the places to go further. None of them is connected with Strata.
+        The public services this course draws on and the places to go further. None of them is connected with StrataLab.
       </p>
       <div className="grid gap-6">
         {SECTIONS.map((section) => (

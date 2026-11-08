@@ -1,0 +1,91 @@
+/* StrataLab brand tokens — drop-in for src/index.css (shadcn / Tailwind v4, oklch). */
+/* Brand palette (raw) */
+:root {
+  --strata-basement: oklch(0.212 0.006 56.0); /* #1B1816 */
+  --strata-slate: oklch(0.290 0.006 0.5); /* #2E2A2B */
+  --strata-chalk: oklch(0.974 0.011 84.6); /* #FAF6EE */
+  --strata-magma: oklch(0.561 0.169 32.7); /* #C4432B */
+  --strata-magma-bright: oklch(0.650 0.161 32.6); /* #E0634B */
+  --strata-sandstone: oklch(0.752 0.127 75.2); /* #DDA247 */
+  --strata-limestone: oklch(0.909 0.068 93.6); /* #F0E1AE */
+  --strata-shale: oklch(0.664 0.059 283.5); /* #8E8FB7 */
+  --strata-shale-deep: oklch(0.501 0.062 282.8); /* #5E5F86 */
+  --strata-mudstone: oklch(0.759 0.094 37.5); /* #E59C86 */
+  --strata-greensand: oklch(0.749 0.091 127.9); /* #9DB97A */
+
+  /* Semantic: light scheme */
+  color-scheme: light;
+  --background: oklch(0.974 0.011 84.6);
+  --foreground: oklch(0.290 0.006 0.5);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.290 0.006 0.5);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.290 0.006 0.5);
+  --primary: oklch(0.290 0.006 0.5);
+  --primary-foreground: oklch(0.974 0.011 84.6);
+  --secondary: oklch(0.933 0.034 80.3);
+  --secondary-foreground: oklch(0.290 0.006 0.5);
+  --muted: oklch(0.938 0.012 84.6);
+  --muted-foreground: oklch(0.575 0.007 59.6);
+  --accent: oklch(0.930 0.023 52.7);
+  --accent-foreground: oklch(0.561 0.169 32.7);
+  --brand: oklch(0.561 0.169 32.7);  /* links, active nav, progress */
+  --destructive: oklch(0.55 0.22 25);
+  --border: oklch(0.902 0.010 81.8);
+  --input: oklch(0.902 0.010 81.8);
+  --ring: oklch(0.561 0.169 32.7);
+  --chart-1: oklch(0.752 0.127 75.2);
+  --chart-2: oklch(0.664 0.059 283.5);
+  --chart-3: oklch(0.749 0.091 127.9);
+  --chart-4: oklch(0.759 0.094 37.5);
+  --chart-5: oklch(0.501 0.062 282.8);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.955 0.021 79.1);
+  --sidebar-foreground: oklch(0.290 0.006 0.5);
+  --sidebar-primary: oklch(0.561 0.169 32.7);
+  --sidebar-primary-foreground: oklch(0.974 0.011 84.6);
+  --sidebar-accent: oklch(0.928 0.036 79.7);
+  --sidebar-accent-foreground: oklch(0.290 0.006 0.5);
+  --sidebar-border: oklch(0.902 0.010 81.8);
+  --sidebar-ring: oklch(0.561 0.169 32.7);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: oklch(0.212 0.006 56.0);
+  --foreground: oklch(0.974 0.011 84.6);
+  --card: oklch(0.259 0.006 56.1);
+  --card-foreground: oklch(0.974 0.011 84.6);
+  --popover: oklch(0.259 0.006 56.1);
+  --popover-foreground: oklch(0.974 0.011 84.6);
+  --primary: oklch(0.974 0.011 84.6);
+  --primary-foreground: oklch(0.212 0.006 56.0);
+  --secondary: oklch(0.304 0.006 56.2);
+  --secondary-foreground: oklch(0.974 0.011 84.6);
+  --muted: oklch(0.304 0.006 56.2);
+  --muted-foreground: oklch(0.733 0.010 78.3);
+  --accent: oklch(0.297 0.038 34.7);
+  --accent-foreground: oklch(0.650 0.161 32.6);
+  --brand: oklch(0.650 0.161 32.6);
+  --destructive: oklch(0.70 0.19 22);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.650 0.161 32.6);
+  --chart-1: oklch(0.752 0.127 75.2);
+  --chart-2: oklch(0.664 0.059 283.5);
+  --chart-3: oklch(0.749 0.091 127.9);
+  --chart-4: oklch(0.759 0.094 37.5);
+  --chart-5: oklch(0.909 0.068 93.6);
+  --sidebar: oklch(0.250 0.006 56.1);
+  --sidebar-foreground: oklch(0.974 0.011 84.6);
+  --sidebar-primary: oklch(0.650 0.161 32.6);
+  --sidebar-primary-foreground: oklch(0.212 0.006 56.0);
+  --sidebar-accent: oklch(0.304 0.006 56.2);
+  --sidebar-accent-foreground: oklch(0.974 0.011 84.6);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.650 0.161 32.6);
+}
+
+/* Type: add to @theme inline. Zilla Slab via @fontsource/zilla-slab (700, 600); JetBrains Mono via @fontsource-variable/jetbrains-mono. */
+/* --font-heading: 'Zilla Slab', ui-serif, Georgia, serif; */
+/* --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace; */

@@ -39,3 +39,30 @@ describe('mineral library', () => {
     }
   })
 })
+
+describe('rock library', async () => {
+  const { rocksSchema } = await import('./schema')
+  const rocks = (await import('@data/samples/rocks.json')).default
+  const parsed = rocksSchema.parse(rocks)
+  const mineralIds = new Set((mineralsSchema.parse(minerals)).map((m) => m.id))
+  const rockIds = new Set(parsed.map((r) => r.id))
+
+  it('validates, with a core set of each class', () => {
+    expect(parsed.length).toBeGreaterThanOrEqual(40)
+    for (const cls of ['igneous', 'sedimentary', 'metamorphic'] as const) expect(parsed.filter((r) => r.class === cls && r.core).length, cls).toBeGreaterThanOrEqual(6)
+  })
+
+  it('names only minerals and rocks that exist', () => {
+    for (const r of parsed) {
+      const minerals = r.class === 'metamorphic' ? r.composition.indexMinerals : r.composition.minerals
+      for (const m of minerals) expect(mineralIds.has(m), `${r.id}: mineral ${m}`).toBe(true)
+      if (r.class === 'igneous' && r.related.twin) expect(rockIds.has(r.related.twin), `${r.id}: twin ${r.related.twin}`).toBe(true)
+      if (r.class === 'metamorphic') for (const p of r.related.parent) expect(rockIds.has(p), `${r.id}: parent ${p}`).toBe(true)
+    }
+  })
+
+  it('fills every igneous grid cell that an intro course names', () => {
+    const cells = new Set(parsed.filter((r) => r.class === 'igneous' && ['phaneritic', 'aphanitic'].includes(r.texture.grain)).map((r) => (r.class === 'igneous' ? `${r.texture.grain}/${r.composition.silica}` : '')))
+    for (const grain of ['phaneritic', 'aphanitic']) for (const silica of ['felsic', 'intermediate', 'mafic', 'ultramafic']) expect(cells.has(`${grain}/${silica}`), `${grain}/${silica}`).toBe(true)
+  })
+})

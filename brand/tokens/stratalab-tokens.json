@@ -1,0 +1,81 @@
+{
+  "name": "StrataLab",
+  "domain": "stratalab.app",
+  "tagline": "Deep time, close up.",
+  "color": {
+    "basement": {
+      "hex": "#1B1816",
+      "oklch": "oklch(0.212 0.006 56.0)"
+    },
+    "slate": {
+      "hex": "#2E2A2B",
+      "oklch": "oklch(0.290 0.006 0.5)"
+    },
+    "chalk": {
+      "hex": "#FAF6EE",
+      "oklch": "oklch(0.974 0.011 84.6)"
+    },
+    "magma": {
+      "hex": "#C4432B",
+      "oklch": "oklch(0.561 0.169 32.7)"
+    },
+    "magma_bright": {
+      "hex": "#E0634B",
+      "oklch": "oklch(0.650 0.161 32.6)"
+    },
+    "sandstone": {
+      "hex": "#DDA247",
+      "oklch": "oklch(0.752 0.127 75.2)"
+    },
+    "limestone": {
+      "hex": "#F0E1AE",
+      "oklch": "oklch(0.909 0.068 93.6)"
+    },
+    "shale": {
+      "hex": "#8E8FB7",
+      "oklch": "oklch(0.664 0.059 283.5)"
+    },
+    "shale_deep": {
+      "hex": "#5E5F86",
+      "oklch": "oklch(0.501 0.062 282.8)"
+    },
+    "mudstone": {
+      "hex": "#E59C86",
+      "oklch": "oklch(0.759 0.094 37.5)"
+    },
+    "greensand": {
+      "hex": "#9DB97A",
+      "oklch": "oklch(0.749 0.091 127.9)"
+    }
+  },
+  "strata_order_top_to_bottom": [
+    "sandstone",
+    "shale",
+    "limestone",
+    "mudstone",
+    "greensand"
+  ],
+  "type": {
+    "display": "Zilla Slab 700 (OFL)",
+    "body": "Inter (OFL, already in app)",
+    "data": "JetBrains Mono 500 (OFL)"
+  },
+  "mark": {
+    "viewBox": "0 0 128 128",
+    "tile_radius": 28,
+    "band_height": 24,
+    "throw": 12,
+    "fault_trace": [
+      [
+        46,
+        128
+      ],
+      [
+        82,
+        0
+      ]
+    ],
+    "min_size_px": 16,
+    "clear_space": "0.5 \u00d7 mark height"
+  }
+}
