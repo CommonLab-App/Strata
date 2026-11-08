@@ -36,7 +36,7 @@ from the stored entry after a reload.
    inspectors with that week's filter, the lab, ten self-check questions each in `data/self-checks/week-0N.json`.
 7. **Turntable videos**: a one-minute recording of each hand sample on a turntable, made by Panda, imported by
    `scripts/import_sample.py recording.mp4 --id <sample-id>` into `public/media/samples/<id>/` as a silent H.264 MP4
-   (at most 1280 wide, 30 fps, faststart), a poster frame and a `meta.json`. The script drops every tag in the
+   (at most 1280 wide, 30 fps, faststart, about 10 MB a minute), a poster frame and a `meta.json`. The script drops every tag in the
    source (phone recordings carry GPS, device and time fields) and refuses the file if any survive. `public/media/`
    is not in git and is copied to the server with the build. A provenance tag, by default the year and
    `stratalab.app` (`--tag` to change it), is drawn small into the bottom-right of every frame and kept as the

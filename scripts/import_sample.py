@@ -29,7 +29,7 @@ from pathlib import Path
 MAX_WIDTH = 1280
 MAX_SECONDS = 60
 FPS = 30
-CRF = 24  # about 3 to 5 MB per minute at 720p
+CRF = 28  # about 10 to 12 MB per minute at 720p on crystal texture; 24 doubled that for no visible gain, 30 softened the sparkle
 DEFAULT_TAG = f"{date.today().year} stratalab.app"
 ID_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 
