@@ -21,6 +21,7 @@ Requires Node 22.22 or later 22, Node 24, or Node 26 or newer.
 | `npm run lint` | Checks the architecture rules: data and engine code stay pure; network only in adapters. |
 | `npm run typecheck` | Type-checks the project. |
 | `npm run bench` | Lighthouse mobile on the week-1 Explore pane against `dist/`; see docs/DECISIONS.md for how to read it. |
+| `scripts/import_sample.py <video> --id <sample-id>` | Imports a turntable recording of a hand sample into `public/media/samples/` with ffmpeg: consistent format, metadata stripped. |
 | `node scripts/demo-quakes.mjs` | Fetches the past hour's quakes through the snapshot cache: a miss, then a hit. |
 
 ## Documents

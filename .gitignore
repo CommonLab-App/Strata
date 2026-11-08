@@ -8,3 +8,7 @@ coverage/
 .DS_Store
 .claude/settings.local.json
 .claude/worktrees/
+# Turntable videos and posters written by scripts/import_sample.py; copied to the server with the build, not kept in git.
+public/media/
+# Drop raw turntable recordings here for scripts/import_sample.py. Never committed.
+incoming/

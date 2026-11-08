@@ -34,10 +34,16 @@ from the stored entry after a reload.
    One component configured five ways.
 6. **Weeks 2, 3, 4, 6, 7** wired into `WEEK_CONTENT`: Learn text with linked reading, Explore pane pointing into the
    inspectors with that week's filter, the lab, ten self-check questions each in `data/self-checks/week-0N.json`.
-7. **Photos**: CC-licensed images from Wikimedia Commons under `public/samples/<id>/`, each with author, licence and
-   source URL in the library entry; shown on cards and in the lab tray. Credits roll up on the About page. (3D hand
-   samples as glTF are a stretch, not a deliverable; the plan's open question on photos vs procedural textures is
-   settled for phase 2 as photos.)
+7. **Turntable videos**: a one-minute recording of each hand sample on a turntable, made by Panda, imported by
+   `scripts/import_sample.py recording.mp4 --id <sample-id>` into `public/media/samples/<id>/` as a silent H.264 MP4
+   (at most 1280 wide, 30 fps, faststart), a poster frame and a `meta.json`. The script drops every tag in the
+   source (phone recordings carry GPS, device and time fields) and refuses the file if any survive. `public/media/`
+   is not in git and is copied to the server with the build. The library entry holds
+   `turntable: { file, poster, seconds }`. The card shows the video; the lab tray shows the poster and, when an
+   unknown is selected, the video, with horizontal drag scrubbing its time so dragging turns the sample. Where a
+   sample has no video yet, a CC-licensed Wikimedia Commons photo stands in, with author, licence and source URL in
+   the entry; credits roll up on the About page. This settles the plan's open question: Panda's own recordings
+   first, Commons photos as fallback, procedural textures never. 3D hand samples as glTF are a stretch.
 8. ESLint: restore Valence's rule that Three.js is imported only under a `scene/` folder, and add `src/engine/**` to
    the lint-rules test for it.
 
@@ -213,6 +219,20 @@ sedimentary grid, week 7 the metamorphic grid and P–T figure), Lab (above), Se
 shape as week 1, graded by the existing `grade`). Home shows weeks 2, 3, 4, 6, 7 as built; week 5 stays "Planned"
 until phase 3.
 
+## Recording guidelines
+
+For the turntable videos, so that the set looks like one set and the import needs no hand work:
+
+- Same turntable speed, one full turn in about 20 to 30 seconds, recorded for one minute (two to three turns).
+- Same background (a plain neutral card), same lamp position, camera on a tripod at the same height and distance,
+  so size is comparable between samples; a small scale bar or coin in frame is welcome.
+- Nothing in frame that names a place or an organisation: no labelled drawers, room signs, lanyards, handouts or
+  sample tags with catalogue numbers that encode a course. The script strips the file's metadata, but it cannot
+  strip what is in the picture.
+- Landscape, 1080p or better, phone is fine. Name the file as you like; the sample id is given to the script.
+- Drop raw files in `incoming/` (not committed) and run `scripts/import_sample.py incoming/<file> --id <id>`; use
+  `--start`/`--end` to trim handling at either end.
+
 ## Data
 
 No live source. Everything is in the repo: the library JSON, the CIFs with their COD provenance, the figures, the
@@ -232,7 +252,8 @@ an entry for COD (open data, no key, `https://www.crystallography.net/cod/<id>.c
 - Lighthouse mobile performance on `/#/explore/minerals/quartz` stays at or above 80 on a desktop with a GPU (the
   Three.js chunk loads lazily after the card's text paints, as the globe does).
 - `grep -ri` for institution, campus and course strings returns nothing; no library entry mentions a place.
-- Every photo has author, licence and source; About lists them.
+- Every imported video's `meta.json` exists, the MP4 has no tags beyond brand and encoder, and every Commons photo has
+  author, licence and source; About lists the photo credits.
 
 ## Out of scope for phase 2
 

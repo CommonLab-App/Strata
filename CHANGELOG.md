@@ -13,3 +13,4 @@ Phase-1 gate met 2026-11-08: build, tests and the acceptance flow pass; Lighthou
 - Week 1: Learn page with linked reading; Explore with the quake globe, time-range toggle, quake details and a largest-quakes list; sand-and-water lab worksheet; ten-question self-check with best score kept.
 - `npm run bench`: Lighthouse mobile on the Explore pane, cold and warm, with a no-WebGL diagnostic switch.
 - `public/robots.txt`; MapLibre's attribution link styled as a link.
+- `scripts/import_sample.py`: turntable video import with ffmpeg (H.264, 720p, silent, all metadata stripped and verified) for the phase-2 sample library.
