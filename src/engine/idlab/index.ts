@@ -1,5 +1,8 @@
 import type { Mineral } from '@/data/samples/schema'
 import { seeded } from '../random'
+import { candidatesBy, draw as drawCore, scoreTrayBy, type LabConfig as CoreConfig, type RowScore } from './core'
+
+export { type RowScore } from './core'
 
 /**
  * The identification lab's rules, apart from any screen: which unknowns a seed draws, what each bench tool reveals
@@ -14,7 +17,7 @@ export type Scratcher = keyof typeof SCRATCHERS
 export type Tool = 'hand-lens' | 'streak' | 'cleavage' | 'acid' | 'magnet' | 'density' | `scratch:${Scratcher}`
 export const MINERAL_TOOLS: Tool[] = ['hand-lens', 'streak', 'scratch:fingernail', 'scratch:penny', 'scratch:glass', 'scratch:streak-plate', 'scratch:quartz', 'cleavage', 'acid', 'magnet', 'density']
 
-export interface Observations {
+export type Observations = {
   colour?: string[]
   luster?: string[]
   /** How it feels in the hand: soapy, greasy, or 'none'. From the hand-lens step, as a bench does for talc. */
@@ -37,30 +40,14 @@ export interface UnknownRecord {
   seen: Observations
 }
 
-export interface LabConfig {
-  id: string
-  /** Mineral ids the tray may draw from. */
-  pool: string[]
-  count: number
+export interface LabConfig extends CoreConfig {
   tools: Tool[]
-  /** A row counts as sufficiently tested when its observations leave at most this many candidates. */
-  sufficiency: number
 }
 
 export const emptyRecord = (): UnknownRecord => ({ tests: [], seen: {} })
 
 /** The mineral ids on the tray for this seed: distinct, in tray order. Stored progress keeps the seed, not the ids. */
-export function draw(config: LabConfig, seed: number): string[] {
-  const random = seeded(seed)
-  const pool = [...config.pool]
-  const out: string[] = []
-  const target = Math.min(config.count, pool.length)
-  while (out.length < target) {
-    const [picked] = pool.splice(Math.floor(random() * pool.length), 1)
-    if (picked) out.push(picked)
-  }
-  return out
-}
+export const draw = (config: LabConfig, seed: number): string[] => drawCore(config, seed)
 
 /**
  * What running `tool` on `mineral` adds to a record. The result is read from the library entry, never typed. The
@@ -116,23 +103,11 @@ export function consistent(seen: Observations, mineral: Mineral): boolean {
 }
 
 /** The entries of the pool still consistent with the record: the key the learner sees narrowing. */
-export function candidates(seen: Observations, pool: Mineral[]): Mineral[] {
-  return pool.filter((m) => consistent(seen, m))
-}
-
-export interface RowScore {
-  correct: boolean
-  sufficient: boolean
-  candidatesLeft: number
-}
+export const candidates = (seen: Observations, pool: Mineral[]): Mineral[] => candidatesBy(seen, pool, consistent)
 
 /** One row: right when the answer is the drawn species; sufficient when the tests alone would have narrowed enough. */
 export function scoreRow(config: LabConfig, record: UnknownRecord, answer: string | null, drawn: string, pool: Mineral[]): RowScore {
-  const left = candidates(record.seen, pool).length
-  return { correct: answer === drawn, sufficient: left <= config.sufficiency, candidatesLeft: left }
+  return scoreTrayBy(config, [record], [answer], [drawn], pool, consistent).rows[0]!
 }
 
-export function scoreTray(config: LabConfig, records: UnknownRecord[], answers: (string | null)[], drawn: string[], pool: Mineral[]): { rows: RowScore[]; correct: number; total: number } {
-  const rows = drawn.map((d, i) => scoreRow(config, records[i] ?? emptyRecord(), answers[i] ?? null, d, pool))
-  return { rows, correct: rows.filter((r) => r.correct).length, total: rows.length }
-}
+export const scoreTray = (config: LabConfig, records: UnknownRecord[], answers: (string | null)[], drawn: string[], pool: Mineral[]) => scoreTrayBy(config, records, answers, drawn, pool, consistent)

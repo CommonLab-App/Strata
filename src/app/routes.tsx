@@ -20,6 +20,7 @@ export const routes: RouteObject[] = [
       { path: 'week/:week/:tab?', element: <WeekPage /> },
       // The Mineral Inspector: the library and its key, or one mineral's card. Its crystal viewer loads Three.js lazily.
       { path: 'explore/minerals/:id?', lazy: async () => ({ Component: (await import('@/app/inspector/MineralInspector')).MineralsPage }) },
+      { path: 'explore/rocks/:id?', lazy: async () => ({ Component: (await import('@/app/rocks/RockInspector')).RocksPage }) },
       { path: 'explore/elements/:symbol?', lazy: async () => ({ Component: (await import('@/app/elements/ElementsPage')).ElementsPage }) },
       { path: 'resources', element: <Resources /> },
       { path: 'settings', element: <Settings /> },

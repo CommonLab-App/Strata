@@ -29,7 +29,7 @@ export const WEEKS = [
 export type Week = (typeof WEEKS)[number]
 
 /** The weeks that have a page. Phase 1 builds week 1; later phases add theirs here. */
-const BUILT: readonly number[] = [1, 2, 3]
+const BUILT: readonly number[] = [1, 2, 3, 4, 6, 7]
 export const hasPage = (week: Week) => BUILT.includes(week.week)
 
 export const weekPath = (week: number) => `/week/${week}`

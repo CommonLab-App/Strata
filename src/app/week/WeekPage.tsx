@@ -9,6 +9,9 @@ import { hasPage, WEEKS, weekPath, type Week } from '@/app/weeks'
 import * as week01 from '@/app/weeks/week01'
 import * as week02 from '@/app/weeks/week02'
 import * as week03 from '@/app/weeks/week03'
+import * as week04 from '@/app/weeks/week04'
+import * as week06 from '@/app/weeks/week06'
+import * as week07 from '@/app/weeks/week07'
 import { useWeekProgress, type WeekProgress } from './weekProgress'
 
 export interface LabProps {
@@ -24,7 +27,7 @@ export interface WeekContent {
   questions: Question[]
 }
 
-const CONTENT: Record<number, WeekContent> = { 1: week01, 2: week02, 3: week03 }
+const CONTENT: Record<number, WeekContent> = { 1: week01, 2: week02, 3: week03, 4: week04, 6: week06, 7: week07 }
 
 const TABS = [
   { tab: 'learn', label: 'Learn' },
@@ -41,7 +44,8 @@ export function WeekPage() {
   const tab = params.tab ?? 'learn'
   const content = week && CONTENT[week.week]
   if (!week || !hasPage(week) || !content || !TABS.some((t) => t.tab === tab)) return <NotFound />
-  return <WeekShell week={week} tab={tab as Tab} content={content} />
+  // Keyed by week: the shell holds that week's stored progress in state, and a move to another week must start over.
+  return <WeekShell key={week.week} week={week} tab={tab as Tab} content={content} />
 }
 
 function WeekShell({ week, tab, content }: { week: Week; tab: Tab; content: WeekContent }) {

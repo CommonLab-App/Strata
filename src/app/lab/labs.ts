@@ -22,3 +22,10 @@ export const MINERAL_ID_2: LabConfig = {
   tools: ['hand-lens', 'streak', 'scratch:fingernail', 'scratch:penny', 'scratch:glass', 'scratch:streak-plate', 'scratch:quartz', 'cleavage', 'acid', 'magnet', 'density'],
   sufficiency: 2,
 }
+
+import type { RockLabConfig } from '@/engine/idlab/rocks'
+import { coreRockIds } from '@/app/rocks/library'
+
+export const IGNEOUS_ID: RockLabConfig = { id: 'igneous-id', pool: coreRockIds('igneous'), count: 8, tools: ['hand-lens', 'grain-gauge', 'minerals'], sufficiency: 2 }
+export const SEDIMENTARY_ID: RockLabConfig = { id: 'sedimentary-id', pool: coreRockIds('sedimentary'), count: 8, tools: ['hand-lens', 'grain-gauge', 'minerals', 'acid'], sufficiency: 2 }
+export const METAMORPHIC_ID: RockLabConfig = { id: 'metamorphic-id', pool: coreRockIds('metamorphic'), count: 8, tools: ['hand-lens', 'minerals', 'acid'], sufficiency: 2 }
