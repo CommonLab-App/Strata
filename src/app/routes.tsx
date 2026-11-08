@@ -3,6 +3,7 @@ import { Layout } from '@/app/Layout'
 import { About } from '@/app/pages/About'
 import { Home } from '@/app/pages/Home'
 import { NotFound } from '@/app/pages/NotFound'
+import { Resources } from '@/app/pages/Resources'
 import { Settings } from '@/app/pages/Settings'
 import { WeekPage } from '@/app/week/WeekPage'
 
@@ -19,6 +20,7 @@ export const routes: RouteObject[] = [
       { path: 'week/:week/:tab?', element: <WeekPage /> },
       // The Mineral Inspector: the library and its key, or one mineral's card. Its crystal viewer loads Three.js lazily.
       { path: 'explore/minerals/:id?', lazy: async () => ({ Component: (await import('@/app/inspector/MineralInspector')).MineralsPage }) },
+      { path: 'resources', element: <Resources /> },
       { path: 'settings', element: <Settings /> },
       { path: 'about', element: <About /> },
       { path: '*', element: <NotFound /> },

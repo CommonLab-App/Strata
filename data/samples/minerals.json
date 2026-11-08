@@ -62,7 +62,8 @@
         "accessed": "2026-11-08"
       }
     ],
-    "fracture": "conchoidal"
+    "fracture": "conchoidal",
+    "cif": "quartz"
   },
   {
     "id": "orthoclase",
@@ -115,7 +116,8 @@
         "accessed": "2026-11-08"
       }
     ],
-    "fracture": "uneven"
+    "fracture": "uneven",
+    "cif": "orthoclase"
   },
   {
     "id": "plagioclase",
@@ -167,7 +169,8 @@
         "accessed": "2026-11-08"
       }
     ],
-    "fracture": "uneven"
+    "fracture": "uneven",
+    "cif": "plagioclase"
   },
   {
     "id": "muscovite",
@@ -218,7 +221,8 @@
         "url": "https://webmineral.com/data/Muscovite.shtml",
         "accessed": "2026-11-08"
       }
-    ]
+    ],
+    "cif": "muscovite"
   },
   {
     "id": "biotite",
@@ -268,7 +272,8 @@
         "url": "https://webmineral.com/data/Biotite.shtml",
         "accessed": "2026-11-08"
       }
-    ]
+    ],
+    "cif": "biotite"
   },
   {
     "id": "hornblende",
@@ -318,7 +323,8 @@
         "accessed": "2026-11-08"
       }
     ],
-    "fracture": "uneven"
+    "fracture": "uneven",
+    "cif": "hornblende"
   },
   {
     "id": "augite",
@@ -370,7 +376,8 @@
         "accessed": "2026-11-08"
       }
     ],
-    "fracture": "uneven"
+    "fracture": "uneven",
+    "cif": "augite"
   },
   {
     "id": "olivine",
@@ -420,7 +427,8 @@
         "accessed": "2026-11-08"
       }
     ],
-    "fracture": "conchoidal"
+    "fracture": "conchoidal",
+    "cif": "olivine"
   },
   {
     "id": "garnet",
@@ -472,7 +480,8 @@
         "accessed": "2026-11-08"
       }
     ],
-    "fracture": "conchoidal"
+    "fracture": "conchoidal",
+    "cif": "garnet"
   },
   {
     "id": "calcite",
@@ -526,7 +535,8 @@
         "url": "https://webmineral.com/data/Calcite.shtml",
         "accessed": "2026-11-08"
       }
-    ]
+    ],
+    "cif": "calcite"
   },
   {
     "id": "dolomite",
@@ -579,7 +589,8 @@
         "url": "https://webmineral.com/data/Dolomite.shtml",
         "accessed": "2026-11-08"
       }
-    ]
+    ],
+    "cif": "dolomite"
   },
   {
     "id": "gypsum",
@@ -632,7 +643,8 @@
         "url": "https://webmineral.com/data/Gypsum.shtml",
         "accessed": "2026-11-08"
       }
-    ]
+    ],
+    "cif": "gypsum"
   },
   {
     "id": "halite",
@@ -684,7 +696,8 @@
         "url": "https://webmineral.com/data/Halite.shtml",
         "accessed": "2026-11-08"
       }
-    ]
+    ],
+    "cif": "halite"
   },
   {
     "id": "fluorite",
@@ -746,7 +759,8 @@
         "url": "https://webmineral.com/data/Fluorite.shtml",
         "accessed": "2026-11-08"
       }
-    ]
+    ],
+    "cif": "fluorite"
   },
   {
     "id": "apatite",
@@ -798,7 +812,8 @@
         "accessed": "2026-11-08"
       }
     ],
-    "fracture": "conchoidal"
+    "fracture": "conchoidal",
+    "cif": "apatite"
   },
   {
     "id": "corundum",
@@ -850,7 +865,8 @@
         "accessed": "2026-11-08"
       }
     ],
-    "fracture": "uneven"
+    "fracture": "uneven",
+    "cif": "corundum"
   },
   {
     "id": "topaz",
@@ -901,7 +917,8 @@
         "accessed": "2026-11-08"
       }
     ],
-    "fracture": "conchoidal"
+    "fracture": "conchoidal",
+    "cif": "topaz"
   },
   {
     "id": "talc",
@@ -952,7 +969,8 @@
         "url": "https://webmineral.com/data/Talc.shtml",
         "accessed": "2026-11-08"
       }
-    ]
+    ],
+    "cif": "talc"
   },
   {
     "id": "kaolinite",
@@ -1001,7 +1019,8 @@
         "url": "https://webmineral.com/data/Kaolinite.shtml",
         "accessed": "2026-11-08"
       }
-    ]
+    ],
+    "cif": "kaolinite"
   },
   {
     "id": "chlorite",
@@ -1355,7 +1374,8 @@
         "url": "https://webmineral.com/data/Sphalerite.shtml",
         "accessed": "2026-11-08"
       }
-    ]
+    ],
+    "cif": "sphalerite"
   },
   {
     "id": "galena",
@@ -1403,7 +1423,8 @@
         "url": "https://webmineral.com/data/Galena.shtml",
         "accessed": "2026-11-08"
       }
-    ]
+    ],
+    "cif": "galena"
   },
   {
     "id": "pyrite",
@@ -1452,7 +1473,8 @@
         "accessed": "2026-11-08"
       }
     ],
-    "fracture": "uneven"
+    "fracture": "uneven",
+    "cif": "pyrite"
   },
   {
     "id": "chalcopyrite",
@@ -1551,7 +1573,8 @@
         "accessed": "2026-11-08"
       }
     ],
-    "fracture": "uneven"
+    "fracture": "uneven",
+    "cif": "magnetite"
   },
   {
     "id": "hematite",
@@ -1605,7 +1628,8 @@
         "accessed": "2026-11-08"
       }
     ],
-    "fracture": "uneven"
+    "fracture": "uneven",
+    "cif": "hematite"
   },
   {
     "id": "goethite",
@@ -1709,7 +1733,8 @@
         "url": "https://webmineral.com/data/Graphite.shtml",
         "accessed": "2026-11-08"
       }
-    ]
+    ],
+    "cif": "graphite"
   },
   {
     "id": "sulfur",

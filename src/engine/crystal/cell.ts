@@ -61,6 +61,25 @@ export function buildCell(cif: Cif): Atom[] {
   return atoms
 }
 
+/**
+ * The atoms of the cell plus those from the neighbouring cells that bond to them, so every atom at the cell's edge
+ * has its full set of neighbours: a silicon at a face still shows four oxygens. `reach` is the longest bond in Å.
+ */
+export function withNeighbours(cif: Cif, atoms: Atom[], reach = 2.6): Atom[] {
+  const out = [...atoms]
+  for (let i = -1; i <= 1; i++)
+    for (let j = -1; j <= 1; j++)
+      for (let k = -1; k <= 1; k++) {
+        if (i === 0 && j === 0 && k === 0) continue
+        for (const a of atoms) {
+          const frac: [number, number, number] = [a.frac[0] + i, a.frac[1] + j, a.frac[2] + k]
+          const image: Atom = { element: a.element, frac, xyz: toCartesian(cif.cell, frac) }
+          if (atoms.some((c) => distance(c, image) <= reach)) out.push(image)
+        }
+      }
+  return out
+}
+
 /** The cell repeated n times along each axis, so bonds across cell edges can be seen. */
 export function repeatCell(cif: Cif, atoms: Atom[], n: number): Atom[] {
   const out: Atom[] = []

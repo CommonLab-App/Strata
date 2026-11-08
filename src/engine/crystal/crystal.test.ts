@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import index from '@data/cif/index.json'
-import { applyOp, bonds, buildCell, distance, repeatCell } from './cell'
+import { applyOp, bonds, buildCell, distance, repeatCell, withNeighbours } from './cell'
 import { cifNumber, parseCif } from './cif'
 
 const load = (id: string) => parseCif(readFileSync(`data/cif/${id}.cif`, 'utf8'))
@@ -48,6 +48,18 @@ describe('unit cells', () => {
     const d = bonds(big).map(([i, j]) => distance(big[i]!, big[j]!))
     expect(Math.min(...d)).toBeGreaterThan(1.55)
     expect(Math.min(...d)).toBeLessThan(1.65)
+  })
+  it('gives every silicon in quartz four oxygens once the neighbouring cells are added', () => {
+    const cif = load('quartz')
+    const cell = buildCell(cif)
+    const all = withNeighbours(cif, cell)
+    expect(all.length).toBeGreaterThan(cell.length)
+    const b = bonds(all)
+    for (let i = 0; i < cell.length; i++) {
+      if (cell[i]!.element !== 'Si') continue
+      const o = b.filter(([p, q]) => p === i || q === i).length
+      expect(o, `Si ${i}`).toBe(4)
+    }
   })
   it('builds fluorite with 4 Ca and 8 F', () => {
     const atoms = buildCell(load('fluorite'))

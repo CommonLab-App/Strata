@@ -1,5 +1,6 @@
 import { existsSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
+import cifIndex from '@data/cif/index.json'
 import minerals from '@data/samples/minerals.json'
 import { mineralsSchema } from './schema'
 
@@ -15,6 +16,14 @@ describe('mineral library', () => {
     for (const m of parsed) {
       expect(m.sources.length, m.id).toBeGreaterThan(0)
       expect(m.streak.trim(), m.id).not.toBe('')
+    }
+  })
+
+  it('links every structure file that exists, and only existing ones', () => {
+    const index = cifIndex as Record<string, unknown>
+    for (const m of parsed) {
+      if (m.cif) expect(index[m.cif], `${m.id} -> ${m.cif}`).toBeDefined()
+      if (index[m.id]) expect(m.cif, `${m.id} has a structure file but no cif key`).toBe(m.id)
     }
   })
 

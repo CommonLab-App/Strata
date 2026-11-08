@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import { bonds, buildCell, repeatCell, toCartesian, type Atom } from '@/engine/crystal/cell'
+import { bonds, buildCell, repeatCell, toCartesian, withNeighbours, type Atom } from '@/engine/crystal/cell'
 import type { Cif } from '@/engine/crystal/cif'
 
 import { ELEMENT_COLOUR } from '../elementColours'
@@ -32,25 +32,33 @@ export function CrystalScene({ cif, options, reducedMotion }: { cif: Cif; option
     key.position.set(5, 8, 10)
     scene.add(key)
 
+    // The cell's own atoms come first; the image atoms that complete edge bonds follow, drawn smaller and paler.
     const cellAtoms = buildCell(cif)
-    const atoms: Atom[] = options.repeat === 2 ? repeatCell(cif, cellAtoms, 2) : cellAtoms
+    const own = options.repeat === 2 ? repeatCell(cif, cellAtoms, 2) : cellAtoms
+    const atoms: Atom[] = options.showBonds || options.polyhedra ? withNeighbours(cif, own) : own
+    const isOwn = (i: number) => i < own.length
     const group = new THREE.Group()
     const corner = toCartesian(cif.cell, [options.repeat / 2, options.repeat / 2, options.repeat / 2])
     group.position.set(-corner[0], -corner[1], -corner[2])
     scene.add(group)
 
-    const byElement = new Map<string, Atom[]>()
-    for (const a of atoms) byElement.set(a.element, [...(byElement.get(a.element) ?? []), a])
     const sphere = new THREE.SphereGeometry(1, 24, 16)
     const m = new THREE.Matrix4()
-    for (const [element, list] of byElement) {
-      const mesh = new THREE.InstancedMesh(sphere, new THREE.MeshStandardMaterial({ color: ELEMENT_COLOUR[element] ?? '#999999', roughness: 0.5 }), list.length)
-      list.forEach((a, i) => {
-        const r = RADIUS[element] ?? 0.35
-        m.makeScale(r, r, r).setPosition(a.xyz[0], a.xyz[1], a.xyz[2])
-        mesh.setMatrixAt(i, m)
+    for (const ownAtoms of [true, false]) {
+      const byElement = new Map<string, Atom[]>()
+      atoms.forEach((a, i) => {
+        if (isOwn(i) === ownAtoms) byElement.set(a.element, [...(byElement.get(a.element) ?? []), a])
       })
-      group.add(mesh)
+      for (const [element, list] of byElement) {
+        const material = new THREE.MeshStandardMaterial({ color: ELEMENT_COLOUR[element] ?? '#999999', roughness: 0.5, transparent: !ownAtoms, opacity: ownAtoms ? 1 : 0.45 })
+        const mesh = new THREE.InstancedMesh(sphere, material, list.length)
+        list.forEach((a, i) => {
+          const r = (RADIUS[element] ?? 0.35) * (ownAtoms ? 1 : 0.7)
+          m.makeScale(r, r, r).setPosition(a.xyz[0], a.xyz[1], a.xyz[2])
+          mesh.setMatrixAt(i, m)
+        })
+        group.add(mesh)
+      }
     }
 
     const pairs = options.showBonds || options.polyhedra ? bonds(atoms) : []
@@ -78,7 +86,7 @@ export function CrystalScene({ cif, options, reducedMotion }: { cif: Cif; option
       }
       const faces: number[] = []
       atoms.forEach((a, i) => {
-        if (a.element !== 'Si' && a.element !== 'Al') return
+        if (!isOwn(i) || (a.element !== 'Si' && a.element !== 'Al')) return
         const o = (neighbours.get(i) ?? []).filter((k) => atoms[k]!.element === 'O')
         if (o.length !== 4) return
         const [p, q, r, s] = o.map((k) => atoms[k]!.xyz)
