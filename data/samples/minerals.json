@@ -1,0 +1,2471 @@
+[
+  {
+    "id": "quartz",
+    "name": "Quartz",
+    "formula": "SiO2",
+    "group": "framework-silicate",
+    "core": true,
+    "hardness": [
+      7,
+      7
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous",
+      "greasy"
+    ],
+    "cleavage": {
+      "directions": 0,
+      "quality": "none"
+    },
+    "colour": [
+      "colourless",
+      "white",
+      "milky",
+      "smoky",
+      "rose",
+      "purple"
+    ],
+    "density": [
+      2.65,
+      2.65
+    ],
+    "crystalSystem": "trigonal",
+    "diagnostic": {
+      "other": "hexagonal prisms with striated faces; harder than steel"
+    },
+    "habit": [
+      "hexagonal prisms",
+      "massive",
+      "drusy"
+    ],
+    "specimens": [
+      {
+        "id": "milky-quartz",
+        "label": "Milky quartz",
+        "turntable": {
+          "file": "turntable.mp4",
+          "poster": "poster.jpg",
+          "seconds": 59.23
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Quartz",
+        "url": "https://handbookofmineralogy.org/pdfs/quartz.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Quartz",
+        "url": "https://webmineral.com/data/Quartz.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "conchoidal"
+  },
+  {
+    "id": "orthoclase",
+    "name": "Orthoclase (K-feldspar)",
+    "formula": "KAlSi3O8",
+    "group": "framework-silicate",
+    "core": true,
+    "hardness": [
+      6,
+      6
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous",
+      "pearly"
+    ],
+    "cleavage": {
+      "directions": 2,
+      "quality": "good",
+      "angles": "about 90°"
+    },
+    "colour": [
+      "pink",
+      "white",
+      "grey",
+      "cream"
+    ],
+    "density": [
+      2.55,
+      2.63
+    ],
+    "crystalSystem": "monoclinic",
+    "diagnostic": {
+      "other": "two cleavages near 90°; no striations"
+    },
+    "habit": [
+      "blocky prisms",
+      "Carlsbad twins"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Orthoclase (K-feldspar)",
+        "url": "https://handbookofmineralogy.org/pdfs/orthoclase (k-feldspar).pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Orthoclase (K-feldspar)",
+        "url": "https://webmineral.com/data/Orthoclase (K-feldspar).shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "uneven"
+  },
+  {
+    "id": "plagioclase",
+    "name": "Plagioclase feldspar",
+    "formula": "NaAlSi3O8 to CaAl2Si2O8",
+    "group": "framework-silicate",
+    "core": true,
+    "hardness": [
+      6,
+      6.5
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous"
+    ],
+    "cleavage": {
+      "directions": 2,
+      "quality": "good",
+      "angles": "about 94°"
+    },
+    "colour": [
+      "white",
+      "grey",
+      "greenish",
+      "bluish"
+    ],
+    "density": [
+      2.62,
+      2.76
+    ],
+    "crystalSystem": "triclinic",
+    "diagnostic": {
+      "other": "fine parallel striations on one cleavage face"
+    },
+    "habit": [
+      "tabular",
+      "lath-shaped in rock"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Albite",
+        "url": "https://handbookofmineralogy.org/pdfs/albite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Albite",
+        "url": "https://webmineral.com/data/Albite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "uneven"
+  },
+  {
+    "id": "muscovite",
+    "name": "Muscovite",
+    "formula": "KAl2(AlSi3O10)(OH)2",
+    "group": "sheet-silicate",
+    "core": true,
+    "hardness": [
+      2,
+      3
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous",
+      "pearly"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "perfect"
+    },
+    "colour": [
+      "colourless",
+      "silvery",
+      "pale brown",
+      "pale green"
+    ],
+    "density": [
+      2.76,
+      2.88
+    ],
+    "crystalSystem": "monoclinic",
+    "diagnostic": {
+      "other": "splits into thin, flexible, elastic sheets"
+    },
+    "habit": [
+      "books",
+      "flakes"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Muscovite",
+        "url": "https://handbookofmineralogy.org/pdfs/muscovite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Muscovite",
+        "url": "https://webmineral.com/data/Muscovite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "biotite",
+    "name": "Biotite",
+    "formula": "K(Mg,Fe)3(AlSi3O10)(OH)2",
+    "group": "sheet-silicate",
+    "core": true,
+    "hardness": [
+      2.5,
+      3
+    ],
+    "streak": "white to grey",
+    "luster": [
+      "vitreous",
+      "pearly"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "perfect"
+    },
+    "colour": [
+      "black",
+      "dark brown",
+      "dark green"
+    ],
+    "density": [
+      2.7,
+      3.3
+    ],
+    "crystalSystem": "monoclinic",
+    "diagnostic": {
+      "other": "thin flexible sheets; dark"
+    },
+    "habit": [
+      "books",
+      "flakes"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Biotite",
+        "url": "https://handbookofmineralogy.org/pdfs/biotite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Biotite",
+        "url": "https://webmineral.com/data/Biotite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "hornblende",
+    "name": "Hornblende",
+    "formula": "Ca2(Mg,Fe,Al)5(Al,Si)8O22(OH)2",
+    "group": "chain-silicate",
+    "core": true,
+    "hardness": [
+      5,
+      6
+    ],
+    "streak": "white to pale grey-green",
+    "luster": [
+      "vitreous"
+    ],
+    "cleavage": {
+      "directions": 2,
+      "quality": "good",
+      "angles": "56° and 124°"
+    },
+    "colour": [
+      "black",
+      "dark green"
+    ],
+    "density": [
+      3.0,
+      3.4
+    ],
+    "crystalSystem": "monoclinic",
+    "diagnostic": {
+      "other": "two cleavages at 56° and 124°; elongate prisms"
+    },
+    "habit": [
+      "prismatic",
+      "bladed"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Hornblende",
+        "url": "https://handbookofmineralogy.org/pdfs/hornblende.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Hornblende",
+        "url": "https://webmineral.com/data/Hornblende.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "uneven"
+  },
+  {
+    "id": "augite",
+    "name": "Augite",
+    "formula": "(Ca,Na)(Mg,Fe,Al)(Si,Al)2O6",
+    "group": "chain-silicate",
+    "core": true,
+    "hardness": [
+      5.5,
+      6
+    ],
+    "streak": "white to greenish grey",
+    "luster": [
+      "vitreous",
+      "dull"
+    ],
+    "cleavage": {
+      "directions": 2,
+      "quality": "good",
+      "angles": "about 87° and 93°"
+    },
+    "colour": [
+      "dark green",
+      "black",
+      "brown"
+    ],
+    "density": [
+      3.2,
+      3.6
+    ],
+    "crystalSystem": "monoclinic",
+    "diagnostic": {
+      "other": "two cleavages near 90°; stubby prisms"
+    },
+    "habit": [
+      "stubby prisms",
+      "granular"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Augite",
+        "url": "https://handbookofmineralogy.org/pdfs/augite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Augite",
+        "url": "https://webmineral.com/data/Augite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "uneven"
+  },
+  {
+    "id": "olivine",
+    "name": "Olivine",
+    "formula": "(Mg,Fe)2SiO4",
+    "group": "isolated-silicate",
+    "core": true,
+    "hardness": [
+      6.5,
+      7
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous"
+    ],
+    "cleavage": {
+      "directions": 0,
+      "quality": "none"
+    },
+    "colour": [
+      "olive green",
+      "yellow-green",
+      "brown"
+    ],
+    "density": [
+      3.27,
+      4.37
+    ],
+    "crystalSystem": "orthorhombic",
+    "diagnostic": {
+      "other": "sugary granular masses in dark rock"
+    },
+    "habit": [
+      "granular",
+      "rounded grains"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Forsterite",
+        "url": "https://handbookofmineralogy.org/pdfs/forsterite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Forsterite",
+        "url": "https://webmineral.com/data/Forsterite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "conchoidal"
+  },
+  {
+    "id": "garnet",
+    "name": "Garnet (almandine)",
+    "formula": "Fe3Al2(SiO4)3",
+    "group": "isolated-silicate",
+    "core": true,
+    "hardness": [
+      7,
+      7.5
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous",
+      "resinous"
+    ],
+    "cleavage": {
+      "directions": 0,
+      "quality": "none"
+    },
+    "colour": [
+      "dark red",
+      "red-brown",
+      "brown"
+    ],
+    "density": [
+      3.5,
+      4.3
+    ],
+    "crystalSystem": "cubic",
+    "diagnostic": {
+      "other": "dodecahedral crystals"
+    },
+    "habit": [
+      "dodecahedra",
+      "trapezohedra",
+      "granular"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Almandine",
+        "url": "https://handbookofmineralogy.org/pdfs/almandine.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Almandine",
+        "url": "https://webmineral.com/data/Almandine.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "conchoidal"
+  },
+  {
+    "id": "calcite",
+    "name": "Calcite",
+    "formula": "CaCO3",
+    "group": "carbonate",
+    "core": true,
+    "hardness": [
+      3,
+      3
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous"
+    ],
+    "cleavage": {
+      "directions": 3,
+      "quality": "perfect",
+      "angles": "rhombohedral, about 75°"
+    },
+    "colour": [
+      "colourless",
+      "white",
+      "yellow",
+      "grey",
+      "pink"
+    ],
+    "density": [
+      2.71,
+      2.71
+    ],
+    "crystalSystem": "trigonal",
+    "diagnostic": {
+      "acid": "fizzes",
+      "other": "rhombohedral cleavage; double refraction through clear pieces"
+    },
+    "habit": [
+      "rhombohedra",
+      "scalenohedra",
+      "massive"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Calcite",
+        "url": "https://handbookofmineralogy.org/pdfs/calcite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Calcite",
+        "url": "https://webmineral.com/data/Calcite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "dolomite",
+    "name": "Dolomite",
+    "formula": "CaMg(CO3)2",
+    "group": "carbonate",
+    "core": true,
+    "hardness": [
+      3.5,
+      4
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous",
+      "pearly"
+    ],
+    "cleavage": {
+      "directions": 3,
+      "quality": "perfect",
+      "angles": "rhombohedral"
+    },
+    "colour": [
+      "white",
+      "pink",
+      "grey",
+      "cream"
+    ],
+    "density": [
+      2.84,
+      2.86
+    ],
+    "crystalSystem": "trigonal",
+    "diagnostic": {
+      "acid": "fizzes-powdered",
+      "other": "curved saddle-shaped crystal faces"
+    },
+    "habit": [
+      "rhombohedra with curved faces",
+      "massive"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Dolomite",
+        "url": "https://handbookofmineralogy.org/pdfs/dolomite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Dolomite",
+        "url": "https://webmineral.com/data/Dolomite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "gypsum",
+    "name": "Gypsum",
+    "formula": "CaSO4·2H2O",
+    "group": "sulfate",
+    "core": true,
+    "hardness": [
+      2,
+      2
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous",
+      "pearly",
+      "silky"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "perfect"
+    },
+    "colour": [
+      "colourless",
+      "white",
+      "grey",
+      "pale brown"
+    ],
+    "density": [
+      2.31,
+      2.33
+    ],
+    "crystalSystem": "monoclinic",
+    "diagnostic": {
+      "other": "scratched by a fingernail; thin sheets bend but do not spring back"
+    },
+    "habit": [
+      "tabular",
+      "fibrous (satin spar)",
+      "massive (alabaster)"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Gypsum",
+        "url": "https://handbookofmineralogy.org/pdfs/gypsum.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Gypsum",
+        "url": "https://webmineral.com/data/Gypsum.shtml",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "halite",
+    "name": "Halite",
+    "formula": "NaCl",
+    "group": "halide",
+    "core": true,
+    "hardness": [
+      2.5,
+      2.5
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous"
+    ],
+    "cleavage": {
+      "directions": 3,
+      "quality": "perfect",
+      "angles": "cubic, 90°"
+    },
+    "colour": [
+      "colourless",
+      "white",
+      "orange",
+      "blue"
+    ],
+    "density": [
+      2.16,
+      2.17
+    ],
+    "crystalSystem": "cubic",
+    "diagnostic": {
+      "taste": "salty",
+      "other": "cubic cleavage"
+    },
+    "habit": [
+      "cubes",
+      "massive"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Halite",
+        "url": "https://handbookofmineralogy.org/pdfs/halite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Halite",
+        "url": "https://webmineral.com/data/Halite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "fluorite",
+    "name": "Fluorite",
+    "formula": "CaF2",
+    "group": "halide",
+    "core": true,
+    "hardness": [
+      4,
+      4
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous"
+    ],
+    "cleavage": {
+      "directions": 4,
+      "quality": "perfect",
+      "angles": "octahedral"
+    },
+    "colour": [
+      "purple",
+      "green",
+      "yellow",
+      "colourless",
+      "blue"
+    ],
+    "density": [
+      3.18,
+      3.18
+    ],
+    "crystalSystem": "cubic",
+    "diagnostic": {
+      "other": "octahedral cleavage; often fluoresces under UV"
+    },
+    "habit": [
+      "cubes",
+      "octahedra",
+      "massive"
+    ],
+    "specimens": [
+      {
+        "id": "fluorite",
+        "turntable": {
+          "file": "turntable.mp4",
+          "poster": "poster.jpg",
+          "seconds": 60.03
+        }
+      }
+    ],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Fluorite",
+        "url": "https://handbookofmineralogy.org/pdfs/fluorite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Fluorite",
+        "url": "https://webmineral.com/data/Fluorite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "apatite",
+    "name": "Apatite",
+    "formula": "Ca5(PO4)3(F,Cl,OH)",
+    "group": "phosphate",
+    "core": true,
+    "hardness": [
+      5,
+      5
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous",
+      "greasy"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "poor"
+    },
+    "colour": [
+      "green",
+      "brown",
+      "blue",
+      "colourless"
+    ],
+    "density": [
+      3.1,
+      3.2
+    ],
+    "crystalSystem": "hexagonal",
+    "diagnostic": {
+      "other": "hexagonal prisms; just scratched by a knife"
+    },
+    "habit": [
+      "hexagonal prisms",
+      "massive"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Fluorapatite",
+        "url": "https://handbookofmineralogy.org/pdfs/fluorapatite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Fluorapatite",
+        "url": "https://webmineral.com/data/Fluorapatite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "conchoidal"
+  },
+  {
+    "id": "corundum",
+    "name": "Corundum",
+    "formula": "Al2O3",
+    "group": "oxide",
+    "core": true,
+    "hardness": [
+      9,
+      9
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous",
+      "adamantine"
+    ],
+    "cleavage": {
+      "directions": 0,
+      "quality": "none"
+    },
+    "colour": [
+      "grey",
+      "brown",
+      "blue (sapphire)",
+      "red (ruby)"
+    ],
+    "density": [
+      3.98,
+      4.1
+    ],
+    "crystalSystem": "trigonal",
+    "diagnostic": {
+      "other": "scratches everything but diamond; barrel-shaped crystals with parting"
+    },
+    "habit": [
+      "barrel-shaped prisms",
+      "granular"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Corundum",
+        "url": "https://handbookofmineralogy.org/pdfs/corundum.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Corundum",
+        "url": "https://webmineral.com/data/Corundum.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "uneven"
+  },
+  {
+    "id": "topaz",
+    "name": "Topaz",
+    "formula": "Al2SiO4(F,OH)2",
+    "group": "isolated-silicate",
+    "core": true,
+    "hardness": [
+      8,
+      8
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "perfect"
+    },
+    "colour": [
+      "colourless",
+      "yellow",
+      "blue",
+      "pink"
+    ],
+    "density": [
+      3.49,
+      3.57
+    ],
+    "crystalSystem": "orthorhombic",
+    "diagnostic": {
+      "other": "one perfect basal cleavage; striated prisms"
+    },
+    "habit": [
+      "prismatic",
+      "granular"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Topaz",
+        "url": "https://handbookofmineralogy.org/pdfs/topaz.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Topaz",
+        "url": "https://webmineral.com/data/Topaz.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "conchoidal"
+  },
+  {
+    "id": "talc",
+    "name": "Talc",
+    "formula": "Mg3Si4O10(OH)2",
+    "group": "sheet-silicate",
+    "core": true,
+    "hardness": [
+      1,
+      1
+    ],
+    "streak": "white",
+    "luster": [
+      "pearly",
+      "greasy"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "perfect"
+    },
+    "colour": [
+      "white",
+      "pale green",
+      "grey"
+    ],
+    "density": [
+      2.58,
+      2.83
+    ],
+    "crystalSystem": "monoclinic",
+    "diagnostic": {
+      "feel": "soapy",
+      "other": "scratched by a fingernail"
+    },
+    "habit": [
+      "foliated masses",
+      "compact (soapstone)"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Talc",
+        "url": "https://handbookofmineralogy.org/pdfs/talc.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Talc",
+        "url": "https://webmineral.com/data/Talc.shtml",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "kaolinite",
+    "name": "Kaolinite",
+    "formula": "Al2Si2O5(OH)4",
+    "group": "sheet-silicate",
+    "core": true,
+    "hardness": [
+      2,
+      2.5
+    ],
+    "streak": "white",
+    "luster": [
+      "dull",
+      "earthy"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "perfect"
+    },
+    "colour": [
+      "white",
+      "cream",
+      "pale grey"
+    ],
+    "density": [
+      2.6,
+      2.63
+    ],
+    "crystalSystem": "triclinic",
+    "diagnostic": {
+      "other": "earthy smell when breathed on; sticks to the tongue"
+    },
+    "habit": [
+      "earthy masses"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Kaolinite",
+        "url": "https://handbookofmineralogy.org/pdfs/kaolinite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Kaolinite",
+        "url": "https://webmineral.com/data/Kaolinite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "chlorite",
+    "name": "Chlorite",
+    "formula": "(Mg,Fe)5Al(AlSi3O10)(OH)8",
+    "group": "sheet-silicate",
+    "core": true,
+    "hardness": [
+      2,
+      2.5
+    ],
+    "streak": "pale green to white",
+    "luster": [
+      "vitreous",
+      "pearly"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "perfect"
+    },
+    "colour": [
+      "green",
+      "dark green"
+    ],
+    "density": [
+      2.6,
+      3.3
+    ],
+    "crystalSystem": "monoclinic",
+    "diagnostic": {
+      "other": "thin sheets flexible but not elastic"
+    },
+    "habit": [
+      "foliated",
+      "scaly"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Clinochlore",
+        "url": "https://handbookofmineralogy.org/pdfs/clinochlore.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Clinochlore",
+        "url": "https://webmineral.com/data/Clinochlore.shtml",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "serpentine",
+    "name": "Serpentine",
+    "formula": "Mg3Si2O5(OH)4",
+    "group": "sheet-silicate",
+    "core": true,
+    "hardness": [
+      2.5,
+      4
+    ],
+    "streak": "white",
+    "luster": [
+      "greasy",
+      "silky",
+      "dull"
+    ],
+    "cleavage": {
+      "directions": 0,
+      "quality": "none"
+    },
+    "colour": [
+      "green",
+      "yellow-green",
+      "black-green"
+    ],
+    "density": [
+      2.5,
+      2.6
+    ],
+    "crystalSystem": "monoclinic",
+    "diagnostic": {
+      "feel": "greasy",
+      "other": "mottled green; fibrous variety is chrysotile"
+    },
+    "habit": [
+      "massive",
+      "fibrous"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Antigorite",
+        "url": "https://handbookofmineralogy.org/pdfs/antigorite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Antigorite",
+        "url": "https://webmineral.com/data/Antigorite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "splintery"
+  },
+  {
+    "id": "epidote",
+    "name": "Epidote",
+    "formula": "Ca2(Al,Fe)3(SiO4)3(OH)",
+    "group": "isolated-silicate",
+    "core": true,
+    "hardness": [
+      6,
+      7
+    ],
+    "streak": "white to grey",
+    "luster": [
+      "vitreous"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "perfect"
+    },
+    "colour": [
+      "pistachio green",
+      "yellow-green"
+    ],
+    "density": [
+      3.3,
+      3.5
+    ],
+    "crystalSystem": "monoclinic",
+    "diagnostic": {
+      "other": "pistachio colour; striated prisms"
+    },
+    "habit": [
+      "prismatic",
+      "granular"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Epidote",
+        "url": "https://handbookofmineralogy.org/pdfs/epidote.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Epidote",
+        "url": "https://webmineral.com/data/Epidote.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "uneven"
+  },
+  {
+    "id": "staurolite",
+    "name": "Staurolite",
+    "formula": "Fe2Al9Si4O23(OH)",
+    "group": "isolated-silicate",
+    "core": true,
+    "hardness": [
+      7,
+      7.5
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous",
+      "resinous",
+      "dull"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "poor"
+    },
+    "colour": [
+      "brown",
+      "red-brown",
+      "black-brown"
+    ],
+    "density": [
+      3.65,
+      3.83
+    ],
+    "crystalSystem": "monoclinic",
+    "diagnostic": {
+      "other": "cross-shaped twins"
+    },
+    "habit": [
+      "prismatic",
+      "cruciform twins"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Staurolite",
+        "url": "https://handbookofmineralogy.org/pdfs/staurolite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Staurolite",
+        "url": "https://webmineral.com/data/Staurolite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "uneven"
+  },
+  {
+    "id": "kyanite",
+    "name": "Kyanite",
+    "formula": "Al2SiO5",
+    "group": "isolated-silicate",
+    "core": true,
+    "hardness": [
+      4.5,
+      7
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous",
+      "pearly"
+    ],
+    "cleavage": {
+      "directions": 2,
+      "quality": "perfect"
+    },
+    "colour": [
+      "blue",
+      "white",
+      "grey"
+    ],
+    "density": [
+      3.53,
+      3.67
+    ],
+    "crystalSystem": "triclinic",
+    "diagnostic": {
+      "other": "hardness 4.5 along the blade, 6.5 to 7 across it"
+    },
+    "habit": [
+      "bladed"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Kyanite",
+        "url": "https://handbookofmineralogy.org/pdfs/kyanite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Kyanite",
+        "url": "https://webmineral.com/data/Kyanite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "tourmaline",
+    "name": "Tourmaline (schorl)",
+    "formula": "Na(Fe,Mg)3Al6(BO3)3Si6O18(OH)4",
+    "group": "isolated-silicate",
+    "core": true,
+    "hardness": [
+      7,
+      7.5
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous"
+    ],
+    "cleavage": {
+      "directions": 0,
+      "quality": "none"
+    },
+    "colour": [
+      "black",
+      "brown",
+      "green",
+      "pink"
+    ],
+    "density": [
+      3.0,
+      3.25
+    ],
+    "crystalSystem": "trigonal",
+    "diagnostic": {
+      "other": "striated prisms with rounded triangular cross-section"
+    },
+    "habit": [
+      "striated prisms"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Schorl",
+        "url": "https://handbookofmineralogy.org/pdfs/schorl.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Schorl",
+        "url": "https://webmineral.com/data/Schorl.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "conchoidal"
+  },
+  {
+    "id": "sphalerite",
+    "name": "Sphalerite",
+    "formula": "ZnS",
+    "group": "sulfide",
+    "core": true,
+    "hardness": [
+      3.5,
+      4
+    ],
+    "streak": "pale yellow to brown",
+    "luster": [
+      "resinous",
+      "adamantine"
+    ],
+    "cleavage": {
+      "directions": 6,
+      "quality": "perfect"
+    },
+    "colour": [
+      "brown",
+      "black",
+      "yellow",
+      "red"
+    ],
+    "density": [
+      3.9,
+      4.1
+    ],
+    "crystalSystem": "cubic",
+    "diagnostic": {
+      "other": "streak smells faintly of sulfur; resinous luster"
+    },
+    "habit": [
+      "tetrahedra",
+      "granular",
+      "massive"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Sphalerite",
+        "url": "https://handbookofmineralogy.org/pdfs/sphalerite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Sphalerite",
+        "url": "https://webmineral.com/data/Sphalerite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "galena",
+    "name": "Galena",
+    "formula": "PbS",
+    "group": "sulfide",
+    "core": true,
+    "hardness": [
+      2.5,
+      2.5
+    ],
+    "streak": "lead grey",
+    "luster": [
+      "metallic"
+    ],
+    "cleavage": {
+      "directions": 3,
+      "quality": "perfect",
+      "angles": "cubic, 90°"
+    },
+    "colour": [
+      "lead grey"
+    ],
+    "density": [
+      7.4,
+      7.6
+    ],
+    "crystalSystem": "cubic",
+    "diagnostic": {
+      "other": "very heavy; cubic cleavage"
+    },
+    "habit": [
+      "cubes",
+      "massive"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Galena",
+        "url": "https://handbookofmineralogy.org/pdfs/galena.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Galena",
+        "url": "https://webmineral.com/data/Galena.shtml",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "pyrite",
+    "name": "Pyrite",
+    "formula": "FeS2",
+    "group": "sulfide",
+    "core": true,
+    "hardness": [
+      6,
+      6.5
+    ],
+    "streak": "greenish black",
+    "luster": [
+      "metallic"
+    ],
+    "cleavage": {
+      "directions": 0,
+      "quality": "none"
+    },
+    "colour": [
+      "brass yellow"
+    ],
+    "density": [
+      4.95,
+      5.1
+    ],
+    "crystalSystem": "cubic",
+    "diagnostic": {
+      "other": "cubes with striated faces; harder than a knife"
+    },
+    "habit": [
+      "cubes",
+      "pyritohedra",
+      "massive"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Pyrite",
+        "url": "https://handbookofmineralogy.org/pdfs/pyrite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Pyrite",
+        "url": "https://webmineral.com/data/Pyrite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "uneven"
+  },
+  {
+    "id": "chalcopyrite",
+    "name": "Chalcopyrite",
+    "formula": "CuFeS2",
+    "group": "sulfide",
+    "core": true,
+    "hardness": [
+      3.5,
+      4
+    ],
+    "streak": "greenish black",
+    "luster": [
+      "metallic"
+    ],
+    "cleavage": {
+      "directions": 0,
+      "quality": "none"
+    },
+    "colour": [
+      "brass yellow",
+      "iridescent tarnish"
+    ],
+    "density": [
+      4.1,
+      4.3
+    ],
+    "crystalSystem": "tetragonal",
+    "diagnostic": {
+      "other": "softer and more golden than pyrite; tarnishes iridescent"
+    },
+    "habit": [
+      "massive",
+      "tetrahedra"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Chalcopyrite",
+        "url": "https://handbookofmineralogy.org/pdfs/chalcopyrite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Chalcopyrite",
+        "url": "https://webmineral.com/data/Chalcopyrite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "uneven"
+  },
+  {
+    "id": "magnetite",
+    "name": "Magnetite",
+    "formula": "Fe3O4",
+    "group": "oxide",
+    "core": true,
+    "hardness": [
+      5.5,
+      6.5
+    ],
+    "streak": "black",
+    "luster": [
+      "metallic",
+      "submetallic"
+    ],
+    "cleavage": {
+      "directions": 0,
+      "quality": "none"
+    },
+    "colour": [
+      "black"
+    ],
+    "density": [
+      5.17,
+      5.18
+    ],
+    "crystalSystem": "cubic",
+    "diagnostic": {
+      "magnetic": true
+    },
+    "habit": [
+      "octahedra",
+      "granular",
+      "massive"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Magnetite",
+        "url": "https://handbookofmineralogy.org/pdfs/magnetite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Magnetite",
+        "url": "https://webmineral.com/data/Magnetite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "uneven"
+  },
+  {
+    "id": "hematite",
+    "name": "Hematite",
+    "formula": "Fe2O3",
+    "group": "oxide",
+    "core": true,
+    "hardness": [
+      5,
+      6
+    ],
+    "streak": "red-brown",
+    "luster": [
+      "metallic",
+      "earthy",
+      "dull"
+    ],
+    "cleavage": {
+      "directions": 0,
+      "quality": "none"
+    },
+    "colour": [
+      "steel grey",
+      "red-brown",
+      "black"
+    ],
+    "density": [
+      5.26,
+      5.26
+    ],
+    "crystalSystem": "trigonal",
+    "diagnostic": {
+      "other": "red-brown streak whatever the colour; earthy forms are softer"
+    },
+    "habit": [
+      "massive",
+      "botryoidal",
+      "specular plates",
+      "oolitic"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Hematite",
+        "url": "https://handbookofmineralogy.org/pdfs/hematite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Hematite",
+        "url": "https://webmineral.com/data/Hematite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "uneven"
+  },
+  {
+    "id": "goethite",
+    "name": "Goethite (limonite)",
+    "formula": "FeO(OH)",
+    "group": "hydroxide",
+    "core": true,
+    "hardness": [
+      5,
+      5.5
+    ],
+    "streak": "yellow-brown",
+    "luster": [
+      "adamantine",
+      "dull",
+      "earthy",
+      "silky"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "perfect"
+    },
+    "colour": [
+      "yellow-brown",
+      "dark brown",
+      "black"
+    ],
+    "density": [
+      3.3,
+      4.3
+    ],
+    "crystalSystem": "orthorhombic",
+    "diagnostic": {
+      "other": "yellow-brown streak; earthy masses are called limonite"
+    },
+    "habit": [
+      "botryoidal",
+      "earthy",
+      "fibrous"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Goethite (limonite)",
+        "url": "https://handbookofmineralogy.org/pdfs/goethite (limonite).pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Goethite (limonite)",
+        "url": "https://webmineral.com/data/Goethite (limonite).shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "uneven"
+  },
+  {
+    "id": "graphite",
+    "name": "Graphite",
+    "formula": "C",
+    "group": "native-element",
+    "core": true,
+    "hardness": [
+      1,
+      2
+    ],
+    "streak": "black",
+    "luster": [
+      "metallic",
+      "dull"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "perfect"
+    },
+    "colour": [
+      "black",
+      "steel grey"
+    ],
+    "density": [
+      2.09,
+      2.23
+    ],
+    "crystalSystem": "hexagonal",
+    "diagnostic": {
+      "feel": "greasy",
+      "other": "marks paper"
+    },
+    "habit": [
+      "foliated",
+      "earthy"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Graphite",
+        "url": "https://handbookofmineralogy.org/pdfs/graphite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Graphite",
+        "url": "https://webmineral.com/data/Graphite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "sulfur",
+    "name": "Sulfur",
+    "formula": "S",
+    "group": "native-element",
+    "core": true,
+    "hardness": [
+      1.5,
+      2.5
+    ],
+    "streak": "white to pale yellow",
+    "luster": [
+      "resinous",
+      "greasy"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "poor"
+    },
+    "colour": [
+      "yellow",
+      "yellow-brown"
+    ],
+    "density": [
+      2.07,
+      2.07
+    ],
+    "crystalSystem": "orthorhombic",
+    "diagnostic": {
+      "other": "faint smell; brittle"
+    },
+    "habit": [
+      "crystals",
+      "earthy crusts"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Sulfur",
+        "url": "https://handbookofmineralogy.org/pdfs/sulfur.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Sulfur",
+        "url": "https://webmineral.com/data/Sulfur.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "conchoidal"
+  },
+  {
+    "id": "copper",
+    "name": "Copper",
+    "formula": "Cu",
+    "group": "native-element",
+    "core": true,
+    "hardness": [
+      2.5,
+      3
+    ],
+    "streak": "copper red",
+    "luster": [
+      "metallic"
+    ],
+    "cleavage": {
+      "directions": 0,
+      "quality": "none"
+    },
+    "colour": [
+      "copper red",
+      "brown tarnish",
+      "green tarnish"
+    ],
+    "density": [
+      8.9,
+      8.9
+    ],
+    "crystalSystem": "cubic",
+    "diagnostic": {
+      "other": "malleable; very heavy"
+    },
+    "habit": [
+      "dendritic",
+      "wires",
+      "nuggets"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Copper",
+        "url": "https://handbookofmineralogy.org/pdfs/copper.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Copper",
+        "url": "https://webmineral.com/data/Copper.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "hackly"
+  },
+  {
+    "id": "barite",
+    "name": "Barite",
+    "formula": "BaSO4",
+    "group": "sulfate",
+    "core": true,
+    "hardness": [
+      3,
+      3.5
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous",
+      "pearly"
+    ],
+    "cleavage": {
+      "directions": 3,
+      "quality": "perfect"
+    },
+    "colour": [
+      "white",
+      "colourless",
+      "blue",
+      "yellow"
+    ],
+    "density": [
+      4.5,
+      4.5
+    ],
+    "crystalSystem": "orthorhombic",
+    "diagnostic": {
+      "other": "unusually heavy for a light-coloured non-metallic mineral"
+    },
+    "habit": [
+      "tabular",
+      "rosettes",
+      "massive"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Barite",
+        "url": "https://handbookofmineralogy.org/pdfs/barite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Barite",
+        "url": "https://webmineral.com/data/Barite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "sillimanite",
+    "name": "Sillimanite",
+    "formula": "Al2SiO5",
+    "group": "isolated-silicate",
+    "core": false,
+    "hardness": [
+      6.5,
+      7.5
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous",
+      "silky"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "perfect"
+    },
+    "colour": [
+      "white",
+      "grey",
+      "brown"
+    ],
+    "density": [
+      3.23,
+      3.27
+    ],
+    "crystalSystem": "orthorhombic",
+    "diagnostic": {
+      "other": "fibrous (fibrolite) in high-grade rocks"
+    },
+    "habit": [
+      "fibrous",
+      "prismatic"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Sillimanite",
+        "url": "https://handbookofmineralogy.org/pdfs/sillimanite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Sillimanite",
+        "url": "https://webmineral.com/data/Sillimanite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "uneven"
+  },
+  {
+    "id": "malachite",
+    "name": "Malachite",
+    "formula": "Cu2CO3(OH)2",
+    "group": "carbonate",
+    "core": false,
+    "hardness": [
+      3.5,
+      4
+    ],
+    "streak": "pale green",
+    "luster": [
+      "silky",
+      "dull",
+      "vitreous"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "perfect"
+    },
+    "colour": [
+      "bright green",
+      "banded green"
+    ],
+    "density": [
+      3.6,
+      4.05
+    ],
+    "crystalSystem": "monoclinic",
+    "diagnostic": {
+      "acid": "fizzes"
+    },
+    "habit": [
+      "botryoidal",
+      "banded",
+      "fibrous"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Malachite",
+        "url": "https://handbookofmineralogy.org/pdfs/malachite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Malachite",
+        "url": "https://webmineral.com/data/Malachite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "azurite",
+    "name": "Azurite",
+    "formula": "Cu3(CO3)2(OH)2",
+    "group": "carbonate",
+    "core": false,
+    "hardness": [
+      3.5,
+      4
+    ],
+    "streak": "light blue",
+    "luster": [
+      "vitreous",
+      "dull"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "perfect"
+    },
+    "colour": [
+      "azure blue",
+      "dark blue"
+    ],
+    "density": [
+      3.77,
+      3.78
+    ],
+    "crystalSystem": "monoclinic",
+    "diagnostic": {
+      "acid": "fizzes"
+    },
+    "habit": [
+      "prismatic",
+      "nodular"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Azurite",
+        "url": "https://handbookofmineralogy.org/pdfs/azurite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Azurite",
+        "url": "https://webmineral.com/data/Azurite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "conchoidal"
+  },
+  {
+    "id": "bornite",
+    "name": "Bornite",
+    "formula": "Cu5FeS4",
+    "group": "sulfide",
+    "core": false,
+    "hardness": [
+      3,
+      3
+    ],
+    "streak": "grey-black",
+    "luster": [
+      "metallic"
+    ],
+    "cleavage": {
+      "directions": 0,
+      "quality": "none"
+    },
+    "colour": [
+      "bronze",
+      "purple-blue tarnish"
+    ],
+    "density": [
+      5.06,
+      5.08
+    ],
+    "crystalSystem": "orthorhombic",
+    "diagnostic": {
+      "other": "peacock tarnish"
+    },
+    "habit": [
+      "massive"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Bornite",
+        "url": "https://handbookofmineralogy.org/pdfs/bornite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Bornite",
+        "url": "https://webmineral.com/data/Bornite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "uneven"
+  },
+  {
+    "id": "aragonite",
+    "name": "Aragonite",
+    "formula": "CaCO3",
+    "group": "carbonate",
+    "core": false,
+    "hardness": [
+      3.5,
+      4
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous",
+      "resinous"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "poor"
+    },
+    "colour": [
+      "colourless",
+      "white",
+      "yellow"
+    ],
+    "density": [
+      2.94,
+      2.95
+    ],
+    "crystalSystem": "orthorhombic",
+    "diagnostic": {
+      "acid": "fizzes"
+    },
+    "habit": [
+      "acicular",
+      "pseudo-hexagonal twins",
+      "coralloidal"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Aragonite",
+        "url": "https://handbookofmineralogy.org/pdfs/aragonite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Aragonite",
+        "url": "https://webmineral.com/data/Aragonite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "subconchoidal"
+  },
+  {
+    "id": "siderite",
+    "name": "Siderite",
+    "formula": "FeCO3",
+    "group": "carbonate",
+    "core": false,
+    "hardness": [
+      3.5,
+      4.5
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous",
+      "pearly"
+    ],
+    "cleavage": {
+      "directions": 3,
+      "quality": "perfect"
+    },
+    "colour": [
+      "brown",
+      "yellow-brown",
+      "grey"
+    ],
+    "density": [
+      3.8,
+      3.96
+    ],
+    "crystalSystem": "trigonal",
+    "diagnostic": {
+      "acid": "fizzes-powdered",
+      "other": "turns brown and magnetic when heated"
+    },
+    "habit": [
+      "rhombohedra with curved faces",
+      "massive"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Siderite",
+        "url": "https://handbookofmineralogy.org/pdfs/siderite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Siderite",
+        "url": "https://webmineral.com/data/Siderite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "beryl",
+    "name": "Beryl",
+    "formula": "Be3Al2Si6O18",
+    "group": "chain-silicate",
+    "core": false,
+    "hardness": [
+      7.5,
+      8
+    ],
+    "streak": "white",
+    "luster": [
+      "vitreous"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "poor"
+    },
+    "colour": [
+      "green",
+      "blue-green",
+      "yellow",
+      "pink",
+      "colourless"
+    ],
+    "density": [
+      2.63,
+      2.92
+    ],
+    "crystalSystem": "hexagonal",
+    "diagnostic": {
+      "other": "hexagonal prisms; emerald and aquamarine are varieties"
+    },
+    "habit": [
+      "hexagonal prisms"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Beryl",
+        "url": "https://handbookofmineralogy.org/pdfs/beryl.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Beryl",
+        "url": "https://webmineral.com/data/Beryl.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "conchoidal"
+  },
+  {
+    "id": "zircon",
+    "name": "Zircon",
+    "formula": "ZrSiO4",
+    "group": "isolated-silicate",
+    "core": false,
+    "hardness": [
+      7.5,
+      7.5
+    ],
+    "streak": "white",
+    "luster": [
+      "adamantine",
+      "vitreous"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "poor"
+    },
+    "colour": [
+      "brown",
+      "red-brown",
+      "colourless",
+      "yellow"
+    ],
+    "density": [
+      4.6,
+      4.7
+    ],
+    "crystalSystem": "tetragonal",
+    "diagnostic": {
+      "other": "tiny tetragonal prisms in granite; very durable"
+    },
+    "habit": [
+      "tetragonal prisms with pyramids"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Zircon",
+        "url": "https://handbookofmineralogy.org/pdfs/zircon.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Zircon",
+        "url": "https://webmineral.com/data/Zircon.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "conchoidal"
+  },
+  {
+    "id": "rutile",
+    "name": "Rutile",
+    "formula": "TiO2",
+    "group": "oxide",
+    "core": false,
+    "hardness": [
+      6,
+      6.5
+    ],
+    "streak": "pale brown to yellowish",
+    "luster": [
+      "adamantine",
+      "submetallic"
+    ],
+    "cleavage": {
+      "directions": 2,
+      "quality": "good"
+    },
+    "colour": [
+      "red-brown",
+      "black",
+      "golden"
+    ],
+    "density": [
+      4.23,
+      4.25
+    ],
+    "crystalSystem": "tetragonal",
+    "diagnostic": {
+      "other": "striated prisms; needles in quartz"
+    },
+    "habit": [
+      "striated prisms",
+      "needles"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Rutile",
+        "url": "https://handbookofmineralogy.org/pdfs/rutile.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Rutile",
+        "url": "https://webmineral.com/data/Rutile.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "uneven"
+  },
+  {
+    "id": "cinnabar",
+    "name": "Cinnabar",
+    "formula": "HgS",
+    "group": "sulfide",
+    "core": false,
+    "hardness": [
+      2,
+      2.5
+    ],
+    "streak": "scarlet",
+    "luster": [
+      "adamantine",
+      "dull"
+    ],
+    "cleavage": {
+      "directions": 3,
+      "quality": "perfect"
+    },
+    "colour": [
+      "scarlet",
+      "brownish red"
+    ],
+    "density": [
+      8.1,
+      8.2
+    ],
+    "crystalSystem": "trigonal",
+    "diagnostic": {
+      "other": "very heavy; scarlet streak"
+    },
+    "habit": [
+      "massive",
+      "granular"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Cinnabar",
+        "url": "https://handbookofmineralogy.org/pdfs/cinnabar.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Cinnabar",
+        "url": "https://webmineral.com/data/Cinnabar.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "uneven"
+  },
+  {
+    "id": "molybdenite",
+    "name": "Molybdenite",
+    "formula": "MoS2",
+    "group": "sulfide",
+    "core": false,
+    "hardness": [
+      1,
+      1.5
+    ],
+    "streak": "blue-grey",
+    "luster": [
+      "metallic"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "perfect"
+    },
+    "colour": [
+      "lead grey",
+      "blue-grey"
+    ],
+    "density": [
+      4.62,
+      5.06
+    ],
+    "crystalSystem": "hexagonal",
+    "diagnostic": {
+      "feel": "greasy",
+      "other": "like graphite but bluer, heavier, and with a greenish streak on porcelain"
+    },
+    "habit": [
+      "foliated",
+      "scales"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Molybdenite",
+        "url": "https://handbookofmineralogy.org/pdfs/molybdenite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Molybdenite",
+        "url": "https://webmineral.com/data/Molybdenite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ]
+  },
+  {
+    "id": "stibnite",
+    "name": "Stibnite",
+    "formula": "Sb2S3",
+    "group": "sulfide",
+    "core": false,
+    "hardness": [
+      2,
+      2
+    ],
+    "streak": "lead grey",
+    "luster": [
+      "metallic"
+    ],
+    "cleavage": {
+      "directions": 1,
+      "quality": "perfect"
+    },
+    "colour": [
+      "lead grey",
+      "black tarnish"
+    ],
+    "density": [
+      4.63,
+      4.66
+    ],
+    "crystalSystem": "orthorhombic",
+    "diagnostic": {
+      "other": "bladed crystals that bend"
+    },
+    "habit": [
+      "bladed",
+      "radiating"
+    ],
+    "specimens": [],
+    "sources": [
+      {
+        "title": "Handbook of Mineralogy: Stibnite",
+        "url": "https://handbookofmineralogy.org/pdfs/stibnite.pdf",
+        "accessed": "2026-11-08"
+      },
+      {
+        "title": "webmineral: Stibnite",
+        "url": "https://webmineral.com/data/Stibnite.shtml",
+        "accessed": "2026-11-08"
+      }
+    ],
+    "fracture": "subconchoidal"
+  }
+]
