@@ -1,0 +1,504 @@
+{
+  "sources": [
+    {
+      "id": "crc-crust",
+      "title": "CRC Handbook of Chemistry and Physics, abundance of elements in Earth's crust, as tabulated on Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Abundance_of_elements_in_Earth%27s_crust",
+      "accessed": "2026-11-08"
+    },
+    {
+      "id": "goldschmidt",
+      "title": "Goldschmidt classification (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Goldschmidt_classification",
+      "accessed": "2026-11-08"
+    }
+  ],
+  "elements": {
+    "H": {
+      "crustPpm": 1400,
+      "crustSource": "crc-crust",
+      "goldschmidt": "atmophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "He": {
+      "goldschmidt": "atmophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Li": {
+      "crustPpm": 20,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Be": {
+      "crustPpm": 2.8,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "B": {
+      "crustPpm": 10,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "C": {
+      "crustPpm": 200,
+      "crustSource": "crc-crust",
+      "goldschmidt": "atmophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "N": {
+      "crustPpm": 19,
+      "crustSource": "crc-crust",
+      "goldschmidt": "atmophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "O": {
+      "crustPpm": 461000,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "F": {
+      "crustPpm": 585,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Ne": {
+      "goldschmidt": "atmophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Na": {
+      "crustPpm": 23600,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Mg": {
+      "crustPpm": 23300,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Al": {
+      "crustPpm": 82300,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Si": {
+      "crustPpm": 282000,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "P": {
+      "crustPpm": 1050,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "S": {
+      "crustPpm": 350,
+      "crustSource": "crc-crust",
+      "goldschmidt": "chalcophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Cl": {
+      "crustPpm": 145,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Ar": {
+      "goldschmidt": "atmophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "K": {
+      "crustPpm": 20900,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Ca": {
+      "crustPpm": 41500,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Sc": {
+      "crustPpm": 22,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Ti": {
+      "crustPpm": 5650,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "V": {
+      "crustPpm": 120,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Cr": {
+      "crustPpm": 102,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Mn": {
+      "crustPpm": 950,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Fe": {
+      "crustPpm": 56300,
+      "crustSource": "crc-crust",
+      "goldschmidt": "siderophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Co": {
+      "crustPpm": 25,
+      "crustSource": "crc-crust",
+      "goldschmidt": "siderophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Ni": {
+      "crustPpm": 84,
+      "crustSource": "crc-crust",
+      "goldschmidt": "siderophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Cu": {
+      "crustPpm": 60,
+      "crustSource": "crc-crust",
+      "goldschmidt": "chalcophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Zn": {
+      "crustPpm": 70,
+      "crustSource": "crc-crust",
+      "goldschmidt": "chalcophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Ga": {
+      "crustPpm": 19,
+      "crustSource": "crc-crust",
+      "goldschmidt": "chalcophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Ge": {
+      "crustPpm": 1.5,
+      "crustSource": "crc-crust",
+      "goldschmidt": "siderophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "As": {
+      "crustPpm": 1.8,
+      "crustSource": "crc-crust",
+      "goldschmidt": "chalcophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Se": {
+      "crustPpm": 0.05,
+      "crustSource": "crc-crust",
+      "goldschmidt": "chalcophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Br": {
+      "crustPpm": 2.4,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Kr": {
+      "goldschmidt": "atmophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Rb": {
+      "crustPpm": 90,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Sr": {
+      "crustPpm": 370,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Y": {
+      "crustPpm": 33,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Zr": {
+      "crustPpm": 165,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Nb": {
+      "crustPpm": 20,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Mo": {
+      "crustPpm": 1.2,
+      "crustSource": "crc-crust",
+      "goldschmidt": "siderophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Ru": {
+      "crustPpm": 0.001,
+      "crustSource": "crc-crust",
+      "goldschmidt": "siderophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Rh": {
+      "crustPpm": 0.001,
+      "crustSource": "crc-crust",
+      "goldschmidt": "siderophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Pd": {
+      "crustPpm": 0.015,
+      "crustSource": "crc-crust",
+      "goldschmidt": "siderophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Ag": {
+      "crustPpm": 0.075,
+      "crustSource": "crc-crust",
+      "goldschmidt": "chalcophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Cd": {
+      "crustPpm": 0.15,
+      "crustSource": "crc-crust",
+      "goldschmidt": "chalcophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "In": {
+      "crustPpm": 0.25,
+      "crustSource": "crc-crust",
+      "goldschmidt": "chalcophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Sn": {
+      "crustPpm": 2.3,
+      "crustSource": "crc-crust",
+      "goldschmidt": "chalcophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Sb": {
+      "crustPpm": 0.2,
+      "crustSource": "crc-crust",
+      "goldschmidt": "chalcophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Te": {
+      "crustPpm": 0.001,
+      "crustSource": "crc-crust",
+      "goldschmidt": "chalcophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "I": {
+      "crustPpm": 0.45,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Xe": {
+      "goldschmidt": "atmophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Cs": {
+      "crustPpm": 3.0,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Ba": {
+      "crustPpm": 425,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "La": {
+      "crustPpm": 39,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Ce": {
+      "crustPpm": 66.5,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Pr": {
+      "crustPpm": 9.2,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Nd": {
+      "crustPpm": 41.5,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Sm": {
+      "crustPpm": 7.05,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Eu": {
+      "crustPpm": 2.0,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Gd": {
+      "crustPpm": 6.2,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Tb": {
+      "crustPpm": 1.2,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Dy": {
+      "crustPpm": 5.2,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Ho": {
+      "crustPpm": 1.3,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Er": {
+      "crustPpm": 3.5,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Tm": {
+      "crustPpm": 0.52,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Yb": {
+      "crustPpm": 3.2,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Lu": {
+      "crustPpm": 0.8,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Hf": {
+      "crustPpm": 3.0,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Ta": {
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "W": {
+      "crustPpm": 1.25,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Re": {
+      "crustPpm": 0.0007,
+      "crustSource": "crc-crust",
+      "goldschmidt": "siderophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Os": {
+      "crustPpm": 0.0015,
+      "crustSource": "crc-crust",
+      "goldschmidt": "siderophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Ir": {
+      "crustPpm": 0.001,
+      "crustSource": "crc-crust",
+      "goldschmidt": "siderophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Pt": {
+      "crustPpm": 0.005,
+      "crustSource": "crc-crust",
+      "goldschmidt": "siderophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Au": {
+      "crustPpm": 0.004,
+      "crustSource": "crc-crust",
+      "goldschmidt": "siderophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Hg": {
+      "crustPpm": 0.085,
+      "crustSource": "crc-crust",
+      "goldschmidt": "chalcophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Tl": {
+      "crustPpm": 0.85,
+      "crustSource": "crc-crust",
+      "goldschmidt": "chalcophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Pb": {
+      "crustPpm": 14,
+      "crustSource": "crc-crust",
+      "goldschmidt": "chalcophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Bi": {
+      "crustPpm": 0.0085,
+      "crustSource": "crc-crust",
+      "goldschmidt": "chalcophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "Th": {
+      "crustPpm": 9.6,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    },
+    "U": {
+      "crustPpm": 2.7,
+      "crustSource": "crc-crust",
+      "goldschmidt": "lithophile",
+      "goldschmidtSource": "goldschmidt"
+    }
+  }
+}
