@@ -20,12 +20,21 @@ export default defineConfig({
   // Relative, so the same build serves from / or from /strata/.
   base: './',
   plugins: [react(), tailwindcss(), firstPaint],
+  // Where Cesium finds its runtime assets, copied to public/cesium/ by the package.json prepare script.
+  define: { CESIUM_BASE_URL: JSON.stringify('./cesium/') },
   resolve: {
     alias: {
       '@': path.resolve(import.meta.dirname, './src'),
     },
   },
   build: {
+    // Each candidate engine in a chunk of its own, so the build output states its size.
+    rollupOptions: {
+      output: {
+        manualChunks: (id: string) => (id.includes('node_modules/cesium/') ? 'cesium' : id.includes('node_modules/maplibre-gl/') ? 'maplibre' : undefined),
+      },
+    },
+    chunkSizeWarningLimit: 5000,
     modulePreload: {
       // A lazy chunk that imports from the entry chunk would preload the entry again (WebKit warns).
       resolveDependencies: (_, deps) => deps.filter((dep) => !/^assets\/index-[^/]+\.js$/.test(dep)),

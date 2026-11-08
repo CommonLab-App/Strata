@@ -13,6 +13,8 @@ export const routes: RouteObject[] = [
     hydrateFallbackElement: <p className="p-6 text-muted-foreground">Loading…</p>,
     children: [
       { index: true, element: <Home /> },
+      // Phase-1 engine bench; becomes the Explore pane once the engine is chosen.
+      { path: 'bench/:engine', lazy: async () => ({ Component: (await import('@/app/bench/BenchPage')).BenchPage }) },
       { path: 'settings', element: <Settings /> },
       { path: 'about', element: <About /> },
       { path: '*', element: <NotFound /> },
