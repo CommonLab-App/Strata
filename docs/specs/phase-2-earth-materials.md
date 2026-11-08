@@ -38,7 +38,10 @@ from the stored entry after a reload.
    `scripts/import_sample.py recording.mp4 --id <sample-id>` into `public/media/samples/<id>/` as a silent H.264 MP4
    (at most 1280 wide, 30 fps, faststart), a poster frame and a `meta.json`. The script drops every tag in the
    source (phone recordings carry GPS, device and time fields) and refuses the file if any survive. `public/media/`
-   is not in git and is copied to the server with the build. The library entry holds
+   is not in git and is copied to the server with the build. A provenance tag, by default the year and
+   `stratalab.app` (`--tag` to change it), is drawn small into the bottom-right of every frame and kept as the
+   file's one `comment` tag: a mark of origin, not a copyright notice, so it survives screenshots and copies alike.
+   The library entry holds
    `turntable: { file, poster, seconds }`. The card shows the video; the lab tray shows the poster and, when an
    unknown is selected, the video, with horizontal drag scrubbing its time so dragging turns the sample. Where a
    sample has no video yet, a CC-licensed Wikimedia Commons photo stands in, with author, licence and source URL in
