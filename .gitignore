@@ -12,3 +12,5 @@ coverage/
 public/media/
 # Drop raw turntable recordings here for scripts/import_sample.py. Never committed.
 incoming/
+# Raw recordings from the phone. Never committed.
+_import_do_not_track/
