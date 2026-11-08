@@ -17,6 +17,8 @@ export const MINERAL_TOOLS: Tool[] = ['hand-lens', 'streak', 'scratch:fingernail
 export interface Observations {
   colour?: string[]
   luster?: string[]
+  /** How it feels in the hand: soapy, greasy, or 'none'. From the hand-lens step, as a bench does for talc. */
+  feel?: string
   streak?: string
   /** The bracket the scratch tests have closed so far: harder than min, not harder than max. */
   hardnessMin?: number
@@ -70,6 +72,7 @@ export function runTest(record: UnknownRecord, mineral: Mineral, tool: Tool, see
   if (tool === 'hand-lens') {
     seen.colour = mineral.colour
     seen.luster = mineral.luster
+    seen.feel = mineral.diagnostic.feel ?? 'none'
   } else if (tool === 'streak') {
     seen.streak = mineral.streak
   } else if (tool.startsWith('scratch:')) {
@@ -101,6 +104,7 @@ const norm = (s: string) => s.trim().toLowerCase()
 export function consistent(seen: Observations, mineral: Mineral): boolean {
   if (seen.streak !== undefined && norm(seen.streak) !== norm(mineral.streak)) return false
   if (seen.luster && !seen.luster.some((l) => mineral.luster.includes(l as Mineral['luster'][number]))) return false
+  if (seen.feel !== undefined && (mineral.diagnostic.feel ?? 'none') !== seen.feel) return false
   if (seen.hardnessMin !== undefined && mineral.hardness[1] <= seen.hardnessMin) return false
   if (seen.hardnessMax !== undefined && mineral.hardness[0] > seen.hardnessMax) return false
   if (seen.cleavageDirections !== undefined && mineral.cleavage.directions !== seen.cleavageDirections) return false

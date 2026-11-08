@@ -1,24 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 import { useAppState } from '@/app/AppState'
 import { getSnapshot } from '@/app/data/snapshot'
+import { settled } from '@/app/settled'
 import { DataFooter } from '@/app/week/DataFooter'
 import { Button } from '@/components/ui/button'
 import type { Snapshot } from '@/data/adapters/types'
 import { QUAKE_RANGES, usgsQuakes, type Quake, type QuakeRange } from '@/data/adapters/usgs-quakes'
 import { quakePoint } from '@/map/points'
 import type { MapEngine } from '@/map/types'
-
-/**
- * Resolves once the fonts have loaded and a frame has actually been painted (two animation frames: the second runs
- * only after the first frame is on screen), then yields once more so the paint is committed before any long task.
- */
-const settled = () =>
-  document.fonts.ready.then(
-    () =>
-      new Promise<void>((resolve) => {
-        requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(resolve, 0)))
-      }),
-  )
 
 const RANGE_LABEL: Record<QuakeRange, string> = { hour: 'hour', day: 'day', week: '7 days', month: '30 days' }
 const FEED_PAGE = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php'

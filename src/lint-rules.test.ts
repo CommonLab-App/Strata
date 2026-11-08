@@ -40,6 +40,13 @@ describe('architecture lint rules', () => {
     expect(await ruleIds(FETCH, 'src/data/adapters/usgs-quakes.ts')).toEqual([])
   })
 
+  it('keeps Three.js inside scene/ folders', async () => {
+    expect(await ruleIds('import * as THREE from "three"\nexport const t = THREE\n', 'src/app/inspector/Card.tsx')).toEqual(['no-restricted-imports'])
+    expect(await ruleIds('import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"\nexport const t = OrbitControls\n', 'src/app/inspector/Card.tsx')).toEqual(['no-restricted-imports'])
+    expect(await ruleIds('import * as THREE from "three"\nexport const t = THREE\n', 'src/app/inspector/scene/CrystalScene.tsx')).toEqual([])
+    expect(await ruleIds('import * as THREE from "three"\nexport const t = THREE\n', 'src/engine/x.ts')).toEqual(['no-restricted-imports'])
+  })
+
   it('rejects the DOM in pure folders', async () => {
     expect(await ruleIds('export const t = document.title\n', 'src/data/adapters/x.ts')).toEqual(['no-restricted-globals'])
     expect(await ruleIds('export const t = window.name\n', 'src/engine/x.ts')).toEqual(['no-restricted-globals'])

@@ -37,6 +37,8 @@ describe('runTest', () => {
   it('reads streak, cleavage, acid and magnet off the entry', () => {
     const r = ['streak', 'cleavage', 'acid', 'magnet'].reduce((rec, t) => runTest(rec, byId('magnetite'), t as never), emptyRecord())
     expect(r.seen).toEqual({ streak: 'black', cleavageDirections: 0, cleavageQuality: 'none', acid: 'none', magnetic: true })
+    expect(runTest(emptyRecord(), byId('talc'), 'hand-lens').seen.feel).toBe('soapy')
+    expect(runTest(emptyRecord(), byId('quartz'), 'hand-lens').seen.feel).toBe('none')
   })
   it('gives a density inside the range, the same for the same seed and position', () => {
     const a = runTest(emptyRecord(), byId('galena'), 'density', 7, 3).seen.density!

@@ -7,6 +7,8 @@ import type { Question } from '@/app/selfcheck/questions'
 import { STATUS_LABEL } from '@/app/status'
 import { hasPage, WEEKS, weekPath, type Week } from '@/app/weeks'
 import * as week01 from '@/app/weeks/week01'
+import * as week02 from '@/app/weeks/week02'
+import * as week03 from '@/app/weeks/week03'
 import { useWeekProgress, type WeekProgress } from './weekProgress'
 
 export interface LabProps {
@@ -22,7 +24,7 @@ export interface WeekContent {
   questions: Question[]
 }
 
-const CONTENT: Record<number, WeekContent> = { 1: week01 }
+const CONTENT: Record<number, WeekContent> = { 1: week01, 2: week02, 3: week03 }
 
 const TABS = [
   { tab: 'learn', label: 'Learn' },

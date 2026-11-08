@@ -12,6 +12,7 @@ const NO_NETWORK = 'Network only in src/data/adapters/: every fetch goes through
 const NO_DOM = 'data/ and engine/ must not touch the DOM.'
 const NO_CLOCK = 'engine/ must not read the clock: take time as an argument.'
 const NO_RANDOM = 'engine/ is deterministic: use the seeded RNG passed in.'
+const NO_EAGER_THREE = 'Three.js is imported only inside a scene/ folder, which the app loads lazily. A static import anywhere else puts about 700 kB into an eagerly loaded chunk.'
 
 const NETWORK_NAMES = ['fetch', 'XMLHttpRequest', 'WebSocket', 'EventSource', 'WebTransport', 'RTCPeerConnection']
 const NETWORK_GLOBALS = NETWORK_NAMES.map((name) => ({ name, message: NO_NETWORK }))
@@ -78,6 +79,29 @@ export default defineConfig(
       'no-restricted-imports': ['error', NO_UI_IMPORTS],
       'no-restricted-globals': ['error', ...DOM_GLOBALS],
     },
+  },
+
+  // Three.js stays in the lazily loaded scene/ folders.
+  {
+    files: ['src/**/*.{ts,tsx}'],
+    ignores: ['src/**/scene/**'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [{ name: 'three', message: NO_EAGER_THREE }],
+          patterns: [
+            { group: ['three/*'], message: NO_EAGER_THREE },
+            { regex: '/scene/', allowTypeImports: true, message: 'Import scene/ modules with import type, or load them with React.lazy(() => import(...)).' },
+          ],
+        },
+      ],
+    },
+  },
+  // The pure folders' import rule must win over the block above for their files, so it is restated here, after it.
+  {
+    files: PURE,
+    rules: { 'no-restricted-imports': ['error', { ...NO_UI_IMPORTS, paths: [...NO_UI_IMPORTS.paths, { name: 'three', message: 'No Three.js in data/ or engine/.' }] }] },
   },
 
   // Engines are deterministic: no Math.random, no clock.

@@ -17,6 +17,8 @@ export const routes: RouteObject[] = [
       // A week's Learn, Explore, Lab and Check panes. In the main chunk while there is one week: a lazy chunk would cost a
       // round trip before the pane's text can paint. The globe engine is a chunk of its own that the Explore pane loads itself.
       { path: 'week/:week/:tab?', element: <WeekPage /> },
+      // The Mineral Inspector: the library and its key, or one mineral's card. Its crystal viewer loads Three.js lazily.
+      { path: 'explore/minerals/:id?', lazy: async () => ({ Component: (await import('@/app/inspector/MineralInspector')).MineralsPage }) },
       { path: 'settings', element: <Settings /> },
       { path: 'about', element: <About /> },
       { path: '*', element: <NotFound /> },

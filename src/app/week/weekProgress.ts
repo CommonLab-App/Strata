@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { z } from 'zod'
 import { useAppState } from '@/app/AppState'
 import { loadEntry, saveEntry, weekEntry, type KeyValueStore } from '@/app/progress/storage'
+import { idLabStateSchema } from '@/engine/idlab/state'
 import type { Week } from '@/app/weeks'
 
 export const WORKSHEET_FIELDS = ['hypothesis', 'variable', 'prediction', 'observation', 'conclusion'] as const
@@ -21,6 +22,8 @@ export const weekProgressSchema = z.object({
   status: z.enum(['not-started', 'in-progress', 'completed']),
   worksheet: worksheetSchema,
   labDone: z.boolean(),
+  /** Weeks with an identification lab keep its tray here; week 1's guided form uses `worksheet` and `labDone`. */
+  lab: idLabStateSchema.optional(),
   selfCheckBest: z.number().int().nullable(),
   selfCheckAttempts: z.number().int(),
 })
@@ -39,8 +42,9 @@ export const worksheetComplete = (worksheet: Worksheet) => WORKSHEET_FIELDS.ever
 
 /** The record with its status worked out: completed once the lab is finished and the self-check taken; in progress once anything is written. */
 export function withStatus(progress: Omit<WeekProgress, 'status'>): WeekProgress {
-  const begun = progress.labDone || progress.selfCheckAttempts > 0 || WORKSHEET_FIELDS.some((field) => progress.worksheet[field] !== '')
-  const status = progress.labDone && progress.selfCheckBest !== null ? 'completed' : begun ? 'in-progress' : 'not-started'
+  const labFinished = progress.labDone || progress.lab?.checked === true
+  const begun = labFinished || progress.lab !== undefined || progress.selfCheckAttempts > 0 || WORKSHEET_FIELDS.some((field) => progress.worksheet[field] !== '')
+  const status = labFinished && progress.selfCheckBest !== null ? 'completed' : begun ? 'in-progress' : 'not-started'
   return { ...progress, status }
 }
 

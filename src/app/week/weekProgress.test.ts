@@ -12,6 +12,9 @@ describe('week progress', () => {
     expect(withStatus({ ...EMPTY_PROGRESS, selfCheckAttempts: 1, selfCheckBest: 7 }).status).toBe('in-progress')
     expect(withStatus({ ...EMPTY_PROGRESS, labDone: true }).status).toBe('in-progress')
     expect(withStatus({ ...EMPTY_PROGRESS, labDone: true, selfCheckAttempts: 1, selfCheckBest: 0 }).status).toBe('completed')
+    const lab = { seed: 1, records: [], answers: [], checked: false, best: null, attempts: 0 }
+    expect(withStatus({ ...EMPTY_PROGRESS, lab }).status).toBe('in-progress')
+    expect(withStatus({ ...EMPTY_PROGRESS, lab: { ...lab, checked: true, best: 7, attempts: 1 }, selfCheckAttempts: 1, selfCheckBest: 5 }).status).toBe('completed')
   })
 
   it('round-trips through the store under the week entry, where Home peeks at it', () => {
