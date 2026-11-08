@@ -22,7 +22,7 @@ same cached snapshot the learner saw, score a worksheet, and reproduce the score
    animation. Used by the Volcano Lab here and by the half-life, stream, Darcy and slope sims later. Plot is pure
    SVG, no chart library.
 2. **Plate boundaries layer**: `data/tectonics/pb2002-boundaries.json`, the Bird (2003) PB2002 boundaries as
-   GeoJSON (public domain data as redistributed by the open `tectonicplates` repository, MIT), fetched once by
+   GeoJSON (Bird 2003 data as redistributed by the open `tectonicplates` repository, ODC-BY 1.0), fetched once by
    `scripts/fetch-static.mjs` with provenance in `data/tectonics/index.json`. A `LineLayer` added to the map engine
    (`addLines`, `removeLayer`), coloured by boundary kind (ridge, trench, transform).
 3. **GNSS velocities adapter** `gnss-velocities`: present-day station velocities (east, north, up, mm/yr, with
@@ -65,12 +65,12 @@ same cached snapshot the learner saw, score a worksheet, and reproduce the score
 
 | Source | Decision | Notes |
 | --- | --- | --- |
-| Plate boundaries | Bundle PB2002 GeoJSON, fetched by script with provenance | Checked 2026-11-08: raw file reachable; Bird 2003 data, repository MIT. |
-| GNSS velocities | Prefer a published velocity-field release file over the token API, bundled by script with provenance; the adapter reads the bundled file, so a live source can replace it later | The plan's open question stands: confirm the release's terms allow redistribution in an open app, and record the answer in docs/DATA-SOURCES.md before fetching. If no file allows it, the adapter fetches live with a token kept out of the repo and the lab uses a smaller bundled teaching subset. |
+| Plate boundaries | Bundle PB2002 GeoJSON, fetched by script with provenance | Checked 2026-11-08: raw files reachable; Bird 2003 data, repository ODC-BY 1.0. Kind comes from the steps file (docs/DATA-SOURCES.md). |
+| GNSS velocities | Owner's decision pending | Checked 2026-11-08: release files need a login; GeoServer 403. Either download one release with an account and bundle a teaching subset if its terms allow, or keep the adapter live behind a token kept out of the repo (docs/DATA-SOURCES.md). |
 | GPlates Web Service | Live, open HTTP GET, no key | Checked 2026-11-08: `reconstruct_points` answers in GeoJSON. Snapshots cached per request. |
 | USGS earthquakes | Phase 1 adapter; event detail via the FDSN event service for focal mechanisms | Checked 2026-11-08: `fdsnws/event/1/query` answers GeoJSON. |
 | IRIS FDSN dataselect | Script-fetched teaching events, bundled | Checked 2026-11-08: service reachable. Choose events with clear P and S at three stations 200 to 1500 km away. |
-| Smithsonian GVP | Verify | The web-services page returned 403 to a plain client on 2026-11-08. Try the WFS endpoints with a browser user agent, or the published data downloads; if neither is open to a static app, bundle a table by script with provenance and record the terms. |
+| Smithsonian GVP | Bundle by script with provenance | Checked 2026-11-08: the WFS answers a plain client but sends no CORS header, so the browser cannot call it. Terms page was down that day; read it before the bundle ships (docs/DATA-SOURCES.md). |
 
 Every bundled file carries the request URL, the fetch date and the licence in an `index.json` beside it, as
 `data/cif/index.json` does. Snapshot sizes: velocities about 150 kB, a GPlates coastline response under 1 MB,

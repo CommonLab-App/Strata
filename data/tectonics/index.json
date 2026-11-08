@@ -1,0 +1,21 @@
+{
+  "pb2002-boundaries": {
+    "title": "PB2002 plate boundaries (Bird, 2003)",
+    "citation": "Bird, P. (2003) An updated digital model of plate boundaries. Geochemistry, Geophysics, Geosystems 4(3), 1027.",
+    "url": "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_steps.json",
+    "licence": "ODC-BY 1.0",
+    "licenceUrl": "https://raw.githubusercontent.com/fraxen/tectonicplates/master/LICENSE.md",
+    "fetched": "2026-11-08",
+    "steps": 5824,
+    "features": 1579,
+    "kinds": {
+      "OSR": "divergent",
+      "CRB": "divergent",
+      "OTF": "transform",
+      "CTF": "transform",
+      "SUB": "convergent",
+      "OCB": "convergent",
+      "CCB": "convergent"
+    }
+  }
+}

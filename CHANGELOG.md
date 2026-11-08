@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Phase 3 groundwork, review-independent: great-circle helpers, relative plate motion with the lab tolerances, travel-time interpolation and a least-squares epicentre, all pure and unit-tested under `src/engine/`; PB2002 plate boundaries bundled with provenance by `scripts/fetch-static.mjs`; source probes for GVP, EarthScope and PB2002 recorded in docs/DATA-SOURCES.md.
+
 Phase-2 gate met on the build machine 2026-11-08: all five identification labs save, score and reproduce their tray after a reload (docs/specs/phase-2-earth-materials.md); Lighthouse on the mineral card still to run on a GPU machine.
 
 Phase-1 gate met 2026-11-08: build, tests and the acceptance flow pass; Lighthouse mobile performance 92 on the Explore pane (docs/DECISIONS.md).
@@ -21,4 +23,4 @@ Phase-1 gate met 2026-11-08: build, tests and the acceptance flow pass; Lighthou
 - Rock library (47 rocks, 30 core) with Bowen's series and metamorphic facies as data figures; Rock Inspector with the three classification grids; rock identification engine and bench; weeks 4, 6 and 7 with Learn text, labs and self-checks.
 - StrataLab brand: tokens, Zilla Slab and JetBrains Mono, mark and lockups, icons, the labelled block diagram on About.
 - Elements of the crust: the periodic table shaded by crustal abundance with Goldschmidt classes and links to the minerals that hold each element; Maps and data page of public services.
-- `scripts/import_sample.py`: turntable video import with ffmpeg (H.264, 720p, silent, all metadata stripped and verified, a provenance tag drawn into the frame and kept as the comment tag) for the phase-2 sample library.
+- `scripts/import_sample.py`: turntable video import with ffmpeg (H.264, 1080p, CRF 22, silent, all metadata stripped and verified, a provenance tag drawn into the frame and kept as the comment tag) for the phase-2 sample library.
