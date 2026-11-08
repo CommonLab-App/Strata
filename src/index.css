@@ -163,3 +163,10 @@
   transition-duration: 0.01ms !important;
   scroll-behavior: auto !important;
 }
+
+/* MapLibre's attribution link is grey on grey without an underline (Lighthouse link-in-text-block); make it a plain link. */
+.maplibregl-ctrl-attrib a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

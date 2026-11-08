@@ -51,7 +51,7 @@ either by changing the raster source.
 
 `npm run bench` now runs Lighthouse mobile on the week-1 Explore pane alone, for the phase-1 gate.
 
-## 2026-11-08 Phase-1 Lighthouse gate: measured at 72 here, device number still needed
+## 2026-11-08 Phase-1 Lighthouse gate: met, 92 on a desktop with a GPU
 
 The spec asks for Lighthouse mobile performance of 80 or more on the Explore pane. `npm run bench` runs it twice in one
 headless Chromium against the production build; this server has no GPU, so WebGL runs on SwiftShader (software).
@@ -75,7 +75,21 @@ What the runs say:
   shader work runs on the CPU and is counted at Lighthouse's four-times slowdown; on a phone the GPU driver does it.
 - The cold run adds the browser's own GPU-process start to everything; Lighthouse on a desktop pays far less for it.
 
-So the gate is not shown met here, and cannot be from this server. To measure it: `npm run build && npm run preview`,
-open `/#/week/1/explore` in desktop Chrome, run Lighthouse from DevTools with the mobile preset, or `CHROME_PATH=<a
-Chrome with a GPU> npm run bench`. If a device run still falls short, the next levers are MapLibre's chunk (1.06 MB,
-288 kB gzipped; no smaller build exists) and the main chunk (481 kB; React, the router, zod and the UI library).
+The gate cannot be shown from this server. Panda ran Lighthouse 13.5 from desktop Chrome 157 (Windows, GPU) against
+`npm run preview` on 2026-11-08, mobile preset, default simulated throttling:
+
+| Measure | Result |
+| --- | --- |
+| Performance | 92 |
+| First contentful paint | 1.7 s |
+| Largest contentful paint (the caption paragraph) | 2.0 s |
+| Total blocking time | 291 ms |
+| Cumulative layout shift | 0.007 |
+| Speed index | 1.7 s |
+| Accessibility, best practices, SEO | 96, 100, 91 |
+
+The blocking time's largest task is MapLibre's start-up at 289 ms, a third of its software-rendered figure here. The
+phase-1 gate is met. The two non-performance findings, MapLibre's attribution link lacking contrast and an underline,
+and the preview server answering `/robots.txt` with the app shell, were fixed the same day (a CSS rule, a
+`public/robots.txt`). The measurement to repeat after any change to the Explore pane: `npm run build && npm run
+preview`, then Lighthouse from DevTools on `/#/week/1/explore`, or `CHROME_PATH=<a Chrome with a GPU> npm run bench`.

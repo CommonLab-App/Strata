@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+Phase-1 gate met 2026-11-08: build, tests and the acceptance flow pass; Lighthouse mobile performance 92 on the Explore pane (docs/DECISIONS.md).
+
 - Scaffold copied from Valence: Vite, React, hash router, Tailwind, shadcn, first-paint theme script, architecture lint rules (network only in `src/data/adapters/`).
 - Versioned localStorage progress with per-week entries and data-snapshot entries; Home lists the eighteen weeks with their status; Settings and About pages.
 - Data adapter interface and `getSnapshot` cache (TTL per adapter, fetched_at and source_url on every snapshot).
@@ -10,3 +12,4 @@
 - Week shell with Learn, Explore, Lab and Self-check sections and a progress chip; data footer under live layers.
 - Week 1: Learn page with linked reading; Explore with the quake globe, time-range toggle, quake details and a largest-quakes list; sand-and-water lab worksheet; ten-question self-check with best score kept.
 - `npm run bench`: Lighthouse mobile on the Explore pane, cold and warm, with a no-WebGL diagnostic switch.
+- `public/robots.txt`; MapLibre's attribution link styled as a link.
