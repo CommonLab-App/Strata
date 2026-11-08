@@ -4,7 +4,7 @@
     scripts/import_sample.py recording.mp4 --id quartz
     scripts/import_sample.py IMG_0231.MOV --id granite --start 2 --end 62
 
-Writes public/media/samples/<id>/turntable.mp4 (H.264, yuv420p, 30 fps, at most 1280 wide, silent, faststart,
+Writes public/media/samples/<id>/turntable.mp4 (H.264, yuv420p, 30 fps, at most 1920 wide, silent, faststart,
 at most 60 s), poster.jpg (a frame from one second in), and meta.json. Every tag in the source is dropped: phone
 recordings carry GPS and device fields, and the project stores no location data. The output is probed afterwards and
 the import fails if any tag survived. public/media/ is not in git: copy it to the server with the build.
@@ -26,10 +26,10 @@ import sys
 from datetime import date
 from pathlib import Path
 
-MAX_WIDTH = 1280
+MAX_WIDTH = 1920  # keep 1080p recordings at full size: detail matters more than bytes here
 MAX_SECONDS = 60
 FPS = 30
-CRF = 28  # about 10 to 12 MB per minute at 720p on crystal texture; 24 doubled that for no visible gain, 30 softened the sparkle
+CRF = 22  # visually transparent for this material; the host has the space, learners load one video at a time
 DEFAULT_TAG = f"{date.today().year} stratalab.app"
 ID_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 
