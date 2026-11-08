@@ -103,7 +103,7 @@ CIFs from the Crystallography Open Database (open data, CC0). `scripts/fetch-cif
 `https://www.crystallography.net/cod/<id>.cif`, stores it, and appends `{ mineral, cod, url, fetched }` to
 `data/cif/index.json`. Twenty to start: quartz, orthoclase, albite, anorthite, muscovite, biotite (annite), hornblende
 (a tremolite or pargasite entry), diopside, forsterite, almandine, calcite, dolomite, gypsum, halite, fluorite,
-apatite, corundum, talk, pyrite, galena, magnetite, hematite, graphite. Each inspector card links the COD page.
+apatite, corundum, talc, pyrite, galena, magnetite, hematite, graphite. Each inspector card links the COD page.
 
 `src/engine/crystal/`: `parseCif(text)` (cell lengths and angles, space-group symmetry operations as `_symmetry_equiv_pos_as_xyz`
 or `_space_group_symop_operation_xyz`, atom sites with fractional coordinates and element), `buildCell(cif, { repeat })`
