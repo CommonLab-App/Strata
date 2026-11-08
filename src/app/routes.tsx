@@ -13,8 +13,8 @@ export const routes: RouteObject[] = [
     hydrateFallbackElement: <p className="p-6 text-muted-foreground">Loading…</p>,
     children: [
       { index: true, element: <Home /> },
-      // Phase-1 engine bench; becomes the Explore pane once the engine is chosen.
-      { path: 'bench/:engine', lazy: async () => ({ Component: (await import('@/app/bench/BenchPage')).BenchPage }) },
+      // A week's Learn, Explore, Lab and Check panes, one lazy chunk per week; the globe engine is a further chunk the Explore pane loads itself.
+      { path: 'week/:week/:tab?', lazy: async () => ({ Component: (await import('@/app/week/WeekPage')).WeekPage }) },
       { path: 'settings', element: <Settings /> },
       { path: 'about', element: <About /> },
       { path: '*', element: <NotFound /> },

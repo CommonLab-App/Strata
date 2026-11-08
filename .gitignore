@@ -8,5 +8,3 @@ coverage/
 .DS_Store
 .claude/settings.local.json
 .claude/worktrees/
-# Copied from node_modules/cesium by scripts/copy-cesium.mjs.
-public/cesium/

@@ -24,7 +24,7 @@ export interface Pick {
 }
 
 /**
- * The whole of what the app asks of a globe engine. Phase 1 builds this twice (cesium/, maplibre/) and keeps one.
+ * The whole of what the app asks of the globe engine (maplibre/), so that the rest of the app never imports it directly.
  * The engine owns its DOM inside the container it was given and frees everything on destroy.
  */
 export interface MapEngine {
@@ -32,7 +32,7 @@ export interface MapEngine {
   removeLayer(id: string): void
   /** Shows only the points whose time falls in the range; null shows all. */
   setTime(range: TimeRange | null): void
-  /** Moves the camera. `zoom` is a web-map zoom level (0 shows the whole globe); the Cesium engine converts it to a height. */
+  /** Moves the camera. `zoom` is a web-map zoom level (0 shows the whole globe). */
   flyTo(view: { lat: number; lon: number; zoom: number; durationMs?: number }): Promise<void>
   /** Called with the picked point on a click, or null for a click on nothing. Returns a function that stops the calls. */
   onPick(callback: (pick: Pick | null) => void): () => void
@@ -40,8 +40,5 @@ export interface MapEngine {
 }
 
 export type CreateEngine = (container: HTMLElement) => Promise<MapEngine>
-
-/** A web-map zoom level as a camera height above the ellipsoid in metres, close enough for flyTo. */
-export const zoomToHeight = (zoom: number) => 40_000_000 / 2 ** zoom
 
 export const inRange = (point: MapPoint, range: TimeRange | null) => range === null || (point.time >= range.start && point.time <= range.end)

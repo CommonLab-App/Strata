@@ -6,11 +6,11 @@ Dated records of choices that are not obvious from the code.
 
 Progress, worksheets, self-check scores and cached data snapshots live in localStorage, as in Valence. No accounts, no database, no server job. The build is fully static.
 
-## 2026-11-08 Globe engine: CesiumJS vs MapLibre GL (decision pending)
+## 2026-11-08 Globe engine: MapLibre GL (chosen over CesiumJS)
 
-Both candidates implement the same five-call wrapper in `src/map/types.ts` and draw the same layer: the past day's
-USGS quakes plus 10,000 synthetic points. Bench page: `/#/bench/cesium` and `/#/bench/maplibre`, `?points=10000`
-to add the scatter and fly the camera. Measured by `npm run bench` against the production build.
+Decided 2026-11-08: MapLibre GL. Both candidates implemented the same five-call wrapper in `src/map/types.ts` and
+drew the same layer: the past day's USGS quakes plus 10,000 synthetic points, on a bench page since removed with the
+Cesium prototype (last present at commit d803ba3). Measured against the production build.
 
 ### Numbers
 
@@ -49,7 +49,4 @@ box. Phase 4's topographic work needs hillshade and profiles, not 3D terrain; Ma
 terrain, and profiles are computed from elevation tiles in code anyway. Phase 6's Moon and Mars DEM swap works on
 either by changing the raster source.
 
-### After the pick
-
-Delete the loser's folder under `src/map/`, its dependency, its lint ignore and (for Cesium) `scripts/copy-cesium.mjs`,
-the `prepare` script, `public/cesium/` and the `CESIUM_BASE_URL` define. Keep `scripts/bench.mjs` for the Lighthouse gate.
+`npm run bench` now runs Lighthouse mobile on the week-1 Explore pane alone, for the phase-1 gate.

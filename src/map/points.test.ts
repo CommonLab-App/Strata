@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { syntheticPoints, quakePoint } from './points'
-import { inRange, zoomToHeight } from './types'
+import { inRange } from './types'
 
 describe('map points', () => {
   it('makes the same synthetic scatter for the same seed, within bounds', () => {
@@ -29,8 +29,4 @@ describe('map points', () => {
     expect(inRange(p, { start: 51, end: 100 })).toBe(false)
   })
 
-  it('maps zoom 0 to a height that shows the whole globe', () => {
-    expect(zoomToHeight(0)).toBe(40_000_000)
-    expect(zoomToHeight(2)).toBe(10_000_000)
-  })
 })
