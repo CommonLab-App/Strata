@@ -70,6 +70,17 @@ export function About() {
               GeoJSON under ODC-BY 1.0; StrataLab merges steps of one boundary class into lines.
             </li>
             <li>
+              Volcanoes: the Volcanoes of the World database (v. 5.4.0, 7 Aug 2026) of the{' '}
+              <a className={link} href="https://volcano.si.edu/" rel="noreferrer">
+                Global Volcanism Program, Smithsonian Institution
+              </a>
+              , compiled by Venzke, E.,{' '}
+              <a className={link} href="https://doi.org/10.5479/si.GVP.VOTW5-2026.5.4" rel="noreferrer">
+                doi 10.5479/si.GVP.VOTW5-2026.5.4
+              </a>
+              ; StrataLab keeps positions, types and dated eruptions and links each volcano's own page.
+            </li>
+            <li>
               Crystal structures: CIF files from the{' '}
               <a className={link} href="https://www.crystallography.net/cod/" rel="noreferrer">
                 Crystallography Open Database

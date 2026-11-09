@@ -7,10 +7,13 @@
       "https://webservices.volcano.si.edu/geoserver/GVP-VOTW/ows?service=WFS&version=2.0.0&request=GetFeature&outputFormat=json&typeName=GVP-VOTW:Smithsonian_VOTW_Holocene_Eruptions"
     ],
     "pageUrl": "https://volcano.si.edu/volcano.cfm?vn=",
-    "licence": "pending: see docs/DATA-SOURCES.md",
+    "licence": "Work of United States government employees (Smithsonian Terms of Use for GVP Content, Intellectual Property Rights in Content, item 2); used for education, non-commercial",
     "fetched": "2026-11-09",
     "volcanoes": 1214,
     "eruptions": 11043,
-    "eruption": "[start year, VEI max or null, confirmed]"
+    "eruption": "[start year, VEI max or null, confirmed]",
+    "licenceUrl": "https://volcano.si.edu/gvp_cite.cfm",
+    "citation": "Global Volcanism Program, 2026. [Database] Volcanoes of the World (v. 5.4.0; 7 Aug 2026). Distributed by Smithsonian Institution, compiled by Venzke, E. https://doi.org/10.5479/si.GVP.VOTW5-2026.5.4",
+    "attribution": "Global Volcanism Program, Smithsonian Institution, https://volcano.si.edu/"
   }
 }
