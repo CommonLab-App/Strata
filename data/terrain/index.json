@@ -1,0 +1,59 @@
+{
+  "source": "Terrain Tiles on AWS Open Data (Terrarium encoding), zoom 11",
+  "url": "https://registry.opendata.aws/terrain-tiles/",
+  "licence": "Per the dataset’s source list; see docs/DATA-SOURCES.md",
+  "fetched": "2026-11-09",
+  "areas": [
+    {
+      "id": "area-1",
+      "tile": {
+        "z": 11,
+        "x": 328,
+        "y": 726
+      },
+      "bounds": {
+        "west": -122.34375,
+        "east": -122.16796875,
+        "north": 46.316584181822186,
+        "south": 46.195042108660154
+      },
+      "min": 532,
+      "max": 2466,
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/11/328/726.png"
+    },
+    {
+      "id": "area-2",
+      "tile": {
+        "z": 11,
+        "x": 582,
+        "y": 769
+      },
+      "bounds": {
+        "west": -77.6953125,
+        "east": -77.51953125,
+        "north": 40.847060356071225,
+        "south": 40.713955826286046
+      },
+      "min": 204,
+      "max": 735,
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/11/582/769.png"
+    },
+    {
+      "id": "area-3",
+      "tile": {
+        "z": 11,
+        "x": 331,
+        "y": 721
+      },
+      "bounds": {
+        "west": -121.81640625,
+        "east": -121.640625,
+        "north": 46.92025531537452,
+        "south": 46.8000594467873
+      },
+      "min": 1186,
+      "max": 4380,
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/11/331/721.png"
+    }
+  ]
+}

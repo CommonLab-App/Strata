@@ -88,6 +88,13 @@ export function About() {
               (CC BY 4.0).
             </li>
             <li>
+              Elevation: three areas from the{' '}
+              <a className={link} href="https://registry.opendata.aws/terrain-tiles/" rel="noreferrer">
+                Terrain Tiles on AWS Open Data
+              </a>{' '}
+              (Tilezen; built from the USGS 3DEP, SRTM and other public sources), decoded to height grids.
+            </li>
+            <li>
               Crystal structures: CIF files from the{' '}
               <a className={link} href="https://www.crystallography.net/cod/" rel="noreferrer">
                 Crystallography Open Database

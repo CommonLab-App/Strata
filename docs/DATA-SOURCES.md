@@ -42,3 +42,11 @@ public build; `data/seismograms/index.json` lists the networks used.
 `macrostrat.org/api/v2/defs/intervals?timescale=international%20{eras,periods}` answers openly, no key, and states
 `"license": "CC-BY 4.0"` in the response. Bundled by `scripts/fetch-timescale.mjs` to `data/timescale/` with the
 licence in its index; credited on About. The columns and map endpoints (phase 4, weeks 6 and 12) are still to probe.
+
+## Terrain Tiles on AWS Open Data (2026-11-09)
+
+`s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png` answers openly with no key but sends no
+`Access-Control-Allow-Origin` header, so a browser can draw a tile but not read its heights; the three week-12 areas
+are therefore decoded by `scripts/fetch-terrain.mjs` and bundled under `data/terrain/`. The dataset is a Tilezen
+compilation of public sources (USGS 3DEP, SRTM, GMTED2010, ETOPO1 and others); its registry page lists them and asks
+for attribution, which About gives. Confirm the attribution wording against the registry before the public build.

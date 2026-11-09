@@ -1,0 +1,12 @@
+[
+  { "id": "w12q01", "prompt": "Closely spaced contour lines mean the ground is:", "options": ["Flat", "Steep", "Wet", "High"], "answer": 1, "explanation": "Each line is a fixed rise, so more lines in less distance is a steeper slope." },
+  { "id": "w12q02", "prompt": "Where contours cross a stream they:", "options": ["Run straight across", "Bend to point upstream", "Bend to point downstream", "Stop"], "answer": 1, "explanation": "The valley floor is lowest, so a contour must go upstream to stay at its elevation." },
+  { "id": "w12q03", "prompt": "Two contour lines can cross each other:", "options": ["Where streams meet", "Never, except at an overhanging cliff", "On flat ground", "At hilltops"], "answer": 1, "explanation": "A point cannot have two elevations." },
+  { "id": "w12q04", "prompt": "A closed contour with small inward tick marks shows:", "options": ["A hilltop", "A closed depression", "A lake", "A quarry road"], "answer": 1, "explanation": "Hachures mark ground that slopes inward to a low." },
+  { "id": "w12q05", "prompt": "A point rises 200 m over 4 km. Its gradient is:", "options": ["5 m per km", "50 m per km", "500 m per km", "800 m per km"], "answer": 1, "explanation": "200 divided by 4." },
+  { "id": "w12q06", "prompt": "The strike of a bed is:", "options": ["The angle it slopes", "The direction of a horizontal line on the bed", "Its thickness", "Its age"], "answer": 1, "explanation": "Strike is a compass bearing; dip is the angle." },
+  { "id": "w12q07", "prompt": "Dip is measured:", "options": ["Along the strike", "At right angles to the strike", "Toward north", "Toward the nearest stream"], "answer": 1, "explanation": "The steepest slope on a plane is perpendicular to its horizontal line." },
+  { "id": "w12q08", "prompt": "By the right-hand rule, a bed with strike 000 (north) dips toward:", "options": ["North", "West", "East", "South"], "answer": 2, "explanation": "Facing along strike, the bed dips to your right." },
+  { "id": "w12q09", "prompt": "To fix the attitude of a planar bed you need at least:", "options": ["One outcrop", "Two outcrops", "Three outcrops not in a line", "A borehole"], "answer": 2, "explanation": "Three points define a plane." },
+  { "id": "w12q10", "prompt": "A topographic profile is:", "options": ["A list of rock units", "The ground surface drawn from the side along a line", "A map of soils", "A satellite image"], "answer": 1, "explanation": "Elevation plotted against distance along the chosen line." }
+]

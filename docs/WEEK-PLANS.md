@@ -191,7 +191,12 @@ initial daughter; 5 % age tolerance; a second mark per sample for the period. No
 
 ## Week 12: Topographic and geologic maps
 
-**Status:** planned (phase 4).
+**Status:** built 2026-11-09. `src/app/weeks/week12/`, `src/app/topo/TopoView.tsx`, `src/engine/topo/`, `data/terrain/`
+(three zoom-11 Terrarium tiles decoded to 128 by 128 grids by `scripts/fetch-terrain.mjs`), `data/self-checks/week-12.json`.
+Assumed: the three areas (given by latitude and longitude only in the script); 50 m contours in the lab; the
+three-point problem on a synthetic plane with the outcrops as coordinates, not on the map; tolerances one interval,
+10 % gradient, 10° strike, 5° dip. Not built: the Macrostrat geologic-map overlay (the tiles need a vector-tile
+parser; the point query is too slow for an area) and a scored cross-section sketch.
 
 - Learn: contours, scale, profiles, strike and dip, cross-sections. Sources: USGS topographic map symbols; OpenGeology
   chapter 9 for structure.
