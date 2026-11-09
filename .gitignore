@@ -14,3 +14,5 @@ public/media/
 incoming/
 # Raw recordings from the phone. Never committed.
 _import_do_not_track/
+# Output of scripts/build-basemap.sh; uploaded to the host, not kept in git.
+basemap/

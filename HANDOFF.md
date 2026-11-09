@@ -31,7 +31,7 @@ Phase 2 is built as of 2026-11-08 (docs/specs/phase-2-earth-materials.md, Status
 geologists; expect changes to specs 2 and 3 and to the library data from that review. Meanwhile the review-independent
 phase-3 groundwork is in: pure engine maths with tests (`src/engine/{geo,tectonics,seismic}`), PB2002 boundaries
 bundled (`scripts/fetch-static.mjs`), and source findings in docs/DATA-SOURCES.md. The owner downloaded the GAGE NAM14
-velocity release; it is normalized into `data/gnss/` by `scripts/import-velocities.mjs` (CC BY 4.0 under the GAGE Data License, attribution text in its index). GVP tables are bundled too (`scripts/fetch-gvp.mjs`), terms page to read when volcano.si.edu is back. Also in:
+velocity release; it is normalized into `data/gnss/` by `scripts/import-velocities.mjs` (CC BY 4.0 under the GAGE Data License, attribution text in its index). GVP tables are bundled too (`scripts/fetch-gvp.mjs`), terms page to read when volcano.si.edu is back. Basemap decided 2026-11-08: self-hosted Protomaps extract, built by `scripts/build-basemap.sh` and named by `VITE_BASEMAP_URL`; the owner builds and uploads the folder before launch. Also in:
 map line layers and arrows, `src/app/sim/` Sliders and Plot, GPlates adapters, nearest-boundary checker rule. Waiting
 on the review: the volcano model's empirical relation, the travel-time table source, the teaching earthquakes for the
 seismograms, the reconstruction model beyond 250 Ma, and all week content and labs.

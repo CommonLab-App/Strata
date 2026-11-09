@@ -1,23 +1,48 @@
-import { config, Map as MapLibreMap, type FilterSpecification, type MapMouseEvent } from 'maplibre-gl'
+import { layers, namedFlavor } from '@protomaps/basemaps'
+import { addProtocol, config, Map as MapLibreMap, type FilterSpecification, type MapMouseEvent, type StyleSpecification } from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url'
+import { Protocol } from 'pmtiles'
+import type { CreateEngine, LineLayer, MapEngine, Pick, PointLayer, TimeRange } from '../types'
 
 // MapLibre looks for its worker beside its own module, which the bundle does not provide: Vite serves the file as an asset instead.
 config.WORKER_URL = workerUrl
-import type { CreateEngine, LineLayer, MapEngine, Pick, PointLayer, TimeRange } from '../types'
+addProtocol('pmtiles', new Protocol().tile)
+
+/** Folder with world.pmtiles, fonts/ and sprites/ from scripts/build-basemap.sh (docs/DECISIONS.md). Unset: OSM raster tiles, development only. */
+const BASEMAP = (import.meta.env.VITE_BASEMAP_URL as string | undefined)?.replace(/\/$/, '')
+
+// ponytail: the flavour follows the theme at map start only; a theme change mid-session keeps the old basemap until reload.
+const style = (): StyleSpecification => {
+  if (!BASEMAP) {
+    return {
+      version: 8,
+      sources: { osm: { type: 'raster', tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'], tileSize: 256, attribution: '© OpenStreetMap contributors' } },
+      layers: [{ id: 'osm', type: 'raster', source: 'osm' }],
+    }
+  }
+  const flavour = document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+  return {
+    version: 8,
+    glyphs: `${BASEMAP}/fonts/{fontstack}/{range}.pbf`,
+    sprite: `${BASEMAP}/sprites/v4/${flavour}`,
+    sources: {
+      protomaps: {
+        type: 'vector',
+        url: `pmtiles://${BASEMAP}/world.pmtiles`,
+        attribution: '<a href="https://protomaps.com">Protomaps</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      },
+    },
+    layers: layers('protomaps', namedFlavor(flavour), { lang: 'en' }),
+  }
+}
 
 const filterFor = (range: TimeRange | null): FilterSpecification | null => (range === null ? null : ['all', ['>=', ['get', 't'], range.start], ['<=', ['get', 't'], range.end]])
 
 export const createEngine: CreateEngine = async (container) => {
   const map = new MapLibreMap({
     container,
-    style: {
-      version: 8,
-      sources: {
-        osm: { type: 'raster', tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'], tileSize: 256, attribution: '© OpenStreetMap contributors' },
-      },
-      layers: [{ id: 'osm', type: 'raster', source: 'osm' }],
-    },
+    style: style(),
     center: [0, 20],
     zoom: 1.2,
     // At most two device pixels per CSS pixel: a 3x phone draws under half the fragments for a globe that looks the same.

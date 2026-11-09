@@ -93,3 +93,15 @@ phase-1 gate is met. The two non-performance findings, MapLibre's attribution li
 and the preview server answering `/robots.txt` with the app shell, were fixed the same day (a CSS rule, a
 `public/robots.txt`). The measurement to repeat after any change to the Explore pane: `npm run build && npm run
 preview`, then Lighthouse from DevTools on `/#/week/1/explore`, or `CHROME_PATH=<a Chrome with a GPU> npm run bench`.
+
+## 2026-11-08 Basemap: self-hosted Protomaps extract
+
+The owner chose self-hosting over a hosted tile provider; the host has the space and bandwidth, and nothing in the app
+then calls a third party except the data APIs. The basemap is one PMTiles file, a zoom 0 to 8 extract of the Protomaps
+daily planet build, next to the Protomaps glyphs and sprites, in a folder named by `VITE_BASEMAP_URL` at build time.
+PMTiles is read with HTTP range requests, so the reseller host needs no tile server. The style is the Protomaps
+`light` or `dark` flavour from `@protomaps/basemaps`, matched to the app theme at map start. With the variable unset
+the engine falls back to OpenStreetMap raster tiles for development. Rejected: Natural Earth raster (too coarse past
+zoom 5 for regional views), a hosted vector provider (a key in the build, a third party in every page view).
+Zoom 8 keeps the file in the hundreds of megabytes; pass a higher maximum to `scripts/build-basemap.sh` if regional
+views need it.

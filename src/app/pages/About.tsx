@@ -77,11 +77,15 @@ export function About() {
               , placed in the public domain by their contributors; each structure links its COD entry.
             </li>
             <li>
-              Basemap:{' '}
+              Basemap: map data ©{' '}
               <a className={link} href="https://www.openstreetmap.org/copyright" rel="noreferrer">
                 OpenStreetMap contributors
-              </a>
-              , drawn with{' '}
+              </a>{' '}
+              (ODbL), tiles built by{' '}
+              <a className={link} href="https://protomaps.com/" rel="noreferrer">
+                Protomaps
+              </a>{' '}
+              and served from StrataLab's own host, drawn with{' '}
               <a className={link} href="https://maplibre.org/" rel="noreferrer">
                 MapLibre GL JS
               </a>

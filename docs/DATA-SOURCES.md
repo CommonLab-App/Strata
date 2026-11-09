@@ -9,8 +9,12 @@ Checked 2026-11-07. `https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/a
 ## OpenStreetMap raster tiles
 
 Used 2026-11-08 as the basemap in both engine prototypes (`https://tile.openstreetmap.org/{z}/{x}/{y}.png`). The OSM
-tile usage policy asks that heavy or public use go elsewhere; before launch, switch the basemap to a permitted or
-self-hosted source (Natural Earth raster, or a vector style on a hosted provider) and keep the attribution.
+tile usage policy asks that heavy or public use go elsewhere. Decided 2026-11-08: self-host (docs/DECISIONS.md). The
+production basemap is a zoom-limited extract of a Protomaps daily planet build (`build.protomaps.com/YYYYMMDD.pmtiles`,
+139 GB, extracted by range requests with the `pmtiles` CLI; OpenStreetMap data under ODbL 1.0, attribution to
+OpenStreetMap contributors and Protomaps) plus the Noto Sans glyphs and sprites from `protomaps/basemaps-assets`
+(OFL), all served from the app's own host; `scripts/build-basemap.sh` builds the folder. The OSM raster tiles remain
+the fallback when `VITE_BASEMAP_URL` is unset, for development only.
 
 ## Phase-3 probes (2026-11-08)
 
