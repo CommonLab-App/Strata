@@ -1,0 +1,18 @@
+{
+  "source": "Macrostrat, international geologic time scale intervals",
+  "url": "https://macrostrat.org/api/v2/defs/intervals",
+  "licence": "CC BY 4.0 (as stated in the API response)",
+  "fetched": "2026-11-09",
+  "scales": {
+    "eras": {
+      "url": "https://macrostrat.org/api/v2/defs/intervals?timescale=international%20eras",
+      "licence": "CC-BY 4.0",
+      "count": 10
+    },
+    "periods": {
+      "url": "https://macrostrat.org/api/v2/defs/intervals?timescale=international%20periods",
+      "licence": "CC-BY 4.0",
+      "count": 22
+    }
+  }
+}

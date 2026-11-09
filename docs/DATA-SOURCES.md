@@ -36,3 +36,9 @@ USGS catalogue is read from `earthquake.usgs.gov/fdsnws/event/1/query` (public d
 Data License (CC BY 4.0) covers data from EarthScope-operated facilities, which includes the global network stations
 (IU, IC, CU); contributed networks (JP, TW, PS, GE, NU here) carry their own terms, to confirm per network before the
 public build; `data/seismograms/index.json` lists the networks used.
+
+## Macrostrat time scale (2026-11-09)
+
+`macrostrat.org/api/v2/defs/intervals?timescale=international%20{eras,periods}` answers openly, no key, and states
+`"license": "CC-BY 4.0"` in the response. Bundled by `scripts/fetch-timescale.mjs` to `data/timescale/` with the
+licence in its index; credited on About. The columns and map endpoints (phase 4, weeks 6 and 12) are still to probe.

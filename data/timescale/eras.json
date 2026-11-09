@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Cenozoic",
+    "abbrev": "Cz",
+    "startMa": 66,
+    "endMa": 0,
+    "colour": "#F2F91D"
+  },
+  {
+    "name": "Mesozoic",
+    "abbrev": "Mz",
+    "startMa": 251.902,
+    "endMa": 66,
+    "colour": "#67C5CA"
+  },
+  {
+    "name": "Paleozoic",
+    "abbrev": "Pz",
+    "startMa": 538.8,
+    "endMa": 251.902,
+    "colour": "#99C08D"
+  },
+  {
+    "name": "Neoproterozoic",
+    "abbrev": "Nptz",
+    "startMa": 1000,
+    "endMa": 538.8,
+    "colour": "#FF9BCD"
+  },
+  {
+    "name": "Mesoproterozoic",
+    "abbrev": "Mptz",
+    "startMa": 1600,
+    "endMa": 1000,
+    "colour": "#FF7EBF"
+  },
+  {
+    "name": "Paleoproterozoic",
+    "abbrev": "Pptz",
+    "startMa": 2500,
+    "endMa": 1600,
+    "colour": "#E665A6"
+  },
+  {
+    "name": "Neoarchean",
+    "abbrev": "Narc",
+    "startMa": 2800,
+    "endMa": 2500,
+    "colour": "#FF5CAD"
+  },
+  {
+    "name": "Mesoarchean",
+    "abbrev": "Marc",
+    "startMa": 3200,
+    "endMa": 2800,
+    "colour": "#E62E8A"
+  },
+  {
+    "name": "Paleoarchean",
+    "abbrev": "Parc",
+    "startMa": 3600,
+    "endMa": 3200,
+    "colour": "#CC297A"
+  },
+  {
+    "name": "Eoarchean",
+    "abbrev": "Earc",
+    "startMa": 4031,
+    "endMa": 3600,
+    "colour": "#B2246B"
+  }
+]

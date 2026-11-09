@@ -81,6 +81,13 @@ export function About() {
               ; StrataLab keeps positions, types and dated eruptions and links each volcano's own page.
             </li>
             <li>
+              Geologic time scale: international eras and periods from{' '}
+              <a className={link} href="https://macrostrat.org/" rel="noreferrer">
+                Macrostrat
+              </a>{' '}
+              (CC BY 4.0).
+            </li>
+            <li>
               Crystal structures: CIF files from the{' '}
               <a className={link} href="https://www.crystallography.net/cod/" rel="noreferrer">
                 Crystallography Open Database

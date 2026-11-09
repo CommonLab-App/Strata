@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Week 11 built: the dating engine (`src/engine/dating/`: decay, ratio to age, seeded samples, time-scale lookup), the half-life Explore with the decay curve and the international time scale (bundled from Macrostrat, CC BY 4.0, credited on About), the three-sample dating lab with periods, Learn text and ten questions.
 - Week 10 built: the cross-section engine (`src/engine/strata/`: beds, dikes, faults, tilting, erosion applied per column; seeded generator; order scoring that names the rule the first wrong pair breaks), the Time Builder sandbox on Explore, the ordering lab with unconformity types, Learn text and ten questions.
 - Week 9 built: the quake globe coloured by depth (shared `QuakeGlobe`, week 1 uses it plain), seismograms of four bundled teaching earthquakes (`scripts/fetch-waveforms.mjs`, EarthScope FDSN GeoCSV at 1 Hz) with P and S picks to drag, the two-layer travel-time table, the epicentre lab (distances from the picks, circles on the globe, tap to place, scored by `scoreEpicentre`), Learn text and ten questions. Map points take a colour each and a tap reports where it landed.
 - Week 5 built: the volcano model (`src/engine/volcano/`, a teaching fit for viscosity, style and VEI rules, tested on the end members), the Volcano Lab (sliders, viscosity plot, three prompts scored by the model), Learn text, ten questions, and an eruption-history chart on each volcano's card in Explore.

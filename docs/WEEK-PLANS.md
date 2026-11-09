@@ -172,7 +172,10 @@ panel (week 8 has it).
 
 ## Week 11: Absolute dating and the time scale
 
-**Status:** planned (phase 4).
+**Status:** built 2026-11-09. `src/app/weeks/week11/`, `src/engine/dating/`, `data/timescale/` (Macrostrat, CC BY 4.0,
+`scripts/fetch-timescale.mjs`), `data/self-checks/week-11.json`. Assumed: four systems (C-14, K-Ar, U-Pb, Rb-Sr)
+with textbook half-lives and ranges; three samples per sheet from C-14, K-Ar and U-Pb with the system given, no
+initial daughter; 5 % age tolerance; a second mark per sample for the period. Not built: a choose-the-system step.
 
 - Learn: decay, half-life, which isotopes date what, how the time scale was pinned. Sources: OpenGeology chapter 7.
 - Explore: Time Builder with a half-life slider: parent and daughter counts animate as a plot (shared `Plot`);

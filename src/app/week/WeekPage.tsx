@@ -16,6 +16,7 @@ import * as week07 from '@/app/weeks/week07'
 import * as week08 from '@/app/weeks/week08'
 import * as week09 from '@/app/weeks/week09'
 import * as week10 from '@/app/weeks/week10'
+import * as week11 from '@/app/weeks/week11'
 import { PLANS, scaffoldWeek } from '@/app/weeks/scaffold'
 import { useWeekProgress, type WeekProgress } from './weekProgress'
 
@@ -44,6 +45,7 @@ const CONTENT: Record<number, WeekContent> = {
   8: week08,
   9: week09,
   10: week10,
+  11: week11,
 }
 
 const TABS = [
