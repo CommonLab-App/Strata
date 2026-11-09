@@ -433,7 +433,7 @@
     "id": "pumice",
     "name": "Pumice",
     "class": "igneous",
-    "core": false,
+    "core": true,
     "texture": {
       "grain": "vesicular"
     },
@@ -1604,7 +1604,7 @@
     "id": "quartzite",
     "name": "Quartzite",
     "class": "metamorphic",
-    "core": false,
+    "core": true,
     "texture": {
       "foliated": false,
       "grade": "medium",
