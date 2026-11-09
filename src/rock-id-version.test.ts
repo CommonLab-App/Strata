@@ -7,7 +7,9 @@ import { drawRocks } from './engine/idlab/rocks'
 // stored-entry version, so a pool change bumps the version.
 describe('the rock identification labs', () => {
   it('pin pool and draw to the stored-entry version of weeks 4, 6 and 7', () => {
-    expect({ v: [WEEKS[3].version, WEEKS[5].version, WEEKS[6].version], pools: [9, 7, 5],
+    expect({ v: [WEEKS[3].version, WEEKS[5].version, WEEKS[6].version], pools: [IGNEOUS_ID.pool.length, SEDIMENTARY_ID.pool.length, METAMORPHIC_ID.pool.length], draws: [drawRocks(IGNEOUS_ID, 1), drawRocks(SEDIMENTARY_ID, 1), drawRocks(METAMORPHIC_ID, 1)] }).toEqual({
+      v: [2, 2, 2],
+      pools: [9, 7, 5],
       draws: [["obsidian", "granite", "basalt", "porphyry", "scoria", "diorite"], ["fossiliferous-limestone", "conglomerate", "limestone", "coal", "oolitic-limestone", "sandstone"], ["marble", "slate", "gneiss", "quartzite"]],
     })
   })

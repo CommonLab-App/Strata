@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Offline mode (phase 6, docs/specs/phase-6-polish.md): a service worker built from `src/sw/worker.js` by a Vite plugin precaches the shell, every bundle asset and the fonts under a cache named by their hash, serves same-origin requests cache first and navigations network first, and caches sample media as it is watched; data APIs and tiles are untouched (the localStorage snapshots are the offline data). A web app manifest with the maskable icons makes the app installable. `scripts/deploy.sh` rsyncs a build to the host named in `.env`.
 - Core sets match the hand samples the owner holds: 14 minerals and 21 rocks are `core`; the rest are marked extra. The identification labs draw from the core sets (week 2 without gypsum) with smaller trays, so weeks 2, 3, 4, 6 and 7 move to stored-entry version 2 and stored trays from version 1 are regraded. Limestone is labelled micrite.
 - Week 18 built: the globe can wear another planet's raster tiles (NASA Trek mosaics of the Moon and Mars), the crater-counting engine (`src/engine/craters/`), the Moon's craters of 20 km and above bundled from the Robbins (2018) database (`scripts/fetch-craters.mjs`), the planet Explore, the two-box crater-counting lab, Learn text and ten questions. Every week now has content; the Draft list is empty.
 - Week 17 built: the structure engine (`src/engine/structure/`: lines, poles, great circles, equal-angle projection, plane intersection, seeded tasks), an SVG stereonet, the two-plane Explore with the fold axis, the read-the-net lab, Learn text and ten questions.
