@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- docs/WEEK-PLANS.md: an implementation plan for every week, 1 to 18, in spec shape (Learn sources, Explore, lab fields, checker rule, data and licence, questions for the reviewers).
 - `npm run smoke`: opens the globe panes of the production build in headless Chromium, fails on console errors, saves screenshots. Found and fixed: boundary segments crossing the date line drew straight across the globe (lines are now split there in the engine); bundled-data footers show the fetch date, not a midnight time; the globe takes an opening view, and week 8 opens on its network.
 - Week 8 Explore, the Plate Motion Explorer: GNSS velocity arrows and the PB2002 boundaries on the globe, tap two stations for the motion between them (speed, direction, nearest boundary to the midpoint, a third arrow). Week 5 Explore: Holocene volcanoes beside the boundaries, a tap opens the GVP record. Both load their bundles with the pane; point layers take a colour; the globe start-up moved into `useGlobe`, shared with week 1. A test keeps every Explore caption free of risk words.
 - Every week now has a page: weeks 5 and 8 to 18 are scaffolds built from a plan outline (`src/app/weeks/scaffold.tsx`) with an orientation paragraph, reading, the planned explorer and lab, and the data sources; Home marks them Draft and their self-check tab says it is not written yet.
