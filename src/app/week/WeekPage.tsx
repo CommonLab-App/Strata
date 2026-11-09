@@ -12,6 +12,7 @@ import * as week03 from '@/app/weeks/week03'
 import * as week04 from '@/app/weeks/week04'
 import * as week06 from '@/app/weeks/week06'
 import * as week07 from '@/app/weeks/week07'
+import { PLANS, scaffoldWeek } from '@/app/weeks/scaffold'
 import { useWeekProgress, type WeekProgress } from './weekProgress'
 
 export interface LabProps {
@@ -27,7 +28,15 @@ export interface WeekContent {
   questions: Question[]
 }
 
-const CONTENT: Record<number, WeekContent> = { 1: week01, 2: week02, 3: week03, 4: week04, 6: week06, 7: week07 }
+const CONTENT: Record<number, WeekContent> = {
+  ...Object.fromEntries(Object.entries(PLANS).map(([week, plan]) => [week, scaffoldWeek(plan)])),
+  1: week01,
+  2: week02,
+  3: week03,
+  4: week04,
+  6: week06,
+  7: week07,
+}
 
 const TABS = [
   { tab: 'learn', label: 'Learn' },
@@ -76,7 +85,14 @@ function WeekShell({ week, tab, content }: { week: Week; tab: Tab; content: Week
       {tab === 'learn' && <Learn />}
       {tab === 'explore' && <Explore />}
       {tab === 'lab' && <Lab progress={progress} update={update} />}
-      {tab === 'check' && <SelfCheck questions={questions} progress={progress} update={update} />}
+      {tab === 'check' &&
+        (questions.length > 0 ? (
+          <SelfCheck questions={questions} progress={progress} update={update} />
+        ) : (
+          <p role="status" className="max-w-prose rounded-md border border-dashed p-3 text-sm text-muted-foreground">
+            The self-check for this week is not written yet.
+          </p>
+        ))}
     </>
   )
 }

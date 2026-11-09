@@ -3,7 +3,7 @@ import { useAppState } from '@/app/AppState'
 import { PageHeader } from '@/app/PageHeader'
 import { NOT_SAVING_TEXT } from '@/app/progress/storage'
 import { STATUS_LABEL } from '@/app/status'
-import { hasPage, WEEKS, weekPath, weekStatus } from '@/app/weeks'
+import { hasPage, isDraft, WEEKS, weekPath, weekStatus } from '@/app/weeks'
 
 export function Home() {
   const { store, persistent } = useAppState()
@@ -36,7 +36,7 @@ export function Home() {
                 )}
                 {'optional' in week && <span className="ml-2 text-sm text-muted-foreground">optional</span>}
               </span>
-              <span className="shrink-0 text-sm text-muted-foreground">{built ? STATUS_LABEL[weekStatus(store, week)] : 'Planned'}</span>
+              <span className="shrink-0 text-sm text-muted-foreground">{!built ? 'Planned' : isDraft(week) ? 'Draft' : STATUS_LABEL[weekStatus(store, week)]}</span>
             </li>
           )
         })}
