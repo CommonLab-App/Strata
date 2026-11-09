@@ -1,0 +1,12 @@
+[
+  { "id": "w17q01", "prompt": "In an eroded anticline, the oldest beds are found:", "options": ["On the flanks", "In the core", "Nowhere", "At the highest elevation only"], "answer": 1, "explanation": "The arch brings the deepest, oldest layers up into the centre." },
+  { "id": "w17q02", "prompt": "A syncline is:", "options": ["An upward arch", "A downward sag with the youngest beds in the core", "A fault", "A volcanic cone"], "answer": 1, "explanation": "Layers dip toward the axis from both sides." },
+  { "id": "w17q03", "prompt": "In a normal fault, the hanging wall:", "options": ["Moves up", "Moves down", "Moves sideways", "Does not move"], "answer": 1, "explanation": "Normal faults form where the crust is stretched." },
+  { "id": "w17q04", "prompt": "Thrust faults form where the crust is:", "options": ["Stretched", "Shortened", "Twisted", "Heated"], "answer": 1, "explanation": "Compression pushes the hanging wall up and over at a low angle." },
+  { "id": "w17q05", "prompt": "Blocks sliding horizontally past each other define a:", "options": ["Normal fault", "Reverse fault", "Strike-slip fault", "Fold"], "answer": 2, "explanation": "Motion is along the strike of the fault." },
+  { "id": "w17q06", "prompt": "Rock flows rather than breaks when it is:", "options": ["Cold and shallow", "Hot and deeply buried", "Dry", "Sandstone"], "answer": 1, "explanation": "Heat and confining pressure favour ductile behaviour." },
+  { "id": "w17q07", "prompt": "On a stereonet, a plane plots as:", "options": ["A point", "A great circle", "A straight line always", "A square"], "answer": 1, "explanation": "Its intersection with the lower hemisphere projects to a curved arc." },
+  { "id": "w17q08", "prompt": "The pole to a plane is:", "options": ["Its strike line", "The line perpendicular to it", "Its dip direction", "Its outcrop"], "answer": 1, "explanation": "One point stands for the whole plane." },
+  { "id": "w17q09", "prompt": "Where the great circles of two planes cross on a stereonet is:", "options": ["Their poles", "The line along which the planes intersect", "The horizontal", "Nothing in particular"], "answer": 1, "explanation": "For two fold limbs this is the fold axis." },
+  { "id": "w17q10", "prompt": "A plunging fold shows on a map as:", "options": ["Parallel bands", "A V-shaped or closed outcrop pattern", "A circle of faults", "No pattern"], "answer": 1, "explanation": "Erosion across the tilted hinge closes the pattern in the direction of plunge." }
+]

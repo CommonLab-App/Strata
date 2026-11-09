@@ -296,7 +296,10 @@ query forms worked out; recorded in docs/DATA-SOURCES.md) and a climate layer; b
 
 ## Week 17: Mountain building and structural geology (optional)
 
-**Status:** planned (phase 6).
+**Status:** built 2026-11-09 as a stereonet week. `src/app/weeks/week17/`, `src/engine/structure/`,
+`data/self-checks/week-17.json`. Assumed: equal-angle lower-hemisphere net; two seeded planes read for strike, dip
+and their intersection within 6°, either end of a strike or trend accepted. Not built: the Three.js block models
+and the map-pattern naming task.
 
 - Learn: stress and strain, folds, faults, orogeny. Sources: OpenGeology chapter 9.
 - Explore: the Map Workshop in three dimensions: Three.js block models of an anticline, a syncline, a normal, a
