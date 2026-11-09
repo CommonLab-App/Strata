@@ -58,6 +58,13 @@ export interface MapEngine {
   destroy(): void
 }
 
-export type CreateEngine = (container: HTMLElement) => Promise<MapEngine>
+/** Where the globe opens; default the whole globe. */
+export interface MapView {
+  lat: number
+  lon: number
+  zoom: number
+}
+
+export type CreateEngine = (container: HTMLElement, view?: MapView) => Promise<MapEngine>
 
 export const inRange = (point: MapPoint, range: TimeRange | null) => range === null || (point.time >= range.start && point.time <= range.end)

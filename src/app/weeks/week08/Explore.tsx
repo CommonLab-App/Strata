@@ -48,13 +48,17 @@ export function Explore() {
   const [showArrows, setShowArrows] = useState(true)
   const [showBoundaries, setShowBoundaries] = useState(true)
   const [picked, setPicked] = useState<string[]>([])
-  const { container, engine, ready, error: globeError } = useGlobe((pick) => {
-    if (pick === null || pick.layerId !== 'stations') return setPicked([])
-    setPicked((prev) => {
-      const [first] = prev
-      return prev.length === 1 && first !== undefined && first !== pick.pointId ? [first, pick.pointId] : [pick.pointId]
-    })
-  })
+  // The network is North American, so the globe opens there.
+  const { container, engine, ready, error: globeError } = useGlobe(
+    (pick) => {
+      if (pick === null || pick.layerId !== 'stations') return setPicked([])
+      setPicked((prev) => {
+        const [first] = prev
+        return prev.length === 1 && first !== undefined && first !== pick.pointId ? [first, pick.pointId] : [pick.pointId]
+      })
+    },
+    { lat: 40, lon: -100, zoom: 1.2 },
+  )
 
   useEffect(() => {
     let cancelled = false
@@ -202,8 +206,8 @@ export function Explore() {
 
       {bundle && (
         <>
-          <DataFooter snapshot={{ fetched_at: `${bundle.gnss.fetched}T00:00:00Z`, source_url: bundle.gnss.url, data: null }} attribution="EarthScope Consortium, NSF NGF data archive (CC BY 4.0)" />
-          <DataFooter snapshot={{ fetched_at: `${bundle.pb2002.fetched}T00:00:00Z`, source_url: bundle.pb2002.url, data: null }} attribution="Bird (2003) PB2002 boundaries via tectonicplates (ODC-BY 1.0)" />
+          <DataFooter snapshot={{ fetched_at: bundle.gnss.fetched, source_url: bundle.gnss.url, data: null }} attribution="EarthScope Consortium, NSF NGF data archive (CC BY 4.0)" />
+          <DataFooter snapshot={{ fetched_at: bundle.pb2002.fetched, source_url: bundle.pb2002.url, data: null }} attribution="Bird (2003) PB2002 boundaries via tectonicplates (ODC-BY 1.0)" />
         </>
       )}
     </div>

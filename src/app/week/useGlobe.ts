@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 import { settled } from '@/app/settled'
-import type { MapEngine, Pick } from '@/map/types'
+import type { MapEngine, MapView, Pick } from '@/map/types'
 
 /**
  * The globe in a pane: started only once the pane has painted in its web font and the browser is idle (its first
  * second of work would otherwise block the main thread while the text is still being laid out), destroyed with the
  * pane. `onPick` is called with each tap; the latest function is always the one called.
  */
-export function useGlobe(onPick: (pick: Pick | null) => void) {
+export function useGlobe(onPick: (pick: Pick | null) => void, view?: MapView) {
   const container = useRef<HTMLDivElement>(null)
   const engine = useRef<MapEngine | null>(null)
   const pick = useRef(onPick)
@@ -22,7 +22,7 @@ export function useGlobe(onPick: (pick: Pick | null) => void) {
     let cancelled = false
     settled()
       .then(() => (cancelled ? Promise.reject(new Error('cancelled')) : import('@/map/maplibre')))
-      .then(({ createEngine }) => createEngine(element))
+      .then(({ createEngine }) => createEngine(element, view))
       .then((started) => {
         if (cancelled) return started.destroy()
         created = started

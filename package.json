@@ -14,7 +14,8 @@
     "test": "vitest run",
     "preview": "vite preview",
     "lint": "eslint .",
-    "bench": "node scripts/bench.mjs"
+    "bench": "node scripts/bench.mjs",
+    "smoke": "node scripts/smoke.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",

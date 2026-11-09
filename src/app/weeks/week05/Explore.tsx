@@ -132,8 +132,8 @@ export function Explore() {
 
       {bundle && (
         <>
-          <DataFooter snapshot={{ fetched_at: `${bundle.gvp.fetched}T00:00:00Z`, source_url: bundle.gvp.urls[0] ?? GVP_HOME, data: null }} attribution="Global Volcanism Program, Smithsonian Institution (Volcanoes of the World v. 5.4.0)" />
-          <DataFooter snapshot={{ fetched_at: `${bundle.pb2002.fetched}T00:00:00Z`, source_url: bundle.pb2002.url, data: null }} attribution="Bird (2003) PB2002 boundaries via tectonicplates (ODC-BY 1.0)" />
+          <DataFooter snapshot={{ fetched_at: bundle.gvp.fetched, source_url: bundle.gvp.urls[0] ?? GVP_HOME, data: null }} attribution="Global Volcanism Program, Smithsonian Institution (Volcanoes of the World v. 5.4.0)" />
+          <DataFooter snapshot={{ fetched_at: bundle.pb2002.fetched, source_url: bundle.pb2002.url, data: null }} attribution="Bird (2003) PB2002 boundaries via tectonicplates (ODC-BY 1.0)" />
         </>
       )}
     </div>

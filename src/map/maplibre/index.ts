@@ -37,14 +37,25 @@ const style = (): StyleSpecification => {
   }
 }
 
+/** A line that jumps more than 180° of longitude between two vertices crosses the date line; drawn as one string it would cut straight across the globe, so it is cut there instead. */
+export const splitAtAntimeridian = (coordinates: [number, number][]): [number, number][][] => {
+  const parts: [number, number][][] = [[]]
+  coordinates.forEach((c, i) => {
+    const previous = coordinates[i - 1]
+    if (previous && Math.abs(c[0] - previous[0]) > 180) parts.push([])
+    parts[parts.length - 1]?.push(c)
+  })
+  return parts.filter((part) => part.length > 1)
+}
+
 const filterFor = (range: TimeRange | null): FilterSpecification | null => (range === null ? null : ['all', ['>=', ['get', 't'], range.start], ['<=', ['get', 't'], range.end]])
 
-export const createEngine: CreateEngine = async (container) => {
+export const createEngine: CreateEngine = async (container, view = { lat: 20, lon: 0, zoom: 1.2 }) => {
   const map = new MapLibreMap({
     container,
     style: style(),
-    center: [0, 20],
-    zoom: 1.2,
+    center: [view.lon, view.lat],
+    zoom: view.zoom,
     // At most two device pixels per CSS pixel: a 3x phone draws under half the fragments for a globe that looks the same.
     pixelRatio: Math.min(window.devicePixelRatio, 2),
     // No cross-fade as tiles arrive: it costs a frame every 16 ms for 300 ms per tile on a phone, for little.
@@ -88,7 +99,7 @@ export const createEngine: CreateEngine = async (container) => {
         type: 'geojson',
         data: {
           type: 'FeatureCollection',
-          features: layer.lines.map((l) => ({ type: 'Feature', geometry: { type: 'LineString', coordinates: l.coordinates }, properties: { id: l.id, colour: l.colour, width: l.width ?? 1.5 } })),
+          features: layer.lines.map((l) => ({ type: 'Feature', geometry: { type: 'MultiLineString', coordinates: splitAtAntimeridian(l.coordinates) }, properties: { id: l.id, colour: l.colour, width: l.width ?? 1.5 } })),
         },
       })
       map.addLayer({ id: layer.id, type: 'line', source: layer.id, paint: { 'line-color': ['get', 'colour'], 'line-width': ['get', 'width'] }, layout: { 'line-cap': 'round', 'line-join': 'round' } })
