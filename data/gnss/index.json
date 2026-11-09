@@ -1,0 +1,13 @@
+{
+  "cwu.final_nam14.20231230": {
+    "title": "GAGE/CWU combined GNSS velocities, NAM14 frame",
+    "source": "EarthScope Consortium, GAGE Facility; CWU analysis centre combined solution",
+    "url": "https://gage-data.earthscope.org/archive/gnss/products/velocity/rel_231230/cwu.final_nam14.20231230.vel",
+    "release": "20240123",
+    "licence": "pending: see docs/DATA-SOURCES.md",
+    "fetched": "2026-11-09",
+    "segments": 6495,
+    "stations": 2194,
+    "rule": "one row per station: the longest observation span; names dropped"
+  }
+}

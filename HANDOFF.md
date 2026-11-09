@@ -30,9 +30,9 @@ Phase 2 is built as of 2026-11-08 (docs/specs/phase-2-earth-materials.md, Status
 `/#/explore/minerals/quartz` from a machine with a GPU, 80 or more. The phase-3 spec is drafted (docs/specs/phase-3-internal-processes.md, 2026-11-08) and is out for review by
 geologists; expect changes to specs 2 and 3 and to the library data from that review. Meanwhile the review-independent
 phase-3 groundwork is in: pure engine maths with tests (`src/engine/{geo,tectonics,seismic}`), PB2002 boundaries
-bundled (`scripts/fetch-static.mjs`), and source findings in docs/DATA-SOURCES.md. Open for the owner: GNSS velocity
-files need an EarthScope login (bundle a subset under its terms, or run live behind a token); GVP terms page to read
-when volcano.si.edu is back. No UI or week content for phase 3 until the review lands.
+bundled (`scripts/fetch-static.mjs`), and source findings in docs/DATA-SOURCES.md. The owner downloaded the GAGE NAM14
+velocity release; it is normalized into `data/gnss/` by `scripts/import-velocities.mjs` (licence marked pending until
+the GAGE data-policy wording is confirmed). GVP terms page to read when volcano.si.edu is back. No UI or week content for phase 3 until the review lands.
 
 ## Then
 Ask Claude Code to draft docs/specs/phase-2-earth-materials.md from docs/PLAN.md before any phase-2 code, and review it the same way.
