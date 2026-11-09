@@ -124,6 +124,7 @@ export function Explore() {
             <dt className="text-muted-foreground">Last known eruption</dt>
             <dd>{picked.lastEruption !== null ? year(picked.lastEruption) : 'not given'}</dd>
           </dl>
+          {picked.eruptions.length > 0 && <EruptionHistory eruptions={picked.eruptions} />}
           <a href={gvpUrl(picked.number)} className="mt-2 inline-block text-sm underline underline-offset-4" rel="noreferrer">
             Record at the Global Volcanism Program
           </a>
@@ -137,5 +138,32 @@ export function Explore() {
         </>
       )}
     </div>
+  )
+}
+
+/** Dated eruptions as bars of VEI by year; an eruption without a VEI is a short tick. */
+function EruptionHistory({ eruptions }: { eruptions: Volcano['eruptions'] }) {
+  const years = eruptions.map(([y]) => y)
+  const lo = Math.min(...years)
+  const hi = Math.max(...years, lo + 1)
+  const W = 320
+  const H = 90
+  const x = (y: number) => 8 + ((y - lo) / (hi - lo)) * (W - 16)
+  return (
+    <figure className="mt-3">
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Dated eruptions from ${year(lo)} to ${year(hi)}, bar height the VEI`} className="w-full text-xs">
+        <line x1={8} x2={W - 8} y1={H - 16} y2={H - 16} stroke="currentColor" strokeOpacity={0.3} />
+        {eruptions.map(([y, vei, confirmed], i) => (
+          <line key={i} x1={x(y)} x2={x(y)} y1={H - 16} y2={H - 16 - (vei === null ? 4 : 6 + vei * 8)} stroke={confirmed ? VOLCANO_COLOUR : 'currentColor'} strokeOpacity={confirmed ? 1 : 0.4} strokeWidth={1.5} />
+        ))}
+        <text x={8} y={H - 3} fill="currentColor">
+          {year(lo)}
+        </text>
+        <text x={W - 8} y={H - 3} textAnchor="end" fill="currentColor">
+          {year(hi)}
+        </text>
+      </svg>
+      <figcaption className="text-xs text-muted-foreground">Bar height is the eruption's VEI; short ticks have none recorded; faint bars are uncertain eruptions.</figcaption>
+    </figure>
   )
 }

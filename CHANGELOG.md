@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Week 5 built: the volcano model (`src/engine/volcano/`, a teaching fit for viscosity, style and VEI rules, tested on the end members), the Volcano Lab (sliders, viscosity plot, three prompts scored by the model), Learn text, ten questions, and an eruption-history chart on each volcano's card in Explore.
 - Week 8 built: Learn text, the relative-motion lab (two station codes, the sheet shows their velocities, the learner's relative vector and boundary type scored by `scoreRelativeMotion` from the same bundle), ten self-check questions, and the GPlates age slider on Explore (plate outlines to 250 Ma, the first picked station's site moved back in time). Week progress gains a generic `data` slot for lab worksheets.
 - docs/WEEK-PLANS.md: an implementation plan for every week, 1 to 18, in spec shape (Learn sources, Explore, lab fields, checker rule, data and licence, questions for the reviewers).
 - `npm run smoke`: opens the globe panes of the production build in headless Chromium, fails on console errors, saves screenshots. Found and fixed: boundary segments crossing the date line drew straight across the globe (lines are now split there in the engine); bundled-data footers show the fetch date, not a midnight time; the globe takes an opening view, and week 8 opens on its network.

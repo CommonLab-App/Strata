@@ -64,7 +64,10 @@ domain), COD structures (public domain), PB2002 via tectonicplates (ODC-BY 1.0),
 
 ## Week 5: Volcanoes
 
-**Status:** Explore built (volcano overlay); model, lab, Learn and self-check wait on the review.
+**Status:** built 2026-11-09 on the assumptions below. `src/app/weeks/week05/`, `src/engine/volcano/`,
+`data/self-checks/week-05.json`. Assumed: a StrataLab teaching fit for viscosity (three linear terms anchored on
+basalt, andesite and dry rhyolite; see the file comment) and style rules by viscosity and water; the reviewers'
+relation replaces `logViscosity` alone. Not built: the real-volcano overlay on the plot and the week-4 panel.
 
 - Learn: magma properties and eruption style; why volcanoes line the boundaries. Sources: OpenGeology chapter 4; GVP
   pages for the real examples the reviewers pick.
