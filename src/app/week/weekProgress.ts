@@ -24,6 +24,8 @@ export const weekProgressSchema = z.object({
   labDone: z.boolean(),
   /** Weeks with an identification lab keep its tray here; week 1's guided form uses `worksheet` and `labDone`. */
   lab: idLabStateSchema.optional(),
+  /** Any other lab's saved worksheet, in that lab's own shape; the lab validates it with its own schema on load. */
+  data: z.record(z.string(), z.unknown()).optional(),
   selfCheckBest: z.number().int().nullable(),
   selfCheckAttempts: z.number().int(),
 })
@@ -43,7 +45,7 @@ export const worksheetComplete = (worksheet: Worksheet) => WORKSHEET_FIELDS.ever
 /** The record with its status worked out: completed once the lab is finished and the self-check taken; in progress once anything is written. */
 export function withStatus(progress: Omit<WeekProgress, 'status'>): WeekProgress {
   const labFinished = progress.labDone || progress.lab?.checked === true
-  const begun = labFinished || progress.lab !== undefined || progress.selfCheckAttempts > 0 || WORKSHEET_FIELDS.some((field) => progress.worksheet[field] !== '')
+  const begun = labFinished || progress.lab !== undefined || progress.data !== undefined || progress.selfCheckAttempts > 0 || WORKSHEET_FIELDS.some((field) => progress.worksheet[field] !== '')
   const status = labFinished && progress.selfCheckBest !== null ? 'completed' : begun ? 'in-progress' : 'not-started'
   return { ...progress, status }
 }

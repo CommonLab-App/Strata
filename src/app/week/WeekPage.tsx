@@ -12,9 +12,9 @@ import * as week03 from '@/app/weeks/week03'
 import * as week04 from '@/app/weeks/week04'
 import * as week06 from '@/app/weeks/week06'
 import * as week07 from '@/app/weeks/week07'
+import * as week08 from '@/app/weeks/week08'
 import { PLANS, plannedWeek, scaffoldWeek } from '@/app/weeks/scaffold'
 import { Explore as Explore05 } from '@/app/weeks/week05/Explore'
-import { Explore as Explore08 } from '@/app/weeks/week08/Explore'
 import { useWeekProgress, type WeekProgress } from './weekProgress'
 
 export interface LabProps {
@@ -39,7 +39,7 @@ const CONTENT: Record<number, WeekContent> = {
   5: plannedWeek(5, { Explore: Explore05 }),
   6: week06,
   7: week07,
-  8: plannedWeek(8, { Explore: Explore08 }),
+  8: week08,
 }
 
 const TABS = [

@@ -102,7 +102,9 @@ domain), COD structures (public domain), PB2002 via tectonicplates (ODC-BY 1.0),
 
 ## Week 8: Plate tectonics
 
-**Status:** Explore built (Plate Motion Explorer); lab, age slider, Learn and self-check wait on the review.
+**Status:** built 2026-11-09 on the assumptions below; the reviewers may change any of them. `src/app/weeks/week08/`,
+`src/engine/tectonics/worksheet.ts`, `data/self-checks/week-08.json`. Assumed: the spec's tolerances; the learner
+chooses the station pair; the age slider stops at 250 Ma (MULLER2019) in 25 Ma steps.
 
 - Learn: plates, boundary types, the evidence then and now. Sources: OpenGeology chapter 2; EarthScope education
   pages.

@@ -1,43 +1,26 @@
 import { useEffect, useState } from 'react'
+import { useAppState } from '@/app/AppState'
+import { getSnapshot } from '@/app/data/snapshot'
 import { DataFooter } from '@/app/week/DataFooter'
 import { useGlobe } from '@/app/week/useGlobe'
 import { Button } from '@/components/ui/button'
-import { velocityFieldSchema, type StationVelocity, type VelocityField } from '@/data/gnss/schema'
-import { midpoint, nearestBoundary, type BoundaryLine } from '@/engine/tectonics/boundaries'
+import { GPLATES_MAX_MA, GPLATES_MODEL, gplatesPlates, gplatesPoints } from '@/data/adapters/gplates'
+import type { Snapshot } from '@/data/adapters/types'
+import type { StationVelocity } from '@/data/gnss/schema'
+import { midpoint, nearestBoundary } from '@/engine/tectonics/boundaries'
 import { relativeMotion } from '@/engine/tectonics/motion'
 import { KM_PER_MM_YR, velocityArrow } from '@/map/arrows'
-import { BOUNDARY_COLOUR, BOUNDARY_LABEL, boundaryLayer, boundaryLines, type BoundaryFeature } from '@/map/boundaries'
+import { BOUNDARY_COLOUR, BOUNDARY_LABEL, boundaryLayer } from '@/map/boundaries'
+import { GNSS_ATTRIBUTION, loadBundle, PB2002_ATTRIBUTION, type Bundle } from './bundle'
 
 const STATION_COLOUR = 'rgba(30, 41, 59, 0.9)'
 const ARROW_COLOUR = '#ea580c'
 const RELATIVE_COLOUR = '#9333ea'
 const SOURCE_PAGE = 'https://www.earthscope.org/'
-
-interface Bundle {
-  field: VelocityField
-  gnss: { fetched: string; url: string }
-  boundaries: BoundaryFeature[]
-  lines: BoundaryLine[]
-  pb2002: { fetched: string; url: string }
-}
-
-// The bundles are a few hundred kilobytes each, so they load with the pane, not with the app.
-async function loadBundle(): Promise<Bundle> {
-  const [field, gnssIndex, pb, pbIndex] = await Promise.all([
-    import('@data/gnss/cwu.final_nam14.20231230.json'),
-    import('@data/gnss/index.json'),
-    import('@data/tectonics/pb2002-boundaries.json'),
-    import('@data/tectonics/index.json'),
-  ])
-  const boundaries = pb.default.features as BoundaryFeature[]
-  return {
-    field: velocityFieldSchema.parse(field.default),
-    gnss: gnssIndex.default['cwu.final_nam14.20231230'],
-    boundaries,
-    lines: boundaryLines(boundaries),
-    pb2002: pbIndex.default['pb2002-boundaries'],
-  }
-}
+const PLATE_COLOUR = '#6b7280'
+const PALEO_COLOUR = '#0891b2'
+/** Ages the slider offers; each is one cached snapshot of about 150 kB, so the step is coarse. */
+const AGE_STEP_MA = 25
 
 const pm = (value: number, sigma: number) => `${value.toFixed(1)} ± ${sigma.toFixed(1)} mm/yr`
 
@@ -48,6 +31,11 @@ export function Explore() {
   const [showArrows, setShowArrows] = useState(true)
   const [showBoundaries, setShowBoundaries] = useState(true)
   const [picked, setPicked] = useState<string[]>([])
+  const { store } = useAppState()
+  const [ageMa, setAgeMa] = useState(0)
+  const [plates, setPlates] = useState<Snapshot<[number, number][][]> | null>(null)
+  const [paleo, setPaleo] = useState<{ ageMa: number; station: string; lon: number; lat: number } | null>(null)
+  const [gplatesError, setGplatesError] = useState<string | null>(null)
   // The network is North American, so the globe opens there.
   const { container, engine, ready, error: globeError } = useGlobe(
     (pick) => {
@@ -98,6 +86,54 @@ export function Explore() {
     else map.removeLayer('relative')
   }, [ready, relative, b, engine])
 
+  // Reconstructed plate outlines at the chosen age, debounced so a slider drag asks the service once.
+  useEffect(() => {
+    if (ageMa === 0) return setPlates(null)
+    let cancelled = false
+    setGplatesError(null)
+    const timer = setTimeout(() => {
+      getSnapshot(store, gplatesPlates, { ageMa })
+        .then((s) => !cancelled && setPlates(s))
+        .catch((e) => !cancelled && setGplatesError(String(e)))
+    }, 400)
+    return () => {
+      cancelled = true
+      clearTimeout(timer)
+    }
+  }, [ageMa, store])
+
+  useEffect(() => {
+    const map = engine.current
+    if (!ready || !map) return
+    if (plates) map.addLines({ id: 'plates', lines: plates.data.map((ring, i) => ({ id: `plate-${i}`, coordinates: ring, colour: PLATE_COLOUR, width: 1 })) })
+    else map.removeLayer('plates')
+  }, [ready, plates, engine])
+
+  // Where the first picked station's site lay at that age.
+  useEffect(() => {
+    if (ageMa === 0 || !a) return setPaleo(null)
+    let cancelled = false
+    const timer = setTimeout(() => {
+      getSnapshot(store, gplatesPoints, { points: [[a.lon, a.lat]], ageMa })
+        .then((s) => {
+          const [point] = s.data
+          if (!cancelled && point) setPaleo({ ageMa, station: a.station, lon: point[0], lat: point[1] })
+        })
+        .catch((e) => !cancelled && setGplatesError(String(e)))
+    }, 400)
+    return () => {
+      cancelled = true
+      clearTimeout(timer)
+    }
+  }, [ageMa, a, store])
+
+  useEffect(() => {
+    const map = engine.current
+    if (!ready || !map) return
+    if (paleo) map.addLayer({ id: 'paleo', colour: PALEO_COLOUR, points: [{ id: 'paleo', lat: paleo.lat, lon: paleo.lon, time: 0, size: 10 }] })
+    else map.removeLayer('paleo')
+  }, [ready, paleo, engine])
+
   const error = loadError ?? globeError
 
   return (
@@ -145,7 +181,27 @@ export function Explore() {
           <span aria-hidden className="inline-block h-0.5 w-5" style={{ background: RELATIVE_COLOUR }} />
           Motion of the second station relative to the first
         </li>
+        <li className="flex items-center gap-1">
+          <span aria-hidden className="inline-block h-0.5 w-5" style={{ background: PLATE_COLOUR }} />
+          Plate outlines at the chosen age
+        </li>
       </ul>
+
+      <div className="grid max-w-prose gap-1">
+        <label htmlFor="age-slider" className="text-sm font-medium">
+          Reconstruction age: {ageMa === 0 ? 'today' : `${ageMa} million years ago`}
+        </label>
+        <input id="age-slider" type="range" min={0} max={GPLATES_MAX_MA} step={AGE_STEP_MA} value={ageMa} onChange={(e) => setAgeMa(Number(e.target.value))} className="w-full" />
+        <p className="text-xs text-muted-foreground">
+          Past today the grey outlines are the plates reconstructed by the GPlates Web Service (model {GPLATES_MODEL}, to {GPLATES_MAX_MA} Ma); pick a station first and a blue dot marks where its site lay.
+          {paleo && ` ${paleo.station} at ${paleo.ageMa} Ma: ${paleo.lat.toFixed(1)}, ${paleo.lon.toFixed(1)}.`}
+        </p>
+        {gplatesError && (
+          <p role="alert" className="text-xs text-red-700 dark:text-red-400">
+            The reconstruction could not load: {gplatesError}
+          </p>
+        )}
+      </div>
 
       {error && (
         <p role="alert" className="text-sm text-red-700 dark:text-red-400">
@@ -206,8 +262,9 @@ export function Explore() {
 
       {bundle && (
         <>
-          <DataFooter snapshot={{ fetched_at: bundle.gnss.fetched, source_url: bundle.gnss.url, data: null }} attribution="EarthScope Consortium, NSF NGF data archive (CC BY 4.0)" />
-          <DataFooter snapshot={{ fetched_at: bundle.pb2002.fetched, source_url: bundle.pb2002.url, data: null }} attribution="Bird (2003) PB2002 boundaries via tectonicplates (ODC-BY 1.0)" />
+          <DataFooter snapshot={{ fetched_at: bundle.gnss.fetched, source_url: bundle.gnss.url, data: null }} attribution={GNSS_ATTRIBUTION} />
+          <DataFooter snapshot={{ fetched_at: bundle.pb2002.fetched, source_url: bundle.pb2002.url, data: null }} attribution={PB2002_ATTRIBUTION} />
+          {plates && <DataFooter snapshot={plates} attribution={gplatesPlates.attribution} />}
         </>
       )}
     </div>
