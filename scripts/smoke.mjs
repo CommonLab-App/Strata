@@ -31,7 +31,7 @@ try {
     await page.setViewport({ width: 412, height: Math.min(Math.max(height, 900), 4000), deviceScaleFactor: 1 })
     await new Promise((r) => setTimeout(r, 6000))
     const status = await page.$$eval('[role=status]', (nodes) => nodes.map((n) => n.textContent?.trim()).join(' | '))
-    const file = `${out}/${route.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '')}.png`
+    const file = `${out}/${route.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '') || 'home'}.png`
     await page.screenshot({ path: file })
     const ok = problems.length === 0
     failed ||= !ok
