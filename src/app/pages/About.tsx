@@ -52,6 +52,31 @@ export function About() {
               .
             </li>
             <li>
+              Plate motion: GNSS station velocities from the NSF NGF data archive operated by{' '}
+              <a className={link} href="https://www.earthscope.org/" rel="noreferrer">
+                EarthScope Consortium
+              </a>{' '}
+              (NSF award 2435260), under{' '}
+              <a className={link} href="https://www.unavco.org/data/policies_forms/data-policy/data-license.html" rel="noreferrer">
+                CC BY 4.0
+              </a>
+              . StrataLab keeps one solution per station, drops station names and converts to mm/yr.
+            </li>
+            <li>
+              Plate boundaries: the PB2002 model of Bird (2003), from the{' '}
+              <a className={link} href="https://github.com/fraxen/tectonicplates" rel="noreferrer">
+                tectonicplates
+              </a>{' '}
+              GeoJSON under ODC-BY 1.0; StrataLab merges steps of one boundary class into lines.
+            </li>
+            <li>
+              Crystal structures: CIF files from the{' '}
+              <a className={link} href="https://www.crystallography.net/cod/" rel="noreferrer">
+                Crystallography Open Database
+              </a>
+              , placed in the public domain by their contributors; each structure links its COD entry.
+            </li>
+            <li>
               Basemap:{' '}
               <a className={link} href="https://www.openstreetmap.org/copyright" rel="noreferrer">
                 OpenStreetMap contributors
