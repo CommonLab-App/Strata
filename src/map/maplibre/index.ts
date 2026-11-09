@@ -4,7 +4,7 @@ import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url'
 
 // MapLibre looks for its worker beside its own module, which the bundle does not provide: Vite serves the file as an asset instead.
 config.WORKER_URL = workerUrl
-import type { CreateEngine, MapEngine, Pick, PointLayer, TimeRange } from '../types'
+import type { CreateEngine, LineLayer, MapEngine, Pick, PointLayer, TimeRange } from '../types'
 
 const filterFor = (range: TimeRange | null): FilterSpecification | null => (range === null ? null : ['all', ['>=', ['get', 't'], range.start], ['<=', ['get', 't'], range.end]])
 
@@ -29,6 +29,7 @@ export const createEngine: CreateEngine = async (container) => {
   map.setProjection({ type: 'globe' })
 
   const layers = new Map<string, PointLayer>()
+  const lineLayers = new Set<string>()
   let range: TimeRange | null = null
   const picks = new Set<(pick: Pick | null) => void>()
   map.on('click', (event: MapMouseEvent) => {
@@ -56,11 +57,24 @@ export const createEngine: CreateEngine = async (container) => {
       })
       layers.set(layer.id, layer)
     },
+    addLines(layer: LineLayer) {
+      engine.removeLayer(layer.id)
+      map.addSource(layer.id, {
+        type: 'geojson',
+        data: {
+          type: 'FeatureCollection',
+          features: layer.lines.map((l) => ({ type: 'Feature', geometry: { type: 'LineString', coordinates: l.coordinates }, properties: { id: l.id, colour: l.colour, width: l.width ?? 1.5 } })),
+        },
+      })
+      map.addLayer({ id: layer.id, type: 'line', source: layer.id, paint: { 'line-color': ['get', 'colour'], 'line-width': ['get', 'width'] }, layout: { 'line-cap': 'round', 'line-join': 'round' } })
+      lineLayers.add(layer.id)
+    },
     removeLayer(id) {
-      if (!layers.has(id)) return
+      if (!layers.has(id) && !lineLayers.has(id)) return
       map.removeLayer(id)
       map.removeSource(id)
       layers.delete(id)
+      lineLayers.delete(id)
     },
     setTime(next) {
       range = next

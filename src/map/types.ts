@@ -13,6 +13,21 @@ export interface PointLayer {
   points: MapPoint[]
 }
 
+/** A polyline on the globe, e.g. a plate boundary or a velocity arrow. Coordinates are [lon, lat]. */
+export interface MapLine {
+  id: string
+  coordinates: [number, number][]
+  /** Any CSS colour. */
+  colour: string
+  /** Stroke width in CSS pixels; default 1.5. */
+  width?: number
+}
+
+export interface LineLayer {
+  id: string
+  lines: MapLine[]
+}
+
 export interface TimeRange {
   start: number
   end: number
@@ -29,6 +44,8 @@ export interface Pick {
  */
 export interface MapEngine {
   addLayer(layer: PointLayer): void
+  /** Lines are not filtered by setTime. */
+  addLines(layer: LineLayer): void
   removeLayer(id: string): void
   /** Shows only the points whose time falls in the range; null shows all. */
   setTime(range: TimeRange | null): void

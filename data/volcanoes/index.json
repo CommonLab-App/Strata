@@ -1,0 +1,16 @@
+{
+  "holocene": {
+    "title": "Volcanoes of the World, Holocene volcanoes and eruptions",
+    "source": "Global Volcanism Program, Smithsonian Institution",
+    "urls": [
+      "https://webservices.volcano.si.edu/geoserver/GVP-VOTW/ows?service=WFS&version=2.0.0&request=GetFeature&outputFormat=json&typeName=GVP-VOTW:Smithsonian_VOTW_Holocene_Volcanoes",
+      "https://webservices.volcano.si.edu/geoserver/GVP-VOTW/ows?service=WFS&version=2.0.0&request=GetFeature&outputFormat=json&typeName=GVP-VOTW:Smithsonian_VOTW_Holocene_Eruptions"
+    ],
+    "pageUrl": "https://volcano.si.edu/volcano.cfm?vn=",
+    "licence": "pending: see docs/DATA-SOURCES.md",
+    "fetched": "2026-11-09",
+    "volcanoes": 1214,
+    "eruptions": 11043,
+    "eruption": "[start year, VEI max or null, confirmed]"
+  }
+}

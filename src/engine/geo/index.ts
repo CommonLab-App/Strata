@@ -22,6 +22,7 @@ export const azimuthDeg = (east: number, north: number) => (deg(Math.atan2(east,
 
 /** The point `km` away from `from` along `bearing` (degrees from north). */
 export function destination(from: LatLon, bearing: number, km: number): LatLon {
+  if (km === 0) return from
   const d = km / EARTH_RADIUS_KM
   const b = rad(bearing)
   const lat1 = rad(from.lat)
