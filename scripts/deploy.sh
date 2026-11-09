@@ -4,6 +4,6 @@ set -eu
 cd "$(dirname "$0")/.."
 . ./.env
 npm run build
-rsync -az --delete --exclude media/ dist/ "$STRATA_DEPLOY/"
+rsync -az --delete --chmod=D755,F644 --exclude media/ dist/ "$STRATA_DEPLOY/"
 # Media is large and changes rarely: copied without --delete so a half-finished upload never removes a video.
-rsync -az dist/media/ "$STRATA_DEPLOY/media/"
+rsync -az --chmod=D755,F644 dist/media/ "$STRATA_DEPLOY/media/"

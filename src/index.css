@@ -203,8 +203,9 @@
   scroll-behavior: auto !important;
 }
 
-/* MapLibre's attribution link is grey on grey without an underline (Lighthouse link-in-text-block); make it a plain link. */
-.maplibregl-ctrl-attrib a {
+/* MapLibre's attribution link is grey on grey without an underline (Lighthouse link-in-text-block); make it a plain link.
+   MapLibre's stylesheet arrives later with the lazy chunk, so this needs the higher specificity to win. */
+.maplibregl-ctrl.maplibregl-ctrl-attrib a {
   color: inherit;
   text-decoration: underline;
   text-underline-offset: 2px;

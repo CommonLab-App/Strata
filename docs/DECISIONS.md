@@ -126,3 +126,24 @@ smaller poster would save about 26 kB per card; the main bundle and the crystal 
 unused on this page (the crystal scene is already a lazy chunk); the OSM preconnect hint was unused here and is now
 removed since production serves its own basemap. The video-caption note does not apply: the turntable clips have no
 audio.
+
+## Phase-3 gate: Lighthouse on the week-8 Explore pane (2026-11-09)
+
+Mobile preset, GPU desktop, against the deployed build (OSM raster fallback, no basemap yet).
+
+| Category | Score |
+| --- | --- |
+| Performance | 71 |
+| Accessibility | 96 |
+| Best practices | 96 |
+| SEO | 100 |
+
+Performance misses the gate's 80. First paint and largest paint are fine (2.2 s, 2.6 s); the cost is total blocking
+time, 1.1 s, almost all of it one 685 ms task inside MapLibre as the globe starts on the 4x-throttled CPU, plus
+170 ms and 125 ms tasks in the main chunk. Decision: record the number, fix what the run found that is ours (icon
+files deployed mode 700 so the host answered 403, no Cache-Control on hashed assets, manifest served as
+octet-stream, attribution link contrast), and measure before optimising: the same run on the week-1 Explore pane
+(the quake globe, far fewer features) tells whether the blocking time is the globe itself or week 8's layers. If it is
+the layers, defer the arrows and boundaries to an idle callback after the first frame; if it is the globe, the gate
+number is revisited rather than the code.
+
