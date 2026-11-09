@@ -149,7 +149,11 @@ hand picks; the table is applied for the learner rather than read by eye. Not bu
 
 ## Week 10: Deep time, relative dating
 
-**Status:** planned (phase 4).
+**Status:** built 2026-11-09. `src/app/weeks/week10/`, `src/app/strata/SectionView.tsx`, `src/engine/strata/`,
+`data/self-checks/week-10.json`. Assumed: event types bed, dike, fault, tilt, erosion (no folds, inclusions or
+fossils); five to twelve events per section; unconformities classed angular or disconformity (no nonconformity, as
+there is no basement); two marks, one for a perfect order and one for the unconformity types. Not built: the GPlates
+panel (week 8 has it).
 
 - Learn: superposition, original horizontality, cross-cutting, inclusions, faunal succession, the three unconformity
   types. Sources: OpenGeology chapter 7.
