@@ -7,7 +7,7 @@ import { BOUNDARY_COLOUR, boundaryLayer, type BoundaryFeature } from '@/map/boun
 const FORBIDDEN = /\b(risk\w*|danger\w*|hazard\w*|threat\w*|warning\w*|unsafe|safe|deadly|disaster\w*|catastroph\w*)\b/i
 
 describe('Explore captions', () => {
-  it.each(['week01', 'week05', 'week08'])('%s says nothing about risk', (week) => {
+  it.each(['week01', 'week05', 'week08', 'week09'])('%s says nothing about risk', (week) => {
     const source = readFileSync(new URL(`./${week}/Explore.tsx`, import.meta.url), 'utf8')
     expect(source.match(FORBIDDEN)).toBeNull()
   })

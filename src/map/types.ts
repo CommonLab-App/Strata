@@ -6,6 +6,8 @@ export interface MapPoint {
   time: number
   /** Diameter in CSS pixels. */
   size: number
+  /** Any CSS colour for this dot alone; default the layer's colour. */
+  colour?: string
 }
 
 export interface PointLayer {
@@ -53,8 +55,8 @@ export interface MapEngine {
   setTime(range: TimeRange | null): void
   /** Moves the camera. `zoom` is a web-map zoom level (0 shows the whole globe). */
   flyTo(view: { lat: number; lon: number; zoom: number; durationMs?: number }): Promise<void>
-  /** Called with the picked point on a click, or null for a click on nothing. Returns a function that stops the calls. */
-  onPick(callback: (pick: Pick | null) => void): () => void
+  /** Called on a click with the picked point, or null for a click on nothing, and the place on the globe that was tapped. Returns a function that stops the calls. */
+  onPick(callback: (pick: Pick | null, at: { lat: number; lon: number }) => void): () => void
   destroy(): void
 }
 

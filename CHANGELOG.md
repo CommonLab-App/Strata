@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Week 9 built: the quake globe coloured by depth (shared `QuakeGlobe`, week 1 uses it plain), seismograms of four bundled teaching earthquakes (`scripts/fetch-waveforms.mjs`, EarthScope FDSN GeoCSV at 1 Hz) with P and S picks to drag, the two-layer travel-time table, the epicentre lab (distances from the picks, circles on the globe, tap to place, scored by `scoreEpicentre`), Learn text and ten questions. Map points take a colour each and a tap reports where it landed.
 - Week 5 built: the volcano model (`src/engine/volcano/`, a teaching fit for viscosity, style and VEI rules, tested on the end members), the Volcano Lab (sliders, viscosity plot, three prompts scored by the model), Learn text, ten questions, and an eruption-history chart on each volcano's card in Explore.
 - Week 8 built: Learn text, the relative-motion lab (two station codes, the sheet shows their velocities, the learner's relative vector and boundary type scored by `scoreRelativeMotion` from the same bundle), ten self-check questions, and the GPlates age slider on Explore (plate outlines to 250 Ma, the first picked station's site moved back in time). Week progress gains a generic `data` slot for lab worksheets.
 - docs/WEEK-PLANS.md: an implementation plan for every week, 1 to 18, in spec shape (Learn sources, Explore, lab fields, checker rule, data and licence, questions for the reviewers).

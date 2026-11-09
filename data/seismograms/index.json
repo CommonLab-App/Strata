@@ -1,0 +1,54 @@
+{
+  "source": "USGS Earthquake Hazards Program (catalogue); EarthScope Consortium FDSN station and dataselect services (waveforms)",
+  "licence": "USGS: public domain. Waveforms: see docs/DATA-SOURCES.md",
+  "fetched": "2026-11-09",
+  "model": {
+    "crustKm": 35,
+    "vp": 6.1,
+    "vs": 3.5,
+    "vpn": 8,
+    "vsn": 4.5
+  },
+  "events": [
+    {
+      "id": "us7000pcdl",
+      "mag": 7.6,
+      "time": "2025-02-08T23:23:14.697Z",
+      "stations": [
+        "CU.MTDJ 518.1 km",
+        "NU.BLUN 646.2 km",
+        "IU.TEIG 681.6 km"
+      ]
+    },
+    {
+      "id": "us6000m0xl",
+      "mag": 7.5,
+      "time": "2024-01-01T07:10:09.476Z",
+      "stations": [
+        "JP.JGF 209.6 km",
+        "JP.JYT 294.9 km",
+        "JP.JTM 491.7 km"
+      ]
+    },
+    {
+      "id": "us6000jlqa",
+      "mag": 7.5,
+      "time": "2023-02-06T10:24:48.811Z",
+      "stations": [
+        "IU.ANTO 433.1 km",
+        "IU.GNI 693 km",
+        "GE.EIL 950.2 km"
+      ]
+    },
+    {
+      "id": "us7000m9g4",
+      "mag": 7.4,
+      "time": "2024-04-02T23:58:12.173Z",
+      "stations": [
+        "PS.ISG 274.4 km",
+        "TW.KMNB 333 km",
+        "IC.SSE 808.2 km"
+      ]
+    }
+  ]
+}

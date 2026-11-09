@@ -7,7 +7,7 @@ import type { MapEngine, MapView, Pick } from '@/map/types'
  * second of work would otherwise block the main thread while the text is still being laid out), destroyed with the
  * pane. `onPick` is called with each tap; the latest function is always the one called.
  */
-export function useGlobe(onPick: (pick: Pick | null) => void, view?: MapView) {
+export function useGlobe(onPick: (pick: Pick | null, at: { lat: number; lon: number }) => void, view?: MapView) {
   const container = useRef<HTMLDivElement>(null)
   const engine = useRef<MapEngine | null>(null)
   const pick = useRef(onPick)
@@ -27,7 +27,7 @@ export function useGlobe(onPick: (pick: Pick | null) => void, view?: MapView) {
         if (cancelled) return started.destroy()
         created = started
         engine.current = started
-        started.onPick((p) => pick.current(p))
+        started.onPick((p, at) => pick.current(p, at))
         setReady(true)
       })
       .catch((e) => !cancelled && setError(String(e)))

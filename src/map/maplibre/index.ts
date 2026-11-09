@@ -67,11 +67,11 @@ export const createEngine: CreateEngine = async (container, view = { lat: 20, lo
   const layers = new Map<string, PointLayer>()
   const lineLayers = new Set<string>()
   let range: TimeRange | null = null
-  const picks = new Set<(pick: Pick | null) => void>()
+  const picks = new Set<(pick: Pick | null, at: { lat: number; lon: number }) => void>()
   map.on('click', (event: MapMouseEvent) => {
     const hit = map.queryRenderedFeatures(event.point, { layers: [...layers.keys()] })[0]
     const pick = hit?.layer && typeof hit.properties?.id === 'string' ? { layerId: hit.layer.id, pointId: hit.properties.id } : null
-    for (const callback of picks) callback(pick)
+    for (const callback of picks) callback(pick, { lat: event.lngLat.lat, lon: event.lngLat.lng })
   })
 
   const engine: MapEngine = {
@@ -81,14 +81,14 @@ export const createEngine: CreateEngine = async (container, view = { lat: 20, lo
         type: 'geojson',
         data: {
           type: 'FeatureCollection',
-          features: layer.points.map((p) => ({ type: 'Feature', geometry: { type: 'Point', coordinates: [p.lon, p.lat] }, properties: { id: p.id, t: p.time, size: p.size } })),
+          features: layer.points.map((p) => ({ type: 'Feature', geometry: { type: 'Point', coordinates: [p.lon, p.lat] }, properties: { id: p.id, t: p.time, size: p.size, colour: p.colour ?? layer.colour ?? 'rgba(255, 69, 0, 0.85)' } })),
         },
       })
       map.addLayer({
         id: layer.id,
         type: 'circle',
         source: layer.id,
-        paint: { 'circle-radius': ['/', ['get', 'size'], 2], 'circle-color': layer.colour ?? 'rgba(255, 69, 0, 0.85)', 'circle-stroke-color': 'rgba(255, 255, 255, 0.6)', 'circle-stroke-width': 1 },
+        paint: { 'circle-radius': ['/', ['get', 'size'], 2], 'circle-color': ['get', 'colour'], 'circle-stroke-color': 'rgba(255, 255, 255, 0.6)', 'circle-stroke-width': 1 },
         filter: filterFor(range) ?? true,
       })
       layers.set(layer.id, layer)

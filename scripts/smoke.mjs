@@ -23,12 +23,16 @@ try {
     page.on('console', (m) => m.type() === 'error' && problems.push(`console: ${m.text()}`))
     page.on('pageerror', (e) => problems.push(`exception: ${e.message}`))
     await page.goto(`http://localhost:${PORT}/${route}`, { waitUntil: 'networkidle0', timeout: 60000 })
-    // The pane's status line stops saying Loading once its data is in; the globe gets a few seconds more to draw.
+    // The pane's status line stops saying Loading once its data is in. Then the viewport is grown to the whole page
+    // before the globe gets its seconds to draw: a full-page capture would resize the viewport itself, and a map
+    // sized in vh would be caught mid-redraw with half its tiles missing.
     await page.waitForFunction(() => ![...document.querySelectorAll('[role=status]')].some((n) => /Loading/.test(n.textContent ?? '')), { timeout: 30000 })
-    await new Promise((r) => setTimeout(r, 5000))
+    const height = await page.evaluate(() => document.documentElement.scrollHeight)
+    await page.setViewport({ width: 412, height: Math.min(Math.max(height, 900), 4000), deviceScaleFactor: 1 })
+    await new Promise((r) => setTimeout(r, 6000))
     const status = await page.$$eval('[role=status]', (nodes) => nodes.map((n) => n.textContent?.trim()).join(' | '))
     const file = `${out}/${route.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '')}.png`
-    await page.screenshot({ path: file, fullPage: true })
+    await page.screenshot({ path: file })
     const ok = problems.length === 0
     failed ||= !ok
     console.log(`${ok ? 'ok  ' : 'FAIL'} ${route}  status: ${status}  -> ${file}`)

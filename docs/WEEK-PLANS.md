@@ -125,7 +125,12 @@ chooses the station pair; the age slider stops at 250 Ma (MULLER2019) in 25 Ma s
 
 ## Week 9: Earthquakes and Earth's interior
 
-**Status:** engine maths built; viewer, lab, Learn and self-check wait on the review.
+**Status:** built 2026-11-09 on the assumptions below. `src/app/weeks/week09/`, `src/app/quakes/`,
+`src/engine/seismic/`, `data/seismograms/` (four events bundled by `scripts/fetch-waveforms.mjs`),
+`data/self-checks/week-09.json`. Assumed: a two-layer teaching travel-time table (35 km crust, P 6.1 and S 3.5
+km/s over mantle P 8.0 and S 4.5); the four largest shallow catalogue events of 2023 to 2025 with three open
+records 200 to 1500 km away; reference picks are the model's predicted arrivals at the catalogue distance, not
+hand picks; the table is applied for the learner rather than read by eye. Not built: focal-mechanism glyphs.
 
 - Learn: faults and waves, locating an epicentre, the shadow zone and the core. Sources: OpenGeology chapter 9; USGS
   earthquake science pages.
