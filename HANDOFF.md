@@ -20,23 +20,23 @@ Do deliverable 6: build the quake layer on both CesiumJS and MapLibre GL, run th
 
 Remove the engine we did not pick. Finish deliverables 7 through 10 and run the acceptance tests. When all pass, update CHANGELOG.md and tell me the phase-1 gate is met.
 
-## Status 2026-11-09
+## Status 2026-11-09 (end of day)
 
-All eighteen weeks are built and every phase gate that can be checked here passes: `npm run build` (lint, 206
-tests, types, bundle) and `npm run smoke` (headless Chromium over the globe panes). Phases 1 and 2 met their gates
-with Lighthouse on a GPU machine (92 and 91). Phase 3 (weeks 5, 8, 9), phase 4 (10 to 12), phase 5 (13 to 16) and
-the phase-6 extension weeks (17, 18) were built on 2026-11-09 against docs/WEEK-PLANS.md, which records for every
-week what was assumed where a reviewer's decision was expected (viscosity relation, travel-time table and teaching
-earthquakes, isotope ranges, elevation tile source and areas, stream-table rule, soil parameters, crater catalogue)
-and what was left out (GPlates past 250 Ma, the real-volcano overlay, the Macrostrat map overlay, landslide and
-resource layers, labelled landforms, Three.js block models, Mars craters). Each data source's terms are in
-docs/DATA-SOURCES.md and credited on About.
+All eighteen weeks are built; `npm run build` (lint, 208 tests, types, bundle) and `npm run smoke` pass. Core sets
+match the owner's hand samples (14 minerals, 21 rocks, `core` flag in data/samples); the identification labs draw
+from them, weeks 2, 3, 4, 6 and 7 at stored-entry version 2. Phase 6 offline mode is in: a Vite plugin builds
+`sw.js` from `src/sw/worker.js`, the manifest makes the app installable (docs/specs/phase-6-polish.md). First deploy
+to stratalab.app done with `scripts/deploy.sh` (target in the gitignored `.env`); the worker was seen activated on
+the live site with the precache full. Lighthouse on the week-8 Explore pane: 71/96/96/100, below the phase-3 gate's
+80; the reasoning and the next measurement (week-1 pane) are in docs/DECISIONS.md. The fixes that run produced
+(icon file modes, `public/.htaccess` cache headers and manifest type, attribution contrast) are committed and wait
+for a redeploy.
 
-Still owner work: build and upload the basemap folder (`scripts/build-basemap.sh`, `VITE_BASEMAP_URL`); run
-Lighthouse on the week-8 Explore pane from a GPU machine (phase-3 gate item); the core mineral list; more
-turntable videos; the GPU check of week 8 zoomed in. Still reviewer work: the Planka review cards, whose answers go
-into docs/WEEK-PLANS.md and then into the code paths each entry names. Phase 6's remaining items are offline mode
-(service worker), the accessibility pass and launch.
+Owner work, also on the Planka digest card: redeploy; check install and airplane mode; Lighthouse on
+/#/week/1/explore; build and upload the basemap (`scripts/build-basemap.sh`, `VITE_BASEMAP_URL`); record the
+turntable videos for the 35 core samples (`scripts/import_sample.py <video> --id <sample>`); the GPU check of week 8
+zoomed in. Reviewer work: the Planka review cards, whose answers go into docs/WEEK-PLANS.md and then into the code
+paths each entry names. Phase 6 still owes the accessibility pass and launch.
 
 ## Then
 Ask Claude Code to draft docs/specs/phase-2-earth-materials.md from docs/PLAN.md before any phase-2 code, and review it the same way.
