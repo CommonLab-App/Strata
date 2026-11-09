@@ -1,13 +1,12 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useAppState } from '@/app/AppState'
 import { getSnapshot } from '@/app/data/snapshot'
-import { settled } from '@/app/settled'
 import { DataFooter } from '@/app/week/DataFooter'
+import { useGlobe } from '@/app/week/useGlobe'
 import { Button } from '@/components/ui/button'
 import type { Snapshot } from '@/data/adapters/types'
 import { QUAKE_RANGES, usgsQuakes, type Quake, type QuakeRange } from '@/data/adapters/usgs-quakes'
 import { quakePoint } from '@/map/points'
-import type { MapEngine } from '@/map/types'
 
 const RANGE_LABEL: Record<QuakeRange, string> = { hour: 'hour', day: 'day', week: '7 days', month: '30 days' }
 const FEED_PAGE = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php'
@@ -15,39 +14,12 @@ const FEED_PAGE = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
 /** The globe with the USGS quake layer: a time-range toggle, a tap on a quake for its fields, and the data footer. */
 export function Explore() {
   const { store } = useAppState()
-  const container = useRef<HTMLDivElement>(null)
-  const engineRef = useRef<MapEngine | null>(null)
-  const [engineReady, setEngineReady] = useState(false)
   const [range, setRange] = useState<QuakeRange>('day')
   const [snapshot, setSnapshot] = useState<Snapshot<Quake[]> | null>(null)
-  const [error, setError] = useState<string | null>(null)
+  const [fetchError, setError] = useState<string | null>(null)
   const [pickedId, setPickedId] = useState<string | null>(null)
-
-  // The engine is started only once the pane has painted in its web font and the browser is idle: its first
-  // second of work would otherwise block the main thread while the text is still being laid out.
-  useEffect(() => {
-    const element = container.current
-    if (!element) return
-    let engine: MapEngine | undefined
-    let cancelled = false
-    settled()
-      .then(() => (cancelled ? Promise.reject(new Error('cancelled')) : import('@/map/maplibre')))
-      .then(({ createEngine }) => createEngine(element))
-      .then((created) => {
-        if (cancelled) return created.destroy()
-        engine = created
-        engineRef.current = created
-        created.onPick((pick) => setPickedId(pick?.pointId ?? null))
-        setEngineReady(true)
-      })
-      .catch((e) => !cancelled && setError(String(e)))
-    return () => {
-      cancelled = true
-      engine?.destroy()
-      engineRef.current = null
-      setEngineReady(false)
-    }
-  }, [])
+  const { container, engine: engineRef, ready: engineReady, error: globeError } = useGlobe((pick) => setPickedId(pick?.pointId ?? null))
+  const error = fetchError ?? globeError
 
   useEffect(() => {
     let cancelled = false

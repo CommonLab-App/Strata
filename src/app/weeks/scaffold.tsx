@@ -191,3 +191,10 @@ export function scaffoldWeek(plan: WeekPlan): WeekContent {
     questions: [],
   }
 }
+
+/** A planned week with some tabs already built: the scaffold with those tabs replaced. */
+export function plannedWeek(week: number, built: Partial<WeekContent> = {}): WeekContent {
+  const plan = PLANS[week]
+  if (!plan) throw new Error(`week ${week} has no plan`)
+  return { ...scaffoldWeek(plan), ...built }
+}

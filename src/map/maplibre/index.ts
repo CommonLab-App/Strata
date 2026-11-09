@@ -77,7 +77,7 @@ export const createEngine: CreateEngine = async (container) => {
         id: layer.id,
         type: 'circle',
         source: layer.id,
-        paint: { 'circle-radius': ['/', ['get', 'size'], 2], 'circle-color': 'rgba(255, 69, 0, 0.85)', 'circle-stroke-color': 'rgba(255, 255, 255, 0.6)', 'circle-stroke-width': 1 },
+        paint: { 'circle-radius': ['/', ['get', 'size'], 2], 'circle-color': layer.colour ?? 'rgba(255, 69, 0, 0.85)', 'circle-stroke-color': 'rgba(255, 255, 255, 0.6)', 'circle-stroke-width': 1 },
         filter: filterFor(range) ?? true,
       })
       layers.set(layer.id, layer)

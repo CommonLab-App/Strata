@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Week 8 Explore, the Plate Motion Explorer: GNSS velocity arrows and the PB2002 boundaries on the globe, tap two stations for the motion between them (speed, direction, nearest boundary to the midpoint, a third arrow). Week 5 Explore: Holocene volcanoes beside the boundaries, a tap opens the GVP record. Both load their bundles with the pane; point layers take a colour; the globe start-up moved into `useGlobe`, shared with week 1. A test keeps every Explore caption free of risk words.
 - Every week now has a page: weeks 5 and 8 to 18 are scaffolds built from a plan outline (`src/app/weeks/scaffold.tsx`) with an orientation paragraph, reading, the planned explorer and lab, and the data sources; Home marks them Draft and their self-check tab says it is not written yet.
 - Dropped the OpenStreetMap preconnect hint from index.html: production serves its own basemap, and Lighthouse flagged the hint as unused on non-map pages.
 - Basemap decided and wired: a self-hosted Protomaps PMTiles extract with its glyphs and sprites, folder named by `VITE_BASEMAP_URL`; `scripts/build-basemap.sh` builds it; OSM raster tiles stay the development fallback (docs/DECISIONS.md).

@@ -11,6 +11,8 @@ export interface MapPoint {
 export interface PointLayer {
   id: string
   points: MapPoint[]
+  /** Any CSS colour for every dot; default the quake orange. */
+  colour?: string
 }
 
 /** A polyline on the globe, e.g. a plate boundary or a velocity arrow. Coordinates are [lon, lat]. */
