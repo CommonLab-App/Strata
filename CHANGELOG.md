@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- Core sets match the hand samples the owner holds: 14 minerals and 18 rocks are `core`; the rest are marked extra. The identification labs draw from the core sets (week 2 without gypsum) with smaller trays, so weeks 2, 3, 4, 6 and 7 move to stored-entry version 2 and stored trays from version 1 are regraded. Limestone is labelled micrite.
+- Core sets match the hand samples the owner holds: 14 minerals and 19 rocks are `core`; the rest are marked extra. The identification labs draw from the core sets (week 2 without gypsum) with smaller trays, so weeks 2, 3, 4, 6 and 7 move to stored-entry version 2 and stored trays from version 1 are regraded. Limestone is labelled micrite.
 - Week 18 built: the globe can wear another planet's raster tiles (NASA Trek mosaics of the Moon and Mars), the crater-counting engine (`src/engine/craters/`), the Moon's craters of 20 km and above bundled from the Robbins (2018) database (`scripts/fetch-craters.mjs`), the planet Explore, the two-box crater-counting lab, Learn text and ten questions. Every week now has content; the Draft list is empty.
 - Week 17 built: the structure engine (`src/engine/structure/`: lines, poles, great circles, equal-angle projection, plane intersection, seeded tasks), an SVG stereonet, the two-plane Explore with the fold axis, the read-the-net lab, Learn text and ten questions.
 - Week 16 built: the infinite-slope engine (`src/engine/slope/`: factor of safety, failure angle by bisection, three soils, seeded tasks), the slope-stability sandbox, the failure-angle lab, Learn text and ten questions.

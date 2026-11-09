@@ -467,7 +467,7 @@
     "id": "scoria",
     "name": "Scoria",
     "class": "igneous",
-    "core": false,
+    "core": true,
     "texture": {
       "grain": "vesicular"
     },
