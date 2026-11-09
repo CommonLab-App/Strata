@@ -235,7 +235,12 @@ cut. Not built: flood stage (not in the services used).
 
 ## Week 14: Groundwater and karst
 
-**Status:** planned (phase 5).
+**Status:** built 2026-11-09. `src/app/weeks/week14/`, `src/engine/groundwater/`, the well mode of the gauge picker
+(`usgs-well-sites`, `usgs-well-iv` with parameter 72019), `data/self-checks/week-14.json`. Assumed: a generated
+eight-well set (a sloping table with one bump) rather than live wells, so the checker reproduces; inverse-distance
+weighting (power 2) for the table and 2 m contours; the learner reads head and flow azimuth at a point rather than
+drawing contours; Thiem confined steady state with a given radius of influence; tolerances 1 m, 20°, 10 %. Karst
+stays in Learn (no sinkhole layer).
 
 - Learn: porosity, permeability, the water table, Darcy's law, wells, karst. Sources: OpenGeology chapter 11.
 - Explore: the Water Explorer for wells: live well levels on the globe; a Darcy sandbox with sliders for hydraulic

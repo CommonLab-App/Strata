@@ -16,6 +16,13 @@ export interface GaugeBox {
   lon: number
 }
 
+/** What is being measured: stream discharge in ft³/s, or depth to water in a well in feet below land surface. */
+export const WATER_KINDS = {
+  stream: { siteType: 'ST', parameter: '00060', label: 'Discharge', attribution: 'USGS Water Services, instantaneous discharge' },
+  well: { siteType: 'GW', parameter: '72019', label: 'Depth to water', attribution: 'USGS Water Services, instantaneous depth to water' },
+} as const
+export type WaterKind = keyof typeof WATER_KINDS
+
 export const gaugeSchema = z.object({ site: z.string(), name: z.string(), lat: z.number(), lon: z.number() })
 export type Gauge = z.infer<typeof gaugeSchema>
 
@@ -28,14 +35,14 @@ export function parseRdb(text: string): Record<string, string>[] {
   return lines.slice(2).map((l) => Object.fromEntries(l.split('\t').map((v, i) => [header[i] ?? String(i), v])))
 }
 
-export const usgsGauges: Adapter<GaugeBox, string, Gauge[]> = {
-  id: 'usgs-gauges',
+const siteAdapter = (kind: WaterKind): Adapter<GaugeBox, string, Gauge[]> => ({
+  id: `usgs-${kind}-sites`,
   ttlSeconds: 86400,
   attribution: 'USGS Water Services',
-  sourceUrl: ({ lat, lon }) => `${SITE}?format=rdb&bBox=${(round(lon) - 0.5).toFixed(2)},${(round(lat) - 0.5).toFixed(2)},${(round(lon) + 0.5).toFixed(2)},${(round(lat) + 0.5).toFixed(2)}&siteType=ST&parameterCd=00060&siteStatus=active&hasDataTypeCd=iv`,
+  sourceUrl: ({ lat, lon }) => `${SITE}?format=rdb&bBox=${(round(lon) - 0.5).toFixed(2)},${(round(lat) - 0.5).toFixed(2)},${(round(lon) + 0.5).toFixed(2)},${(round(lat) + 0.5).toFixed(2)}&siteType=${WATER_KINDS[kind].siteType}&parameterCd=${WATER_KINDS[kind].parameter}&siteStatus=active&hasDataTypeCd=iv`,
   cacheKey: ({ lat, lon }) => `${round(lat)},${round(lon)}`,
   async fetch(params) {
-    const response = await fetch(usgsGauges.sourceUrl(params))
+    const response = await fetch(siteAdapter(kind).sourceUrl(params))
     if (response.status === 404) return ''
     if (!response.ok) throw new Error(`USGS site service ${response.status} ${response.statusText}`)
     return response.text()
@@ -43,10 +50,12 @@ export const usgsGauges: Adapter<GaugeBox, string, Gauge[]> = {
   normalize(raw) {
     return parseRdb(raw)
       .filter((r) => r.site_no && r.dec_lat_va && r.dec_long_va)
-      .map((r) => ({ site: r.site_no!, name: r.station_nm ?? r.site_no!, lat: Number(r.dec_lat_va), lon: Number(r.dec_long_va) }))
+      .map((r) => ({ site: r.site_no!, name: (r.station_nm ?? r.site_no!).trim(), lat: Number(r.dec_lat_va), lon: Number(r.dec_long_va) }))
   },
   normalized: z.array(gaugeSchema),
-}
+})
+export const usgsGauges = siteAdapter('stream')
+export const usgsWells = siteAdapter('well')
 
 export interface DischargeParams {
   site: string
@@ -70,27 +79,29 @@ export const dischargeSchema = z.object({
   lat: z.number(),
   lon: z.number(),
   unit: z.string(),
-  /** [ISO time, discharge] in the unit given, as reported (usually every 15 minutes for 30 days). */
+  /** [ISO time, value] in the unit given, as reported (usually every 15 minutes for 30 days). */
   values: z.array(z.tuple([z.string(), z.number()])),
 })
 export type Discharge = z.infer<typeof dischargeSchema>
 
-export const usgsDischarge: Adapter<DischargeParams, unknown, Discharge> = {
-  id: 'usgs-discharge',
+const ivAdapter = (kind: WaterKind): Adapter<DischargeParams, unknown, Discharge> => ({
+  id: `usgs-${kind}-iv`,
   ttlSeconds: 900,
-  attribution: 'USGS Water Services, instantaneous values',
-  sourceUrl: ({ site }) => `${IV}?format=json&sites=${site}&parameterCd=00060&period=P30D`,
+  attribution: WATER_KINDS[kind].attribution,
+  sourceUrl: ({ site }) => `${IV}?format=json&sites=${site}&parameterCd=${WATER_KINDS[kind].parameter}&period=P30D`,
   cacheKey: ({ site }) => site,
   async fetch(params) {
-    const response = await fetch(usgsDischarge.sourceUrl(params))
+    const response = await fetch(ivAdapter(kind).sourceUrl(params))
     if (!response.ok) throw new Error(`USGS IV service ${response.status} ${response.statusText}`)
     return response.json()
   },
   normalize(raw) {
     const series = ivSchema.parse(raw).value.timeSeries[0]
-    if (!series) throw new Error('no discharge series for this site')
-    const values = series.values.flatMap((v) => v.value).map(({ value, dateTime }) => [new Date(dateTime).toISOString(), Number(value)] as [string, number]).filter(([, v]) => Number.isFinite(v) && v >= 0)
-    return { site: series.sourceInfo.siteCode[0]?.value ?? '', name: series.sourceInfo.siteName, lat: series.sourceInfo.geoLocation.geogLocation.latitude, lon: series.sourceInfo.geoLocation.geogLocation.longitude, unit: series.variable.unit.unitCode, values }
+    if (!series) throw new Error('no series for this site')
+    const values = series.values.flatMap((v) => v.value).map(({ value, dateTime }) => [new Date(dateTime).toISOString(), Number(value)] as [string, number]).filter(([, v]) => Number.isFinite(v) && v > -999)
+    return { site: series.sourceInfo.siteCode[0]?.value ?? '', name: series.sourceInfo.siteName.trim(), lat: series.sourceInfo.geoLocation.geogLocation.latitude, lon: series.sourceInfo.geoLocation.geogLocation.longitude, unit: series.variable.unit.unitCode, values }
   },
   normalized: dischargeSchema,
-}
+})
+export const usgsDischarge = ivAdapter('stream')
+export const usgsWaterLevel = ivAdapter('well')

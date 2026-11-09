@@ -13,7 +13,7 @@ describe('week scaffolds', () => {
     }
   })
   it('leave no week without a page', () => {
-    const built = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    const built = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
     expect([...built, ...DRAFT].sort((a, b) => a - b)).toEqual(WEEKS.map((w) => w.week))
   })
 })

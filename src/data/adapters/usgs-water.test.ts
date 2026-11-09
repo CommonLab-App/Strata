@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { parseRdb, usgsDischarge, usgsGauges } from './usgs-water'
+import { parseRdb, usgsDischarge, usgsGauges, usgsWells } from './usgs-water'
 
 const rdb = `# comment\nagency_cd\tsite_no\tstation_nm\tdec_lat_va\tdec_long_va\n5s\t15s\t50s\t16s\t16s\nUSGS\t01234567\tSOME RIVER\t39.1\t-77.0\nUSGS\t07654321\tOTHER CREEK\t39.2\t-77.1\n`
 
@@ -11,6 +11,7 @@ describe('usgs-water adapters', () => {
       { site: '07654321', name: 'OTHER CREEK', lat: 39.2, lon: -77.1 },
     ])
     expect(usgsGauges.cacheKey({ lat: 39.13, lon: -77.08 })).toBe('39,-77')
+    expect(usgsWells.sourceUrl({ lat: 39, lon: -77 })).toContain('siteType=GW&parameterCd=72019')
   })
   it('normalizes an instantaneous-values response', () => {
     const raw = {
