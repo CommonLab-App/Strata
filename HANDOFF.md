@@ -26,8 +26,8 @@ Prompts one to four are done and the phase-1 gate is met: deliverables 1 to 10 a
 build` passes, the scripted acceptance flow passes in a fresh browser profile, and Lighthouse mobile performance on
 Explore is 92 on a desktop with a GPU (docs/DECISIONS.md).
 
-Phase 2 is built as of 2026-11-08 (docs/specs/phase-2-earth-materials.md, Status). To close its gate: Lighthouse mobile on
-`/#/explore/minerals/quartz` from a machine with a GPU, 80 or more. The phase-3 spec is drafted (docs/specs/phase-3-internal-processes.md, 2026-11-08) and is out for review by
+Phase 2 is built and its gate is met as of 2026-11-09 (docs/specs/phase-2-earth-materials.md, Status): Lighthouse mobile
+on the quartz card scored 91 on the owner's GPU desktop. The phase-3 spec is drafted (docs/specs/phase-3-internal-processes.md, 2026-11-08) and is out for review by
 geologists; expect changes to specs 2 and 3 and to the library data from that review. Meanwhile the review-independent
 phase-3 groundwork is in: pure engine maths with tests (`src/engine/{geo,tectonics,seismic}`), PB2002 boundaries
 bundled (`scripts/fetch-static.mjs`), and source findings in docs/DATA-SOURCES.md. The owner downloaded the GAGE NAM14

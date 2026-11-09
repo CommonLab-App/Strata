@@ -11,8 +11,9 @@ from the stored entry after a reload.
 
 2026-11-08: all deliverables built. The gate is met on this machine: the five identification labs (weeks 2, 3, 4, 6,
 7) each save a tray, score it, and reproduce the same unknowns and score after a reload, in a scripted run through
-the production build; 128 tests, lint, types and the build pass; the forbidden-strings grep is clean. Still to run
-on a machine with a GPU, as for phase 1: Lighthouse mobile on `/#/explore/minerals/quartz`.
+the production build; 128 tests, lint, types and the build pass; the forbidden-strings grep is clean. Lighthouse
+mobile on `/#/explore/minerals/quartz` from the owner's desktop with a GPU, 2026-11-09: performance 91, accessibility,
+best practices and SEO 100 (docs/DECISIONS.md). **Gate met.**
 
 Departures from the text below, decided while building:
 

@@ -105,3 +105,24 @@ the engine falls back to OpenStreetMap raster tiles for development. Rejected: N
 zoom 5 for regional views), a hosted vector provider (a key in the build, a third party in every page view).
 Zoom 8 keeps the file in the hundreds of megabytes; pass a higher maximum to `scripts/build-basemap.sh` if regional
 views need it.
+
+## 2026-11-09 Phase-2 Lighthouse gate: met, 91 on the quartz card
+
+Lighthouse 13.5 mobile (simulated throttling, 4x CPU slowdown) on `/#/explore/minerals/quartz` from the production
+build on the owner's desktop with a GPU.
+
+| Measure | Result |
+| --- | --- |
+| Performance | 91 |
+| First contentful paint | 2.0 s |
+| Largest contentful paint (the turntable video poster) | 2.9 s |
+| Total blocking time | 147 ms |
+| Cumulative layout shift | 0 |
+| Speed index | 2.0 s |
+| Accessibility, best practices, SEO | 100, 100, 100 |
+
+The phase-2 gate is met. Notes for later, none blocking: the 640x360 poster is drawn at 308 px wide on a phone, so a
+smaller poster would save about 26 kB per card; the main bundle and the crystal scene each carry about 40 % of code
+unused on this page (the crystal scene is already a lazy chunk); the OSM preconnect hint was unused here and is now
+removed since production serves its own basemap. The video-caption note does not apply: the turntable clips have no
+audio.

@@ -2,10 +2,11 @@
 
 ## Unreleased
 
+- Dropped the OpenStreetMap preconnect hint from index.html: production serves its own basemap, and Lighthouse flagged the hint as unused on non-map pages.
 - Basemap decided and wired: a self-hosted Protomaps PMTiles extract with its glyphs and sprites, folder named by `VITE_BASEMAP_URL`; `scripts/build-basemap.sh` builds it; OSM raster tiles stay the development fallback (docs/DECISIONS.md).
 - Phase 3 groundwork, review-independent: great-circle helpers, relative plate motion with the lab tolerances, travel-time interpolation and a least-squares epicentre, all pure and unit-tested under `src/engine/`; PB2002 plate boundaries bundled with provenance by `scripts/fetch-static.mjs`; source probes for GVP, EarthScope and PB2002 recorded in docs/DATA-SOURCES.md. Then: GAGE NAM14 GNSS velocities (2194 stations) and the GVP Holocene volcano and eruption tables bundled by script, each with provenance (GNSS now CC BY 4.0 per the GAGE Data License of 2025-06-12, with attribution text in its index; GVP recorded as a work of United States government employees with the Volcanoes of the World v. 5.4.0 citation); About lists the GNSS, PB2002, GVP and COD attributions; map engine line layers and velocity arrows; the shared `Sliders` and SVG `Plot` under `src/app/sim/`; `gplates-points` and `gplates-plates` live adapters; the nearest-boundary rule for the week-8 checker.
 
-Phase-2 gate met on the build machine 2026-11-08: all five identification labs save, score and reproduce their tray after a reload (docs/specs/phase-2-earth-materials.md); Lighthouse on the mineral card still to run on a GPU machine.
+Phase-2 gate met on the build machine 2026-11-08: all five identification labs save, score and reproduce their tray after a reload (docs/specs/phase-2-earth-materials.md); Lighthouse mobile on the quartz card 91 on the owner's GPU desktop, 2026-11-09 (docs/DECISIONS.md).
 
 Phase-1 gate met 2026-11-08: build, tests and the acceptance flow pass; Lighthouse mobile performance 92 on the Explore pane (docs/DECISIONS.md).
 
