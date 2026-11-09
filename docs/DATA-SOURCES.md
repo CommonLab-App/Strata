@@ -58,3 +58,10 @@ the site search takes a bounding box with `siteType=ST&parameterCd=00060&siteSta
 the IV service gives 30 days of 15-minute discharge with `period=P30D`. The successor `api.waterdata.usgs.gov/ogcapi`
 also answers with CORS; when NWIS is retired, `src/data/adapters/usgs-water.ts` is the one place to change. Public
 domain (US government work).
+
+## Landslide and resource layers (2026-11-09)
+
+The USGS landslide inventory is served from an ArcGIS feature service (`services.arcgis.com/v01gqwM5QqNysAAi/.../US_Landslide_Inventory`)
+that answers with `Access-Control-Allow-Origin: *`, but the envelope query tried returned 400; the query form needs
+working out before a layer is built. Mineral resource records (`mrdata.usgs.gov`) answer but their formats were not
+probed. Week 16 ships without these layers.

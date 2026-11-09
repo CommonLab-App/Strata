@@ -29,7 +29,7 @@ export const WEEKS = [
 export type Week = (typeof WEEKS)[number]
 
 /** The weeks whose page is a plan outline, not built content (src/app/weeks/scaffold.tsx). Home shows them as drafts. */
-export const DRAFT: readonly number[] = [16, 17, 18]
+export const DRAFT: readonly number[] = [17, 18]
 export const isDraft = (week: Week) => DRAFT.includes(week.week)
 /** Every week has a page: built content or its scaffold. */
 export const hasPage = (week: Week) => WEEKS.includes(week)

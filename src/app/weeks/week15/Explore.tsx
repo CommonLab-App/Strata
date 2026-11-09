@@ -9,7 +9,7 @@ import { floodedFraction, glaciate, PROFILE_HALF_WIDTH, PROFILE_POINTS, shapeExp
 
 /** Week 15: a valley under ice, and a coast under a rising sea. */
 export function Explore() {
-  const [g, setG] = useState({ ice: 300, years: 2000 })
+  const [g, setG] = useState({ ice: 400, years: 6000 })
   const [sea, setSea] = useState({ level: 0 })
   const v = vValley(500)
   const u = glaciate(v, g.ice, g.years)

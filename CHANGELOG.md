@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Week 16 built: the infinite-slope engine (`src/engine/slope/`: factor of safety, failure angle by bisection, three soils, seeded tasks), the slope-stability sandbox, the failure-angle lab, Learn text and ten questions.
 - Week 15 built: the surface models (`src/engine/surface/`: a valley profile rounded under ice with a shape exponent, flooded fraction of a grid), a coastal elevation tile added to the terrain bundle, the Surface Sandbox Explore (glacier sliders and profile, sea level on the coast with flooded cells drawn blue), the U-valley and flooded-coast lab, Learn text and ten questions.
 - Week 14 built: the water adapters and gauge picker take a kind (stream or well, parameter 72019 for depth to water), the groundwater engine (`src/engine/groundwater/`: Darcy, Thiem, an inverse-distance water table with contours and flow direction, seeded tasks), the well Explore with a Darcy sandbox, the water-table lab, Learn text and ten questions.
 - Week 13 built: `usgs-gauges` and `usgs-discharge` adapters (USGS Water Services, RDB and JSON), the gauge picker on the globe (tap for gauges within half a degree, tap a gauge for 30 days of discharge), the hydrograph engine (`src/engine/hydro/`: peak, start of rise, hourly means, the Leopold and Wolman channel rule), the Water Explorer and stream-table sandbox, the hydrograph lab, Learn text and ten questions. About credits the USGS Water Services.

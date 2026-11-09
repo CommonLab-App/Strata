@@ -275,7 +275,11 @@ built: landform identification on labelled tiles (needs the reviewers' labels) a
 
 ## Week 16: Mass wasting, resources, climate
 
-**Status:** planned (phase 5).
+**Status:** built 2026-11-09. `src/app/weeks/week16/`, `src/engine/slope/`, `data/self-checks/week-16.json`. Assumed:
+the infinite-slope factor of safety with root cohesion added to soil cohesion; three soils with textbook
+parameters (loose sand, silty soil, clay-rich soil, 2 m thick); failure angle within 2°; the one-line explanations
+are kept, not scored. Not built: landslide-inventory and resource map layers (the USGS feature services need their
+query forms worked out; recorded in docs/DATA-SOURCES.md) and a climate layer; both stay in Learn.
 
 - Learn: slope processes and triggers, the resources we take from rock, the climate record in geology. Sources:
   OpenGeology chapters 10, 15 and 16.

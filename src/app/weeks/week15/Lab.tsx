@@ -35,7 +35,7 @@ export function Lab({ progress, update }: LabProps) {
   const id = useId()
   const parsed = worksheetSchema.safeParse(progress.data)
   const ws = parsed.success ? parsed.data : null
-  const [g, setG] = useState({ ice: 300, years: 2000 })
+  const [g, setG] = useState({ ice: 400, years: 6000 })
   const [shown, setShown] = useState(0)
   const { grid, error } = useArea(COAST_ID)
   if (!ws) {
