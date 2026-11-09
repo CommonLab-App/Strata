@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Week 18 built: the globe can wear another planet's raster tiles (NASA Trek mosaics of the Moon and Mars), the crater-counting engine (`src/engine/craters/`), the Moon's craters of 20 km and above bundled from the Robbins (2018) database (`scripts/fetch-craters.mjs`), the planet Explore, the two-box crater-counting lab, Learn text and ten questions. Every week now has content; the Draft list is empty.
 - Week 17 built: the structure engine (`src/engine/structure/`: lines, poles, great circles, equal-angle projection, plane intersection, seeded tasks), an SVG stereonet, the two-plane Explore with the fold axis, the read-the-net lab, Learn text and ten questions.
 - Week 16 built: the infinite-slope engine (`src/engine/slope/`: factor of safety, failure angle by bisection, three soils, seeded tasks), the slope-stability sandbox, the failure-angle lab, Learn text and ten questions.
 - Week 15 built: the surface models (`src/engine/surface/`: a valley profile rounded under ice with a shape exponent, flooded fraction of a grid), a coastal elevation tile added to the terrain bundle, the Surface Sandbox Explore (glacier sliders and profile, sea level on the coast with flooded cells drawn blue), the U-valley and flooded-coast lab, Learn text and ten questions.

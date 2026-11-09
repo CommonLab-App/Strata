@@ -2,9 +2,9 @@
 
 One entry per week, in the shape the working agreement asks of a spec: Learn sources, Explore interactions, Lab
 worksheet fields, checker rules, data adapters and licences, and the questions the reviewers should settle before
-the week is built. Weeks 1 to 4, 6 and 7 are built; their entries say where the content lives and what is still
-open. Weeks 5, 8 and 9 follow docs/specs/phase-3-internal-processes.md. Weeks 10 to 18 are plans only; their
-Explore pages today show the outline from `src/app/weeks/scaffold.tsx`, marked Draft on Home.
+the week is built. All eighteen weeks are built as of 2026-11-09; each entry says where the content lives, what was assumed in
+place of a reviewer's decision, and what was left out. The scaffold (`src/app/weeks/scaffold.tsx`) keeps the
+original outlines for the record.
 
 Conventions that hold for every week: Learn links out and never copies; Explore shows a one-line neutral caption and
 a source link with the fetch date; labs save to the week's localStorage entry and the checker recomputes from the
@@ -311,7 +311,12 @@ and the map-pattern naming task.
 
 ## Week 18: Planetary geology and synthesis (optional)
 
-**Status:** planned (phase 6).
+**Status:** built 2026-11-09. `src/app/weeks/week18/`, `src/engine/craters/`, `src/map/planets.ts`, `data/craters/moon.json`
+(Robbins 2018 lunar crater database, craters of 20 km and above, by `scripts/fetch-craters.mjs`), `data/self-checks/week-18.json`.
+Assumed: NASA Trek global mosaics (Moon WAC, Mars Viking) drawn on the globe, their equirectangular tiles stretched
+onto the web-mercator globe (shapes squeezed toward the poles; counting kept to the mid-latitudes); two seeded
+20° boxes; craters of 50 km and above counted, within 10 % or two; "older" by crater density with a 10 % tie band.
+Not built: Mars craters and a Mars counting task; elevation models of either body.
 
 - Learn: comparative planetology; crater counting as a clock. Sources: USGS Astrogeology; Wikipedia articles linked.
 - Explore: the globe with Moon and Mars elevation in place of Earth, the same layer tools running on them.

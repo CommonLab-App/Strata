@@ -3,7 +3,7 @@ import { addProtocol, config, Map as MapLibreMap, type FilterSpecification, type
 import 'maplibre-gl/dist/maplibre-gl.css'
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url'
 import { Protocol } from 'pmtiles'
-import type { CreateEngine, LineLayer, MapEngine, Pick, PointLayer, TimeRange } from '../types'
+import type { CreateEngine, LineLayer, MapEngine, Pick, PointLayer, RasterTiles, TimeRange } from '../types'
 
 // MapLibre looks for its worker beside its own module, which the bundle does not provide: Vite serves the file as an asset instead.
 config.WORKER_URL = workerUrl
@@ -13,7 +13,14 @@ addProtocol('pmtiles', new Protocol().tile)
 const BASEMAP = (import.meta.env.VITE_BASEMAP_URL as string | undefined)?.replace(/\/$/, '')
 
 // ponytail: the flavour follows the theme at map start only; a theme change mid-session keeps the old basemap until reload.
-const style = (): StyleSpecification => {
+const style = (tiles?: RasterTiles): StyleSpecification => {
+  if (tiles) {
+    return {
+      version: 8,
+      sources: { planet: { type: 'raster', tiles: [tiles.url], tileSize: 256, maxzoom: tiles.maxZoom, scheme: tiles.tms ? 'tms' : 'xyz', attribution: tiles.attribution } },
+      layers: [{ id: 'planet', type: 'raster', source: 'planet' }],
+    }
+  }
   if (!BASEMAP) {
     return {
       version: 8,
@@ -50,10 +57,10 @@ export const splitAtAntimeridian = (coordinates: [number, number][]): [number, n
 
 const filterFor = (range: TimeRange | null): FilterSpecification | null => (range === null ? null : ['all', ['>=', ['get', 't'], range.start], ['<=', ['get', 't'], range.end]])
 
-export const createEngine: CreateEngine = async (container, view = { lat: 20, lon: 0, zoom: 1.2 }) => {
+export const createEngine: CreateEngine = async (container, view = { lat: 20, lon: 0, zoom: 1.2 }, tiles) => {
   const map = new MapLibreMap({
     container,
-    style: style(),
+    style: style(tiles),
     center: [view.lon, view.lat],
     zoom: view.zoom,
     // At most two device pixels per CSS pixel: a 3x phone draws under half the fragments for a globe that looks the same.

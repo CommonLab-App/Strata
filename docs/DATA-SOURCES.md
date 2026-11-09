@@ -65,3 +65,11 @@ The USGS landslide inventory is served from an ArcGIS feature service (`services
 that answers with `Access-Control-Allow-Origin: *`, but the envelope query tried returned 400; the query form needs
 working out before a layer is built. Mineral resource records (`mrdata.usgs.gov`) answer but their formats were not
 probed. Week 16 ships without these layers.
+
+## NASA Trek tiles and the lunar crater database (2026-11-09)
+
+`trek.nasa.gov/tiles/{Moon,Mars}/EQ/<layer>/1.0.0//default/default028mm/{z}/{y}/{x}.jpg` answers openly for the LRO
+WAC and Viking MDIM 2.1 global mosaics (the LOLA colour shade layer name tried returned 404). The tile matrix is
+equirectangular, not web mercator, so the globe stretches the tiles; good enough for a global view, noted on the pane.
+NASA imagery is public domain. The Robbins (2018) lunar crater database is a 96 MB zip at the USGS Astrogeology
+CKAN; `scripts/fetch-craters.mjs` keeps craters of 20 km and above (about 5000) with the citation in the bundle.

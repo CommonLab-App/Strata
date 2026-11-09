@@ -67,6 +67,17 @@ export interface MapView {
   zoom: number
 }
 
-export type CreateEngine = (container: HTMLElement, view?: MapView) => Promise<MapEngine>
+/** A raster tile set to draw in place of the Earth basemap, e.g. another planet's mosaic. */
+export interface RasterTiles {
+  /** URL template with {z}/{x}/{y}. */
+  url: string
+  attribution: string
+  /** Largest zoom the set serves. */
+  maxZoom: number
+  /** Tiles whose y index counts from the south (TMS) rather than the north. */
+  tms?: boolean
+}
+
+export type CreateEngine = (container: HTMLElement, view?: MapView, tiles?: RasterTiles) => Promise<MapEngine>
 
 export const inRange = (point: MapPoint, range: TimeRange | null) => range === null || (point.time >= range.start && point.time <= range.end)

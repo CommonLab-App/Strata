@@ -20,21 +20,23 @@ Do deliverable 6: build the quake layer on both CesiumJS and MapLibre GL, run th
 
 Remove the engine we did not pick. Finish deliverables 7 through 10 and run the acceptance tests. When all pass, update CHANGELOG.md and tell me the phase-1 gate is met.
 
-## Status 2026-11-08
+## Status 2026-11-09
 
-Prompts one to four are done and the phase-1 gate is met: deliverables 1 to 10 are built and committed, `npm run
-build` passes, the scripted acceptance flow passes in a fresh browser profile, and Lighthouse mobile performance on
-Explore is 92 on a desktop with a GPU (docs/DECISIONS.md).
+All eighteen weeks are built and every phase gate that can be checked here passes: `npm run build` (lint, 206
+tests, types, bundle) and `npm run smoke` (headless Chromium over the globe panes). Phases 1 and 2 met their gates
+with Lighthouse on a GPU machine (92 and 91). Phase 3 (weeks 5, 8, 9), phase 4 (10 to 12), phase 5 (13 to 16) and
+the phase-6 extension weeks (17, 18) were built on 2026-11-09 against docs/WEEK-PLANS.md, which records for every
+week what was assumed where a reviewer's decision was expected (viscosity relation, travel-time table and teaching
+earthquakes, isotope ranges, elevation tile source and areas, stream-table rule, soil parameters, crater catalogue)
+and what was left out (GPlates past 250 Ma, the real-volcano overlay, the Macrostrat map overlay, landslide and
+resource layers, labelled landforms, Three.js block models, Mars craters). Each data source's terms are in
+docs/DATA-SOURCES.md and credited on About.
 
-Phase 2 is built and its gate is met as of 2026-11-09 (docs/specs/phase-2-earth-materials.md, Status): Lighthouse mobile
-on the quartz card scored 91 on the owner's GPU desktop. The phase-3 spec is drafted (docs/specs/phase-3-internal-processes.md, 2026-11-08) and is out for review by
-geologists; expect changes to specs 2 and 3 and to the library data from that review. Meanwhile the review-independent
-phase-3 groundwork is in: pure engine maths with tests (`src/engine/{geo,tectonics,seismic}`), PB2002 boundaries
-bundled (`scripts/fetch-static.mjs`), and source findings in docs/DATA-SOURCES.md. The owner downloaded the GAGE NAM14
-velocity release; it is normalized into `data/gnss/` by `scripts/import-velocities.mjs` (CC BY 4.0 under the GAGE Data License, attribution text in its index). GVP tables are bundled too (`scripts/fetch-gvp.mjs`), cited per the GVP How To Cite page. Every week has an implementation plan in docs/WEEK-PLANS.md (2026-11-09), with the questions for the reviewers listed per week. Phase 3 is under way (2026-11-09): the week-8 Plate Motion Explorer and the week-5 volcano overlay are built on the bundled data (spec deliverables 5 and 11's overlay); the labs, Learn texts, self-checks, the GPlates age slider, the volcano model and the seismic work wait on the review. Weeks 5 and 8 to 18 are scaffolded (2026-11-09): plan outlines in `src/app/weeks/scaffold.tsx`, shown as Draft on Home; building a week means adding its folder and removing its number from DRAFT in `src/app/weeks.ts`. Basemap decided 2026-11-08: self-hosted Protomaps extract, built by `scripts/build-basemap.sh` and named by `VITE_BASEMAP_URL`; the owner builds and uploads the folder before launch. Also in:
-map line layers and arrows, `src/app/sim/` Sliders and Plot, GPlates adapters, nearest-boundary checker rule. Waiting
-on the review: the volcano model's empirical relation, the travel-time table source, the teaching earthquakes for the
-seismograms, the reconstruction model beyond 250 Ma, and all week content and labs.
+Still owner work: build and upload the basemap folder (`scripts/build-basemap.sh`, `VITE_BASEMAP_URL`); run
+Lighthouse on the week-8 Explore pane from a GPU machine (phase-3 gate item); the core mineral list; more
+turntable videos; the GPU check of week 8 zoomed in. Still reviewer work: the Planka review cards, whose answers go
+into docs/WEEK-PLANS.md and then into the code paths each entry names. Phase 6's remaining items are offline mode
+(service worker), the accessibility pass and launch.
 
 ## Then
 Ask Claude Code to draft docs/specs/phase-2-earth-materials.md from docs/PLAN.md before any phase-2 code, and review it the same way.

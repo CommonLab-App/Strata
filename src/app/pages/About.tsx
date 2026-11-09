@@ -109,6 +109,17 @@ export function About() {
               .
             </li>
             <li>
+              The Moon and Mars: global mosaics from{' '}
+              <a className={link} href="https://trek.nasa.gov/" rel="noreferrer">
+                NASA Trek
+              </a>{' '}
+              (NASA/JPL-Caltech/USGS), and lunar craters from the Robbins (2018) lunar crater database at the{' '}
+              <a className={link} href="https://astrogeology.usgs.gov/" rel="noreferrer">
+                USGS Astrogeology Science Center
+              </a>
+              .
+            </li>
+            <li>
               Basemap: map data ©{' '}
               <a className={link} href="https://www.openstreetmap.org/copyright" rel="noreferrer">
                 OpenStreetMap contributors
