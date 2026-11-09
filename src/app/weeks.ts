@@ -7,12 +7,12 @@ import { peekStatus, weekEntry, type ActivityStatus, type KeyValueStore } from '
  */
 export const WEEKS = [
   { week: 1, title: 'Earth as a system', version: 1 },
-  { week: 2, title: 'Minerals: atoms, bonds, crystal structure', version: 1 },
-  { week: 3, title: 'Minerals: silicate families', version: 1 },
-  { week: 4, title: 'Igneous rocks and magma', version: 1 },
+  { week: 2, title: 'Minerals: atoms, bonds, crystal structure', version: 2 },
+  { week: 3, title: 'Minerals: silicate families', version: 2 },
+  { week: 4, title: 'Igneous rocks and magma', version: 2 },
   { week: 5, title: 'Volcanoes and volcanic hazards', version: 1 },
-  { week: 6, title: 'Weathering, soils, sedimentary rocks', version: 1 },
-  { week: 7, title: 'Metamorphic rocks; the rock cycle', version: 1 },
+  { week: 6, title: 'Weathering, soils, sedimentary rocks', version: 2 },
+  { week: 7, title: 'Metamorphic rocks; the rock cycle', version: 2 },
   { week: 8, title: 'Plate tectonics', version: 1 },
   { week: 9, title: "Earthquakes and Earth's interior", version: 1 },
   { week: 10, title: 'Deep time: relative dating', version: 1 },

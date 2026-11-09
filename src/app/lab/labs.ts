@@ -7,10 +7,9 @@ import { coreMineralIds } from './library'
  */
 export const MINERAL_ID_1: LabConfig = {
   id: 'mineral-id-1',
-  // Twenty common minerals that hand lens, streak, scratch set and cleavage tell apart. Olivine, garnet and gypsum
-  // wait for week 3: without density they are twins of quartz and muscovite at this bench.
-  pool: ['quartz', 'orthoclase', 'plagioclase', 'muscovite', 'biotite', 'hornblende', 'apatite', 'corundum', 'calcite', 'chalcopyrite', 'halite', 'fluorite', 'talc', 'galena', 'pyrite', 'magnetite', 'hematite', 'graphite', 'sulfur', 'kaolinite'],
-  count: 12,
+  // The core set without gypsum: it has no density tool here and is a twin of muscovite and kaolinite at this bench.
+  pool: coreMineralIds.filter((id) => id !== 'gypsum'),
+  count: 10,
   tools: ['hand-lens', 'streak', 'scratch:fingernail', 'scratch:penny', 'scratch:glass', 'scratch:streak-plate', 'scratch:quartz', 'cleavage'],
   sufficiency: 2,
 }
@@ -18,7 +17,7 @@ export const MINERAL_ID_1: LabConfig = {
 export const MINERAL_ID_2: LabConfig = {
   id: 'mineral-id-2',
   pool: coreMineralIds,
-  count: 15,
+  count: 12,
   tools: ['hand-lens', 'streak', 'scratch:fingernail', 'scratch:penny', 'scratch:glass', 'scratch:streak-plate', 'scratch:quartz', 'cleavage', 'acid', 'magnet', 'density'],
   sufficiency: 2,
 }
@@ -26,6 +25,6 @@ export const MINERAL_ID_2: LabConfig = {
 import type { RockLabConfig } from '@/engine/idlab/rocks'
 import { coreRockIds } from '@/app/rocks/library'
 
-export const IGNEOUS_ID: RockLabConfig = { id: 'igneous-id', pool: coreRockIds('igneous'), count: 8, tools: ['hand-lens', 'grain-gauge', 'minerals'], sufficiency: 2 }
-export const SEDIMENTARY_ID: RockLabConfig = { id: 'sedimentary-id', pool: coreRockIds('sedimentary'), count: 8, tools: ['hand-lens', 'grain-gauge', 'minerals', 'acid'], sufficiency: 2 }
-export const METAMORPHIC_ID: RockLabConfig = { id: 'metamorphic-id', pool: coreRockIds('metamorphic'), count: 8, tools: ['hand-lens', 'minerals', 'acid'], sufficiency: 2 }
+export const IGNEOUS_ID: RockLabConfig = { id: 'igneous-id', pool: coreRockIds('igneous'), count: 6, tools: ['hand-lens', 'grain-gauge', 'minerals'], sufficiency: 2 }
+export const SEDIMENTARY_ID: RockLabConfig = { id: 'sedimentary-id', pool: coreRockIds('sedimentary'), count: 6, tools: ['hand-lens', 'grain-gauge', 'minerals', 'acid'], sufficiency: 2 }
+export const METAMORPHIC_ID: RockLabConfig = { id: 'metamorphic-id', pool: coreRockIds('metamorphic'), count: 4, tools: ['hand-lens', 'minerals', 'acid'], sufficiency: 2 }

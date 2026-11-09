@@ -8,9 +8,9 @@ import { drawRocks } from './engine/idlab/rocks'
 describe('the rock identification labs', () => {
   it('pin pool and draw to the stored-entry version of weeks 4, 6 and 7', () => {
     expect({ v: [WEEKS[3].version, WEEKS[5].version, WEEKS[6].version], pools: [IGNEOUS_ID.pool.length, SEDIMENTARY_ID.pool.length, METAMORPHIC_ID.pool.length], draws: [drawRocks(IGNEOUS_ID, 1), drawRocks(SEDIMENTARY_ID, 1), drawRocks(METAMORPHIC_ID, 1)] }).toEqual({
-      v: [1, 1, 1],
-      pools: [11, 12, 7],
-      draws: [["peridotite", "granite", "basalt", "tuff", "scoria", "diorite", "obsidian", "gabbro"], ["dolostone", "conglomerate", "coquina", "coal", "rock-gypsum", "sandstone", "limestone", "chert"], ["marble", "slate", "gneiss", "hornfels", "quartzite", "phyllite", "schist"]],
+      v: [2, 2, 2],
+      pools: [7, 7, 4],
+      draws: [["basalt", "granite", "gabbro", "porphyry", "obsidian", "rhyolite"], ["fossiliferous-limestone", "conglomerate", "limestone", "coal", "oolitic-limestone", "sandstone"], ["gneiss", "slate", "marble", "schist"]],
     })
   })
 })

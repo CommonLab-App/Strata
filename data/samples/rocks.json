@@ -207,7 +207,7 @@
     "id": "andesite",
     "name": "Andesite",
     "class": "igneous",
-    "core": true,
+    "core": false,
     "texture": {
       "grain": "aphanitic"
     },
@@ -325,7 +325,7 @@
     "id": "peridotite",
     "name": "Peridotite",
     "class": "igneous",
-    "core": true,
+    "core": false,
     "texture": {
       "grain": "phaneritic"
     },
@@ -433,7 +433,7 @@
     "id": "pumice",
     "name": "Pumice",
     "class": "igneous",
-    "core": true,
+    "core": false,
     "texture": {
       "grain": "vesicular"
     },
@@ -467,7 +467,7 @@
     "id": "scoria",
     "name": "Scoria",
     "class": "igneous",
-    "core": true,
+    "core": false,
     "texture": {
       "grain": "vesicular"
     },
@@ -505,7 +505,7 @@
     "id": "tuff",
     "name": "Tuff",
     "class": "igneous",
-    "core": true,
+    "core": false,
     "texture": {
       "grain": "pyroclastic"
     },
@@ -584,7 +584,7 @@
     "id": "porphyry",
     "name": "Porphyry (andesite porphyry)",
     "class": "igneous",
-    "core": false,
+    "core": true,
     "texture": {
       "grain": "porphyritic"
     },
@@ -662,7 +662,7 @@
     "id": "breccia",
     "name": "Breccia",
     "class": "sedimentary",
-    "core": true,
+    "core": false,
     "texture": {
       "kind": "clastic",
       "grainSizeMm": [
@@ -830,7 +830,7 @@
     "id": "siltstone",
     "name": "Siltstone",
     "class": "sedimentary",
-    "core": true,
+    "core": false,
     "texture": {
       "kind": "clastic",
       "grainSizeMm": [
@@ -954,7 +954,7 @@
   },
   {
     "id": "limestone",
-    "name": "Limestone",
+    "name": "Limestone (micrite)",
     "class": "sedimentary",
     "core": true,
     "texture": {
@@ -991,7 +991,7 @@
     "id": "fossiliferous-limestone",
     "name": "Fossiliferous limestone",
     "class": "sedimentary",
-    "core": false,
+    "core": true,
     "texture": {
       "kind": "biochemical"
     },
@@ -1025,7 +1025,7 @@
     "id": "oolitic-limestone",
     "name": "Oolitic limestone",
     "class": "sedimentary",
-    "core": false,
+    "core": true,
     "texture": {
       "kind": "chemical",
       "grainSizeMm": [
@@ -1098,7 +1098,7 @@
     "id": "coquina",
     "name": "Coquina",
     "class": "sedimentary",
-    "core": true,
+    "core": false,
     "texture": {
       "kind": "biochemical",
       "grainSizeMm": [
@@ -1138,7 +1138,7 @@
     "id": "dolostone",
     "name": "Dolostone",
     "class": "sedimentary",
-    "core": true,
+    "core": false,
     "texture": {
       "kind": "chemical"
     },
@@ -1172,7 +1172,7 @@
     "id": "chert",
     "name": "Chert",
     "class": "sedimentary",
-    "core": true,
+    "core": false,
     "texture": {
       "kind": "chemical"
     },
@@ -1206,7 +1206,7 @@
     "id": "rock-salt",
     "name": "Rock salt",
     "class": "sedimentary",
-    "core": true,
+    "core": false,
     "texture": {
       "kind": "chemical"
     },
@@ -1239,7 +1239,7 @@
     "id": "rock-gypsum",
     "name": "Rock gypsum",
     "class": "sedimentary",
-    "core": true,
+    "core": false,
     "texture": {
       "kind": "chemical"
     },
@@ -1380,7 +1380,7 @@
     "id": "phyllite",
     "name": "Phyllite",
     "class": "metamorphic",
-    "core": true,
+    "core": false,
     "texture": {
       "foliated": true,
       "grade": "low",
@@ -1604,7 +1604,7 @@
     "id": "quartzite",
     "name": "Quartzite",
     "class": "metamorphic",
-    "core": true,
+    "core": false,
     "texture": {
       "foliated": false,
       "grade": "medium",
@@ -1646,7 +1646,7 @@
     "id": "hornfels",
     "name": "Hornfels",
     "class": "metamorphic",
-    "core": true,
+    "core": false,
     "texture": {
       "foliated": false,
       "grade": "medium",

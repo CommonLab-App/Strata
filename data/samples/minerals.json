@@ -70,7 +70,7 @@
     "name": "Orthoclase (K-feldspar)",
     "formula": "KAlSi3O8",
     "group": "framework-silicate",
-    "core": true,
+    "core": false,
     "hardness": [
       6,
       6
@@ -331,7 +331,7 @@
     "name": "Augite",
     "formula": "(Ca,Na)(Mg,Fe,Al)(Si,Al)2O6",
     "group": "chain-silicate",
-    "core": true,
+    "core": false,
     "hardness": [
       5.5,
       6
@@ -384,7 +384,7 @@
     "name": "Olivine",
     "formula": "(Mg,Fe)2SiO4",
     "group": "isolated-silicate",
-    "core": true,
+    "core": false,
     "hardness": [
       6.5,
       7
@@ -435,7 +435,7 @@
     "name": "Garnet (almandine)",
     "formula": "Fe3Al2(SiO4)3",
     "group": "isolated-silicate",
-    "core": true,
+    "core": false,
     "hardness": [
       7,
       7.5
@@ -543,7 +543,7 @@
     "name": "Dolomite",
     "formula": "CaMg(CO3)2",
     "group": "carbonate",
-    "core": true,
+    "core": false,
     "hardness": [
       3.5,
       4
@@ -767,7 +767,7 @@
     "name": "Apatite",
     "formula": "Ca5(PO4)3(F,Cl,OH)",
     "group": "phosphate",
-    "core": true,
+    "core": false,
     "hardness": [
       5,
       5
@@ -820,7 +820,7 @@
     "name": "Corundum",
     "formula": "Al2O3",
     "group": "oxide",
-    "core": true,
+    "core": false,
     "hardness": [
       9,
       9
@@ -873,7 +873,7 @@
     "name": "Topaz",
     "formula": "Al2SiO4(F,OH)2",
     "group": "isolated-silicate",
-    "core": true,
+    "core": false,
     "hardness": [
       8,
       8
@@ -925,7 +925,7 @@
     "name": "Talc",
     "formula": "Mg3Si4O10(OH)2",
     "group": "sheet-silicate",
-    "core": true,
+    "core": false,
     "hardness": [
       1,
       1
@@ -1027,7 +1027,7 @@
     "name": "Chlorite",
     "formula": "(Mg,Fe)5Al(AlSi3O10)(OH)8",
     "group": "sheet-silicate",
-    "core": true,
+    "core": false,
     "hardness": [
       2,
       2.5
@@ -1076,7 +1076,7 @@
     "name": "Serpentine",
     "formula": "Mg3Si2O5(OH)4",
     "group": "sheet-silicate",
-    "core": true,
+    "core": false,
     "hardness": [
       2.5,
       4
@@ -1129,7 +1129,7 @@
     "name": "Epidote",
     "formula": "Ca2(Al,Fe)3(SiO4)3(OH)",
     "group": "isolated-silicate",
-    "core": true,
+    "core": false,
     "hardness": [
       6,
       7
@@ -1178,7 +1178,7 @@
     "name": "Staurolite",
     "formula": "Fe2Al9Si4O23(OH)",
     "group": "isolated-silicate",
-    "core": true,
+    "core": false,
     "hardness": [
       7,
       7.5
@@ -1230,7 +1230,7 @@
     "name": "Kyanite",
     "formula": "Al2SiO5",
     "group": "isolated-silicate",
-    "core": true,
+    "core": false,
     "hardness": [
       4.5,
       7
@@ -1279,7 +1279,7 @@
     "name": "Tourmaline (schorl)",
     "formula": "Na(Fe,Mg)3Al6(BO3)3Si6O18(OH)4",
     "group": "isolated-silicate",
-    "core": true,
+    "core": false,
     "hardness": [
       7,
       7.5
@@ -1329,7 +1329,7 @@
     "name": "Sphalerite",
     "formula": "ZnS",
     "group": "sulfide",
-    "core": true,
+    "core": false,
     "hardness": [
       3.5,
       4
@@ -1382,7 +1382,7 @@
     "name": "Galena",
     "formula": "PbS",
     "group": "sulfide",
-    "core": true,
+    "core": false,
     "hardness": [
       2.5,
       2.5
@@ -1481,7 +1481,7 @@
     "name": "Chalcopyrite",
     "formula": "CuFeS2",
     "group": "sulfide",
-    "core": true,
+    "core": false,
     "hardness": [
       3.5,
       4
@@ -1636,7 +1636,7 @@
     "name": "Goethite (limonite)",
     "formula": "FeO(OH)",
     "group": "hydroxide",
-    "core": true,
+    "core": false,
     "hardness": [
       5,
       5.5
@@ -1741,7 +1741,7 @@
     "name": "Sulfur",
     "formula": "S",
     "group": "native-element",
-    "core": true,
+    "core": false,
     "hardness": [
       1.5,
       2.5
@@ -1791,7 +1791,7 @@
     "name": "Copper",
     "formula": "Cu",
     "group": "native-element",
-    "core": true,
+    "core": false,
     "hardness": [
       2.5,
       3
@@ -1842,7 +1842,7 @@
     "name": "Barite",
     "formula": "BaSO4",
     "group": "sulfate",
-    "core": true,
+    "core": false,
     "hardness": [
       3,
       3.5

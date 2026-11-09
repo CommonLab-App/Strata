@@ -9,12 +9,12 @@ import { draw } from './engine/idlab'
 describe('the mineral identification labs', () => {
   it('pin pool, count and draw to the stored-entry version of weeks 2 and 3', () => {
     expect({ v2: WEEKS[1].version, v3: WEEKS[2].version, draw2: draw(MINERAL_ID_1, 1), draw3: draw(MINERAL_ID_2, 1), pool2: MINERAL_ID_1.pool.length, pool3: MINERAL_ID_2.pool.length }).toEqual({
-      v2: 1,
-      v3: 1,
-      draw2: ["talc","quartz","halite","kaolinite","sulfur","hornblende","fluorite","pyrite","corundum","graphite","apatite","calcite"],
-      draw3: ["staurolite","quartz","kaolinite","barite","sulfur","calcite","epidote","sphalerite","fluorite","copper","apatite","topaz","biotite","halite","olivine"],
-      pool2: 20,
-      pool3: 36,
+      v2: 2,
+      v3: 2,
+      draw2: ["kaolinite", "quartz", "halite", "graphite", "hematite", "biotite", "fluorite", "pyrite", "hornblende", "magnetite"],
+      draw3: ["fluorite", "quartz", "halite", "graphite", "hematite", "biotite", "gypsum", "pyrite", "hornblende", "magnetite", "muscovite", "calcite"],
+      pool2: 13,
+      pool3: 14,
     })
   })
 

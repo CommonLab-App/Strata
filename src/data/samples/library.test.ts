@@ -9,7 +9,7 @@ describe('mineral library', () => {
 
   it('validates, with unique ids and at least a core tray', () => {
     expect(parsed.length).toBeGreaterThanOrEqual(40)
-    expect(parsed.filter((m) => m.core).length).toBeGreaterThanOrEqual(30)
+    expect(parsed.filter((m) => m.core).length).toBeGreaterThanOrEqual(12)
   })
 
   it('gives every mineral a source for its values and a streak the key can match', () => {
@@ -49,7 +49,7 @@ describe('rock library', async () => {
 
   it('validates, with a core set of each class', () => {
     expect(parsed.length).toBeGreaterThanOrEqual(40)
-    for (const cls of ['igneous', 'sedimentary', 'metamorphic'] as const) expect(parsed.filter((r) => r.class === cls && r.core).length, cls).toBeGreaterThanOrEqual(6)
+    for (const cls of ['igneous', 'sedimentary', 'metamorphic'] as const) expect(parsed.filter((r) => r.class === cls && r.core).length, cls).toBeGreaterThanOrEqual(4)
   })
 
   it('names only minerals and rocks that exist', () => {
