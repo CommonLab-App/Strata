@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- Phase 3 groundwork, review-independent: great-circle helpers, relative plate motion with the lab tolerances, travel-time interpolation and a least-squares epicentre, all pure and unit-tested under `src/engine/`; PB2002 plate boundaries bundled with provenance by `scripts/fetch-static.mjs`; source probes for GVP, EarthScope and PB2002 recorded in docs/DATA-SOURCES.md.
+- Phase 3 groundwork, review-independent: great-circle helpers, relative plate motion with the lab tolerances, travel-time interpolation and a least-squares epicentre, all pure and unit-tested under `src/engine/`; PB2002 plate boundaries bundled with provenance by `scripts/fetch-static.mjs`; source probes for GVP, EarthScope and PB2002 recorded in docs/DATA-SOURCES.md. Then: GAGE NAM14 GNSS velocities (2194 stations) and the GVP Holocene volcano and eruption tables bundled by script, each with provenance and a licence marked pending; map engine line layers and velocity arrows; the shared `Sliders` and SVG `Plot` under `src/app/sim/`; `gplates-points` and `gplates-plates` live adapters; the nearest-boundary rule for the week-8 checker.
 
 Phase-2 gate met on the build machine 2026-11-08: all five identification labs save, score and reproduce their tray after a reload (docs/specs/phase-2-earth-materials.md); Lighthouse on the mineral card still to run on a GPU machine.
 
