@@ -213,7 +213,12 @@ parser; the point query is too slow for an area) and a scored cross-section sket
 
 ## Week 13: Streams and floods
 
-**Status:** planned (phase 5).
+**Status:** built 2026-11-09. `src/app/weeks/week13/`, `src/app/water/GaugePicker.tsx`, `src/data/adapters/usgs-water.ts`,
+`src/engine/hydro/`, `data/self-checks/week-13.json`. Assumed: the legacy NWIS site and IV services (CORS, open);
+the learner chooses the gauge by tapping the globe (no fixed gauge); the lab keeps hourly means of the record in the
+worksheet so the checker reads what the learner saw; the start of the rise is the last trough before the peak;
+Leopold and Wolman (1957) for braided against meandering, with a slope one twentieth of the line as the straight
+cut. Not built: flood stage (not in the services used).
 
 - Learn: drainage, discharge, floodplains, hydrographs, recurrence. Sources: OpenGeology chapter 11; USGS water
   science school pages.

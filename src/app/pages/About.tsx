@@ -102,6 +102,13 @@ export function About() {
               , placed in the public domain by their contributors; each structure links its COD entry.
             </li>
             <li>
+              Rivers and groundwater: gauges, discharge and well levels from the{' '}
+              <a className={link} href="https://waterservices.usgs.gov/" rel="noreferrer">
+                USGS Water Services
+              </a>
+              .
+            </li>
+            <li>
               Basemap: map data ©{' '}
               <a className={link} href="https://www.openstreetmap.org/copyright" rel="noreferrer">
                 OpenStreetMap contributors

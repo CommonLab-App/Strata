@@ -50,3 +50,11 @@ licence in its index; credited on About. The columns and map endpoints (phase 4,
 are therefore decoded by `scripts/fetch-terrain.mjs` and bundled under `data/terrain/`. The dataset is a Tilezen
 compilation of public sources (USGS 3DEP, SRTM, GMTED2010, ETOPO1 and others); its registry page lists them and asks
 for attribution, which About gives. Confirm the attribution wording against the registry before the public build.
+
+## USGS Water Services (2026-11-09)
+
+`waterservices.usgs.gov/nwis/site/` (RDB) and `/nwis/iv/` (JSON) answer openly with `Access-Control-Allow-Origin: *`;
+the site search takes a bounding box with `siteType=ST&parameterCd=00060&siteStatus=active&hasDataTypeCd=iv`, and
+the IV service gives 30 days of 15-minute discharge with `period=P30D`. The successor `api.waterdata.usgs.gov/ogcapi`
+also answers with CORS; when NWIS is retired, `src/data/adapters/usgs-water.ts` is the one place to change. Public
+domain (US government work).
