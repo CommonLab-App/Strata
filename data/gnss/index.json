@@ -4,10 +4,12 @@
     "source": "EarthScope Consortium, GAGE Facility; CWU analysis centre combined solution",
     "url": "https://gage-data.earthscope.org/archive/gnss/products/velocity/rel_231230/cwu.final_nam14.20231230.vel",
     "release": "20240123",
-    "licence": "pending: see docs/DATA-SOURCES.md",
+    "licence": "CC BY 4.0",
     "fetched": "2026-11-09",
     "segments": 6495,
     "stations": 2194,
-    "rule": "one row per station: the longest observation span; names dropped"
+    "rule": "one row per station: the longest observation span; names dropped",
+    "licenceUrl": "https://www.unavco.org/data/policies_forms/data-policy/data-license.html",
+    "attribution": "Data were accessed from the NSF NGF data archive operated by EarthScope Consortium (NSF award 2435260). Licensed under CC BY 4.0. Changes: one segment per station, station names dropped, units mm/yr."
   }
 }
