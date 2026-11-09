@@ -3,7 +3,7 @@ import { Plot } from '@/app/sim/Plot'
 import { TopoView } from '@/app/topo/TopoView'
 import { DataFooter } from '@/app/week/DataFooter'
 import { Button } from '@/components/ui/button'
-import { AREA_IDS, TERRAIN_ATTRIBUTION, type AreaId } from '@/data/terrain/schema'
+import { AREA_IDS, TERRAIN_ATTRIBUTION } from '@/data/terrain/schema'
 import { gradient, lengthMetres, profile, type Point } from '@/engine/topo'
 import { useArea } from './useArea'
 
@@ -11,7 +11,7 @@ const INTERVALS = [20, 50, 100, 200]
 
 /** Week 12: a real elevation grid with contours at a chosen interval; tap two points for the profile between them. */
 export function Explore() {
-  const [areaId, setAreaId] = useState<AreaId>(AREA_IDS[0])
+  const [areaId, setAreaId] = useState<(typeof AREA_IDS)[number]>(AREA_IDS[0])
   const [interval, setInterval] = useState(50)
   const [points, setPoints] = useState<Point[]>([])
   const { area, grid, error } = useArea(areaId)

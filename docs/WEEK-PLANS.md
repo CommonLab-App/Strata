@@ -256,7 +256,11 @@ stays in Learn (no sinkhole layer).
 
 ## Week 15: Glaciers, deserts, coasts
 
-**Status:** planned (phase 5).
+**Status:** built 2026-11-09. `src/app/weeks/week15/`, `src/engine/surface/`, `data/terrain/area-4.json` (a coastal
+tile), `data/self-checks/week-15.json`. Assumed: a one-dimensional valley-profile model with erosion proportional
+to ice thickness squared and a shape exponent as the U-ness measure (a teaching model); the sea-level task reads the
+flooded fraction of one coastal grid at two seeded levels, within 5 percentage points; wind stays in Learn. Not
+built: landform identification on labelled tiles (needs the reviewers' labels) and the wind and wave sandbox modes.
 
 - Learn: glacial erosion and deposition, wind, waves and longshore drift, sea-level change. Sources: OpenGeology
   chapters 12 to 14.

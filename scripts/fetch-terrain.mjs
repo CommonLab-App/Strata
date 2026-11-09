@@ -11,6 +11,8 @@ const AREAS = [
   { id: 'area-1', lat: 46.2, lon: -122.19 },
   { id: 'area-2', lat: 40.72, lon: -77.62 },
   { id: 'area-3', lat: 46.86, lon: -121.76 },
+  // A coast for the sea-level task: part sea (heights at or below zero), part low land.
+  { id: 'area-4', lat: 37.25, lon: -76.0 },
 ]
 
 const tileOf = (lat, lon, z) => {

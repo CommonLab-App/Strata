@@ -7,7 +7,7 @@ const PX = 512
  * A grid drawn as hillshade on a canvas with contours and any marks as SVG on top. Taps report grid coordinates.
  * Pure drawing: the contours come from the engine, the shade from a fixed north-west light.
  */
-export function TopoView({ grid, interval, line, stations = [], onTap, title }: { grid: Grid; interval: number; line?: [Point, Point]; stations?: Point[]; onTap?: (p: Point) => void; title: string }) {
+export function TopoView({ grid, interval, line, stations = [], onTap, title, floodLevel }: { grid: Grid; interval: number; line?: [Point, Point]; stations?: Point[]; onTap?: (p: Point) => void; title: string; floodLevel?: number }) {
   const canvas = useRef<HTMLCanvasElement>(null)
   const scale = PX / grid.size
 
@@ -27,14 +27,20 @@ export function TopoView({ grid, interval, line, stations = [], onTap, title }: 
         const shade = Math.max(0, Math.min(1, 0.65 + ((h - e) / grid.dx + (h - s) / grid.dy) * 1.2))
         const t = (h - lo) / Math.max(1, hi - lo)
         const o = (r * grid.size + c) * 4
-        img.data[o] = Math.round(shade * (200 + 40 * t))
-        img.data[o + 1] = Math.round(shade * (190 + 20 * t))
-        img.data[o + 2] = Math.round(shade * (150 + 60 * (1 - t)))
+        if (floodLevel !== undefined && h <= floodLevel) {
+          img.data[o] = 70
+          img.data[o + 1] = 130
+          img.data[o + 2] = 200
+        } else {
+          img.data[o] = Math.round(shade * (200 + 40 * t))
+          img.data[o + 1] = Math.round(shade * (190 + 20 * t))
+          img.data[o + 2] = Math.round(shade * (150 + 60 * (1 - t)))
+        }
         img.data[o + 3] = 255
       }
     ctx.imageSmoothingEnabled = false
     ctx.putImageData(img, 0, 0)
-  }, [grid])
+  }, [grid, floodLevel])
 
   const tap = (e: PointerEvent<SVGSVGElement>) => {
     if (!onTap) return

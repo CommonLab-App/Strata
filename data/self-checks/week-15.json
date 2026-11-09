@@ -1,0 +1,12 @@
+[
+  { "id": "w15q01", "prompt": "A glacier forms where:", "options": ["Winters are cold", "More snow accumulates each year than melts", "There are mountains", "Rivers freeze"], "answer": 1, "explanation": "Snow that survives the summer compacts to ice and begins to flow." },
+  { "id": "w15q02", "prompt": "A valley cut by a glacier has a cross-profile shaped like:", "options": ["A V", "A U", "A W", "A flat plain"], "answer": 1, "explanation": "Ice fills the valley and scours the floor and walls into a trough." },
+  { "id": "w15q03", "prompt": "A hanging valley is:", "options": ["A valley above a cliff left by a larger glacier", "A dry riverbed", "A canyon", "A sand dune"], "answer": 0, "explanation": "The tributary glacier eroded less deeply than the main one." },
+  { "id": "w15q04", "prompt": "A moraine is made of:", "options": ["Well-sorted sand", "Unsorted debris dropped by ice", "Lava", "Limestone"], "answer": 1, "explanation": "Ice carries everything from clay to boulders and drops it all together." },
+  { "id": "w15q05", "prompt": "An erratic is:", "options": ["A fossil", "A boulder carried by ice far from its source rock", "A type of dune", "A meander"], "answer": 1, "explanation": "Its rock type does not match the ground it rests on." },
+  { "id": "w15q06", "prompt": "Wind moves which sediment most readily?", "options": ["Boulders", "Gravel", "Sand and dust", "Clay only"], "answer": 2, "explanation": "Air is too thin to lift anything coarser than sand." },
+  { "id": "w15q07", "prompt": "The steep slip face of a dune points:", "options": ["Upwind", "Downwind", "North", "Toward the sea"], "answer": 1, "explanation": "Sand blows up the gentle windward slope and avalanches down the lee side." },
+  { "id": "w15q08", "prompt": "Longshore drift moves sand:", "options": ["Straight out to sea", "Along the shore", "Inland", "Nowhere"], "answer": 1, "explanation": "Waves arrive at an angle and carry sand in a zigzag along the beach." },
+  { "id": "w15q09", "prompt": "At the height of the last ice age, sea level was about:", "options": ["The same as today", "A few metres higher", "More than a hundred metres lower", "A kilometre lower"], "answer": 2, "explanation": "Water locked in ice sheets lowered the oceans; coastlines lay far out on today's shelves." },
+  { "id": "w15q10", "prompt": "Loess is:", "options": ["Beach sand", "Wind-blown dust deposited in thick layers", "Glacial ice", "A kind of cliff"], "answer": 1, "explanation": "Fine silt carried by wind, often from glacial outwash, settles far downwind." }
+]

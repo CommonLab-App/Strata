@@ -12,7 +12,9 @@ export const areaSchema = z.object({
 export type Area = z.infer<typeof areaSchema>
 
 export const AREA_IDS = ['area-1', 'area-2', 'area-3'] as const
-export type AreaId = (typeof AREA_IDS)[number]
+/** The coast for week 15's sea-level task; not offered in the topo workshop. */
+export const COAST_ID = 'area-4'
+export type AreaId = (typeof AREA_IDS)[number] | typeof COAST_ID
 
 const EARTH_M = 40_075_017
 

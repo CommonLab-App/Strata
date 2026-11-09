@@ -54,6 +54,23 @@
       "min": 1186,
       "max": 4380,
       "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/11/331/721.png"
+    },
+    {
+      "id": "area-4",
+      "tile": {
+        "z": 11,
+        "x": 591,
+        "y": 795
+      },
+      "bounds": {
+        "west": -76.11328125,
+        "east": -75.9375,
+        "north": 37.30027528134431,
+        "south": 37.160316546736766
+      },
+      "min": -1,
+      "max": 17,
+      "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/11/591/795.png"
     }
   ]
 }
