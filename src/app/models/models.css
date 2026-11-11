@@ -1,0 +1,90 @@
+/* Looping block diagrams (docs/specs/models.md). Every animated element carries .mdl plus one effect class and
+   sets its own animation-duration inline. `forwards` matters: the app's reduced-motion rule runs each animation
+   once in 0.01 ms, and with forwards that leaves the element on its last keyframe, the loop's end state. */
+.mdl {
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 8s;
+}
+
+/* A selected part keeps full opacity; the rest of the drawing dims. ModelTab sets data-dim on the wrapper and
+   data-on on the matching part. */
+[data-dim] [data-part] {
+  opacity: 0.3;
+  transition: opacity 0.2s;
+}
+[data-dim] [data-part][data-on] {
+  opacity: 1;
+}
+[data-part] {
+  cursor: pointer;
+}
+
+/* Steady loops: end where they start. */
+@keyframes mdl-drift-right {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(12px); }
+  100% { transform: translateX(0); }
+}
+@keyframes mdl-drift-left {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-12px); }
+  100% { transform: translateX(0); }
+}
+@keyframes mdl-flow {
+  0% { stroke-dashoffset: 48; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes mdl-pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+@keyframes mdl-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes mdl-spin-back {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+/* Before-to-after loops: reach the end state at 80 %, hold it, then cut back to the start. */
+@keyframes mdl-rise {
+  0% { transform: translateY(0); }
+  80%, 100% { transform: translateY(-10px); }
+}
+@keyframes mdl-sink {
+  0% { transform: translateY(0); }
+  80%, 100% { transform: translateY(10px); }
+}
+@keyframes mdl-shift-right {
+  0% { transform: translateX(0); }
+  80%, 100% { transform: translateX(16px); }
+}
+@keyframes mdl-shift-left {
+  0% { transform: translateX(0); }
+  80%, 100% { transform: translateX(-16px); }
+}
+@keyframes mdl-grow {
+  0% { transform: scaleY(0); }
+  80%, 100% { transform: scaleY(1); }
+}
+@keyframes mdl-shrink {
+  0% { transform: scaleY(1); }
+  80%, 100% { transform: scaleY(0.3); }
+}
+@keyframes mdl-fade-in {
+  0% { opacity: 0; }
+  80%, 100% { opacity: 1; }
+}
+@keyframes mdl-fade-out {
+  0% { opacity: 1; }
+  80%, 100% { opacity: 0; }
+}
+@keyframes mdl-fall {
+  0% { transform: translateY(-40px); opacity: 0; }
+  10% { opacity: 1; }
+  80%, 100% { transform: translateY(0); opacity: 1; }
+}

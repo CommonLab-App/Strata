@@ -53,7 +53,7 @@ export default defineConfig({
   },
   test: {
     environment: 'node',
-    include: ['src/**/*.test.ts'],
+    include: ['src/**/*.test.{ts,tsx}'],
     // Vitest hands a test an empty string for a stylesheet unless told otherwise; firstPaint.test.ts reads the app's for its colour schemes.
     css: { include: [/src\/index\.css/] },
   },
