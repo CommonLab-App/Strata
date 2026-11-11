@@ -1,16 +1,17 @@
 // Screenshots every variant of a topic's Model tab from the production build, drawing only, at 2x, so each scene
 // can be checked by eye. `npm run build` first. With REDUCED=1 the page is loaded as if the system asked for
 // reduced motion, so each shot is the loop's end state.
-// Usage: node scripts/model-shots.mjs <out dir> <slug> [slug ...]
+// Usage: node scripts/model-shots.mjs <out dir> <slug> [slug ...]   (PORT and DIST env to run several at once)
 import { spawn } from 'node:child_process'
 import { mkdirSync } from 'node:fs'
 import puppeteer from 'puppeteer-core'
 
 const CHROME = process.env.CHROME_PATH ?? `${process.env.HOME}/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome`
-const PORT = 4175
+const PORT = Number(process.env.PORT ?? 4175)
+const DIST = process.env.DIST ?? 'dist'
 const [out = 'shots', ...slugs] = process.argv.slice(2)
 mkdirSync(out, { recursive: true })
-const preview = spawn('npx', ['vite', 'preview', '--port', String(PORT), '--strictPort'], { stdio: 'ignore' })
+const preview = spawn('npx', ['vite', 'preview', '--port', String(PORT), '--strictPort', '--outDir', DIST], { stdio: 'ignore' })
 await new Promise((r) => setTimeout(r, 2500))
 const browser = await puppeteer.launch({ executablePath: CHROME, headless: true, args: ['--no-sandbox'] })
 let failed = false
