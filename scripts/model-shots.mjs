@@ -23,7 +23,7 @@ try {
     const problems = []
     page.on('console', (m) => m.type() === 'error' && problems.push(`console: ${m.text()}`))
     page.on('pageerror', (e) => problems.push(`exception: ${e.message}`))
-    await page.goto(`http://localhost:${PORT}/#/topic/${slug}/model`, { waitUntil: 'networkidle0', timeout: 60000 })
+    await page.goto(`http://localhost:${PORT}/#/topic/${slug}/model`, { waitUntil: 'load', timeout: 60000 })
     await page.waitForSelector('svg[role=img]', { timeout: 30000 })
     const labels = await page.$$eval('[role=group][aria-label=Model] button', (b) => b.map((x) => x.textContent ?? ''))
     for (const [i, label] of (labels.length ? labels : ['']).entries()) {

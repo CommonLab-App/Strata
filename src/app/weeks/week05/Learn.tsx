@@ -28,7 +28,8 @@ export function Learn() {
         <p className="mb-2">
           Fluid basalt builds broad, low shield volcanoes and lava plains. Intermediate magma builds steep
           stratovolcanoes from alternating lava and fragmental layers. When a large body of silica-rich magma erupts
-          at once, the roof of the emptied chamber collapses into a caldera many kilometres across. The Volcanic
+          at once, the roof of the emptied chamber collapses into a caldera many kilometres across. The Model tab shows
+          the four edifice shapes in cross-section and as a model you can turn. The Volcanic
           Explosivity Index, VEI, ranks eruptions on a scale of 0 to 8 by the volume of material thrown out, each step
           roughly ten times the last.
         </p>

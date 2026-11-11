@@ -22,7 +22,7 @@ try {
     const problems = []
     page.on('console', (m) => m.type() === 'error' && problems.push(`console: ${m.text()}`))
     page.on('pageerror', (e) => problems.push(`exception: ${e.message}`))
-    await page.goto(`http://localhost:${PORT}/${route}`, { waitUntil: 'networkidle0', timeout: 60000 })
+    await page.goto(`http://localhost:${PORT}/${route}`, { waitUntil: 'load', timeout: 60000 })
     // The pane's status line stops saying Loading once its data is in. Then the viewport is grown to the whole page
     // before the globe gets its seconds to draw: a full-page capture would resize the viewport itself, and a map
     // sized in vh would be caught mid-redraw with half its tiles missing.
