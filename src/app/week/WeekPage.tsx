@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react'
+import { Suspense, type ComponentType } from 'react'
 import { NavLink, useParams } from 'react-router'
 import { PageHeader } from '@/app/PageHeader'
 import { NotFound } from '@/app/pages/NotFound'
@@ -38,6 +38,8 @@ export interface WeekContent {
   Explore: ComponentType
   Lab: ComponentType<LabProps>
   questions: Question[]
+  /** A looping block diagram (docs/specs/models.md); the Model tab shows only when a topic has one. */
+  Model?: ComponentType
 }
 
 const CONTENT: Record<number, WeekContent> = {
@@ -65,6 +67,7 @@ const CONTENT: Record<number, WeekContent> = {
 const TABS = [
   { tab: 'learn', label: 'Learn' },
   { tab: 'explore', label: 'Explore' },
+  { tab: 'model', label: 'Model' },
   { tab: 'lab', label: 'Lab' },
   { tab: 'check', label: 'Self-check' },
 ] as const
@@ -75,7 +78,7 @@ export function WeekPage() {
   const week = weekBySlug(params.slug)
   const tab = params.tab ?? 'learn'
   const content = week && CONTENT[week.week]
-  if (!week || !hasPage(week) || !content || !TABS.some((t) => t.tab === tab)) return <NotFound />
+  if (!week || !hasPage(week) || !content || !TABS.some((t) => t.tab === tab) || (tab === 'model' && !content.Model)) return <NotFound />
   // Keyed by week: the shell holds that week's stored progress in state, and a move to another week must start over.
   return <WeekShell key={week.week} week={week} tab={tab as Tab} content={content} />
 }
@@ -83,13 +86,14 @@ export function WeekPage() {
 function WeekShell({ week, tab, content }: { week: Week; tab: Tab; content: WeekContent }) {
   const [progress, update] = useWeekProgress(week)
   const title = week.title
-  const { Learn, Explore, Lab, questions } = content
+  const { Learn, Explore, Lab, Model, questions } = content
+  const tabs = TABS.filter((t) => t.tab !== 'model' || Model)
   return (
     <>
       <PageHeader title={title} documentTitle={`${TABS.find((t) => t.tab === tab)?.label} · ${title}`} />
       <div className="mb-4 flex flex-wrap items-center gap-3">
         <nav aria-label="Topic sections" className="flex flex-wrap gap-1 rounded-lg bg-muted p-[3px] text-sm">
-          {TABS.map(({ tab: t, label }) => (
+          {tabs.map(({ tab: t, label }) => (
             <NavLink
               key={t}
               to={t === 'learn' ? weekPath(week.week) : `${weekPath(week.week)}/${t}`}
@@ -107,6 +111,11 @@ function WeekShell({ week, tab, content }: { week: Week; tab: Tab; content: Week
       </div>
       {tab === 'learn' && <Learn />}
       {tab === 'explore' && <Explore />}
+      {tab === 'model' && Model && (
+        <Suspense fallback={<p className="text-muted-foreground">Loading the model…</p>}>
+          <Model />
+        </Suspense>
+      )}
       {tab === 'lab' && <Lab progress={progress} update={update} />}
       {tab === 'check' &&
         (questions.length > 0 ? (
