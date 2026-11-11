@@ -9,7 +9,8 @@ export function Learn() {
           Faults and waves
         </h2>
         <p className="mb-2">
-          Rock under stress bends, stores energy, and finally breaks along a fault; the sudden slip is an earthquake.
+          Rock under stress bends, stores energy, and finally breaks along a fault; the sudden slip is an earthquake. The
+          Model tab shows each fault type as a looping block diagram.
           The point where the break starts is the focus, and the spot on the surface above it is the epicentre. The
           slip sends out waves of two kinds through the body of the Earth. P waves push and pull along their path and
           travel fastest. S waves shake from side to side, travel slower, and cannot pass through liquid. Surface
