@@ -62,7 +62,7 @@ export function Explore() {
     const map = engine.current
     if (!ready || !bundle || !map) return
     if (showBoundaries) map.addLines(boundaryLayer(bundle.boundaries))
-    else map.removeLayer('boundaries')
+    else map.removeLayer('plate-boundaries')
   }, [ready, bundle, showBoundaries, engine])
 
   useEffect(() => {

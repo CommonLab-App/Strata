@@ -50,7 +50,7 @@ export function Explore() {
     const map = engine.current
     if (!ready || !bundle || !map) return
     if (showBoundaries) map.addLines(boundaryLayer(bundle.boundaries))
-    else map.removeLayer('boundaries')
+    else map.removeLayer('plate-boundaries')
     map.addLayer({ id: 'volcanoes', colour: VOLCANO_COLOUR, points: bundle.volcanoes.map((v) => ({ id: String(v.number), lat: v.lat, lon: v.lon, time: 0, size: 5 })) })
   }, [ready, bundle, showBoundaries, engine])
 

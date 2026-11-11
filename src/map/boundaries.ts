@@ -15,7 +15,7 @@ const kindOf = (f: BoundaryFeature): BoundaryKind => f.properties.kind as Bounda
 
 /** The bundled boundaries as a line layer coloured by kind. */
 export const boundaryLayer = (features: BoundaryFeature[]): LineLayer => ({
-  id: 'boundaries',
+  id: 'plate-boundaries', // Not 'boundaries': the Protomaps basemap style owns a layer of that name.
   lines: features.map((f, i) => ({ id: `${f.properties.boundary}-${i}`, coordinates: f.geometry.coordinates as [number, number][], colour: BOUNDARY_COLOUR[kindOf(f)], width: 1.5 })),
 })
 
