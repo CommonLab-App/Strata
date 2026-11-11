@@ -2,7 +2,7 @@
 # worker and the shell must be re-checked so a new deploy is picked up.
 AddType application/manifest+json .webmanifest
 <IfModule mod_headers.c>
-  <FilesMatch "\.(js|css|woff2|png|jpg|svg)$">
+  <FilesMatch "\.(js|css|woff2|png|jpg|svg|pbf|pmtiles)$">
     Header set Cache-Control "public, max-age=604800"
   </FilesMatch>
   <If "%{REQUEST_URI} =~ m#/assets/#">
