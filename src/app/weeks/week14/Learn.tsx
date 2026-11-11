@@ -20,6 +20,8 @@ export function Learn() {
           centimetres a year in clay, driven by the slope of the water table and governed by Darcy&rsquo;s law:
           discharge is hydraulic conductivity times area times head gradient. Pumping a well lowers the head around
           it into a cone of depression whose depth depends on the pumping rate and the aquifer&rsquo;s transmissivity.
+          The Model tab shows an artesian cross-section with three wells, the zones below the surface, and a karst
+          block as looping diagrams.
         </p>
       </section>
       <section aria-labelledby="karst-heading">
