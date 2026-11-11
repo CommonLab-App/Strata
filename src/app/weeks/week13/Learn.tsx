@@ -13,7 +13,8 @@ export function Learn() {
           where it is steep and sideways where it is gentle, carries sediment as dissolved load, suspended load and
           bed load, and drops it where it slows: on the inside of bends, across a floodplain when it overtops its
           banks, and in a delta where it meets still water. Steep, sediment-choked streams braid into many shifting
-          channels; gentler ones meander in a single channel that migrates across the valley floor.
+          channels; gentler ones meander in a single channel that migrates across the valley floor. The Model tab
+          shows the zones of a stream and the four drainage patterns as looping block diagrams.
         </p>
         <p>
           Discharge is the volume of water passing a point per second. A gauge measures the water level and converts
