@@ -11,7 +11,7 @@ const [out = 'smoke', ...routes] = process.argv.slice(2)
 const ROUTES = routes.length > 0 ? routes : ['/#/topic/earth-system/explore', '/#/topic/volcanoes/explore', '/#/topic/plate-tectonics/explore']
 mkdirSync(out, { recursive: true })
 
-const preview = spawn('npx', ['vite', 'preview', '--port', String(PORT), '--strictPort'], { stdio: 'ignore' })
+const preview = spawn('npx', ['vite', 'preview', '--port', String(PORT), '--strictPort'], { stdio: 'ignore', detached: true })
 await new Promise((r) => setTimeout(r, 2500))
 const browser = await puppeteer.launch({ executablePath: CHROME, headless: true, args: ['--no-sandbox', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] })
 let failed = false
@@ -41,6 +41,7 @@ try {
   }
 } finally {
   await browser.close()
-  preview.kill()
+  // The npx wrapper spawns vite in its own process group; killing the group takes the server with it.
+  process.kill(-preview.pid, 'SIGTERM')
 }
 process.exit(failed ? 1 : 0)

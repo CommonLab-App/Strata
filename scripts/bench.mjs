@@ -12,7 +12,7 @@ const CHROME = process.env.CHROME_PATH ?? `${process.env.HOME}/.cache/ms-playwri
 const PORT = 4173
 const URL = process.argv[2] ?? `http://localhost:${PORT}/#/topic/earth-system/explore`
 
-const preview = spawn('npx', ['vite', 'preview', '--port', String(PORT), '--strictPort'], { stdio: 'ignore' })
+const preview = spawn('npx', ['vite', 'preview', '--port', String(PORT), '--strictPort'], { stdio: 'ignore', detached: true })
 await new Promise((r) => setTimeout(r, 2500))
 const gl = process.env.BENCH_NO_WEBGL ? ['--disable-3d-apis'] : ['--use-angle=swiftshader', '--enable-unsafe-swiftshader']
 const chrome = await launch({ chromePath: CHROME, chromeFlags: ['--headless=new', '--no-sandbox', ...gl] })
@@ -27,5 +27,6 @@ try {
   console.log(JSON.stringify({ url: URL, webgl: process.env.BENCH_NO_WEBGL ? 'disabled' : 'swiftshader', ...out }, null, 2))
 } finally {
   chrome.kill()
-  preview.kill()
+  // The npx wrapper spawns vite in its own process group; killing the group takes the server with it.
+  process.kill(-preview.pid, 'SIGTERM')
 }

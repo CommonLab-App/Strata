@@ -11,7 +11,7 @@ const PORT = Number(process.env.PORT ?? 4175)
 const DIST = process.env.DIST ?? 'dist'
 const [out = 'shots', ...slugs] = process.argv.slice(2)
 mkdirSync(out, { recursive: true })
-const preview = spawn('npx', ['vite', 'preview', '--port', String(PORT), '--strictPort', '--outDir', DIST], { stdio: 'ignore' })
+const preview = spawn('npx', ['vite', 'preview', '--port', String(PORT), '--strictPort', '--outDir', DIST], { stdio: 'ignore', detached: true })
 await new Promise((r) => setTimeout(r, 2500))
 const browser = await puppeteer.launch({ executablePath: CHROME, headless: true, args: ['--no-sandbox'] })
 let failed = false
@@ -40,6 +40,7 @@ try {
   }
 } finally {
   await browser.close()
-  preview.kill()
+  // The npx wrapper spawns vite in its own process group; killing the group takes the server with it.
+  process.kill(-preview.pid, 'SIGTERM')
 }
 process.exit(failed ? 1 : 0)
