@@ -15,6 +15,7 @@ export function Learn() {
           valleys are left hanging above it, and the head of the valley is carved into a bowl, a cirque. The ice
           drops its load where it melts, in ridges of unsorted debris called moraines and in boulders carried far
           from their source, erratics. Continental ice sheets did the same across whole regions in the last ice age.
+          The Model tab shows five agents of erosion as before-and-after loops.
         </p>
       </section>
       <section aria-labelledby="wind-heading">
