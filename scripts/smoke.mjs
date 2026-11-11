@@ -8,7 +8,7 @@ import puppeteer from 'puppeteer-core'
 const CHROME = process.env.CHROME_PATH ?? `${process.env.HOME}/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome`
 const PORT = 4174
 const [out = 'smoke', ...routes] = process.argv.slice(2)
-const ROUTES = routes.length > 0 ? routes : ['/#/week/1/explore', '/#/week/5/explore', '/#/week/8/explore']
+const ROUTES = routes.length > 0 ? routes : ['/#/topic/earth-system/explore', '/#/topic/volcanoes/explore', '/#/topic/plate-tectonics/explore']
 mkdirSync(out, { recursive: true })
 
 const preview = spawn('npx', ['vite', 'preview', '--port', String(PORT), '--strictPort'], { stdio: 'ignore' })

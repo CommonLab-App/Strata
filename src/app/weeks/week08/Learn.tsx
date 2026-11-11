@@ -36,7 +36,7 @@ export function Learn() {
         <p>
           Today the motion is measured directly. Stations fixed to bedrock track satellite positioning signals for
           years, and their drift, millimetres per year, is the plate motion. A velocity has to be stated relative to
-          something: in this week&rsquo;s data the frame is the stable interior of the North American plate, so
+          something: in this topic&rsquo;s data the frame is the stable interior of the North American plate, so
           stations there read close to zero and the western edge shows the Pacific plate sliding past.
         </p>
       </section>

@@ -3,7 +3,7 @@ import { Atom, Gem, Globe, House, Info, Map, Mountain, Settings } from 'lucide-r
 /** The app pages, as the navigation rail lists them. */
 export const NAV = [
   { to: '/', label: 'Home', icon: House },
-  { to: '/week/1', label: 'This week', icon: Globe },
+  { to: '/topic/earth-system', label: 'Topics', icon: Globe },
   { to: '/explore/minerals', label: 'Minerals', icon: Gem },
   { to: '/explore/rocks', label: 'Rocks', icon: Mountain },
   { to: '/explore/elements', label: 'Elements', icon: Atom },

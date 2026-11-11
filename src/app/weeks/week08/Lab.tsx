@@ -137,7 +137,7 @@ export function Lab({ progress, update }: LabProps) {
             <li>{result.azimuthOk ? 'Direction: right.' : `Direction: the data give ${result.expected.azimuth.toFixed(0)}° from north.`}</li>
             <li>{result.boundaryOk ? 'Boundary: agrees with the nearest PB2002 segment.' : 'Boundary: does not agree with the nearest PB2002 segment within 200 km of the midpoint (or none is that close).'}</li>
           </ul>
-          <p className="mt-2 text-muted-foreground">Change any entry to try again; your best attempt is what the week keeps.</p>
+          <p className="mt-2 text-muted-foreground">Change any entry to try again; your best attempt is what the topic keeps.</p>
         </section>
       )}
 

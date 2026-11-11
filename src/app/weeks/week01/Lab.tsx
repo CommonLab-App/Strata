@@ -71,7 +71,7 @@ export function Lab({ progress, update }: LabProps) {
         {!complete && <p className="text-sm text-muted-foreground">Fill in every field to finish.</p>}
         {progress.labDone && (
           <p className="text-sm text-muted-foreground" role="status">
-            Saved. You can keep editing; the week stays finished.
+            Saved. You can keep editing; the topic stays finished.
           </p>
         )}
       </div>

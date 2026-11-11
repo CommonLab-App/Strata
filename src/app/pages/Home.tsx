@@ -17,15 +17,15 @@ export function Home() {
         </p>
       )}
       <p className="mb-6 max-w-prose text-muted-foreground">
-        StrataLab is an introductory physical geology explorer and virtual lab, laid out as a sixteen-week course with two
-        optional extension weeks. No account is needed{persistent ? '; your progress is saved in this browser.' : '.'}
+        StrataLab is an introductory physical geology explorer and virtual lab, in sixteen topics that build on each other, with two
+        optional extensions. No account is needed{persistent ? '; your progress is saved in this browser.' : '.'}
       </p>
       <ol className="grid max-w-3xl gap-2">
         {WEEKS.map((week) => {
           const built = hasPage(week)
           return (
             <li key={week.week} className="flex items-baseline gap-3 rounded-lg border bg-card px-4 py-3">
-              <span className="w-16 shrink-0 text-sm text-muted-foreground">Week {week.week}</span>
+              <span className="w-6 shrink-0 text-sm tabular-nums text-muted-foreground">{week.week}</span>
               <span className="min-w-0 flex-1">
                 {built ? (
                   <Link to={weekPath(week.week)} className="font-medium underline-offset-4 hover:underline">

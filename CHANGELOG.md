@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Topics replace weeks in everything the learner sees: routes are `/topic/<slug>` (old `/week/<n>` links redirect), titles drop the number, Home lists numbered topics, the nav item is "Topics", and the copy no longer says "this week". Internals keep the week names (src/app/weeks.ts explains).
 - Fix: the plate-boundaries layer is now `plate-boundaries`; the Protomaps basemap style owns a layer called `boundaries`, so weeks 5 and 8 threw "Layer already exists" and drew no boundaries once the self-hosted basemap went live. `.htaccess` lets other origins read `basemap/`, so a local preview can run on the live copy.
 - Self-hosted basemap goes live: the `basemap/` folder from `scripts/build-basemap.sh` (Protomaps zoom 0 to 8 extract, 549 MB) is uploaded beside the app and excluded from the deploy rsync so `--delete` never removes it; `.htaccess` caches `.pbf` glyphs and the `.pmtiles` archive for a week.
 - Deploy fixes from the first Lighthouse run on the live site: icon files are mode 644 and the deploy rsync sets modes, so the host serves the manifest icons; `public/.htaccess` gives hashed assets a year-long immutable cache, the worker and shell no-cache, and the manifest its media type; the attribution link rule now outranks MapLibre's stylesheet. docs/DECISIONS.md records the week-8 scores (71/96/96/100).

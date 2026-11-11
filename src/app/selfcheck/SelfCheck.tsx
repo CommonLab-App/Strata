@@ -23,7 +23,7 @@ export function SelfCheck({ questions, progress, update }: LabProps & { question
   return (
     <div className="grid max-w-prose gap-6">
       <p className="text-muted-foreground">
-        Ten questions on this week. Check your answers when you are done; you can try again as often as you like, and
+        Ten questions on this topic. Check your answers when you are done; you can try again as often as you like, and
         your best score is kept.
         {progress.selfCheckBest !== null && ` Best so far: ${progress.selfCheckBest}/${questions.length} in ${progress.selfCheckAttempts} ${progress.selfCheckAttempts === 1 ? 'attempt' : 'attempts'}.`}
       </p>

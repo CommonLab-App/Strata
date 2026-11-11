@@ -1,4 +1,4 @@
-// Lighthouse mobile on the week-1 Explore pane, against the production build (`npm run build` first). Prints JSON.
+// Lighthouse mobile on the first topic's Explore pane, against the production build (`npm run build` first). Prints JSON.
 //
 // Two runs in one browser. The first pays the browser's cold start (GPU process, compositor shaders), which on this
 // headless server takes close to a second and on a phone a fraction of that; the second measures the page alone.
@@ -10,7 +10,7 @@ import { launch } from 'chrome-launcher'
 
 const CHROME = process.env.CHROME_PATH ?? `${process.env.HOME}/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome`
 const PORT = 4173
-const URL = process.argv[2] ?? `http://localhost:${PORT}/#/week/1/explore`
+const URL = process.argv[2] ?? `http://localhost:${PORT}/#/topic/earth-system/explore`
 
 const preview = spawn('npx', ['vite', 'preview', '--port', String(PORT), '--strictPort'], { stdio: 'ignore' })
 await new Promise((r) => setTimeout(r, 2500))

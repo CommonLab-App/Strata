@@ -5,7 +5,7 @@ import { NotFound } from '@/app/pages/NotFound'
 import { SelfCheck } from '@/app/selfcheck/SelfCheck'
 import type { Question } from '@/app/selfcheck/questions'
 import { STATUS_LABEL } from '@/app/status'
-import { hasPage, WEEKS, weekPath, type Week } from '@/app/weeks'
+import { hasPage, weekBySlug, weekPath, type Week } from '@/app/weeks'
 import * as week01 from '@/app/weeks/week01'
 import * as week02 from '@/app/weeks/week02'
 import * as week03 from '@/app/weeks/week03'
@@ -72,8 +72,7 @@ type Tab = (typeof TABS)[number]['tab']
 
 export function WeekPage() {
   const params = useParams()
-  const number = Number(params.week)
-  const week = WEEKS.find((w) => w.week === number)
+  const week = weekBySlug(params.slug)
   const tab = params.tab ?? 'learn'
   const content = week && CONTENT[week.week]
   if (!week || !hasPage(week) || !content || !TABS.some((t) => t.tab === tab)) return <NotFound />
@@ -83,13 +82,13 @@ export function WeekPage() {
 
 function WeekShell({ week, tab, content }: { week: Week; tab: Tab; content: WeekContent }) {
   const [progress, update] = useWeekProgress(week)
-  const title = `Week ${week.week}: ${week.title}`
+  const title = week.title
   const { Learn, Explore, Lab, questions } = content
   return (
     <>
       <PageHeader title={title} documentTitle={`${TABS.find((t) => t.tab === tab)?.label} · ${title}`} />
       <div className="mb-4 flex flex-wrap items-center gap-3">
-        <nav aria-label="Week sections" className="flex flex-wrap gap-1 rounded-lg bg-muted p-[3px] text-sm">
+        <nav aria-label="Topic sections" className="flex flex-wrap gap-1 rounded-lg bg-muted p-[3px] text-sm">
           {TABS.map(({ tab: t, label }) => (
             <NavLink
               key={t}
@@ -101,7 +100,7 @@ function WeekShell({ week, tab, content }: { week: Week; tab: Tab; content: Week
             </NavLink>
           ))}
         </nav>
-        <span className="rounded-full border px-2.5 py-0.5 text-xs text-muted-foreground" aria-label="Week progress">
+        <span className="rounded-full border px-2.5 py-0.5 text-xs text-muted-foreground" aria-label="Topic progress">
           {STATUS_LABEL[progress.status]}
           {progress.selfCheckBest !== null && ` · best ${progress.selfCheckBest}/${questions.length}`}
         </span>
@@ -114,7 +113,7 @@ function WeekShell({ week, tab, content }: { week: Week; tab: Tab; content: Week
           <SelfCheck questions={questions} progress={progress} update={update} />
         ) : (
           <p role="status" className="max-w-prose rounded-md border border-dashed p-3 text-sm text-muted-foreground">
-            The self-check for this week is not written yet.
+            The self-check for this topic is not written yet.
           </p>
         ))}
     </>

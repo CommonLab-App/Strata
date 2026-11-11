@@ -34,7 +34,7 @@ export function Learn() {
           the sulfides pyrite and galena, the oxides magnetite and hematite, and the evaporites halite and gypsum.
         </p>
         <p>
-          Which of these a rock holds, and in what proportion, is most of what a rock name means. Week 4 starts there.
+          Which of these a rock holds, and in what proportion, is most of what a rock name means. The igneous rocks topic starts there.
         </p>
       </section>
 

@@ -33,7 +33,7 @@ export function Learn() {
           running today ran in the past too, so a modern river or beach can be read as a guide to an ancient one.
         </p>
         <p>
-          The Explore pane shows this week's earthquakes as the USGS records them, minutes after they happen. Watching
+          The Explore pane shows today's earthquakes as the USGS records them, minutes after they happen. Watching
           where they fall, and where they do not, is the first observation of the course. In the Lab you will run the
           method yourself on a small model of sand and water.
         </p>

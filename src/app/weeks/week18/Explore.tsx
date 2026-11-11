@@ -27,7 +27,7 @@ export function Explore() {
         The same tools, another world. The Moon has no air, water or plate tectonics, so almost every landform on it
         is an impact crater or a lava plain, and the number of craters on a surface is its clock: old ground has
         collected more. Mars has craters too, but also volcanoes, canyons, dunes and dry channels that the Earth
-        weeks have prepared you to read.
+        topics have prepared you to read.
       </p>
       <div className="flex flex-wrap items-center gap-2" role="group" aria-label="World">
         {(Object.keys(PLANETS) as PlanetId[]).map((id) => (

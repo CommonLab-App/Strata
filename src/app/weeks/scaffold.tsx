@@ -172,7 +172,7 @@ export function scaffoldWeek(plan: WeekPlan): WeekContent {
     ),
     Explore: () => (
       <div className="grid max-w-prose gap-6">
-        <Draft>The explorer for this week is not built yet. Here is what it will do and where its data will come from.</Draft>
+        <Draft>The explorer for this topic is not built yet. Here is what it will do and where its data will come from.</Draft>
         <p>{plan.explore}</p>
         <section aria-labelledby="sources-heading">
           <h2 id="sources-heading" className="mb-1 text-lg font-medium">
@@ -184,7 +184,7 @@ export function scaffoldWeek(plan: WeekPlan): WeekContent {
     ),
     Lab: () => (
       <div className="grid max-w-prose gap-6">
-        <Draft>The lab for this week is not built yet; nothing here saves. Here is the worksheet as planned.</Draft>
+        <Draft>The lab for this topic is not built yet; nothing here saves. Here is the worksheet as planned.</Draft>
         <p>{plan.lab}</p>
       </div>
     ),

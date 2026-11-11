@@ -20,23 +20,26 @@ Do deliverable 6: build the quake layer on both CesiumJS and MapLibre GL, run th
 
 Remove the engine we did not pick. Finish deliverables 7 through 10 and run the acceptance tests. When all pass, update CHANGELOG.md and tell me the phase-1 gate is met.
 
-## Status 2026-11-09 (end of day)
+## Status 2026-11-10 (end of day)
 
-All eighteen weeks are built; `npm run build` (lint, 208 tests, types, bundle) and `npm run smoke` pass. Core sets
-match the owner's hand samples (14 minerals, 21 rocks, `core` flag in data/samples); the identification labs draw
-from them, weeks 2, 3, 4, 6 and 7 at stored-entry version 2. Phase 6 offline mode is in: a Vite plugin builds
-`sw.js` from `src/sw/worker.js`, the manifest makes the app installable (docs/specs/phase-6-polish.md). First deploy
-to stratalab.app done with `scripts/deploy.sh` (target in the gitignored `.env`); the worker was seen activated on
-the live site with the precache full. Lighthouse on the week-8 Explore pane: 71/96/96/100, below the phase-3 gate's
-80; the reasoning and the next measurement (week-1 pane) are in docs/DECISIONS.md. The fixes that run produced
-(icon file modes, `public/.htaccess` cache headers and manifest type, attribution contrast) are committed and wait
-for a redeploy.
+All eighteen topics are built; `npm run build` (lint, 209 tests, types, bundle) and `npm run smoke` pass. The
+learner sees topics, not weeks: `/#/topic/<slug>` (slugs in src/app/weeks.ts), page titles without a number, and
+old `/week/<n>` links redirect. Internals keep the week names (folders, `WEEKS`, storage key `week:08`,
+docs/WEEK-PLANS.md); the note on `WEEKS` says why. Core sets match the owner's hand samples (14 minerals, 21 rocks,
+`core` flag in data/samples); the identification labs draw from them, weeks 2, 3, 4, 6 and 7 at stored-entry
+version 2. Phase 6 offline mode is in (docs/specs/phase-6-polish.md) and seen activated on the live site. The
+self-hosted Protomaps basemap is uploaded beside the app and live (`VITE_BASEMAP_URL` in `.env`; `basemap/` is
+excluded from the deploy rsync). It exposed a layer-name clash that broke plate boundaries on the volcano and
+plate-tectonics topics; fixed, waiting for a redeploy with the topic routes. Lighthouse on the plate-tectonics
+Explore pane before the basemap: 71/96/96/100, below the phase-3 gate's 80; docs/DECISIONS.md has the reasoning and
+the next measurement.
 
-Owner work, also on the Planka digest card: redeploy; check install and airplane mode; Lighthouse on
-/#/week/1/explore; build and upload the basemap (`scripts/build-basemap.sh`, `VITE_BASEMAP_URL`); record the
-turntable videos for the 35 core samples (`scripts/import_sample.py <video> --id <sample>`); the GPU check of week 8
-zoomed in. Reviewer work: the Planka review cards, whose answers go into docs/WEEK-PLANS.md and then into the code
-paths each entry names. Phase 6 still owes the accessibility pass and launch.
+Owner work, also on the Planka digest card: redeploy (`scripts/deploy.sh`, from a terminal that holds the ssh key);
+confirm boundaries draw on the two globes; check install and airplane mode; Lighthouse on
+/#/topic/earth-system/explore and again on /#/topic/plate-tectonics/explore with the vector basemap; record the
+turntable videos for the 35 core samples (`scripts/import_sample.py <video> --id <sample>`); the GPU check of the
+plate-tectonics globe zoomed in. Reviewer work: the Planka review cards, whose answers go into docs/WEEK-PLANS.md and
+then into the code paths each entry names. Phase 6 still owes the accessibility pass and launch.
 
 ## Then
 Ask Claude Code to draft docs/specs/phase-2-earth-materials.md from docs/PLAN.md before any phase-2 code, and review it the same way.
