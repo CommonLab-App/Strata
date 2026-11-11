@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Model tab on six topics (docs/specs/models.md): looping block diagrams drawn as SVG and animated with CSS, each with a caption and tappable labelled parts. Plate boundaries, faults, volcano profiles (with a Three.js turntable of the edifice), stream zones and drainage patterns, the artesian cross-section with its wells plus the zones below the surface and a karst block, and five agents of erosion before and after. Reduced motion shows each loop's end state. `scripts/model-shots.mjs` screenshots every variant for review.
 - Topics replace weeks in everything the learner sees: routes are `/topic/<slug>` (old `/week/<n>` links redirect), titles drop the number, Home lists numbered topics, the nav item is "Topics", and the copy no longer says "this week". Internals keep the week names (src/app/weeks.ts explains).
 - Fix: the plate-boundaries layer is now `plate-boundaries`; the Protomaps basemap style owns a layer called `boundaries`, so weeks 5 and 8 threw "Layer already exists" and drew no boundaries once the self-hosted basemap went live. `.htaccess` lets other origins read `basemap/`, so a local preview can run on the live copy.
 - Self-hosted basemap goes live: the `basemap/` folder from `scripts/build-basemap.sh` (Protomaps zoom 0 to 8 extract, 549 MB) is uploaded beside the app and excluded from the deploy rsync so `--delete` never removes it; `.htaccess` caches `.pbf` glyphs and the `.pmtiles` archive for a week.

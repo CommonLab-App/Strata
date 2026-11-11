@@ -73,6 +73,7 @@ relation replaces `logViscosity` alone. Not built: the real-volcano overlay on t
   pages for the real examples the reviewers pick.
 - Explore: Holocene volcanoes beside the PB2002 boundaries, a tap opens the GVP record (done). To add: the Volcano
   Lab sliders and plot, and an eruption-history bar chart (VEI by year) in the volcano card.
+- Model tab (docs/specs/models.md): shield, stratovolcano, cinder cone and caldera as looping cut-away profiles, with a Three.js turntable of the edifice.
 - Lab: guided sim, three prompts (land a basaltic shield, a stratovolcano, a caldera-forming eruption) by setting
   silica, water and temperature; free play after.
 - Checker: the model's style class for each prompt's settings; a prompt lands when the class matches.
@@ -114,6 +115,7 @@ chooses the station pair; the age slider stops at 250 Ma (MULLER2019) in 25 Ma s
 - Explore: GNSS arrows and boundaries, two-station relative motion with the nearest boundary (done). To add: the age
   slider, today to 250 Ma with MULLER2019 through the GPlates adapters, drawing reconstructed plate polygons and
   moving a chosen point; past 250 Ma only if the reviewers pick a model that covers it.
+- Model tab (docs/specs/models.md): divergent, subduction, collision and transform boundaries as looping block diagrams.
 - Lab worksheet: station A id and velocity, station B id and velocity, relative east and north, speed (mm/yr),
   azimuth (degrees from north), boundary type (divergent, convergent, transform, none).
 - Checker (`src/engine/tectonics/`, done): relative components B − A, speed their norm, azimuth atan2(east, north);
@@ -136,6 +138,7 @@ hand picks; the table is applied for the learner rather than read by eye. Not bu
   earthquake science pages.
 - Explore: the quake globe with depth as colour and magnitude as size; a seismogram panel for a chosen teaching
   event, three vertical traces on one time axis, P and S picks to drag, distance circles drawn as picks are made.
+- Model tab (docs/specs/models.md): normal, reverse and strike-slip faults as looping block diagrams (placed here rather than in the optional structural-geology topic).
 - Lab worksheet: per station the P pick, S pick, S − P and distance; the learner's epicentre; the catalogue epicentre;
   the miss distance.
 - Checker (`src/engine/seismic/`, done): distances by the bundled travel-time table, interpolated; expected epicentre
@@ -224,6 +227,7 @@ cut. Not built: flood stage (not in the services used).
   science school pages.
 - Explore: the Water Explorer for rivers: gauges on the globe, a tap opens the current discharge and the recent
   hydrograph (shared `Plot`); a stream-table sandbox with sliders for slope, discharge and sediment size.
+- Model tab (docs/specs/models.md): the three stream zones and the dendritic, rectangular, radial and trellis drainage patterns.
 - Lab worksheet: for a chosen gauge and window, peak discharge, time of peak, time from start of rise to peak, and
   whether the record crossed the flood stage where the site gives one.
 - Checker: peak and times recomputed from the cached record (peak within 2 %, times within one data step); flood
@@ -245,6 +249,7 @@ stays in Learn (no sinkhole layer).
 - Learn: porosity, permeability, the water table, Darcy's law, wells, karst. Sources: OpenGeology chapter 11.
 - Explore: the Water Explorer for wells: live well levels on the globe; a Darcy sandbox with sliders for hydraulic
   conductivity, gradient and area giving discharge (shared `Sliders` and `Plot`).
+- Model tab (docs/specs/models.md): the artesian cross-section with three wells, the zones below the surface, and a karst block.
 - Lab worksheet: water-table contours drawn from a set of well heads (as contour values at crossings on a grid),
   the flow direction, and the drawdown at a given radius for a pumping scenario.
 - Checker (`src/engine/groundwater/`): a surface interpolated from the same well heads (inverse distance); each
@@ -266,6 +271,7 @@ built: landform identification on labelled tiles (needs the reviewers' labels) a
   chapters 12 to 14.
 - Explore: the Surface Sandbox in glacier, wind and wave modes (slider-driven erosion of a synthetic surface, drawn
   as shaded relief); paired elevation tiles of a glaciated and an unglaciated valley.
+- Model tab (docs/specs/models.md): river, wave, wind, glacier and landslide erosion as before-and-after loops.
 - Lab worksheet: landforms identified by clicking labelled regions on two tiles; a sea-level scenario on a coastal
   tile with the flooded area read off.
 - Checker: landform picks against the reviewers' labelled regions bundled with the tiles; flooded area recomputed
