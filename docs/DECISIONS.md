@@ -147,3 +147,23 @@ octet-stream, attribution link contrast), and measure before optimising: the sam
 the layers, defer the arrows and boundaries to an idle callback after the first frame; if it is the globe, the gate
 number is revisited rather than the code.
 
+
+## 2026-11-11 Models: Lighthouse on the dev box, not the gate machine
+
+The Model tab (docs/specs/models.md) shipped on six topics. Lighthouse mobile was run on the dev box (no GPU,
+headless Chromium on swiftshader) with `scripts/bench.mjs`, which is not the machine the phase gates were measured
+on; the same box gives the text-only Learn tab of the same topic 69 to 78 with 1 to 7 s of blocking time between
+runs, so the numbers only compare pages with each other.
+
+| Page | Performance | Blocking time |
+| --- | --- | --- |
+| /#/topic/plate-tectonics (Learn, text) | 69 and 78 | 6.8 s and 1.0 s |
+| /#/topic/plate-tectonics/lab | 70 and 75 | 7.2 s and 1.3 s |
+| /#/topic/plate-tectonics/model | 54 and 63 | 7.2 s and 4.5 s |
+
+The model page sits 10 to 15 points under the text pages on this box. The likely cost is that CSS transforms on
+SVG children are not composited in Chromium, so a looping scene repaints on the main thread for as long as it is on
+screen. Decision: record, and have the owner measure the same page on the GPU desktop as for the earlier gates. If it
+is still under 80 there, the first lever is to pause every `.mdl` animation while its svg is off screen
+(IntersectionObserver setting `animation-play-state: paused` on the wrapper), the second is fewer animated nodes
+per scene (the mantle cells and rain drops are the busiest).

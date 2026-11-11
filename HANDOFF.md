@@ -20,26 +20,32 @@ Do deliverable 6: build the quake layer on both CesiumJS and MapLibre GL, run th
 
 Remove the engine we did not pick. Finish deliverables 7 through 10 and run the acceptance tests. When all pass, update CHANGELOG.md and tell me the phase-1 gate is met.
 
-## Status 2026-11-10 (end of day)
+## Status 2026-11-11 (overnight build)
 
-All eighteen topics are built; `npm run build` (lint, 209 tests, types, bundle) and `npm run smoke` pass. The
-learner sees topics, not weeks: `/#/topic/<slug>` (slugs in src/app/weeks.ts), page titles without a number, and
-old `/week/<n>` links redirect. Internals keep the week names (folders, `WEEKS`, storage key `week:08`,
-docs/WEEK-PLANS.md); the note on `WEEKS` says why. Core sets match the owner's hand samples (14 minerals, 21 rocks,
-`core` flag in data/samples); the identification labs draw from them, weeks 2, 3, 4, 6 and 7 at stored-entry
-version 2. Phase 6 offline mode is in (docs/specs/phase-6-polish.md) and seen activated on the live site. The
-self-hosted Protomaps basemap is uploaded beside the app and live (`VITE_BASEMAP_URL` in `.env`; `basemap/` is
-excluded from the deploy rsync). It exposed a layer-name clash that broke plate boundaries on the volcano and
-plate-tectonics topics; fixed, waiting for a redeploy with the topic routes. Lighthouse on the plate-tectonics
-Explore pane before the basemap: 71/96/96/100, below the phase-3 gate's 80; docs/DECISIONS.md has the reasoning and
-the next measurement.
+All eighteen topics are built; `npm run build` (lint, 254 tests, types, bundle) and `npm run smoke` pass. New
+overnight, on the owner's request and with their delegated decisions: a **Model tab** on six topics
+(docs/specs/models.md, plan in docs/superpowers/plans/2026-11-10-models.md): looping block diagrams drawn as SVG in
+the brand's cabinet-projection style, animated with CSS keyframes, each with variant buttons, a caption and
+tappable labelled parts. Plate tectonics (divergent, subduction, collision, transform), earthquakes (normal,
+reverse, strike-slip faults), volcanoes (shield, stratovolcano, cinder cone, caldera, cut open, plus a Three.js
+turntable of the edifice from `src/engine/volcano/shape.ts`), streams (the three zones and four drainage patterns),
+groundwater (artesian cross-section with three wells, infiltration zones, karst), and glaciers-deserts-coasts (five
+agents of erosion before and after). Shared pieces in `src/app/models/` (draw helpers, keyframes, ModelTab); each
+topic's `Model.tsx` is a lazy chunk. Reduced motion lands every loop on its end state. `scripts/model-shots.mjs`
+screenshots every variant for review; `npm run smoke` no longer leaks preview servers.
 
-Owner work, also on the Planka digest card: redeploy (`scripts/deploy.sh`, from a terminal that holds the ssh key);
-confirm boundaries draw on the two globes; check install and airplane mode; Lighthouse on
-/#/topic/earth-system/explore and again on /#/topic/plate-tectonics/explore with the vector basemap; record the
-turntable videos for the 35 core samples (`scripts/import_sample.py <video> --id <sample>`); the GPU check of the
-plate-tectonics globe zoomed in. Reviewer work: the Planka review cards, whose answers go into docs/WEEK-PLANS.md and
-then into the code paths each entry names. Phase 6 still owes the accessibility pass and launch.
+Also live since the last note: topics replace weeks in routes and copy (`/#/topic/<slug>`, old links redirect);
+the self-hosted basemap is uploaded and on; the plate-boundaries layer-name clash is fixed and deployed.
+
+Owner work, also on the Planka digest card: look over the six Model tabs on the phone and the desktop (every
+drawing and caption was reviewed in screenshots, not by the owner yet); redeploy; Lighthouse on
+/#/topic/plate-tectonics/model on the GPU desktop (docs/DECISIONS.md 2026-11-11 says why the dev-box number does
+not count); Lighthouse on /#/topic/earth-system/explore and /#/topic/plate-tectonics/explore with the vector
+basemap; check install and airplane mode; record the turntable videos for the 35 core samples
+(`scripts/import_sample.py <video> --id <sample>`); the GPU check of the plate-tectonics globe zoomed in; nineteen
+stale `vite preview` processes from earlier smoke runs can be cleared with `pkill -f "vite preview"`. Reviewer
+work: the Planka review cards, whose answers go into docs/WEEK-PLANS.md and then into the code paths each entry
+names. Phase 6 still owes the accessibility pass and launch.
 
 ## Then
 Ask Claude Code to draft docs/specs/phase-2-earth-materials.md from docs/PLAN.md before any phase-2 code, and review it the same way.

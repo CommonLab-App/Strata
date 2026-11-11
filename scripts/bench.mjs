@@ -9,7 +9,7 @@ import { spawn, execFileSync } from 'node:child_process'
 import { launch } from 'chrome-launcher'
 
 const CHROME = process.env.CHROME_PATH ?? `${process.env.HOME}/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome`
-const PORT = 4173
+const PORT = Number(process.env.PORT ?? 4173)
 const URL = process.argv[2] ?? `http://localhost:${PORT}/#/topic/earth-system/explore`
 
 const preview = spawn('npx', ['vite', 'preview', '--port', String(PORT), '--strictPort'], { stdio: 'ignore', detached: true })
