@@ -88,3 +88,31 @@
   10% { opacity: 1; }
   80%, 100% { transform: translateY(0); opacity: 1; }
 }
+
+/* Rotations and growth need a box to turn or scale about. */
+.mdl-spin,
+.mdl-spin-back {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.mdl-grow,
+.mdl-shrink {
+  transform-box: fill-box;
+  transform-origin: bottom;
+}
+.mdl-grow-down {
+  transform-box: fill-box;
+  transform-origin: top;
+}
+
+/* Along the depth direction of the cabinet projection (0.62, -0.36): the strike of a transform fault. */
+@keyframes mdl-slide-back {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(7.4px, -4.3px); }
+  100% { transform: translate(0, 0); }
+}
+@keyframes mdl-slide-fore {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-7.4px, 4.3px); }
+  100% { transform: translate(0, 0); }
+}

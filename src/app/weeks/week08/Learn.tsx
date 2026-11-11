@@ -48,7 +48,8 @@ export function Learn() {
           What a boundary does depends on how the plates move relative to each other, not on either one alone. Take
           the velocity of one station from another, component by component, and the result is how the second moves
           as seen from the first. Its length is the relative speed; its direction, compared with the trend of the
-          boundary between them, says whether they are pulling apart, converging, or sliding past.
+          boundary between them, says whether they are pulling apart, converging, or sliding past. The Model tab
+          shows each boundary type as a looping block diagram.
         </p>
       </section>
       <section aria-labelledby="reading-heading">

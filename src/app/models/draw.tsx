@@ -103,11 +103,11 @@ export const Patterns = ({ prefix }: { prefix: string }): ReactElement => (
 /** Outline style shared by every face: 1.6 Basement at 90 %. */
 export const OUTLINE = { fill: 'none', stroke: BASEMENT, strokeWidth: 1.6, strokeLinejoin: 'round', opacity: 0.9 } as const
 
-/** A label with a leader line from (x, y) on the drawing to the text at (lx, ly). Tappable: carries the part id. */
+/** A label with a leader line from (x, y) on the drawing to the text at (lx, ly). Tappable: carries the part id. 13 units reads as 10 px on a phone. */
 export const Label = ({ x, y, lx, ly, part, children, anchor = 'start' }: { x: number; y: number; lx: number; ly: number; part: string; children: string; anchor?: 'start' | 'middle' | 'end' }): ReactElement => (
   <g data-part={part}>
     <line x1={x} y1={y} x2={lx} y2={ly} stroke="currentColor" strokeWidth="0.8" opacity="0.7" />
-    <text x={lx} y={ly} fontSize={11} fill="currentColor" textAnchor={anchor} dominantBaseline="middle" dx={anchor === 'end' ? -3 : anchor === 'start' ? 3 : 0}>
+    <text x={lx} y={ly} fontSize={13} fill="currentColor" textAnchor={anchor} dominantBaseline="middle" dx={anchor === 'end' ? -3 : anchor === 'start' ? 3 : 0}>
       {children}
     </text>
   </g>

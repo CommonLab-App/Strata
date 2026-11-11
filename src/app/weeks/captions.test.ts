@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import pb2002 from '@data/tectonics/pb2002-boundaries.json'
 import { BOUNDARY_COLOUR, boundaryLayer, type BoundaryFeature } from '@/map/boundaries'
@@ -10,6 +10,13 @@ describe('Explore captions', () => {
   it.each(['week01', 'week05', 'week08', 'week09'])('%s says nothing about risk', (week) => {
     const source = readFileSync(new URL(`./${week}/Explore.tsx`, import.meta.url), 'utf8')
     expect(source.match(FORBIDDEN)).toBeNull()
+  })
+  it('no model caption does either', () => {
+    for (const folder of readdirSync(new URL('.', import.meta.url))) {
+      const file = new URL(`./${folder}/Model.tsx`, import.meta.url)
+      if (!existsSync(file)) continue
+      expect(readFileSync(file, 'utf8').match(FORBIDDEN), folder).toBeNull()
+    }
   })
 })
 

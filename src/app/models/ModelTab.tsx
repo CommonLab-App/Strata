@@ -67,7 +67,7 @@ export function ModelTab({ lead, variants, Aside }: ModelProps) {
           ))}
         </div>
       )}
-      <div ref={wrapper} data-dim={state.selected ? '' : undefined} className="rounded-lg border bg-card p-2 [&>svg]:h-auto [&>svg]:w-full" onClick={onClick}>
+      <div ref={wrapper} data-dim={state.selected ? '' : undefined} className="rounded-lg border bg-card p-1 [&>svg]:h-auto [&>svg]:w-full" onClick={onClick}>
         <Scene selected={state.selected} />
       </div>
       <p aria-live="polite" className="min-h-12 text-sm">
