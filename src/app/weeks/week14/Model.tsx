@@ -324,9 +324,11 @@ const karst: Variant = {
         <clipPath id="gw-cave">
           <path d={CAVE} />
         </clipPath>
+        {/* the brick hatch turned 45 degrees reads as jointed rock rather than a built wall */}
+        <pattern id="gw-karst-limestone" href="#gw-limestone" patternTransform="rotate(45)" />
       </defs>
       <polygon points={K_FACE} fill={MATERIAL.limestone} />
-      <polygon points={K_FACE} fill={hatch('gw', 'limestone')} />
+      <polygon points={K_FACE} fill="url(#gw-karst-limestone)" />
       <polygon points={K_PLATEAU} fill={kb.topFill(MATERIAL.limestone)} />
       <polygon points={K_SLOPE} fill={mix(MATERIAL.limestone, MATERIAL.basement, 0.12)} />
       <polygon points={K_FLOOR} fill={kb.topFill(MATERIAL.limestone)} />
