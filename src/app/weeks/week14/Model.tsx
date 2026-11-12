@@ -19,8 +19,6 @@ const Head = ({ x1, y1, x2, y2 }: { x1: number; y1: number; x2: number; y2: numb
 const Svg = ({ caption, children }: { caption: string; children: React.ReactNode }) => (
   <svg viewBox="0 0 400 260" role="img" aria-label={caption}>
     <Patterns prefix="gw" />
-    {/* the brick hatch turned 45 degrees reads as jointed rock rather than a built wall */}
-    <pattern id="gw-joints" href="#gw-limestone" patternTransform="rotate(45)" />
     {children}
   </svg>
 )
@@ -124,7 +122,7 @@ const artesian: Variant = {
           <Head x1={238} y1={183.8} x2={250} y2={185.2} />
         </g>
         <path d={band(B4, 400)} fill={MATERIAL.limestone} />
-        <path d={band(B4, 400)} fill="url(#gw-joints)" />
+        <path d={band(B4, 400)} fill={hatch('gw', 'limestone')} />
         {/* the saturated part of the unconfined aquifer, drawn 10 below the water table and rising to it */}
         <g clipPath="url(#gw-unconfined)" data-part="water-table">
           <path d={SATURATED} fill={MATERIAL.water} opacity="0.35" className="mdl" style={{ animationName: 'mdl-rise', animationDuration: '10s' }} />
@@ -328,7 +326,7 @@ const karst: Variant = {
         </clipPath>
       </defs>
       <polygon points={K_FACE} fill={MATERIAL.limestone} />
-      <polygon points={K_FACE} fill="url(#gw-joints)" />
+      <polygon points={K_FACE} fill={hatch('gw', 'limestone')} />
       <polygon points={K_PLATEAU} fill={kb.topFill(MATERIAL.limestone)} />
       <polygon points={K_SLOPE} fill={mix(MATERIAL.limestone, MATERIAL.basement, 0.12)} />
       <polygon points={K_FLOOR} fill={kb.topFill(MATERIAL.limestone)} />

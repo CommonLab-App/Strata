@@ -84,7 +84,8 @@ export const hatch = (prefix: string, bed: Bed) => `url(#${prefix}-${bed})`
 /** The brand's four hatch patterns, ids prefixed per scene so two scenes on one page cannot clash. */
 export const Patterns = ({ prefix }: { prefix: string }): ReactElement => (
   <defs>
-    <pattern id={`${prefix}-limestone`} width="24" height="12" patternUnits="userSpaceOnUse">
+    {/* brick hatch turned 45 degrees: as a wall it read as masonry, turned it reads as jointed rock */}
+    <pattern id={`${prefix}-limestone`} width="24" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
       <path d="M0 0.5H24 M0 6.5H24 M6 0.5V6.5 M18 6.5V12.5" stroke={BASEMENT} strokeWidth="0.9" fill="none" opacity="0.33" />
     </pattern>
     <pattern id={`${prefix}-sandstone`} width="10" height="10" patternUnits="userSpaceOnUse">
