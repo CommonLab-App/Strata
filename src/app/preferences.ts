@@ -1,34 +1,12 @@
-import { z } from 'zod'
-import { ENTRY, loadEntry, saveEntry, type KeyValueStore } from './progress/storage.ts'
+// StrataLab's preferences: the shared shell's dark mode and reduced motion, and none of its own.
+// With its extensions, here and in firstPaint.ts: vite.config.ts imports this file, and Vite asks that of what its config imports.
+import { createPreferences, type CorePrefs } from '@commonlab/shell/core'
+import { storage } from './progress/storage.ts'
 
-const TRI = ['system', 'on', 'off'] as const
+export { PREFS_VERSION, resolveTri, type Tri } from '@commonlab/shell/core'
 
-/**
- * Every preference and the values it can take. The schema is built from this, and so is the script that applies
- * the theme before the app has loaded (firstPaint.ts), so the two read a stored entry alike.
- */
-export const PREF_VALUES = { darkMode: TRI, reducedMotion: TRI } as const
+export const prefs = createPreferences(storage)
 
-const prefsSchema = z.object({
-  darkMode: z.literal(PREF_VALUES.darkMode),
-  reducedMotion: z.literal(PREF_VALUES.reducedMotion),
-})
+export const { PREF_VALUES, DEFAULT_PREFS, loadPrefs, savePrefs } = prefs
 
-export type Tri = (typeof TRI)[number]
-export type Prefs = z.infer<typeof prefsSchema>
-
-export const PREFS_VERSION = 1
-
-export const DEFAULT_PREFS: Prefs = { darkMode: 'system', reducedMotion: 'system' }
-
-export function resolveTri(pref: Tri, system: boolean): boolean {
-  return pref === 'system' ? system : pref === 'on'
-}
-
-export function loadPrefs(store: KeyValueStore): Prefs {
-  return loadEntry(store, ENTRY.prefs, PREFS_VERSION, prefsSchema) ?? DEFAULT_PREFS
-}
-
-export function savePrefs(store: KeyValueStore, prefs: Prefs): boolean {
-  return saveEntry(store, ENTRY.prefs, PREFS_VERSION, prefs)
-}
+export type Prefs = CorePrefs
