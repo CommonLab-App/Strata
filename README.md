@@ -2,7 +2,7 @@
 
 StrataLab is a free, open-source browser app for self-learning introductory physical geology: interactive explorers, virtual
 labs and live real-world data, laid out as a sixteen-week course with two optional extension weeks. It is the
-geology counterpart of [Valence](https://github.com/zebadrabbit/Valence), and shares its shell.
+geology counterpart of [Valence](https://github.com/CommonLab-App/Valence), and shares its shell.
 
 There are no accounts: progress is saved in the browser. Live data is fetched from public sources and cached
 in the browser for a short time; every live layer names its source and when it was fetched.

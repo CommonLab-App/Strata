@@ -24,7 +24,7 @@ Full plan: docs/PLAN.md. Per-module specs: docs/specs/. Work one spec at a time.
 - Sample library (minerals, rocks, fossils, volcanoes): JSON in the repo under data/ with stable string IDs. Images in the repo under public/ (CC-licensed or procedural).
 
 ## Valence reference
-- Valence repo path: /home/winter/work/Valence (GitHub: https://github.com/zebadrabbit/Valence)
+- Valence repo path: /home/winter/work/Valence (GitHub: https://github.com/CommonLab-App/Valence)
 - Reuse, don't reinvent: app shell, routing, progress storage module, lab worksheet pattern, About/credits page. (Valence has no auth; neither does Strata.)
 
 ## Working agreements
