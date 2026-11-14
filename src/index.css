@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+/* The shared shell's components (@commonlab/shell): Tailwind skips node_modules unless told. */
+@source "../node_modules/@commonlab/shell/dist";
 /* Zilla Slab (OFL, public/fonts/LICENSE-ZillaSlab.txt) for headings; JetBrains Mono (OFL, public/fonts/LICENSE-JetBrainsMono.txt) for data. */
 @font-face {
   font-family: 'Zilla Slab';
