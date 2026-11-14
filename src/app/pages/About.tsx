@@ -143,7 +143,11 @@ export function About() {
           </h2>
           <p>
             StrataLab is free and open source under the MIT License, the same license as its sibling project Valence. The
-            source code is published alongside it.
+            source code is published alongside it. Both are part of{' '}
+            <a className={link} href="https://commonlab.app/">
+              CommonLab
+            </a>
+            .
           </p>
         </section>
 
