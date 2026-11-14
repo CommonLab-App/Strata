@@ -44,7 +44,7 @@ const SECTIONS: { title: string; items: { name: string; url: string; what: strin
     items: [
       { name: 'An Introduction to Geology', url: 'https://opengeology.org/textbook/', what: 'An open textbook for introductory physical geology; the reading this course links to.' },
       { name: 'USGS Education', url: 'https://www.usgs.gov/educational-resources', what: 'Lessons, maps and explainers from the survey.' },
-      { name: 'Valence', url: 'https://firetailfab.com/valence/', what: 'This app\'s chemistry sibling: molecules, a periodic table and virtual labs, built the same way.' },
+      { name: 'ValenceLab', url: 'https://valencelab.app/', what: 'This app\'s chemistry sibling: molecules, a periodic table and virtual labs, built the same way.' },
     ],
   },
 ]

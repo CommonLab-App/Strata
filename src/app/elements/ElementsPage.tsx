@@ -96,7 +96,7 @@ function Detail({ symbol }: { symbol: string }) {
       )}
       <p className="text-sm text-muted-foreground">
         Chemistry of {e.name}, with sourced values:{' '}
-        <a className="underline underline-offset-4" href={`https://firetailfab.com/valence/#/explore/elements/${symbol}`} rel="noreferrer">
+        <a className="underline underline-offset-4" href={`https://valencelab.app/#/explore/elements/${symbol}`} rel="noreferrer">
           the element card in Valence
         </a>
         .

@@ -1,7 +1,7 @@
 # Strata — project memory for Claude Code
 
 Strata is a free, open-source browser app for self-learning introductory physical geology.
-It is the geology counterpart of Valence (Panda's chemistry explorer, live at https://firetailfab.com/valence/).
+It is the geology counterpart of Valence (Panda's chemistry explorer, live at https://valencelab.app/).
 Full plan: docs/PLAN.md. Per-module specs: docs/specs/. Work one spec at a time.
 
 ## Hard rules (never break these)
@@ -16,7 +16,7 @@ Full plan: docs/PLAN.md. Per-module specs: docs/specs/. Work one spec at a time.
 ## Stack (decided)
 - Front end: same framework, build tooling, and component conventions as Valence. Read the Valence repo (path below) first: README, package.json, src/ layout. Copy the structure.
 - Storage: localStorage via the same storage module pattern as Valence. No database, no auth. Decided 2026-11-07.
-- Hosting: static build served at https://firetailfab.com/strata/ (hash router, like Valence), base path configurable.
+- Hosting: static build served at https://stratalab.app/ (hash router, like Valence), base path configurable. Since 2026-11-13 on the CommonLab host; `scripts/deploy.sh` reads the target from `.env` (never written into the repo).
 - Map/globe: one engine for the whole app. Decision pending; phase 1 prototypes both candidates (see docs/specs/phase-1-shell.md).
 - 3D samples/crystals: Three.js. CIF parser for crystal structures, glTF for hand samples.
 - Sims: plain TypeScript models + one shared slider/plot component. Never bury physics in UI components.

@@ -14,7 +14,7 @@ Audience: anyone curious, no prior geology. The app never assumes a classroom, a
 
 - No course numbers, institution names, campus or location data anywhere.
 - No school-system integration, no accounts. Progress saved in the browser (localStorage), as in Valence. Decided 2026-11-07.
-- Free and open source, same license as Valence; hosted at firetailfab.com beside Valence.
+- Free and open source, same license as Valence; hosted at stratalab.app (first planned for firetailfab.com beside Valence; moved 2026-11-13).
 - No hand-written observation text; live data, published datasets, linked references.
 - Labs modeled on common intro physical geology lab-manual exercises, not one school's manual.
 - Credit AI assistance on the About page.
@@ -113,7 +113,7 @@ Fully static. The browser fetches public APIs directly and caches per adapter TT
 3. Internal processes. Plate Motion Explorer (cached GPS + GPlates), Seismic Viewer with S-minus-P lab, Volcano Lab. Weeks 4, 5, 8, 9. Gate: relative-motion and epicenter labs recompute from snapshots.
 4. Time and maps. Time Builder, half-life sim, Map & Topo Workshop with elevation tiles and Macrostrat. Weeks 10-12. Gate: ordering and profile checkers pass a fixed test set.
 5. Water and surface. Water Explorer, Surface Sandbox, slope-stability and sea-level sims, hazard overlays. Weeks 13-16. Gate: hydrograph lab reads a live gauge; sandbox runs 30 fps on a mid-range phone.
-6. Polish and extensions. Weeks 17-18, offline mode, About page with credits, accessibility pass, launch on firetailfab.com.
+6. Polish and extensions. Weeks 17-18, offline mode, About page with credits, accessibility pass, launch on stratalab.app.
 
 Each phase starts with one spec per module in docs/specs/ before code.
 
